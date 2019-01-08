@@ -10,6 +10,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="packages\**" />
+    <Content Remove="packages\**" />
+    <EmbeddedResource Remove="packages\**" />
+    <None Remove="packages\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="wwwroot\images\azure-sql.svg" />
     <Content Remove="wwwroot\images\azure-vms.svg" />
     <Content Remove="wwwroot\images\books-beaker.svg" />
