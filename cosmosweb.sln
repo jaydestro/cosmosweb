@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cosmosweb", "cosmosweb\cosmosweb.csproj", "{74CDC8B0-FDCC-412B-BE05-81D17F618DD3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cosmosweb", "cosmosweb\cosmosweb.csproj", "{74CDC8B0-FDCC-412B-BE05-81D17F618DD3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5E0397C5-70D5-466F-B0FC-838FC335801F}"
+	ProjectSection(SolutionItems) = preProject
+		cosmosweb\NuGet.config = cosmosweb\NuGet.config
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
