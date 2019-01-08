@@ -1,0 +1,18 @@
+<svg width="43" height="50" viewBox="0 0 43 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>StackOverflow-logo</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-15176 -757)">
+<g id="StackOverflow-logo">
+<g id="Vector">
+<use xlink:href="#path0_fill" transform="translate(15176 789.159)" fill="#BCBBBB"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path1_fill" transform="translate(15184.9 757)" fill="#F48023"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 35.6813 13.3949L 35.6813 -8.80992e-07L 40.127 -8.80992e-07L 40.127 17.8406L 2.20248e-07 17.8406L 2.20248e-07 -8.80992e-07L 4.44573 -8.80992e-07L 4.44573 13.3949L 35.6813 13.3949Z"/>
+<path id="path1_fill" d="M 0.461893 30.8891L 22.2864 35.4503L 23.2102 31.0624L 1.38568 26.5012L 0.461893 30.8891ZM 3.34873 20.4965L 23.5566 29.9076L 25.4042 25.8661L 5.1963 16.3972L 3.34873 20.4965ZM 8.94919 10.5658L 26.097 24.8268L 28.9261 21.4203L 11.7783 7.15935L 8.94919 10.5658ZM 20.0346 -2.20248e-07L 16.455 2.65589L 29.7344 20.5543L 33.3141 17.8984L 20.0346 -2.20248e-07ZM 0 41.0508L 22.2864 41.0508L 22.2864 36.6051L 0 36.6051L 0 41.0508Z"/>
+</defs>
+</svg>

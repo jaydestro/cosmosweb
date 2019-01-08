@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewData["Title"] = "Personalization Architecture Guidance";
+    ViewData["Description"] = "Learn how to architect personalization and recommendation applications with Cosmos DB.";
+    var swimLaneHelper = new cosmosweb.Helpers.SwimLaneHelper();
+}
+
+@section header {
+    <h1>Recommendation engines architecture guidance</h1>
+}
+
+<div class="@swimLaneHelper.GetSwimLaneCssClass()">
+    <div class="container">
+        <div class="row vertical-align-sm">
+            <div class="@swimLaneHelper.GetIllustrationCssClass()">
+                <img src="~/images/architecture/personalization.png" alt="" role="presentation" class="img-responsive img-responsive-center img-responsive-swimlane" asp-append-version="true" />
+            </div>
+            <div class="@swimLaneHelper.GetContentCssClass()">
+                <h2>Personalized recommendation applications</h2>
+                <p>Generate personalized recommendations for customers in real time, using low-latency and tunable consistency settings for immediate insights.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="@swimLaneHelper.GetSwimLaneCssClass()">
+    <div class="container">
+        <div class="row vertical-align-sm">
+            <div class="@swimLaneHelper.GetIllustrationCssClass()">
+                <img src="https://docs.microsoft.com/azure/architecture/reference-architectures/serverless/_images/serverless-web-app.png" alt="" role="presentation" class="img-responsive img-responsive-center img-responsive-swimlane" asp-append-version="true" />
+            </div>
+            <div class="@swimLaneHelper.GetContentCssClass()">
+                <h2>Build a real-time recommendation API on Azure</h2>
+                <p>This reference architecture shows how to train a recommendation model using Azure Databricks and deploy it as an API by using Azure Cosmos DB and includes a reference implementation on GitHub</p>
+                <p><a href="https://docs.microsoft.com/azure/architecture/reference-architectures/ai/real-time-recommendation" target="_blank" class="btn btn-default">Read more and deploy solution</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="@swimLaneHelper.GetSwimLaneCssClass()">
+    <div class="container">
+        <div class="row vertical-align-sm">
+            <div class="@swimLaneHelper.GetIllustrationCssClass()">
+                <img src="~/images/illustrations/toolbox.svg" alt="" role="presentation" class="img-responsive img-responsive-center img-responsive-swimlane" asp-append-version="true" />
+            </div>
+            <div class="@swimLaneHelper.GetContentCssClass()">
+                <h2>Additional Resources</h2>
+                <p>To learn more about building personaled recommendation applications in Cosmos DB, check out these resources.</p>
+                <ul>
+                    <li><a href="https://docs.microsoft.com/azure/cosmos-db/change-feed">Change feed in Azure Cosmos DB</a></li>
+                    <li><a href="https://github.com/Azure/azure-documentdb-changefeedprocessor-dotnet">Change Feed Processor library (v2)</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+@{ await Html.RenderPartialAsync("_TryCosmos"); }
+

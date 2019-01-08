@@ -1,0 +1,93 @@
+﻿
+@{
+    ViewData["Title"] = "Gaming Architecture Guidance";
+    ViewData["Description"] = "Learn how to architect gaming applications with Cosmos DB.";
+    var swimLaneHelper = new cosmosweb.Helpers.SwimLaneHelper();
+}
+
+@section header {
+    <h1>Gaming architecture guidance</h1>
+}
+
+<div class="@swimLaneHelper.GetSwimLaneCssClass()">
+    <div class="container">
+        <div class="row vertical-align-sm">
+            <div class="@swimLaneHelper.GetIllustrationCssClass()">
+                <img src="~/images/architecture/gaming.png" alt="" role="presentation" class="img-responsive img-responsive-center img-responsive-swimlane" asp-append-version="true" />
+            </div>
+            <div class="@swimLaneHelper.GetContentCssClass()">
+                <h2>Gaming applications</h2>
+                <p>Elastically scale your database to accommodate unpredictable bursts of traffic and deliver low-latency multi-player experiences on a global scale.</p>
+                <p><a href="https://docs.microsoft.com/en-us/azure/cosmos-db/use-cases#gaming" target="_blank" class="btn btn-default">Read more on Gaming</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="@swimLaneHelper.GetSwimLaneCssClass()">
+    <div class="container">
+        <div class="row vertical-align-sm">
+            <div class="@swimLaneHelper.GetIllustrationCssClass()">
+                <img src="https://github.com/BrianPeek/Scavenger/raw/master/docs/images/title.png?raw=true" alt="" role="presentation" class="img-responsive img-responsive-center img-responsive-swimlane" asp-append-version="true" />
+            </div>
+            <div class="@swimLaneHelper.GetContentCssClass()">
+                <h2>Scavenger Sample Game</h2>
+                <p>Scavenger is a virutal scavenger hunt game written in Unity. Each day players are presented with a 
+                list of items to take a photo of. If the Computer Vision API determines the photo contains the required object, a point is awarded.</p>
+                <p><a href="https://docs.microsoft.com/sandbox/gamedev/azure-gaming-samples#scavenger" target="_blank" class="btn btn-default">Explore sample</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="@swimLaneHelper.GetSwimLaneCssClass()">
+    <div class="container">
+        <div class="row vertical-align-sm">
+            <div class="@swimLaneHelper.GetIllustrationCssClass()">
+                <img src="https://github.com/dgkanatsios/AzureFunctionsNodeLeaderboards-Cosmos/raw/master/media/functions.JPG?raw=true" alt="" role="presentation" class="img-responsive img-responsive-center img-responsive-swimlane" asp-append-version="true" />
+            </div>
+            <div class="@swimLaneHelper.GetContentCssClass()">
+                <h2>Gaming Leaderboards Sample</h2>
+                <p>A game Leaderboards API hosted on Azure Functions and backed by Azure Cosmos DB API for MongoDB</p>
+                <p><a href="https://docs.microsoft.com/sandbox/gamedev/azure-gaming-samples#leaderboards-with-azure-functions-node-and-cosmos-db" target="_blank" class="btn btn-default">Explore sample</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="@swimLaneHelper.GetSwimLaneCssClass()">
+    <div class="container">
+        <div class="row vertical-align-sm">
+            <div class="@swimLaneHelper.GetIllustrationCssClass()">
+                <img src="https://github.com/dgkanatsios/GameAnalyticsEventHubFunctionsCosmosDatalake/raw/master/media/architecture.png?raw=true" alt="" role="presentation" class="img-responsive img-responsive-center img-responsive-swimlane" asp-append-version="true" />
+            </div>
+            <div class="@swimLaneHelper.GetContentCssClass()">
+                <h2>Gaming Analytics Sample</h2>
+                <p>A simple architecture to consume and process messages coming from video game clients or servers.</p>
+                <p><a href="https://docs.microsoft.com/sandbox/gamedev/azure-gaming-samples#analytics-with-event-hubs-azure-functions-cosmos-db-and-datalake" target="_blank" class="btn btn-default">Explore sample</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="@swimLaneHelper.GetSwimLaneCssClass()">
+    <div class="container">
+        <div class="row vertical-align-sm">
+            <div class="@swimLaneHelper.GetIllustrationCssClass()">
+                <img src="~/images/illustrations/toolbox.svg" alt="" role="presentation" class="img-responsive img-responsive-center img-responsive-swimlane" asp-append-version="true" />
+            </div>
+            <div class="@swimLaneHelper.GetContentCssClass()">
+                <h2>Additional Resources</h2>
+                <p>To learn more about building gaming applications with Cosmos DB, check out these resources.</p>
+                <ul>
+                    <li><a href="https://docs.microsoft.com/azure/cosmos-db/serverless-computing-database">Cosmos DB Serverless Overview</a></li>
+                    <li><a href="https://docs.microsoft.com/azure/cosmos-db/spark-connector">Apache Spark and Cosmos DB Overview</a></li>
+                    <li><a href="https://docs.microsoft.com/azure/azure-functions/functions-bindings-cosmosdb-v2">Azure Functions Cosmos DB Bindings</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+@{ await Html.RenderPartialAsync("_TryCosmos"); }
+

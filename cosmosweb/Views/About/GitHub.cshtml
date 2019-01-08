@@ -1,0 +1,62 @@
+﻿@{
+    ViewData["Title"] = "Cosmos DB Developer Community";
+    ViewData["Description"] = "Get involved in the Cosmos DB community. Attent a meetup in your local area, join us on GitHub, ask a question on StackOverflow, or follow us on Twitter.";
+
+    var swimLaneHelper = new cosmosweb.Helpers.SwimLaneHelper();
+}
+
+@section header {
+    <h1>Cosmos DB Developer Community</h1>
+}
+
+<div class="@swimLaneHelper.GetSwimLaneCssClass()">
+    <div class="container">
+        <div class="row vertical-align-sm">
+            <div class="@swimLaneHelper.GetIllustrationCssClass()">
+                <img src="~/images/about/octocat.png" role="presentation" alt="" class="img-responsive img-responsive-center" asp-append-version="true" />
+            </div>
+            <div class="@swimLaneHelper.GetContentCssClass()">
+                <h2>Cosmos DB on GitHub</h2>
+                <p>Cosmos DB SQL API SDKs, samples and tools from the Cosmos DB team.</p>
+                <ul>
+                    <li><a href="https://github.com/Azure/azure-cosmos-dotnet-v2" target="_blank">.NET SDK v2</a></li>
+                    <li><a href="https://github.com/azure/azure-cosmos-dotnet-v3" target="_blank">.NET SDK v3 (preview)</a></li>
+                    <li><a href="https://github.com/Azure/azure-cosmosdb-java/" target="_blank">Java Async SDK</a></li>
+                    <li><a href="https://github.com/Azure/azure-cosmos-js/" target="_blank">JavaScript SDK</a></li>
+                    <li><a href="https://github.com/Azure/azure-cosmos-python/" target="_blank">Python SDK</a></li>
+                    <li><a href="https://github.com/Azure/azure-cosmosdb-js-server/" target="_blank">Server-Side JavaScript Samples</a></li>
+                    <li><a href="https://github.com/Azure/azure-cosmosdb-spark/" target="_blank">Cosmos DB Connector for Apache Spark</a></li>
+                    <li><a href="https://github.com/Azure/azure-documentdb-changefeedprocessor-dotnet/" target="_blank">Change Feed Processor library (v2)</a></li>
+                    <li>BulkExecutor library for <a href="https://github.com/Azure/azure-cosmosdb-bulkexecutor-dotnet-getting-started/" target="_blank">.NET</a> and <a href="https://github.com/Azure/azure-cosmosdb-bulkexecutor-java-getting-started/" target="_blank">Java</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="@swimLaneHelper.GetSwimLaneCssClass()">
+    <div class="container">
+        <div class="row vertical-align-sm">
+            <div class="@swimLaneHelper.GetIllustrationCssClass()">
+                <img src="~/images/illustrations/embed-github-snippet.svg" role="presentation" alt="" class="img-responsive img-responsive-center" asp-append-version="true" />
+            </div>
+            <div class="@swimLaneHelper.GetContentCssClass()">
+                <h2>Cosmos DB Community</h2>
+                <p>More projects and samples from Microsoft and the community.</p>
+                <ul>
+                    <li><a href="https://github.com/seesharprun/cosmos-demo" target="_blank">Scalability and performance demo</a></li>
+                    <li><a href="https://github.com/cjoakim/azure-cosmosdb-travel" target="_blank">CosmosDB Graph database exploration with OpenFlights.org Travel Data</a></li>
+                    <li><a href="https://github.com/Azure/azure-cosmos-dotnet-v2/tree/master/samples/Patterns" target="_blank">Patterns for working with Cosmos DB</a></li>
+                    <li><a href="https://github.com/Microsoft/spring-data-gremlin" target="_blank">Spring Data Gremlin</a></li>
+                    <li><a href="https://github.com/Azure-Samples/aci-event-driven-worker-queue" target="_blank">ACI Event Driven Worker Queue</a></li>
+                    <li><a href="https://github.com/syedhassaanahmed/databricks-notebooks/blob/master/graph_write_cosmosdb.py" target="_blank">Writing GraphFrames to Azure Cosmos DB Gremlin API</a></li>
+                    <li><a href="https://github.com/ealsur/serverless-recipes" target="_blank">Compendium of Serverless samples with Azure Cosmos DB</a></li>
+                    <li><a href="https://github.com/aliuy/azure-cosmosdb-global" target="_blank">Throughput and Latency demo</a></li>
+                    <li><a href="https://github.com/jeffhollan/functions-java-eventhub-to-cosmosdb" target="_blank">Sample Java Azure Function: reads from event hub, creates CosmosDB items</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+ @{ await Html.RenderPartialAsync("_TryCosmos"); }

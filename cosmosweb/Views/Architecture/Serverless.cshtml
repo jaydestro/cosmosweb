@@ -1,0 +1,92 @@
+﻿
+@{
+    ViewData["Title"] = "Serverless Architecture Guidance";
+    ViewData["Description"] = "Learn how to architect serverless and event-driven applications with Cosmos DB.";
+    var swimLaneHelper = new cosmosweb.Helpers.SwimLaneHelper();
+}
+
+@section header {
+    <h1>Serverless architecture guidance</h1>
+}
+
+<div class="@swimLaneHelper.GetSwimLaneCssClass()">
+    <div class="container">
+        <div class="row vertical-align-sm">
+            <div class="@swimLaneHelper.GetIllustrationCssClass()">
+                <img src="~/images/architecture/serverless.png" alt="" role="presentation" class="img-responsive img-responsive-center img-responsive-swimlane" asp-append-version="true" />
+            </div>
+            <div class="@swimLaneHelper.GetContentCssClass()">
+                <h2>Serverless applications</h2>
+                <p>Use Azure Functions and Azure Cosmos DB to build globally distributed, scalable serverless applications.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="@swimLaneHelper.GetSwimLaneCssClass()">
+    <div class="container">
+        <div class="row vertical-align-sm">
+            <div class="@swimLaneHelper.GetIllustrationCssClass()">
+                <img src="~/images/illustrations/embed-github-snippet.svg" alt="" role="presentation" class="img-responsive img-responsive-center img-responsive-swimlane" asp-append-version="true" />
+            </div>
+            <div class="@swimLaneHelper.GetContentCssClass()">
+                <h2>Serverless recipes</h2>
+                <p>Browse our compendium of serverless recipes with Azure Cosmos DB and Azure Functions on GitHub.</p>
+                <p><a href="https://github.com/ealsur/serverless-recipes" target="_blank" class="btn btn-default">Serverless Recipes on GitHub</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="@swimLaneHelper.GetSwimLaneCssClass()">
+    <div class="container">
+        <div class="row vertical-align-sm">
+            <div class="@swimLaneHelper.GetIllustrationCssClass()">
+                <img src="https://docs.microsoft.com/azure/architecture/reference-architectures/serverless/_images/serverless-web-app.png" alt="" role="presentation" class="img-responsive img-responsive-center img-responsive-swimlane" asp-append-version="true" />
+            </div>
+            <div class="@swimLaneHelper.GetContentCssClass()">
+                <h2>Serverless web apps</h2>
+                <p>This reference architecture shows a serverless web application using Azure Functions with Cosmos DB and includes a reference implementation on GitHub</p>
+                <p><a href="https://docs.microsoft.com/azure/architecture/reference-architectures/serverless/web-app" target="_blank" class="btn btn-default">Read more and deploy solution</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="@swimLaneHelper.GetSwimLaneCssClass()">
+    <div class="container">
+        <div class="row vertical-align-sm">
+            <div class="@swimLaneHelper.GetIllustrationCssClass()">
+                <img src="https://docs.microsoft.com/azure/architecture/reference-architectures/serverless/_images/serverless-event-processing.png" alt="" role="presentation" class="img-responsive img-responsive-center img-responsive-swimlane" asp-append-version="true" />
+            </div>
+            <div class="@swimLaneHelper.GetContentCssClass()">
+                <h2>Serverless event processing</h2>
+                <p>This reference architecture shows an end-to-end stream processing pipeline using Azure Functions and Cosmos DB and includes a reference implementation on GitHub</p>
+                <p><a href="https://docs.microsoft.com/azure/architecture/reference-architectures/serverless/event-processing" target="_blank" class="btn btn-default">Read more and deploy solution</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="@swimLaneHelper.GetSwimLaneCssClass()">
+    <div class="container">
+        <div class="row vertical-align-sm">
+            <div class="@swimLaneHelper.GetIllustrationCssClass()">
+                <img src="~/images/illustrations/toolbox.svg" alt="" role="presentation" class="img-responsive img-responsive-center img-responsive-swimlane" asp-append-version="true" />
+            </div>
+            <div class="@swimLaneHelper.GetContentCssClass()">
+                <h2>Additional Resources</h2>
+                <p>To learn more about building Serverless Applications with Cosmos DB, check out these resources.</p>
+                <ul>
+                    <li><a href="https://docs.microsoft.com/azure/cosmos-db/serverless-computing-database">Cosmos DB Serverless Overview</a></li>
+                    <li><a href="https://docs.microsoft.com/azure/azure-functions/functions-bindings-cosmosdb-v2">Azure Functions Cosmos DB Bindings</a></li>
+                    <li><a href="https://github.com/Azure/azure-documentdb-changefeedprocessor-dotnet">Change Feed Processor library (v2)</a></li>
+                    <li><a href="https://github.com/ssemyan/TodoServerless">Serverless ToDo List sample on GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+@{ await Html.RenderPartialAsync("_TryCosmos"); }
+

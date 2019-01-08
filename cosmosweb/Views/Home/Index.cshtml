@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Azure Cosmos DB | Multi-model. Globally distributed. Massively scalable.";
+    ViewData["Description"] = "Azure Cosmos DB is Microsoft's globally distributed, massively scalable, multi-model database service.";
+    ViewData["BodyCssClass"] = "home";
+
+    var swimLaneHelper = new cosmosweb.Helpers.SwimLaneHelper();
+}
+
+@section scripts {
+    <script src="~/bundles/js/home.js" asp-append-version="true" environmental="true"></script>
+}
+
+@section header  {
+    <h1>Azure Cosmos DB</h1>
+    <p class="lead">Globally distributed. Massively scalable. Multi-model.<br />A fully managed database service for building <span class="tagline">cloud scale</span> apps.</p>
+    <p>
+        <a class="btn btn-white btn-lg btn-scale" href="~/learn/" role="button">Get Started</a>
+        <a class="btn btn-purple btn-lg btn-scale btn-normal-weight" href="https://azure.microsoft.com/try/cosmosdb/" role="button">Try for Free</a>
+    </p>
+}
+
+<div class="@swimLaneHelper.GetSwimLaneCssClass()">
+    @{ await Html.RenderPartialAsync("_LearnMore"); }
+</div>
+
+<div class="@swimLaneHelper.GetSwimLaneCssClass()">
+    @{ await Html.RenderPartialAsync("_LearnMore2"); }
+</div>
+
+<div class="@swimLaneHelper.GetSwimLaneCssClass(includeDefaultPadding: false) home-customers pt-40 pb-40">
+    <div class="container text-center">
+        <a href="~/about/customers#johnson"><img src="~/images/customers/johnson.png" height="83" width="150" alt="Johnson Controls is a Cosmos DB customer." asp-append-version="true" /></a>
+        <a href="~/about/customers#allscripts"><img src="~/images/customers/allscripts.png" height="31" width="150" alt="Allscripts is a Cosmos DB customer." asp-append-version="true" /></a>
+        <a href="~/about/customers#asos"><img src="~/images/customers/asos.png" height="113" width="150" alt="asos is a Cosmos DB customer." asp-append-version="true" /></a>
+        <a href="~/about/customers#siemens"><img src="~/images/customers/siemens.png" height="35" width="150" alt="Siemens Healthineers is a Cosmos DB customer." asp-append-version="true" /></a>
+        <a href="~/about/customers#rolls"><img src="~/images/customers/rolls.png" height="35" width="150" alt="Rolls-Royce is a Cosmos DB customer." asp-append-version="true" /></a>
+    </div>
+</div>
+
+@{ await Html.RenderPartialAsync("_TryCosmos"); }

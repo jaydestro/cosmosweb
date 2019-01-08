@@ -1,0 +1,93 @@
+﻿
+@{
+    ViewData["Title"] = "Retail Architecture Guidance";
+    ViewData["Description"] = "Learn how to architect retail and ecommerce applications with Cosmos DB.";
+    var swimLaneHelper = new cosmosweb.Helpers.SwimLaneHelper();
+}
+
+@section header {
+    <h1>Retail and ecommerce architecture guidance</h1>
+}
+
+<div class="@swimLaneHelper.GetSwimLaneCssClass()">
+    <div class="container">
+        <div class="row vertical-align-sm">
+            <div class="@swimLaneHelper.GetIllustrationCssClass()">
+                <img src="~/images/architecture/retail.png" alt="" role="presentation" class="img-responsive img-responsive-center img-responsive-swimlane" asp-append-version="true" />
+            </div>
+            <div class="@swimLaneHelper.GetContentCssClass()">
+                <h2>Retail and ecommerce applications</h2>
+                <p>Support in-depth queries over diverse product catalogs, traffic spikes, and rapidly changing inventory.</p>
+                <p><a href="https://docs.microsoft.com/azure/cosmos-db/use-cases#retail-and-marketing" target="_blank" class="btn btn-default">Read more on Retail</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="@swimLaneHelper.GetSwimLaneCssClass()">
+    <div class="container">
+        <div class="row vertical-align-sm">
+            <div class="@swimLaneHelper.GetIllustrationCssClass()">
+                <img src="https://docs.microsoft.com/azure/architecture/example-scenario/data/media/architecture-ecommerce-order-processing.png" alt="" role="presentation" class="img-responsive img-responsive-center img-responsive-swimlane" asp-append-version="true" />
+            </div>
+            <div class="@swimLaneHelper.GetContentCssClass()">
+                <h2>Scalable order processing on Azure</h2>
+                <p>This example scenario is relevant to organizations that need a highly scalable and resilient architecture for online order processing.</p>
+                <p><a href="https://docs.microsoft.com/azure/architecture/example-scenario/data/ecommerce-order-processing" target="_blank" class="btn btn-default">Read more and deploy solution</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="@swimLaneHelper.GetSwimLaneCssClass()">
+    <div class="container">
+        <div class="row vertical-align-sm">
+            <div class="@swimLaneHelper.GetIllustrationCssClass()">
+                <img src="~/images/architecture/serverless.png" alt="" role="presentation" class="img-responsive img-responsive-center img-responsive-swimlane" asp-append-version="true" />
+            </div>
+            <div class="@swimLaneHelper.GetContentCssClass()">
+                <h2>Event-driven Order Processing</h2>
+                <p>Use Azure Functions and Change Feed in Azure Cosmos DB to build a serverless order processing engine.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="@swimLaneHelper.GetSwimLaneCssClass()">
+    <div class="container">
+        <div class="row vertical-align-sm">
+            <div class="@swimLaneHelper.GetIllustrationCssClass()">
+                <img src="~/images/illustrations/screen-tools-erector.svg" alt="" role="presentation" class="img-responsive img-responsive-center img-responsive-swimlane" asp-append-version="true" />
+            </div>
+            <div class="@swimLaneHelper.GetContentCssClass()">
+                <h2>Real-time retail data analysis</h2>
+                <p>Reference Solution for Real-Time Data Analysis with Cosmos DB Change Feed (+ Azure Functions, Azure Event Hubs, Azure Stream Analytics, Power BI).</p>
+                <p><a href="https://github.com/Azure-Samples/azure-cosmos-db-change-feed-dotnet-retail-sample" target="_blank" class="btn btn-default">Retail solution on GitHub</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="@swimLaneHelper.GetSwimLaneCssClass()">
+    <div class="container">
+        <div class="row vertical-align-sm">
+            <div class="@swimLaneHelper.GetIllustrationCssClass()">
+                <img src="~/images/illustrations/toolbox.svg" alt="" role="presentation" class="img-responsive img-responsive-center img-responsive-swimlane" asp-append-version="true" />
+            </div>
+            <div class="@swimLaneHelper.GetContentCssClass()">
+                <h2>Additional Resources</h2>
+                <p>To learn more about building Retail Applications with Cosmos DB, check out these resources.</p>
+                <ul>
+                    <li><a href="https://docs.microsoft.com/azure/cosmos-db/serverless-computing-database">Cosmos DB Serverless Overview</a></li>
+                    <li><a href="https://docs.microsoft.com/azure/azure-functions/functions-bindings-cosmosdb-v2">Azure Functions Cosmos DB Bindings</a></li>
+                    <li><a href="https://github.com/Azure/azure-documentdb-changefeedprocessor-dotnet">Change Feed Processor library (v2)</a></li>
+                    <li><a href="https://docs.microsoft.com/azure/hdinsight/apache-kafka-spark-structured-streaming-cosmosdb?toc=/azure/cosmos-db/toc.json">Use Apache Kafka with Cosmos DB</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+@{ await Html.RenderPartialAsync("_TryCosmos"); }
+

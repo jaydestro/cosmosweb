@@ -1,0 +1,174 @@
+﻿@inject Microsoft.ApplicationInsights.AspNetCore.JavaScriptSnippet JavaScriptSnippet
+@inject cosmosweb.Services.UHFService UHFService;
+@inject cosmosweb.Services.CookieConsentService CookieConsentService;
+@inject cosmosweb.Services.SitemapService SiteMapService;
+@{
+    var uhfShell = UHFService.Load(Context);
+    var showShell = ViewData["ShowShell"] == null || (bool)ViewData["ShowShell"];
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager -->
+    <!--
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KJT5FH2');</script>
+    -->
+    <!-- End Google Tag Manager -->
+
+    <title>@ViewData["Title"]</title>
+    <meta name="description" content="@ViewData["Description"]" />
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="@ViewData["Title"]" />
+    <meta property="og:description" content="@ViewData["Description"]" />
+    <meta property="og:image" content="@SiteMapService.LiveSiteBaseUrl/images/shared/cosmosdb_darktheme.png" />
+    <meta property="og:image:secure_url" content="@SiteMapService.LiveSiteBaseUrl/images/shared/cosmosdb_darktheme.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Microsoft" />
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@@dotnet">
+    <meta name="twitter:image" content="@SiteMapService.LiveSiteBaseUrl/images/shared/cosmosdb_darktheme.png" />
+
+    <meta name="msvalidate.01" content="6FBA9892BF5F904A89B922361CDABCF8" />
+
+    @if (IsSectionDefined("meta"))
+    {
+        @RenderSection("meta", required: false);
+    }
+
+    @if (showShell)
+    {
+        @uhfShell.CssIncludes
+    }
+
+    @if (IsSectionDefined("styles"))
+    {
+        @RenderSection("styles", required: false);
+    }
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-custom.css" asp-append-version="true" environmental="true" />
+
+    <link rel="canonical" href="@Html.Raw($"{SiteMapService.LiveSiteBaseUrl}{ViewData["CanonicalPath"] ?? Context.Request.Path}")" />
+
+    <script>
+            @{ /* If consent is required, an event handler is registered in site.js to load GoogleAnalytics.
+                  We don't do it here because we don't want to load jquery and cookie consent scripts in <head>. We can't just move all this
+                  to site.js because GoogleOptimize requires the script at the start of <head>. */ }
+            @if (!CookieConsentService.IsConsentRequired(Context))
+            {
+                //@:LoadAnalytics(true);
+            }
+
+            function LoadAnalytics(loadGoogleOptimize)
+            {
+                /*
+                (function (i, s, o, g, r, a, m) {
+                    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+                })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+                ga('create', 'UA-77834912-1', 'auto');
+                if (loadGoogleOptimize) { ga('require', 'GTM-P5V43KZ'); }
+                ga('send', 'pageview');
+                */
+                var appInsights = window.appInsights || function (config) {
+                    function i(config) { t[config] = function () { var i = arguments; t.queue.push(function () { t[config].apply(t, i) }) } } var t = { config: config }, u = document, e = window, o = "script", s = "AuthenticatedUserContext", h = "start", c = "stop", l = "Track", a = l + "Event", v = l + "Page", y = u.createElement(o), r, f; y.src = config.url || "https://az416426.vo.msecnd.net/scripts/a/ai.0.js"; u.getElementsByTagName(o)[0].parentNode.appendChild(y); try { t.cookie = u.cookie } catch (p) { } for (t.queue = [], t.version = "1.0", r = ["Event", "Exception", "Metric", "PageView", "Trace", "Dependency"]; r.length;)i("track" + r.pop()); return i("set" + s), i("clear" + s), i(h + a), i(c + a), i(h + v), i(c + v), i("flush"), config.disableExceptionTracking || (r = "onerror", i("_" + r), f = e[r], e[r] = function (config, i, u, e, o) { var s = f && f(config, i, u, e, o); return s !== !0 && t["_" + r](config, i, u, e, o), s }), t
+                }({
+                    instrumentationKey: '@Microsoft.ApplicationInsights.Extensibility.TelemetryConfiguration.Active.InstrumentationKey'
+                });
+
+                window.appInsights = appInsights;
+                appInsights.trackPageView();
+            }
+    </script>
+    @Html.Raw(JavaScriptSnippet.FullScript)
+</head>
+<body class='@ViewData["BodyCssClass"]'>
+    <!-- Google Tag Manager (noscript) -->
+    <!--
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KJT5FH2"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    -->
+    <!-- End Google Tag Manager (noscript) -->
+    
+
+    @if (showShell)
+        {
+        <div id="uhf-header-wrapper">
+            <div id="uhf-header" data-spy="affix" data-offset-top="1">
+                @uhfShell.HeaderHtml
+            </div>
+        </div>
+        <div class="jumbotron">
+            @{ await Html.RenderPartialAsync("_Alerts"); }
+            <div class="container">
+                @RenderSection("header")
+            </div>
+        </div>
+    }
+
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Cosmos DB</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a asp-area="" asp-controller="About" asp-action="Index">About</a></li>
+                    <li><a asp-area="" asp-controller="Learn" asp-action="Index">Learn</a></li>
+                    <li><a href="https://docs.microsoft.com/azure/cosmos-db/">Docs</a></li>
+                    <li><a asp-area="" asp-controller="Architecture" asp-action="Index">Architecture</a></li>
+                    <li><a asp-area="" asp-controller="Tools" asp-action="Index">Tools</a></li>
+                    <li><a asp-area="" asp-controller="About" asp-action="Community">Community</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    @RenderBody()
+
+    @if (showShell)
+    {
+        @uhfShell.FooterHtml
+    }
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.1.4.min.js"
+            asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+            asp-fallback-test="window.jQuery">
+    </script>
+
+    @if (showShell)
+    {
+        @uhfShell.JavaScriptIncludes
+    }
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js" asp-append-version="true" environmental="true"></script>
+    <script src="~/bundles/js/common.js" asp-append-version="true" environmental="true"></script>
+    <!--<script src="~/bundles/js/google-analytics-external.js" asp-append-version="true" environmental="true"></script>-->
+
+    @if (IsSectionDefined("scripts"))
+    {
+        @RenderSection("scripts", required: false);
+    }
+</body>
+</html>

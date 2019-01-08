@@ -1,0 +1,70 @@
+@{
+    ViewData["Title"] = "Learn Cosmos DB";
+    ViewData["Description"] = "Build your first app, or dig into advanced resources for building for retail, mobile, desktop, gaming, and IoT apps with Cosmos DB.";
+    var swimLaneHelper = new cosmosweb.Helpers.SwimLaneHelper();
+}
+
+@section header {
+    <h1 class="text-center">Learn Cosmos DB</h1>
+}
+
+<div class="@swimLaneHelper.GetSwimLaneCssClass(includeDefaultMargins: false) learn">
+    <div class="container">
+        <div class="text-center">
+            <h2>Get Started</h2>
+            <p class="mb-40">
+                New to Cosmos DB and don't know where to start? Start with the Cosmos DB SQL API and build the app of your choice in .NET or your langugage of choice.
+            </p>
+        </div>
+        @{ await Html.RenderPartialAsync("_SqlApiGetStarted"); }
+    </div>
+</div>
+
+
+<div class="@swimLaneHelper.GetSwimLaneCssClass()">
+    <div class="container">
+        <div class="text-center">
+            <h2>Multi-model</h2>
+            <p class="mb-40">
+                Explore the Cosmos DB multi-model support.
+            </p>
+        </div>
+        <div class="row row-flex text-center">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <a href="https://docs.microsoft.com/azure/cosmos-db/mongodb-introduction" target="_blank" class="blue-tile">
+                    <span class="pb-0-sm"><img src="~/images/learn/mongodb.png" alt="" role="presentation" class="img-responsive img-responsive-center img-responsive-swimlane" asp-append-version="true" /></span>
+                    <div>Azure Cosmos DB's API for Mongo DB</div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <a href="https://docs.microsoft.com/en-us/azure/cosmos-db/graph-introduction" target="_blank" class="blue-tile">
+                    <span class="pb-0-sm"><img src="~/images/learn/gremlin.png" alt="" role="presentation" class="img-responsive img-responsive-center img-responsive-swimlane" asp-append-version="true" /></span>
+                    <div>Gremlin</div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <a href="https://docs.microsoft.com/azure/cosmos-db/cassandra-introduction" target="_blank" class="blue-tile">
+                    <span class="pb-0-sm"><img src="~/images/learn/cassandra.png" alt="" role="presentation" class="img-responsive img-responsive-center img-responsive-swimlane" asp-append-version="true" /></span>
+                    <div>Cassandra</div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <a href="https://docs.microsoft.com/azure/cosmos-db/table-introduction" target="_blank" class="blue-tile">
+                    <span class="pb-0-sm"><img src="~/images/learn/table.png" alt="" role="presentation" class="img-responsive img-responsive-center img-responsive-swimlane" asp-append-version="true" /></span>
+                    <div>Table</div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="@swimLaneHelper.GetSwimLaneCssClass()">
+    @{ await Html.RenderPartialAsync("_LearnMore"); }
+</div>
+
+<div class="@swimLaneHelper.GetSwimLaneCssClass()">
+    @{ await Html.RenderPartialAsync("_LearnMore2"); }
+</div>
+
+
+@{ await Html.RenderPartialAsync("_TryCosmos"); }

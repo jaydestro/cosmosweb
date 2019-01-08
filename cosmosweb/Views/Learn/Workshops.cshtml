@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Azure Cosmos DB Workshops";
+    ViewData["Description"] = "See what in-person and online Azure Cosmos DB Workshops are available.";
+
+    var swimLaneHelper = new cosmosweb.Helpers.SwimLaneHelper();
+}
+
+@section header {
+    <h1>Azure Cosmos DB Workshops</h1>
+}
+
+<div class="@swimLaneHelper.GetSwimLaneCssClass()">
+    <div class="container">
+        <div class="row vertical-align-sm">
+            <div class="@swimLaneHelper.GetIllustrationCssClass()">
+                <img src="~/images/illustrations/toolbox2.svg" role="presentation" alt="" class="img-responsive img-responsive-center" asp-append-version="true" />
+            </div>
+            <div class="@swimLaneHelper.GetContentCssClass()">
+                <h2>Cosmos DB Workshop</h2>
+                <p>
+                    This workshop is built by the Cosmos DB team and will give you hands-on experience working with Azure Cosmos DB using the SQL API, JavaScript and .NET SQL (Core) SDK.
+                    Workshop length is about 12-15 hours of instructor-led content.
+                </p>
+                <p><a class="btn btn-default" href="https://cosmosdb.github.io/labs/" target="_blank" role="button">Visit Cosmos DB Workshop</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="@swimLaneHelper.GetSwimLaneCssClass()">
+    <div class="container">
+        <div class="row vertical-align-sm">
+            <div class="@swimLaneHelper.GetIllustrationCssClass()">
+                <img src="~/images/illustrations/screen.svg" role="presentation" alt="" class="img-responsive img-responsive-center" asp-append-version="true" />
+            </div>
+            <div class="@swimLaneHelper.GetContentCssClass()">
+                <h2>Pluralsite - Learning Azure Cosmos DB</h2>
+                <p>
+                    This workshop was developed by Leonard Lobel for Pluralsite.
+                    This workshop requires registration for the 10-day trial. Workshop length is about 6 hours of online delivery.
+                </p>
+                <p><a class="btn btn-default" href="https://www.pluralsight.com/courses/azure-cosmos-db" target="_blank" role="button">Visit Pluralsite</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@{ await Html.RenderPartialAsync("_TryCosmos"); }

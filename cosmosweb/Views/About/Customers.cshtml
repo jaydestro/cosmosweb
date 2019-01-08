@@ -1,0 +1,221 @@
+@{
+    ViewData["Title"] = ".NET Customers";
+    ViewData["Description"] = "Customers all over the world, in many different industries, rely on .NET for their business. Hear testimonials from customers who depend on .NET every day.";
+    ViewData["BodyCssClass"] = "customers";
+
+    var swimLaneHelper = new cosmosweb.Helpers.SwimLaneHelper();
+}
+
+@section header {
+    <h1>Cosmos DB Customers</h1>
+    <p class="lead">Customers all over the world, in many different industries, rely on Cosmos DB. Here's what they say.</p>
+}
+
+<div id="johnson" class="@swimLaneHelper.GetSwimLaneCssClass()">
+    <div class="container">
+        <div class="row vertical-align-sm">
+            <div class="@swimLaneHelper.GetIllustrationCssClass()">
+                <img src="~/images/customers/johnson.png" role="presentation" alt="" class="img-responsive img-responsive-center logo" asp-append-version="true" />
+            </div>
+            <div class="@swimLaneHelper.GetContentCssClass()">
+                <h2>Johnson Controls</h2>
+                <p>Azure Cosmos DB is at the heart of the processing system, feeding in additional data as needed and storing processed data, 
+                with its Graph API allowing developers to process graph data in any language with minimal integration time.</p>
+                <p><a class="btn btn-default" href="https://azure.microsoft.com/blog/johnson-controls-tackles-a-15b-building-industry-problem-with-azure-cosmos-db/" target="_blank" role="button">Read story</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="allscripts" class="@swimLaneHelper.GetSwimLaneCssClass()">
+    <div class="container">
+        <div class="row vertical-align-sm">
+            <div class="@swimLaneHelper.GetIllustrationCssClass()">
+                <img src="~/images/customers/allscripts.png" role="presentation" alt="" class="img-responsive img-responsive-center logo" asp-append-version="true" />
+            </div>
+            <div class="@swimLaneHelper.GetContentCssClass()">
+                <h2>Allscripts</h2>
+                <p>"Azure Cosmos DB provides so much right out of the box and seems to have an answer for all our needs, like configurable TTL, encryption, RESTful API, and speed-oh, is it fast!"</p>
+                <p>- Jose Molina-Melendez, Software Engineer</p>
+                <p><a class="btn btn-default" href="https://customers.microsoft.com/story/allscripts-partner-professional-services-azure" target="_blank" role="button">Read story</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="asos" class="@swimLaneHelper.GetSwimLaneCssClass()">
+    <div class="container">
+        <div class="row vertical-align-sm">
+            <div class="@swimLaneHelper.GetIllustrationCssClass()">
+                <img src="~/images/customers/asos.png" role="presentation" alt="" class="img-responsive img-responsive-center logo" asp-append-version="true" />
+            </div>
+            <div class="@swimLaneHelper.GetContentCssClass()">
+                <h2>asos</h2>
+                <p>"We chose Azure Cosmos DB because of its global distribution and ability to handle heavy seasonal bursts like Black Friday."</p>
+                <p>- Bob Strudwick, Chief Technology Officer</p>
+                <p><a class="btn btn-default" href="https://customers.microsoft.com/story/asos-retail-and-consumer-goods-azure" target="_blank" role="button">Read story</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="siemens" class="@swimLaneHelper.GetSwimLaneCssClass()">
+    <div class="container">
+        <div class="row vertical-align-sm">
+            <div class="@swimLaneHelper.GetIllustrationCssClass()">
+                <img src="~/images/customers/siemens.png" role="presentation" alt="" class="img-responsive img-responsive-center logo" asp-append-version="true" />
+            </div>
+            <div class="@swimLaneHelper.GetContentCssClass()">
+                <h2>Siemens Healthineers</h2>
+                <p>"Azure Cosmos DB is an amazing technology. The biggest benefit for us is that we can have one database for anonymous 
+                data that is replicated worldwide into all regions that are relevant for us, in a consistency model that perfectly fits our needs."</p>
+                <p>- Thomas Gossler, Lead Architect, Digital Ecosystem Platform</p>
+                <p><a class="btn btn-default" href="https://customers.microsoft.com/en-us/story/siemens-healthineers-health-provider-azure" target="_blank" role="button">Read story</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="jet" class="@swimLaneHelper.GetSwimLaneCssClass()">
+    <div class="container">
+        <div class="row vertical-align-sm">
+            <div class="@swimLaneHelper.GetIllustrationCssClass()">
+                <img src="~/images/customers/jet.png" role="presentation" alt="" class="img-responsive img-responsive-center logo" asp-append-version="true" />
+            </div>
+            <div class="@swimLaneHelper.GetContentCssClass()">
+                <h2>Jet.com</h2>
+                <p>"When we were building Jet's next-generation event sourcing platform, CosmosDB offered the low latency, high throughput, global availability, and rich feature set critical to our success."</p>
+                <p>- Scott Havens, Director of Software Engineering</p>
+                <p><a class="btn btn-default" href="https://customers.microsoft.com/story/jet-com-powers-innovative-e-commerce-engine-on-azure-in-less-than-12-months" target="_blank" role="button">Read story</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="granden" class="@swimLaneHelper.GetSwimLaneCssClass()">
+    <div class="container">
+        <div class="row vertical-align-sm">
+            <div class="@swimLaneHelper.GetIllustrationCssClass()">
+                <img src="~/images/customers/granden.png" role="presentation" alt="" class="img-responsive img-responsive-center logo" asp-append-version="true" />
+            </div>
+            <div class="@swimLaneHelper.GetContentCssClass()">
+                <h2>GranDen</h2>
+                <p>Azure Cosmos DB provides the backbone of the solution, giving GranDen worldwide, low-latency, highly scalable data access.</p>
+                <p><a class="btn btn-default" href="http://customers.microsoft.com/story/granden-media-telecommunications-azure" target="_blank" role="button">Read story</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="cleartrend" class="@swimLaneHelper.GetSwimLaneCssClass()">
+    <div class="container">
+        <div class="row vertical-align-sm">
+            <div class="@swimLaneHelper.GetIllustrationCssClass()">
+                <img src="~/images/customers/cleartrend.png" role="presentation" alt="" class="img-responsive img-responsive-center logo" asp-append-version="true" />
+            </div>
+            <div class="@swimLaneHelper.GetContentCssClass()">
+                <h2>clearTREND Research</h2>
+                <p>"Business models are under attack, especially in the financial industry. Cosmos DB is a technology that can adapt, evolve, 
+                and allow a business to innovate faster in order to turn opportunities into strategic advantages."</p>
+                <p><a class="btn btn-default" href="https://azure.microsoft.com/blog/a-fintech-startup-pivots-to-azure-cosmos-db/" target="_blank" role="button">Read story</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="rolls" class="@swimLaneHelper.GetSwimLaneCssClass()">
+    <div class="container">
+        <div class="row vertical-align-sm">
+            <div class="@swimLaneHelper.GetIllustrationCssClass()">
+                <img src="~/images/customers/rolls.png" role="presentation" alt="" class="img-responsive img-responsive-center logo" asp-append-version="true" />
+            </div>
+            <div class="@swimLaneHelper.GetContentCssClass()">
+                <h2>Rolls-Royce</h2>
+                <p>"The market and the customer need have become much broader as aircraft and engines have gotten more talkative and the scope of our services 
+                has increased. There are terabytes of data coming from large aircraft fleets, with gigabytes per hour-rather than kilobytes-to process and analyze."</p>
+                <p>- Nick Farrant, Senior Vice President</p>
+                <p><a class="btn btn-default" href="https://customers.microsoft.com/story/rollsroycestory" target="_blank" role="button">Read story</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="exxon" class="@swimLaneHelper.GetSwimLaneCssClass()">
+    <div class="container">
+        <div class="row vertical-align-sm">
+            <div class="@swimLaneHelper.GetIllustrationCssClass()">
+                <img src="~/images/customers/exxon.png" role="presentation" alt="" class="img-responsive img-responsive-center logo" asp-append-version="true" />
+            </div>
+            <div class="@swimLaneHelper.GetContentCssClass()">
+                <h2>Exxon-Mobil</h2>
+                <p>"With Azure as a base platform, we can move data within the environment and into the hands of our staff via any tool they want to use."</p>
+                <p>- David Baumgarten, Lead Architect - XTO Energy</p>
+                <p><a class="btn btn-default" href="https://customers.microsoft.com/story/exxonmobil-mining-oil-gas-azure" target="_blank" role="button">Read story</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="cincinnati" class="@swimLaneHelper.GetSwimLaneCssClass()">
+    <div class="container">
+        <div class="row vertical-align-sm">
+            <div class="@swimLaneHelper.GetIllustrationCssClass()">
+                <img src="~/images/customers/cincinnati.png" role="presentation" alt="" class="img-responsive img-responsive-center logo" asp-append-version="true" />
+            </div>
+            <div class="@swimLaneHelper.GetContentCssClass()">
+                <h2>Cincinnati Children's Hospital Medical Center</h2>
+                <p>The EHR system has the ability to push out events, and Cincinnati Children's wanted to be able to respond to those quickly and update app users with 
+                new information on same day surgery cases. The hospital solved the challenge using Azure Event Grid, Azure Functions, and Azure Cosmos DB.</p>
+                <p><a class="btn btn-default" href="https://azure.microsoft.com/blog/cincinnati-children-s-has-a-great-app-development-experience-with-azure-services/" target="_blank" role="button">Read story</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="finastra" class="@swimLaneHelper.GetSwimLaneCssClass()">
+    <div class="container">
+        <div class="row vertical-align-sm">
+            <div class="@swimLaneHelper.GetIllustrationCssClass()">
+                <img src="~/images/customers/finastra.png" role="presentation" alt="" class="img-responsive img-responsive-center logo" asp-append-version="true" />
+            </div>
+            <div class="@swimLaneHelper.GetContentCssClass()">
+                <h2>Finastra</h2>
+                <p>"Our platform intersects a great deal of data and technology, yet our complete integration with Azure streamlines our infrastructure, simplifies our processes and makes our lives infinitely easier."</p>
+                <p>- Felix Grevy, Global Head of Product Management</p>
+                <p><a class="btn btn-default" href="http://customers.microsoft.com/story/finastra-fusion-fabric-cloud-azure" target="_blank" role="button">Read story</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="kohler" class="@swimLaneHelper.GetSwimLaneCssClass()">
+    <div class="container">
+        <div class="row vertical-align-sm">
+            <div class="@swimLaneHelper.GetIllustrationCssClass()">
+                <img src="~/images/customers/kohler.png" role="presentation" alt="" class="img-responsive img-responsive-center logo" asp-append-version="true" />
+            </div>
+            <div class="@swimLaneHelper.GetContentCssClass()">
+                <h2>Kohler</h2>
+                <p>IoT telemetry data is stored using a Lambda approach, whereby hot-path data flows into Azure Cosmos DB for internal analytics through Microsoft Power BI, and external visualization via web and mobile apps.</p>
+                <p><a class="btn btn-default" href="http://customers.microsoft.com/story/kohler-konnect-azure-iot" target="_blank" role="button">Read story</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="@swimLaneHelper.GetSwimLaneCssClass()">
+    <div class="container">
+        <div class="row vertical-align-sm">
+            <div class="@swimLaneHelper.GetIllustrationCssClass()">
+                <img src="~/images/illustrations/people-buildings.svg" role="presentation" alt="" class="img-responsive img-responsive-center" asp-append-version="true" />
+            </div>
+            <div class="@swimLaneHelper.GetContentCssClass()">
+                <h2>And many more...</h2>
+                <p>Hear from many more customers who rely on Cosmos DB for their business.</p>
+                <p><a class="btn btn-default" href="https://customers.microsoft.com/en-us/search?sq=Azure%20Cosmos%20DB" target="_blank" role="button">More customer stories</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@{ await Html.RenderPartialAsync("_TryCosmos"); }

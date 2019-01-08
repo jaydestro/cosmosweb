@@ -1,0 +1,96 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
+    <ApplicationInsightsResourceId>/subscriptions/220fc532-6091-423c-8ba0-66c2397d591b/resourcegroups/cosmosweb/providers/microsoft.insights/components/cosmosweb</ApplicationInsightsResourceId>
+    <ApplicationInsightsAnnotationResourceId>/subscriptions/220fc532-6091-423c-8ba0-66c2397d591b/resourcegroups/cosmosweb/providers/microsoft.insights/components/cosmosweb</ApplicationInsightsAnnotationResourceId>
+    <UserSecretsId>d1d72385-17b9-463e-9f7f-0c94253ba605</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\images\azure-sql.svg" />
+    <Content Remove="wwwroot\images\azure-vms.svg" />
+    <Content Remove="wwwroot\images\books-beaker.svg" />
+    <Content Remove="wwwroot\images\chemistry-lab.svg" />
+    <Content Remove="wwwroot\images\code-or-gui.svg" />
+    <Content Remove="wwwroot\images\cognitive-services.svg" />
+    <Content Remove="wwwroot\images\conveyor-belt-crane.svg" />
+    <Content Remove="wwwroot\images\conveyor-belt-packages.svg" />
+    <Content Remove="wwwroot\images\conveyor-belt.svg" />
+    <Content Remove="wwwroot\images\cross-platform.svg" />
+    <Content Remove="wwwroot\images\customize-editor-theme.svg" />
+    <Content Remove="wwwroot\images\data-to-insights.svg" />
+    <Content Remove="wwwroot\images\docker-container-support.svg" />
+    <Content Remove="wwwroot\images\download.svg" />
+    <Content Remove="wwwroot\images\embed-github-snippet.svg" />
+    <Content Remove="wwwroot\images\error-404.svg" />
+    <Content Remove="wwwroot\images\error-generic.svg" />
+    <Content Remove="wwwroot\images\factory-x-to-y.svg" />
+    <Content Remove="wwwroot\images\feedback.svg" />
+    <Content Remove="wwwroot\images\forklift-cloud.svg" />
+    <Content Remove="wwwroot\images\game-across-devices.svg" />
+    <Content Remove="wwwroot\images\game-maze.svg" />
+    <Content Remove="wwwroot\images\global-data-storage.svg" />
+    <Content Remove="wwwroot\images\globalization.svg" />
+    <Content Remove="wwwroot\images\helicopeter-to-azure.svg" />
+    <Content Remove="wwwroot\images\home-hero-bg.svg" />
+    <Content Remove="wwwroot\images\icon-.svg" />
+    <Content Remove="wwwroot\images\icon-circles.svg" />
+    <Content Remove="wwwroot\images\icon-desktop.svg" />
+    <Content Remove="wwwroot\images\icon-form.svg" />
+    <Content Remove="wwwroot\images\icon-gaming.svg" />
+    <Content Remove="wwwroot\images\icon-iot.svg" />
+    <Content Remove="wwwroot\images\icon-mobile.svg" />
+    <Content Remove="wwwroot\images\icon-visual-studio-code.svg" />
+    <Content Remove="wwwroot\images\icon-visual-studio.svg" />
+    <Content Remove="wwwroot\images\icon-windows.svg" />
+    <Content Remove="wwwroot\images\iot-devices.svg" />
+    <Content Remove="wwwroot\images\lift-shift.png" />
+    <Content Remove="wwwroot\images\lift-shift.svg" />
+    <Content Remove="wwwroot\images\multiple-hands.svg" />
+    <Content Remove="wwwroot\images\octopus.svg" />
+    <Content Remove="wwwroot\images\paint-js-git-bulb-choices.svg" />
+    <Content Remove="wwwroot\images\people-at-table.svg" />
+    <Content Remove="wwwroot\images\people-buildings.svg" />
+    <Content Remove="wwwroot\images\people-desk-download.svg" />
+    <Content Remove="wwwroot\images\rocket.svg" />
+    <Content Remove="wwwroot\images\screen-blue-image.svg" />
+    <Content Remove="wwwroot\images\screen-finish-line.svg" />
+    <Content Remove="wwwroot\images\screen-tools-erector.svg" />
+    <Content Remove="wwwroot\images\screen.svg" />
+    <Content Remove="wwwroot\images\serverless-computing.svg" />
+    <Content Remove="wwwroot\images\survey-hero.svg" />
+    <Content Remove="wwwroot\images\toolbox.svg" />
+    <Content Remove="wwwroot\images\toolbox2.svg" />
+    <Content Remove="wwwroot\images\tools.svg" />
+    <Content Remove="wwwroot\images\tree-decisions.svg" />
+    <Content Remove="wwwroot\images\tree-with-people.svg" />
+    <Content Remove="wwwroot\images\winforms.svg" />
+    <Content Remove="wwwroot\images\xamarin-cross-platform.svg" />
+    <Content Remove="wwwroot\images\xamarin-mobile.svg" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="BuildBundlerMinifier" Version="2.8.391" />
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.CookieCompliance.NetCore" Version="3.1.4" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="Helpers\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services" />
+  </ItemGroup>
+
+</Project>
