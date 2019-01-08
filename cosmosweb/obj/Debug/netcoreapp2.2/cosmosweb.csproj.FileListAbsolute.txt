@@ -46,3 +46,4 @@ C:\Users\mjbrown\GitHub\AzureCosmosDB\cosmosweb\cosmosweb\obj\Debug\netcoreapp2.
 C:\Users\mjbrown\GitHub\AzureCosmosDB\cosmosweb\cosmosweb\obj\Debug\netcoreapp2.2\cosmosweb.pdb
 C:\Users\mjbrown\GitHub\AzureCosmosDB\cosmosweb\cosmosweb\obj\Debug\netcoreapp2.2\cosmosweb.csproj.CopyComplete
 C:\Users\mjbrown\GitHub\AzureCosmosDB\cosmosweb\cosmosweb\obj\Debug\netcoreapp2.2\cosmosweb.csprojAssemblyReference.cache
+C:\Users\mjbrown\GitHub\AzureCosmosDB\cosmosweb\cosmosweb\bin\Debug\netcoreapp2.2\packages\microsoft.cookiecompliance.netcore.3.1.4.nupkg

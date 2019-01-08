@@ -29,4 +29,11 @@
     <WCFMetadata Include="Connected Services" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <None Update="packages\microsoft.cookiecompliance.netcore.3.1.4.nupkg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
