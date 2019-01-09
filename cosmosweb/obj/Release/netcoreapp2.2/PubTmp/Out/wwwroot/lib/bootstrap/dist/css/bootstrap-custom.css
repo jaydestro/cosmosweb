@@ -7362,6 +7362,9 @@ fieldset[disabled] .btn-tab.focus {
 .img-responsive-450 {
   max-width: 450px;
 }
+.img-responsive-brand {
+  color: #0078d4;
+}
 @media (min-width: 1200px) {
   .img-responsive-swimlane {
     max-width: 660px;

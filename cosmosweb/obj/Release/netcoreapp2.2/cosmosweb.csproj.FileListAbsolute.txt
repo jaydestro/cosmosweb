@@ -25,8 +25,6 @@ C:\Users\mjbrown\GitHub\AzureCosmosDB\cosmosweb\cosmosweb\obj\Release\netcoreapp
 C:\Users\mjbrown\GitHub\AzureCosmosDB\cosmosweb\cosmosweb\obj\Release\netcoreapp2.2\Razor\Views\Architecture\Retail.g.cshtml.cs
 C:\Users\mjbrown\GitHub\AzureCosmosDB\cosmosweb\cosmosweb\obj\Release\netcoreapp2.2\Razor\Views\Architecture\Serverless.g.cshtml.cs
 C:\Users\mjbrown\GitHub\AzureCosmosDB\cosmosweb\cosmosweb\obj\Release\netcoreapp2.2\Razor\Views\Architecture\Web.g.cshtml.cs
-C:\Users\mjbrown\GitHub\AzureCosmosDB\cosmosweb\cosmosweb\obj\Release\netcoreapp2.2\Razor\Views\Home\Community.g.cshtml.cs
-C:\Users\mjbrown\GitHub\AzureCosmosDB\cosmosweb\cosmosweb\obj\Release\netcoreapp2.2\Razor\Views\Home\Customers.g.cshtml.cs
 C:\Users\mjbrown\GitHub\AzureCosmosDB\cosmosweb\cosmosweb\obj\Release\netcoreapp2.2\Razor\Views\Home\Error.g.cshtml.cs
 C:\Users\mjbrown\GitHub\AzureCosmosDB\cosmosweb\cosmosweb\obj\Release\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
 C:\Users\mjbrown\GitHub\AzureCosmosDB\cosmosweb\cosmosweb\obj\Release\netcoreapp2.2\Razor\Views\Learn\Index.g.cshtml.cs
@@ -34,7 +32,6 @@ C:\Users\mjbrown\GitHub\AzureCosmosDB\cosmosweb\cosmosweb\obj\Release\netcoreapp
 C:\Users\mjbrown\GitHub\AzureCosmosDB\cosmosweb\cosmosweb\obj\Release\netcoreapp2.2\Razor\Views\Shared\_Layout.g.cshtml.cs
 C:\Users\mjbrown\GitHub\AzureCosmosDB\cosmosweb\cosmosweb\obj\Release\netcoreapp2.2\Razor\Views\Shared\_LearnMore.g.cshtml.cs
 C:\Users\mjbrown\GitHub\AzureCosmosDB\cosmosweb\cosmosweb\obj\Release\netcoreapp2.2\Razor\Views\Shared\_SqlApiGetStarted.g.cshtml.cs
-C:\Users\mjbrown\GitHub\AzureCosmosDB\cosmosweb\cosmosweb\obj\Release\netcoreapp2.2\Razor\Views\Shared\_TryCosmosSwim.g.cshtml.cs
 C:\Users\mjbrown\GitHub\AzureCosmosDB\cosmosweb\cosmosweb\obj\Release\netcoreapp2.2\Razor\Views\Tools\Index.g.cshtml.cs
 C:\Users\mjbrown\GitHub\AzureCosmosDB\cosmosweb\cosmosweb\obj\Release\netcoreapp2.2\Razor\Views\_ViewImports.g.cshtml.cs
 C:\Users\mjbrown\GitHub\AzureCosmosDB\cosmosweb\cosmosweb\obj\Release\netcoreapp2.2\Razor\Views\_ViewStart.g.cshtml.cs
@@ -44,3 +41,8 @@ C:\Users\mjbrown\GitHub\AzureCosmosDB\cosmosweb\cosmosweb\obj\Release\netcoreapp
 C:\Users\mjbrown\GitHub\AzureCosmosDB\cosmosweb\cosmosweb\obj\Release\netcoreapp2.2\cosmosweb.dll
 C:\Users\mjbrown\GitHub\AzureCosmosDB\cosmosweb\cosmosweb\obj\Release\netcoreapp2.2\cosmosweb.pdb
 C:\Users\mjbrown\GitHub\AzureCosmosDB\cosmosweb\cosmosweb\obj\Release\netcoreapp2.2\cosmosweb.csproj.CopyComplete
+C:\Users\mjbrown\GitHub\AzureCosmosDB\cosmosweb\cosmosweb\obj\Release\netcoreapp2.2\Razor\Views\Learn\Compare.g.cshtml.cs
+C:\Users\mjbrown\GitHub\AzureCosmosDB\cosmosweb\cosmosweb\obj\Release\netcoreapp2.2\Razor\Views\Learn\Presentations.g.cshtml.cs
+C:\Users\mjbrown\GitHub\AzureCosmosDB\cosmosweb\cosmosweb\obj\Release\netcoreapp2.2\Razor\Views\Learn\Workshops.g.cshtml.cs
+C:\Users\mjbrown\GitHub\AzureCosmosDB\cosmosweb\cosmosweb\obj\Release\netcoreapp2.2\Razor\Views\Shared\_LearnMore2.g.cshtml.cs
+C:\Users\mjbrown\GitHub\AzureCosmosDB\cosmosweb\cosmosweb\obj\Release\netcoreapp2.2\Razor\Views\Shared\_TryCosmos.g.cshtml.cs
