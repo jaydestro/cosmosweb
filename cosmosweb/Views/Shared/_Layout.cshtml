@@ -118,33 +118,6 @@
         </div>
     }
 
-
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Cosmos DB</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="About" asp-action="Index">About</a></li>
-                    <li><a asp-area="" asp-controller="Learn" asp-action="Index">Learn</a></li>
-                    <li><a href="https://docs.microsoft.com/azure/cosmos-db/">Docs</a></li>
-                    <li><a asp-area="" asp-controller="Architecture" asp-action="Index">Architecture</a></li>
-                    <li><a asp-area="" asp-controller="Tools" asp-action="Index">Tools</a></li>
-                    <li><a asp-area="" asp-controller="About" asp-action="Community">Community</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-
-
     @RenderBody()
 
     @if (showShell)

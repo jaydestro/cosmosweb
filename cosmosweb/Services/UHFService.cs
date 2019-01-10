@@ -19,9 +19,9 @@ namespace cosmosweb.Services
         static int RetryInMinutes = 2;
 
         static string serviceEndpoint = "https://uhf.microsoft.com";
-        static string partnerId = "MSNet";
-        static string headerId = "DotnetHeader";
-        static string footerId = "DotnetFooter";
+        static string partnerId = "Cosmos";
+        static string headerId = "CosmosHeader-v1";
+        static string footerId = "CosmosFooter";
         static string userAgent = "Microsoft";
 
         static ConcurrentDictionary<string, CachedObject<UHFShell>> uhfs = new ConcurrentDictionary<string, CachedObject<UHFShell>>();
