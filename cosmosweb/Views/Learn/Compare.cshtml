@@ -6,7 +6,7 @@
 }
 
 @section header {
-    <h1>Azure Cosmos DB Compare</h1>
+    <h1>Azure Cosmos DB TCO</h1>
 }
 
 <div class="@swimLaneHelper.GetSwimLaneCssClass()">
@@ -16,7 +16,7 @@
                 <img src="~/images/illustrations/data-to-insights.svg" role="presentation" alt="" class="img-responsive img-responsive-center" asp-append-version="true" />
             </div>
             <div class="@swimLaneHelper.GetContentCssClass()">
-                <h2>Cosmos DB TCO comparision</h2>
+                <h2>Azure Cosmos DB TCO comparision</h2>
                 <p>
                     Customers running Cassandra or MongoDB on IaaS or on-premises can achive significant savings by migrating to Azure Cosmos DB
                 </p>
@@ -24,30 +24,11 @@
                     <li><a href="https://github.com/AzureCosmosDB/fileshare/raw/master/compare/Cassandra_IaaS.pdf" target="_blank">Save vs Cassandra on IaaS</a></li>
                     <li><a href="https://github.com/AzureCosmosDB/fileshare/raw/master/compare/Cassandra_on-prem.pdf" target="_blank">Save vs Cassandra on-premises</a></li>
                     <li><a href="https://github.com/AzureCosmosDB/fileshare/raw/master/compare/MongoDB_IaaS.pdf" target="_blank">Save vs MongoDB on IaaS</a></li>
-                    <li><a href="https://github.com/AzureCosmosDB/fileshare/raw/master/compare/CosmosDB_vs_on-prem.pdf" target="_blank">Cosmos DB vs on-premises noSQL</a></li>
+                    <li><a href="https://github.com/AzureCosmosDB/fileshare/raw/master/compare/CosmosDB_vs_on-prem.pdf" target="_blank">Azure Cosmos DB vs on-premises noSQL</a></li>
                 </ul>
             </div>
         </div>
     </div>
 </div>
-<!--
-<div class="@swimLaneHelper.GetSwimLaneCssClass()">
-    <div class="container">
-        <div class="row vertical-align-sm">
-            <div class="@swimLaneHelper.GetIllustrationCssClass()">
-                <img src="~/images/illustrations/screen.svg" role="presentation" alt="" class="img-responsive img-responsive-center" asp-append-version="true" />
-            </div>
-            <div class="@swimLaneHelper.GetContentCssClass()">
-                <h2>Pluralsite - Learning Azure Cosmos DB</h2>
-                <p>
-                    This workshop was developed by Leonard Lobel for Pluralsite.
-                    This workshop requires registration for the 10-day trial. Workshop length is about 6 hours of online delivery.
-                </p>
-                <p><a class="btn btn-default" href="https://www.pluralsight.com/courses/azure-cosmos-db" target="_blank" role="button">Visit Pluralsite</a></p>
-            </div>
-        </div>
-    </div>
-</div>
--->
 
 @{ await Html.RenderPartialAsync("_TryCosmos"); }

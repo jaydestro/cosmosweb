@@ -12,129 +12,76 @@
 
 <div class="@swimLaneHelper.GetSwimLaneCssClass()">
     <div class="container">
-        <div class="row vertical-align-sm">
-            <div class="@swimLaneHelper.GetIllustrationCssClass()">
-                <img src="~/images/illustrations/factory-x-to-y.svg" role="presentation" alt="" class="img-responsive img-responsive-center" asp-append-version="true" />
-            </div>
-            <div class="@swimLaneHelper.GetContentCssClass()">
-                <h2>Cosmos DB Emulator</h2>
+        <div class="row">
+            <div class="col-md-4 col-sm-6">
+                <div class="min-height-165-sm">
+                    <img src="~/images/illustrations/factory-x-to-y.svg" role="presentation" alt="" class="img-responsive img-responsive-center" asp-append-version="true" />
+                </div>
+                <h2 class="h3 mt-20">Azure Cosmos DB Emulator</h2>
                 <p>
-                    The Azure Cosmos DB Emulator provides a local environment that emulates the Azure Cosmos DB service for development purposes.
-                    Using the Azure Cosmos DB Emulator, you can develop and test your application locally, without creating an Azure subscription or incurring any costs.
+                    Develop and test your application locally, without creating an Azure subscription or incurring any costs.
                 </p>
-                <p><a class="btn btn-default" href="https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator" role="button">Learn about Cosmos DB Emulator</a></p>
+                <p><a href="https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator" target="_blank">Learn about Azure Cosmos DB Emulator</a></p>
             </div>
-        </div>
-    </div>
-</div>
-
-<div class="@swimLaneHelper.GetSwimLaneCssClass()">
-    <div class="container">
-        <div class="row vertical-align-sm">
-            <div class="@swimLaneHelper.GetIllustrationCssClass()">
-                <img src="~/images/illustrations/screen-tools-erector.svg" role="presentation" alt="" class="img-responsive img-responsive-center" asp-append-version="true" />
-            </div>
-            <div class="@swimLaneHelper.GetContentCssClass()">
-                <h2>Data Explorer</h2>
+            <div class="col-md-4 col-sm-6">
+                <div class="min-height-165-sm">
+                    <img src="~/images/tools/vscode.png" role="presentation" alt="" class="img-responsive img-responsive-center" asp-append-version="true" />
+                </div>
+                <h2 class="h3 mt-20">Azure Cosmos DB for VS Code</h2>
                 <p>
-                    Data Explorer, now in preview, provides a rich and unified developer experience for inserting, querying, and managing Azure
-                    Cosmos DB data within the Azure portal and the Emulator.
+                    Get rich intellisense and other capabilities for Azure Cosmos DB with the Azure Cosmos DB extension for VS Code
                 </p>
-                <p><a class="btn btn-default" href="https://azure.microsoft.com/updates/documentdb-data-explorer-preview-now-available-in-the-azure-portal/" role="button">Learn about Data Explorer</a></p>
+                <p><a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb" target="_blank">Download the VS Code Extension</a></p>
             </div>
-        </div>
-    </div>
-</div>
-
-<div class="@swimLaneHelper.GetSwimLaneCssClass()">
-    <div class="container">
-        <div class="row vertical-align-sm">
-            <div class="@swimLaneHelper.GetIllustrationCssClass()">
-                <img src="~/images/tools/vscode.png" role="presentation" alt="" class="img-responsive img-responsive-center" asp-append-version="true" />
-            </div>
-            <div class="@swimLaneHelper.GetContentCssClass()">
-                <h2>Azure Cosmos DB extension for VS Code</h2>
+            <div class="col-md-4 col-sm-6 pb-40 pb-0-sm">
+                <div class="min-height-165-sm">
+                    <img src="~/images/tools/storageexplorer.png" role="presentation" alt="" class="img-responsive img-responsive-center" asp-append-version="true" />
+                </div>
+                <h2 class="h3 mt-20">Azure Storage Explorer</h2>
                 <p>
-                    Get rich intellisense and other capabilities for Cosmos DB.
+                    Manage Azure Cosmos DB entities, manipulate data, update stored procedures and triggers along with other Azure entities like Storage blobs and queues.
                 </p>
-                <p><a class="btn btn-default" href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb" role="button">Download the VS Code Extension</a></p>
+                <p><a href="https://docs.microsoft.com/azure/cosmos-db/storage-explorer" target="_blank">Get Azure Storage Explorer</a></p>
             </div>
         </div>
-    </div>
-</div>
-
-<div class="@swimLaneHelper.GetSwimLaneCssClass()">
-    <div class="container">
-        <div class="row vertical-align-sm">
-            <div class="@swimLaneHelper.GetIllustrationCssClass()">
-                <img src="~/images/tools/storageexplorer.png" role="presentation" alt="" class="img-responsive img-responsive-center" asp-append-version="true" />
-            </div>
-            <div class="@swimLaneHelper.GetContentCssClass()">
-                <h2>Azure Storage Explorer</h2>
+        <div class="row">
+            <div class="col-md-4 col-sm-6">
+                <div class="min-height-165-sm">
+                    <img src="~/images/illustrations/helicopeter-to-azure.svg" role="presentation" alt="" class="img-responsive img-responsive-center" asp-append-version="true" />
+                </div>
+                <h2 class="h3 mt-20">Azure Database Migration Guide</h2>
                 <p>
-                    Using Azure Cosmos DB in Azure Storage Explorer enables users to manage Azure Cosmos DB entities, manipulate data,
-                    update stored procedures and triggers along with other Azure entities like Storage blobs and queues.
+                    Step-by-step guidance for and tools for migrating Mongo DB and Cassandra databases and Azure Table storage to Cosmos DB.
+                    <ul>
+                        <li><a href="https://datamigration.microsoft.com/scenario/mongo-to-cosmos" target="_blank">Mongo DB migration</a></li>
+                        <li><a href="https://datamigration.microsoft.com/scenario/cassandra-to-cosmos" target="_blank">Cassandra migration</a></li>
+                    </ul>
                 </p>
-                <p><a class="btn btn-default" href="https://docs.microsoft.com/azure/cosmos-db/storage-explorer" role="button">Get Azure Storage Explorer</a></p>
+                <p><a href="https://datamigration.microsoft.com/" target="_blank">Learn about Database Migration Guide</a></p>
             </div>
-        </div>
-    </div>
-</div>
-
-<div class="@swimLaneHelper.GetSwimLaneCssClass()">
-    <div class="container">
-        <div class="row vertical-align-sm">
-            <div class="@swimLaneHelper.GetIllustrationCssClass()">
-                <img src="~/images/illustrations/helicopeter-to-azure.svg" role="presentation" alt="" class="img-responsive img-responsive-center" asp-append-version="true" />
-            </div>
-            <div class="@swimLaneHelper.GetContentCssClass()">
-                <h2>Azure Database Migration Guide</h2>
-                <p>Step-by-step guidance for and tools for migrating Mongo DB and Cassandra databases and Azure Table storage to Cosmos DB.</p>
-                <p><a class="btn btn-default" href="https://datamigration.microsoft.com/" role="button">Learn about Database Migration Guide</a></p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="@swimLaneHelper.GetSwimLaneCssClass()">
-    <div class="container">
-        <div class="row vertical-align-sm">
-            <div class="@swimLaneHelper.GetIllustrationCssClass()">
-                <img src="~/images/illustrations/conveyor-belt-crane.svg" role="presentation" alt="" class="img-responsive img-responsive-center" asp-append-version="true" />
-            </div>
-            <div class="@swimLaneHelper.GetContentCssClass()">
-                <h2>Data Migration Tool</h2>
-                <p>The Azure Cosmos DB Data Migration tool, can import data from various sources into Azure Cosmos DB containers. You can import from JSON files, CSV files, SQL, MongoDB, Azure Table storage, Amazon DynamoDB, and other Cosmos DB SQL API containers.</p>
-                <p><a class="btn btn-default" href="https://docs.microsoft.com/azure/cosmos-db/import-data" role="button">Learn about Data Migration Tool</a></p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="@swimLaneHelper.GetSwimLaneCssClass()">
-    <div class="container">
-        <div class="row vertical-align-sm">
-            <div class="@swimLaneHelper.GetIllustrationCssClass()">
-                <img src="~/images/illustrations/chemistry-lab.svg" role="presentation" alt="" class="img-responsive img-responsive-center" asp-append-version="true" />
-            </div>
-            <div class="@swimLaneHelper.GetContentCssClass()">
-                <h2>Bulk Executor Library</h2>
+            <div class="col-md-4 col-sm-6">
+                <div class="min-height-165-sm">
+                    <img src="~/images/illustrations/conveyor-belt-packages.svg" role="presentation" alt="" class="img-responsive img-responsive-center" asp-append-version="true" />
+                </div>
+                <h2 class="h3 mt-20">Data Migration Tool</h2>
                 <p>
-                    The bulk executor library allows you to perform bulk operations in Cosmos DB and significantly reduces the client-side compute resources needed to saturate the throughput allocated to a container.
+                    Import JSON files, CSV files, SQL, MongoDB, Azure Table storage, Amazon DynamoDB, and other SQL API containers into Azure Cosmos DB.
+                </p>
+                <p><a href="https://docs.microsoft.com/azure/cosmos-db/import-data" target="_blank">Learn about Data Migration Tool</a></p>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="min-height-165-sm">
+                    <img src="~/images/illustrations/chemistry-lab.svg" role="presentation" alt="" class="img-responsive img-responsive-center" asp-append-version="true" />
+                </div>
+                <h2 class="h3 mt-20">Bulk Executor Library</h2>
+                <p>
+                    Perform bulk operations with significantly reduced client-side compute resources needed to saturate the throughput allocated to a container.
                     Bulk Executor supports SQL API and also Gremlin (graph) import as well.
                 </p>
-                <p><a class="btn btn-default" href="https://docs.microsoft.com/en-us/azure/cosmos-db/bulk-executor-overview" role="button">Learn about Bulk Executor Library</a></p>
+                <p><a href="https://docs.microsoft.com/en-us/azure/cosmos-db/bulk-executor-overview" target="_blank">Learn about Bulk Executor Library</a></p>
             </div>
         </div>
     </div>
-</div>
-
-<div class="@swimLaneHelper.GetSwimLaneCssClass()">
-    @{ await Html.RenderPartialAsync("_LearnMore"); }
-</div>
-
-<div class="@swimLaneHelper.GetSwimLaneCssClass()">
-    @{ await Html.RenderPartialAsync("_LearnMore2"); }
 </div>
 
 @{ await Html.RenderPartialAsync("_TryCosmos"); }

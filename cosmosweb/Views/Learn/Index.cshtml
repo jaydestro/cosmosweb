@@ -1,19 +1,19 @@
 @{
-    ViewData["Title"] = "Learn Cosmos DB";
+    ViewData["Title"] = "Learn Azure Cosmos DB";
     ViewData["Description"] = "Build your first app, or dig into advanced resources for building for retail, mobile, desktop, gaming, and IoT apps with Cosmos DB.";
     var swimLaneHelper = new cosmosweb.Helpers.SwimLaneHelper();
 }
 
 @section header {
-    <h1 class="text-center">Learn Cosmos DB</h1>
+    <h1 class="text-center">Learn Azure Cosmos DB</h1>
 }
 
-<div class="@swimLaneHelper.GetSwimLaneCssClass(includeDefaultMargins: false) learn">
+<div class="@swimLaneHelper.GetSwimLaneCssClass(includeDefaultMargins: false) learn" id="sql">
     <div class="container">
         <div class="text-center">
-            <h2>Get Started</h2>
+            <h2>Get Started - Core (SQL) API</h2>
             <p class="mb-40">
-                New to Cosmos DB and don't know where to start? Start with the Cosmos DB SQL API and build the app of your choice in .NET or your langugage of choice.
+                New to Azure Cosmos DB and don't know where to start? Start with the Azure Cosmos DB SQL API and build the app of your choice in .NET or your langugage of choice.
             </p>
         </div>
         @{ await Html.RenderPartialAsync("_SqlApiGetStarted"); }
@@ -26,29 +26,35 @@
         <div class="text-center">
             <h2>Multi-model</h2>
             <p class="mb-40">
-                Explore the Cosmos DB multi-model support.
+                Explore the Azure Cosmos DB multi-model support.
             </p>
         </div>
         <div class="row row-flex text-center">
-            <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="col-md-2 col-md-offset-1">
+                <a href="#sql" class="blue-tile">
+                    <span class="pb-0-sm"><img src="~/images/learn/sql.png" alt="" role="presentation" class="img-responsive img-responsive-center img-responsive-swimlane" asp-append-version="true" /></span>
+                    <div>Core (SQL)</div>
+                </a>
+            </div>
+            <div class="col-md-2">
                 <a href="https://docs.microsoft.com/azure/cosmos-db/mongodb-introduction" target="_blank" class="blue-tile">
                     <span class="pb-0-sm"><img src="~/images/learn/mongodb.png" alt="" role="presentation" class="img-responsive img-responsive-center img-responsive-swimlane" asp-append-version="true" /></span>
                     <div>Azure Cosmos DB's API for Mongo DB</div>
                 </a>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="col-md-2">
                 <a href="https://docs.microsoft.com/en-us/azure/cosmos-db/graph-introduction" target="_blank" class="blue-tile">
                     <span class="pb-0-sm"><img src="~/images/learn/gremlin.png" alt="" role="presentation" class="img-responsive img-responsive-center img-responsive-swimlane" asp-append-version="true" /></span>
                     <div>Gremlin</div>
                 </a>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="col-md-2">
                 <a href="https://docs.microsoft.com/azure/cosmos-db/cassandra-introduction" target="_blank" class="blue-tile">
                     <span class="pb-0-sm"><img src="~/images/learn/cassandra.png" alt="" role="presentation" class="img-responsive img-responsive-center img-responsive-swimlane" asp-append-version="true" /></span>
                     <div>Cassandra</div>
                 </a>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="col-md-2">
                 <a href="https://docs.microsoft.com/azure/cosmos-db/table-introduction" target="_blank" class="blue-tile">
                     <span class="pb-0-sm"><img src="~/images/learn/table.png" alt="" role="presentation" class="img-responsive img-responsive-center img-responsive-swimlane" asp-append-version="true" /></span>
                     <div>Table</div>
