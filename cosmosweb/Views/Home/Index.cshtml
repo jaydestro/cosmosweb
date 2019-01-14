@@ -19,7 +19,7 @@
     </p>
 }
 
-<div class="@swimLaneHelper.GetSwimLaneCssClass()">
+<div class="@swimLaneHelper.GetSwimLaneCssClass(includeDefaultPadding: false)">
     @{ await Html.RenderPartialAsync("_LearnMore"); }
 </div>
 

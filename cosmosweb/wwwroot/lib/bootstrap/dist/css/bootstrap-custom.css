@@ -7650,23 +7650,7 @@ body.get-started {
   max-width: 350px;
   max-height: 250px;
 }
-/* why dotnet page -------------------------------------------------------------------------------------------------------------------------------------------------*/
-.swim-customer-1 {
-  background: linear-gradient(rgba(26, 7, 95, 0.8), rgba(26, 7, 95, 0.8)), url(../../../../images/redesign/why-customer-1.jpg?v=1) center;
-  background-size: cover;
-}
-.swim-customer-2 {
-  background: linear-gradient(rgba(26, 7, 95, 0.8), rgba(26, 7, 95, 0.8)), url(../../../../images/redesign/why-customer-2.jpg?v=1) center;
-  background-size: cover;
-}
-.swim-customer-3 {
-  background: linear-gradient(rgba(26, 7, 95, 0.8), rgba(26, 7, 95, 0.8)), url(../../../../images/redesign/why-customer-3.jpg?v=1) center;
-  background-size: cover;
-}
-.swim-customer-4 {
-  background: linear-gradient(rgba(26, 7, 95, 0.8), rgba(26, 7, 95, 0.8)), url(../../../../images/redesign/why-customer-4.jpg?v=2) center;
-  background-size: cover;
-}
+/* why cosmos page -------------------------------------------------------------------------------------------------------------------------------------------------*/
 .swim-customer .row {
   min-height: 236px;
 }
