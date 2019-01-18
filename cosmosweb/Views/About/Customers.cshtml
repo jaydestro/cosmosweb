@@ -1,5 +1,5 @@
 @{
-    ViewData["Title"] = "Azure Cosmos DB Customers";
+    ViewData["Title"] = "Customers";
     ViewData["Description"] = "Customers all over the world, in many different industries, rely on Azure Cosmos DB for their business.";
     ViewData["BodyCssClass"] = "customers";
 
@@ -11,7 +11,7 @@
     <p class="lead">Customers all over the world, in many different industries, rely on Azure Cosmos DB. Here's what they say.</p>
 }
 
-<div id="johnson" class="@swimLaneHelper.GetSwimLaneCssClass()">
+<div id="johnson" class="@swimLaneHelper.GetSwimLaneCssClass(includeDefaultMargins:false)">
     <div class="container">
         <div class="row vertical-align-sm">
             <div class="@swimLaneHelper.GetIllustrationCssClass()">
@@ -59,6 +59,22 @@
     </div>
 </div>
 
+<div id="elkjop" class="@swimLaneHelper.GetSwimLaneCssClass()">
+    <div class="container">
+        <div class="row vertical-align-sm">
+            <div class="@swimLaneHelper.GetIllustrationCssClass()">
+                <img src="~/images/customers/elkjop.jpg" role="presentation" alt="" class="img-responsive img-responsive-center logo" asp-append-version="true" />
+            </div>
+            <div class="@swimLaneHelper.GetContentCssClass()">
+                <h2>Elkjøp</h2>
+                <p>"Reliability plays a key role in our mission-critical systems, which require predictable, lightning-fast performance and SLAs of at least 99.99 percent uptime. I’m very glad that we are using Azure Cosmos DB."</p>
+                <p>-Jonas Granlund: Cloud Architect Consultant</p>
+                <p><a class="btn btn-default" href="https://customers.microsoft.com/story/elkjop-retailers-azure" target="_blank" role="button">Read story</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div id="siemens" class="@swimLaneHelper.GetSwimLaneCssClass()">
     <div class="container">
         <div class="row vertical-align-sm">
@@ -87,6 +103,22 @@
                 <p>"When we were building Jet's next-generation event sourcing platform, CosmosDB offered the low latency, high throughput, global availability, and rich feature set critical to our success."</p>
                 <p>- Scott Havens, Director of Software Engineering</p>
                 <p><a class="btn btn-default" href="https://customers.microsoft.com/story/jet-com-powers-innovative-e-commerce-engine-on-azure-in-less-than-12-months" target="_blank" role="button">Read story</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="archive360" class="@swimLaneHelper.GetSwimLaneCssClass()">
+    <div class="container">
+        <div class="row vertical-align-sm">
+            <div class="@swimLaneHelper.GetIllustrationCssClass()">
+                <img src="~/images/customers/archive360.png" role="presentation" alt="" class="img-responsive img-responsive-center logo" asp-append-version="true" />
+            </div>
+            <div class="@swimLaneHelper.GetContentCssClass()">
+                <h2>Archive360</h2>
+                <p>"More than data migration, customers need Archive360 to help organize and classify their data and detect anomalies. That's where Azure Cosmos DB really shines for us."</p>
+                <p>-Glenn Luft, Vice President of Operations</p>
+                <p><a class="btn btn-default" href="https://customers.microsoft.com/story/archive360-partner-professional-services-azure-cosmos-db" target="_blank" role="button">Read story</a></p>
             </div>
         </div>
     </div>
