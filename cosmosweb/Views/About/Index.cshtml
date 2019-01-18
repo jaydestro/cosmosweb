@@ -148,12 +148,16 @@
 
 <div class="@swimLaneHelper.GetSwimLaneCssClass()">
     <div class="container">
-        <div class="text-center">
-            <h2>Applications</h2>
-            <p class="mb-65">You can build many types of apps with Azure Cosmos DB and it's easy to get started.</p>
+        <div class="row vertical-align-sm">
+            <div class="@swimLaneHelper.GetIllustrationCssClass()">
+                <img src="~/images/illustrations/code-or-gui.svg" role="presentation" alt="" class="img-responsive img-responsive-center" asp-append-version="true" />
+            </div>
+            <div class="@swimLaneHelper.GetContentCssClass()">
+                <h2>Total cost of ownership comparisons</h2>
+                <p>See data on other databases to see how we stack up.</p>
+                <p><a class="btn btn-default" href="~/learn/compare" role="button">See TCO data</a></p>
+            </div>
         </div>
-
-        @{ await Html.RenderPartialAsync("_SqlApiGetStarted"); }
     </div>
 </div>
 
