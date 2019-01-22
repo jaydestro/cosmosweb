@@ -19,7 +19,7 @@
     </p>
 }
 
-<div class="@swimLaneHelper.GetSwimLaneCssClass(includeDefaultPadding: false)">
+<div class="@swimLaneHelper.GetSwimLaneCssClass(includeDefaultMargins:false)">
     @{ await Html.RenderPartialAsync("_LearnMore"); }
 </div>
 
@@ -27,7 +27,7 @@
     @{ await Html.RenderPartialAsync("_LearnMore2"); }
 </div>
 
-<div class="@swimLaneHelper.GetSwimLaneCssClass(includeDefaultPadding: false) home-customers pt-40 pb-40">
+<div class="@swimLaneHelper.GetSwimLaneCssClass(includeDefaultMargins:false) home-customers pt-40 pb-40">
     <div class="container text-center">
         <a href="~/about/customers#johnson"><img src="~/images/customers/johnson.png" height="83" width="150" alt="Johnson Controls is an Azure Cosmos DB customer." asp-append-version="true" /></a>
         <a href="~/about/customers#allscripts"><img src="~/images/customers/allscripts.png" height="31" width="150" alt="Allscripts is an Azure Cosmos DB customer." asp-append-version="true" /></a>
