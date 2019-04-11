@@ -41,15 +41,5 @@
       "enabled": true,
       "commentMode": "important"
     }
-  },
- {
-    "outputFileName": "wwwroot/bundles/js/google-analytics-external.js",
-    "inputFiles": [
-      "wwwroot/js/google-analytics-external.js"
-    ],
-    "minify": {
-      "enabled": true,
-      "commentMode": "important"
-    }
   }
 ]

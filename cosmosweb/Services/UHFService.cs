@@ -21,7 +21,7 @@ namespace cosmosweb.Services
         static string serviceEndpoint = "https://uhf.microsoft.com";
         static string partnerId = "Cosmos";
         static string headerId = "CosmosHeader-v1";
-        static string footerId = "CosmosFooter";
+        static string footerId = "CosmosFooter-v1";
         static string userAgent = "Microsoft";
 
         static ConcurrentDictionary<string, CachedObject<UHFShell>> uhfs = new ConcurrentDictionary<string, CachedObject<UHFShell>>();

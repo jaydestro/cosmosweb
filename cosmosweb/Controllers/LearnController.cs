@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 
 namespace cosmosweb.Controllers
 {
+    [AllowAnonymous]
     public class LearnController : Controller
     {
          public IActionResult Index()

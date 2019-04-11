@@ -9,19 +9,29 @@
     <UserSecretsId>d1d72385-17b9-463e-9f7f-0c94253ba605</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Remove="wwwroot\bundles\js\mecontrol-config.ts" />
+  </ItemGroup>
+
    <ItemGroup>
     <PackageReference Include="BuildBundlerMinifier" Version="2.8.391" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.AzureAD.UI" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.CookieCompliance.NetCore" Version="3.1.4" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
   </ItemGroup>
 
 
   <ItemGroup>
     <Folder Include="Helpers\" />
     <Folder Include="Services\" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <None Include="Areas\AzureAD\Pages\Account\SignedOut.cshtml" />
   </ItemGroup>
 
 

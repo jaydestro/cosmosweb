@@ -2,9 +2,11 @@
 using cosmosweb.Helpers;
 using cosmosweb.Models;
 using cosmosweb.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace cosmosweb.Controllers
 {
+    [AllowAnonymous]
     public class HomeController : Controller
     {
         [Route("")]

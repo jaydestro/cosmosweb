@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace cosmosweb.Controllers
 {
+    [AllowAnonymous]
     public class ArchitectureController : Controller
     {
         [Route("architecture")]
