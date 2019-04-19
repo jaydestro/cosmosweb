@@ -60,9 +60,9 @@ namespace cosmosweb
             {
                 options.Authority = options.Authority + "/v2.0/";
                 options.TokenValidationParameters.ValidateIssuer = false;
-                options.Events.OnSignedOutCallbackRedirect = async context =>
+                options.Events.OnRedirectToIdentityProviderForSignOut = async context =>
                 {
-                    context.Response.Redirect(@"https://microsoft.com", true);
+                    context.Response.Redirect(@"https://gotcosmos.com", true);
                     await Task.FromResult(0);
                 };
             });
