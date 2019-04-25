@@ -145,6 +145,20 @@
         </div>
     </div>
 </div>
+<div class="@swimLaneHelper.GetSwimLaneCssClass()">
+    <div class="container">
+        <div class="row vertical-align-sm">
+            <div class="@swimLaneHelper.GetIllustrationCssClass()">
+                <img src="~/images/about/why-cosmos.svg" role="presentation" alt="" class="img-responsive img-responsive-center img-responsive-swimlane" asp-append-version="true" />
+            </div>
+            <div class="@swimLaneHelper.GetContentCssClass()">
+                <h2>Why choose Azure Cosmos DB?</h2>
+                <p>Find out why customers all over the world, in many different industries, rely on Azure Cosmos DB.</p>
+                <p><a class="btn btn-default" href="~/about/customers">Why choose Azure Cosmos DB?</a></p>
+            </div>
+        </div>
+    </div>
+</div>
 <!--
 <div class="@swimLaneHelper.GetSwimLaneCssClass()">
     <div class="container">
@@ -161,19 +175,5 @@
     </div>
 </div>
 -->
-<div class="@swimLaneHelper.GetSwimLaneCssClass()">
-    <div class="container">
-        <div class="row vertical-align-sm">
-            <div class="@swimLaneHelper.GetIllustrationCssClass()">
-                <img src="~/images/about/why-cosmos.svg" role="presentation" alt="" class="img-responsive img-responsive-center img-responsive-swimlane" asp-append-version="true" />
-            </div>
-            <div class="@swimLaneHelper.GetContentCssClass()">
-                <h2>Why choose Azure Cosmos DB?</h2>
-                <p>Find out why customers all over the world, in many different industries, rely on Azure Cosmos DB.</p>
-                <p><a class="btn btn-default" href="~/about/customers">Why choose Azure Cosmos DB?</a></p>
-            </div>
-        </div>
-    </div>
-</div>
 
 @{ await Html.RenderPartialAsync("_TryCosmos"); }
