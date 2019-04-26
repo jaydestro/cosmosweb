@@ -15,20 +15,9 @@ namespace cosmosweb.Controllers
             return View();
         }
 
-        public IActionResult Community()
-        {
-            return View("Community");
-        }
-
         public IActionResult Customers()
         {
             return View("Customers");
-        }
-
-        [Route ("about/github")]
-        public IActionResult GitHub()
-        {
-            return View("GitHub");
         }
     }
 }
