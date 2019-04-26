@@ -7373,6 +7373,9 @@ fieldset[disabled] .btn-tab.focus {
   width: 100px;
   height: 100px;
 }
+.img-responsive-mongo {
+  width: 200px;
+}
 @media (min-width: 1200px) {
   .img-responsive-swimlane {
     max-width: 660px;

@@ -12,14 +12,6 @@ namespace cosmosweb.Controllers
             return View();
         }
 
-        [Route ("compete")]
-        [Route ("compare")]
-        [Route ("learn/compare")]
-        public IActionResult Compare()
-        {
-            return View("Compare");
-        }
-
         [Route ("workshops")]
         [Route ("learn/workshops")]
         public IActionResult Workshops()

@@ -19,5 +19,13 @@ namespace cosmosweb.Controllers
         {
             return View("Customers");
         }
+
+        [Route("compete")]
+        [Route("compare")]
+        [Route("learn/compare")]
+        public IActionResult Compare()
+        {
+            return View("Compare");
+        }
     }
 }
