@@ -6814,6 +6814,17 @@ button.close {
 }
 /* our custom bootstrap variables to override the defaults -------------------------------------------------------------------------------------------------------------------------------------------------*/
 /* custom variables -------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* float */
+.floater {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 200px;
+  height: 50px;
+  background: #000;
+  border-color: #e81123;
+  border: solid;
+}
 /* microsoft universal header/footer (UHF) updates -----------------------------------------------------------------------------------------------------------------------*/
 #footerArea .c-uhff {
   margin-top: 0;
@@ -7282,7 +7293,7 @@ fieldset[disabled] .btn-tab.focus {
 }
 /* jumbotron -------------------------------------------------------------------------------------------------------------------------------------------------*/
 .jumbotron {
-  background: url(../../../../images/shared/top-banner.jpg);
+  background: url(../../../../images/shared/top-banner-2.jpg);
   margin: 0;
   padding: 0;
 }
