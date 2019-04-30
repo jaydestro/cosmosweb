@@ -57,17 +57,16 @@
 
                 window.appInsights = appInsights;
                 appInsights.trackPageView();
-            }
+        }
     </script>
     @Html.Raw(JavaScriptSnippet.FullScript)
 </head>
 <body class='@ViewData["BodyCssClass"]'>
-
     @if (showShell)
     {
         <div id="uhf-header-wrapper">
             <div id="uhf-header" data-spy="affix" data-offset-top="1">
-                @uhfShell.HeaderHtml                                            
+                @uhfShell.HeaderHtml
             </div>
         </div>
         <div class="jumbotron">
@@ -75,10 +74,9 @@
             <div class="container">
                 @RenderSection("header")
             </div>
-            <partial name="_LoginPartial" />
+            <!--<partial name="_LoginPartial" />-->
         </div>
     }
-
     @RenderBody()
 
     @if (showShell)

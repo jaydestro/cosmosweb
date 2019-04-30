@@ -2,45 +2,47 @@
 
 @{
 
+    string Name = "";
     string FirstName = "";
     string LastName = "";
     string MemberName = "";
     string Type = "";
     string isAuthenticated = "3";
 
+    string AAD = "4983ebf2-44f1-441b-acdf-86ca987152cf";
+    //string MSA = "00000000-0000-0000-2cfa-69f79bd87a65";
+
     if (User.Identity.IsAuthenticated)
     {
         isAuthenticated = "1";
         var identity = User.Identity as ClaimsIdentity; // Azure AD V2 endpoint specific
 
-        var identityProviderClaim = identity.FindFirst("http://schemas.microsoft.com/identity/claims/identityprovider");
-        if (identityProviderClaim == null)
+        string objectIdClaim = identity.FindFirst("http://schemas.microsoft.com/identity/claims/objectidentifier").Value;
+
+        if (objectIdClaim == AAD)
         {
             Type = "aad";
-            //FirstName = identity.FindFirst("givenname")?.Value;
-            FirstName = identity.FindFirst("name")?.Value;
-            //LastName = identity.FindFirst("surname")?.Value;
-            MemberName = identity.FindFirst("preferred_username")?.Value ?? identity.FindFirst("Name")?.Value;
         }
         else
         {
             Type = "msa";
-            FirstName = identity.FindFirst("name")?.Value;
-            MemberName = identity.FindFirst("preferred_username")?.Value;
-            //LastName = identity.FindFirst("surname")?.Value;
-            //MemberName = identity.FindFirst("emailaddress")?.Value ?? identity.FindFirst("givenname")?.Value;
         }
 
+        Name = identity.FindFirst("name")?.Value;
+        FirstName = Name.Split(' ')[0].ToString();
+        LastName = Name.Substring(FirstName.Length + 1);
+        MemberName = identity.FindFirst("preferred_username")?.Value ?? identity.FindFirst("Name")?.Value;
+
         @*<ul class="nav navbar-nav navbar-right">
-            <li class="navbar-text">Hello @FirstName!</li>
-            <li><a asp-area="AzureAD" asp-controller="Account" asp-action="SignOut">Sign out</a></li>
-        </ul>*@
+                <li class="navbar-text">Hello @FirstName!</li>
+                <li><a asp-area="AzureAD" asp-controller="Account" asp-action="SignOut">Sign out</a></li>
+            </ul>*@
     }
     else
     {
         @*<ul class="nav navbar-nav navbar-right">
-            <li><a asp-area="AzureAD" asp-controller="Account" asp-action="SignIn">Sign in</a></li>
-        </ul>*@
+                <li><a asp-area="AzureAD" asp-controller="Account" asp-action="SignIn">Sign in</a></li>
+            </ul>*@
     }
 }
 
@@ -58,7 +60,7 @@
                         signInUrl: "/azuread/account/signin",
                         signOutUrl: "/azuread/account/signout",
                         appId: '77a4639f-fff0-41e0-a5a5-410c4eedd33f',
-                        siteUrl: 'https://gotcosmos.com',
+                        siteUrl: 'https://gotcosmos.com/',
                         blockMsaFed: 'false'
                     },
                     preferredIdp: "aad",
@@ -66,7 +68,7 @@
                 userData: {
                     idp: '@Type',
                     firstName: '@FirstName',
-                    lastName: '',
+                    lastName: '@LastName',
                     memberName: '@MemberName',
                     authenticatedState: '@isAuthenticated'
                 }
