@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Azure Cosmos DB Blog";
+    ViewData["Description"] = "Bookmark the Azure Cosmos DB Blog to make sure you are always getting the latest information and updates on Azure Cosmos DB.";
+
+    var swimLaneHelper = new cosmosweb.Helpers.SwimLaneHelper();
+}
+
+@section header {
+    <h1>Azure Cosmos DB Blogs</h1>
+}
+
+<div class="@swimLaneHelper.GetSwimLaneCssClass(includeDefaultPadding: false)">
+    <div class="container">
+        <div class="row vertical-align-sm">
+            <div class="@swimLaneHelper.GetIllustrationCssClass()">
+                <img src="~/images/community/blog.svg" role="presentation" alt="" class="img-responsive img-responsive-center" asp-append-version="true" />
+            </div>
+            <div class="@swimLaneHelper.GetContentCssClass()">
+                <h2>Azure Cosmos DB Blog</h2>
+                <p>
+                    Bookmark the <a href="https://azure.microsoft.com/en-us/blog/tag/azure-cosmos-db/" target="_blank">
+                    Azure Cosmos DB Blog</a> to get the latest information and updates on Azure Cosmos DB.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="@swimLaneHelper.GetSwimLaneCssClass()">
+    <div class="container">
+        <div class="row vertical-align-sm">
+            <div class="@swimLaneHelper.GetIllustrationCssClass()">
+                <img src="~/images/home/why-cosmos.svg" role="presentation" alt="" class="img-responsive img-responsive-center" asp-append-version="true" />
+            </div>
+            <div class="@swimLaneHelper.GetContentCssClass()">
+                <h2>Community Blogs</h2>
+                <p>
+                    We have a growing community of people who blog about Cosmos DB as well. Be sure to
+                    check out these other community bloggers.
+                    <ul>
+                        <li><a href="https://lennilobel.wordpress.com/category/azure/cosmos-db/" target="_blank">Lenni Lobel</a></li>
+                        <li><a href="https://medium.com/@@jayanta.mondal" target="_blank">Jayanta Mondal</a></li>
+                        <li><a href="https://medium.com/@@Ealsur" target="_blank">Matías Quaranta</a></li>
+                        <li><a href="https://chapsas.com/tag/cosmosdb/" target="_blank">Nick Chapsas</a></li>
+                        <li><a href="https://h-savran.blogspot.com/search/label/Cosmos%20DB" target="_blank">Hasan Savran</a></li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@{ await Html.RenderPartialAsync("_TryCosmos"); }
+
+

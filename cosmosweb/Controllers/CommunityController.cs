@@ -25,10 +25,10 @@ namespace cosmosweb.Controllers
             return View("GitHub");
         }
 
-        //[Route("about/github")]
-        //public IActionResult GitHub()
-        //{
-        //    return View("GitHub");
-        //}
+        [Route("community/blog")]
+        public IActionResult Blog()
+        {
+            return View("Blog");
+        }
     }
 }
