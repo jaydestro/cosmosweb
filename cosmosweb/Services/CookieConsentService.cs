@@ -2,7 +2,7 @@
 using Microsoft.CookieCompliance;
 using Microsoft.CookieCompliance.NetCore;
 using Microsoft.CookieCompliance.NetCore.IPAddressResolver;
-using Microsoft.CookieCompliance.NetStd.IP2Geo;
+using Microsoft.CookieCompliance.NetStd;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Linq;
