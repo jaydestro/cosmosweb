@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
-using Microsoft.CookieCompliance;
-using Microsoft.CookieCompliance.NetCore;
-using Microsoft.CookieCompliance.NetCore.IPAddressResolver;
-using Microsoft.CookieCompliance.NetStd;
+//using Microsoft.CookieCompliance;
+//using Microsoft.CookieCompliance.NetCore;
+//using Microsoft.CookieCompliance.NetCore.IPAddressResolver;
+//using Microsoft.CookieCompliance.NetStd;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Linq;
@@ -13,15 +13,15 @@ namespace cosmosweb.Services
     {
         private readonly ILogger _logger;
         private const string _domainName = "microsoft.com";
-        private readonly ICookieConsentClient _cookieConsentClient;
-        private readonly IPAddressResolver _ipAddressResolver;
+        //private readonly ICookieConsentClient _cookieConsentClient;
+        //private readonly IPAddressResolver _ipAddressResolver;
         private bool _isDisposed = false;
 
         public CookieConsentService(ILogger<CookieConsentService> logger)
         {
             _logger = logger;
-            _cookieConsentClient = CookieConsentClientFactory.Create(_domainName, logger);
-            _ipAddressResolver = IPAddressResolverFactory.Create(_domainName, logger);
+            //_cookieConsentClient = CookieConsentClientFactory.Create(_domainName, logger);
+            //_ipAddressResolver = IPAddressResolverFactory.Create(_domainName, logger);
         }
 
         public bool IsConsentRequired(HttpContext context)
@@ -30,9 +30,9 @@ namespace cosmosweb.Services
             {
                 var countryCode = GetCountryCode(context);
 
-                return string.IsNullOrWhiteSpace(countryCode)
-                    ? false
-                    : _cookieConsentClient.IsConsentRequiredForRegion(_domainName, countryCode, context) == ConsentStatus.Required;
+                return string.IsNullOrWhiteSpace(countryCode);
+                    //? false
+                    //: _cookieConsentClient.IsConsentRequiredForRegion(_domainName, countryCode, context) == ConsentStatus.Required;
             }
             catch (Exception)
             {
@@ -75,7 +75,7 @@ namespace cosmosweb.Services
                 _logger.LogInformation(string.Format(header.Key + ": " + header.Value));
             }
 
-            return _ipAddressResolver.GetCountryCode(ip);
+            return string.Empty;// _ipAddressResolver.GetCountryCode(ip);
         }
 
         protected virtual void Dispose(bool disposing)
@@ -84,8 +84,8 @@ namespace cosmosweb.Services
             {
                 if (disposing)
                 {
-                    _cookieConsentClient.Dispose();
-                    _ipAddressResolver.Dispose();
+                    //_cookieConsentClient.Dispose();
+                    //_ipAddressResolver.Dispose();
                 }
 
                 _isDisposed = true;
