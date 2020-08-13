@@ -1,9 +1,7 @@
-﻿@{
-    ViewData["Title"] = "Azure Cosmos DB Workshops";
+﻿@{ ViewData["Title"] = "Azure Cosmos DB Workshops";
     ViewData["Description"] = "See what in-person and online Azure Cosmos DB Workshops are available.";
 
-    var swimLaneHelper = new cosmosweb.Helpers.SwimLaneHelper();
-}
+    var swimLaneHelper = new cosmosweb.Helpers.SwimLaneHelper(); }
 
 @section header {
     <h1>Azure Cosmos DB Workshops</h1>
@@ -18,10 +16,28 @@
             <div class="@swimLaneHelper.GetContentCssClass()">
                 <h2>Azure Cosmos DB Workshop</h2>
                 <p>
-                    This workshop is built by the Azure Cosmos DB team and will give you hands-on experience working with Azure Cosmos DB using it's Core (SQL) API and server-side JavaScript using either or .NET SDK or Java SDK.
-                    Workshop length is about 12-15 hours of instructor-led content or download and consume the content and labs at your own pace.
+                    This workshop is built by the Azure Cosmos DB team and will give you hands-on experience working with Azure Cosmos DB using it's Core (SQL) API for either .NET or Java developers.
+                    Workshop length is about 12-15 hours of instructor-led content which can be downloaded and consumed at your own pace.
                 </p>
                 <p><a class="btn btn-default" href="https://azurecosmosdb.github.io/labs/" target="_blank" role="button">Visit Azure Cosmos DB Workshop</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="@swimLaneHelper.GetSwimLaneCssClass(includeDefaultMargins:false)">
+    <div class="container">
+        <div class="row vertical-align-sm">
+            <div class="@swimLaneHelper.GetIllustrationCssClass()">
+                <img src="~/images/learn/iot-lab.png" role="presentation" alt="" class="img-responsive img-responsive-center" asp-append-version="true" />
+            </div>
+            <div class="@swimLaneHelper.GetContentCssClass()">
+                <h2>Azure Cosmos DB IoT and Retail Workshops</h2>
+                <p>
+                    These IoT and Retail Workshops are two fully complete reference applications built to be delivered as two separate 2 day workshops. Users can either go through the workshop guide and build out the 
+                    solution step at a time, or deploy the demo to quickly and easily see how to build fully functional Azure solutions using Cosmos DB.
+                </p>
+                <p><a class="btn btn-default" href="https://github.com/AzureCosmosDB/scenario-based-labs" target="_blank" role="button">Visit Azure Cosmos DB IoT & Retail Workshops</a></p>
             </div>
         </div>
     </div>
@@ -34,10 +50,9 @@
                 <img src="~/images/illustrations/books-beaker.svg" role="presentation" alt="" class="img-responsive img-responsive-center" asp-append-version="true" />
             </div>
             <div class="@swimLaneHelper.GetContentCssClass()">
-                <h2>Microsoft Learn online platform</h2>
+                <h2>Azure Cosmos DB Learning Path</h2>
                 <p>
-                    Work with NoSQL data in Azure Cosmos DB: Learn how to use the Azure portal, the Azure Cosmos DB extension for Visual Studio Code, and the Azure Cosmos DB .NET Core SDK to work with your NoSQL
-                    data where you want, and provide your users with high availability, no matter where they are in the world.
+                    The <i>Work with NoSQL data in Azure Cosmos DB</i> learning path is offered through the online Microsoft Learn platform. This learning path can help you prepare for the Microsoft Certified: Azure Developer Associate certification.
                 </p>
                 <p><a class="btn btn-default" href="https://docs.microsoft.com/en-us/learn/paths/work-with-nosql-data-in-azure-cosmos-db/" target="_blank" role="button">Visit Microsoft Learn</a></p>
             </div>
@@ -45,6 +60,30 @@
     </div>
 </div>
 
+<div class="@swimLaneHelper.GetSwimLaneCssClass()">
+    <div class="container">
+        <div class="row vertical-align-sm">
+            <div class="@swimLaneHelper.GetIllustrationCssClass()">
+                <img src="~/images/learn/pluralsight.png" role="presentation" alt="" class="img-responsive img-responsive-center" asp-append-version="true" />
+            </div>
+            <div class="@swimLaneHelper.GetContentCssClass()">
+                <h2>Pluralsight</h2>
+                <p>
+                    Pluralsite offers some of the best learning content for Azure Cosmos DB. Developers serious about getting deep knowledge and quickly becoming proficient on Cosmos DB should look
+                    to these course offerings.
+                </p>
+                <ul>
+                    <li><a href="https://www.pluralsight.com/courses/azure-cosmos-db" target="_blank">Learning Azure Cosmos DB</a></li>
+                    <li><a href="https://www.pluralsight.com/courses/data-modeling-partitioning-patterns-azure-cosmos-db" target="_blank">Data Modeling and Partitioning Patterns in Azure Cosmos DB</a></li>
+                    <li><a href="https://www.pluralsight.com/courses/building-event-driven-microservices-azure-cosmos-db-change-feed" target="_blank">Building Event-driven Microservices with the Azure Cosmos DB Change Feed</a></li>
+                </ul>   
+                <p><i>Pluralsite requires registration for a 10-day trial. All courses combined are about 11 hours of online delivery.</i></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--
 <div class="@swimLaneHelper.GetSwimLaneCssClass()">
     <div class="container">
         <div class="row vertical-align-sm">
@@ -62,45 +101,6 @@
         </div>
     </div>
 </div>
-
-<div class="@swimLaneHelper.GetSwimLaneCssClass()">
-    <div class="container">
-        <div class="row vertical-align-sm">
-            <div class="@swimLaneHelper.GetIllustrationCssClass()">
-                <img src="~/images/learn/pluralsight.png" role="presentation" alt="" class="img-responsive img-responsive-center" asp-append-version="true" />
-            </div>
-            <div class="@swimLaneHelper.GetContentCssClass()">
-                <h2>Pluralsight - Learning Azure Cosmos DB</h2>
-                <p>
-                    Microsoft's Azure Cosmos DB is becoming an essential tool for creating powerful global web and mobile applications.
-                    This course will teach you how to design databases and build applications using the various Azure Cosmos DB APIs and supported data models.
-                </p>
-                <p><i>This workshop requires registration for the 10-day trial. Workshop length is about 6 hours of online delivery.</i></p>
-                <p><a class="btn btn-default" href="https://www.pluralsight.com/courses/azure-cosmos-db" target="_blank" role="button">Visit Pluralsight</a></p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="@swimLaneHelper.GetSwimLaneCssClass()">
-    <div class="container">
-        <div class="row vertical-align-sm">
-            <div class="@swimLaneHelper.GetIllustrationCssClass()">
-                <img src="~/images/learn/skillmeup.png" role="presentation" alt="" class="img-responsive img-responsive-center" asp-append-version="true" />
-            </div>
-            <div class="@swimLaneHelper.GetContentCssClass()">
-                <h2>Opsgility - Introduction to Azure Cosmos DB</h2>
-                <p>
-                    This course explores the NoSQL storage options available within the Microsoft Azure Cosmos DB database service. 
-                    Azure Cosmos DB is a multi-model database with support for all 4 primary NoSQL data models (Document, Graph, Key/Value, Column). 
-                    In addition to learning about NoSQL with Azure Cosmos DB, students will also learn about the cloud-native features that make Azure Cosmos DB a 
-                    great NoSQL database-as-a-service in the Microsoft Azure cloud.
-                </p>
-                <p><i>This workshop requires registration for a free trial. Workshop length is about 1 hour of online delivery.</i></p>
-                <p><a class="btn btn-default" href="https://skillmeup.com/courses/player/introduction-to-azure-cosmos-db" target="_blank" role="button">Visit Opsgility</a></p>
-            </div>
-        </div>
-    </div>
-</div>
+-->
 
 @{ await Html.RenderPartialAsync("_TryCosmos"); }
