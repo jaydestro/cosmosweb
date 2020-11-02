@@ -1,6 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Azure Cosmos DB Presentations";
-    ViewData["Description"] = "Azure Cosmos DB presentations to customers.";
+    ViewData["Description"] = "Azure Cosmos DB public presentations";
 
     var swimLaneHelper = new cosmosweb.Helpers.SwimLaneHelper();
 }
@@ -13,22 +13,34 @@
     <div class="container">
         <div class="row vertical-align-sm">
             <div class="@swimLaneHelper.GetIllustrationCssClass()">
+                <img src="~/images/learn/microsoft-ignite-2020-logo.jpg" role="presentation" alt="" class="img-responsive img-responsive-center" asp-append-version="true" />
+            </div>
+            <div class="@swimLaneHelper.GetContentCssClass()">
+                <h2>IGNITE 2020</h2>
+                <p>Watch our presentations from IGNITE 2020.</p>
+                <ul>
+                    <li><a href="https://youtu.be/v1wAt7nux1k" target="_blank">Building modern apps with Azure Cosmos DB serverless and Azure Cache for Redis enterprise</a></li>
+                    <li><a href="https://youtu.be/o2iFdU0EBLg" target="_blank">Real-time analytics and BI using Azure Synapse Link for Azure Cosmos DB</a></li>
+                    <li><a href="https://youtu.be/PsZdnoJeoOE" target="_blank">Best Practices of Running Cloud Native Applications on Azure</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="@swimLaneHelper.GetSwimLaneCssClass()">
+    <div class="container">
+        <div class="row vertical-align-sm">
+            <div class="@swimLaneHelper.GetIllustrationCssClass()">
                 <img src="~/images/learn/microsoft_build_logo_2020.jpg" role="presentation" alt="" class="img-responsive img-responsive-center" asp-append-version="true" />
             </div>
             <div class="@swimLaneHelper.GetContentCssClass()">
                 <h2>BUILD 2020</h2>
-                <p>Watch our latest presentations from BUILD 2020 and download the decks.</p>
+                <p>Watch our presentations from BUILD 2020 and download the decks.</p>
                 <ul>
-                    <li>
-                        INT125 - Building scalable and secure applications with Azure Cosmos DB 
-                        <a href="https://mybuild.microsoft.com/sessions/9c8fa83f-5c1b-4f61-a6fd-5362656eec84" target="_blank"> Video </a> |
-                        <a href="https://github.com/AzureCosmosDB/content/blob/master/decks/BUILD-2020_INT125.pptx?raw=true" target="_blank"> Deck </a>
-                    </li>
-                    <li>
-                        INT124 - Building real-time HTAP analytics solutions with Azure Cosmos DB & Azure Synapse Analytics
-                        <a href="https://mybuild.microsoft.com/sessions/ab1e2d80-29b7-4301-b8b1-95b8ced4c4da" target="_blank"> Video </a> | 
-                        <a href="https://github.com/AzureCosmosDB/content/blob/master/decks/BUILD-2020-INT124.pptx?raw=true" target="_blank"> Deck </a>
-                    </li>
+                    <li><a href="https://mybuild.microsoft.com/sessions/9c8fa83f-5c1b-4f61-a6fd-5362656eec84" target="_blank">Building scalable and secure applications with Azure Cosmos DB</a></li>
+                    <li><a href="https://mybuild.microsoft.com/sessions/ab1e2d80-29b7-4301-b8b1-95b8ced4c4da" target="_blank">Building real-time HTAP analytics solutions with Azure Cosmos DB & Azure Synapse Analytics</a></li>
                 </ul>
             </div>
         </div>
@@ -43,16 +55,14 @@
             </div>
             <div class="@swimLaneHelper.GetContentCssClass()">
                 <h2>IGNITE 2019</h2>
-                <p>Watch our latest presentations at IGNITE 2019 and download the decks.</p>
+                <p>Watch our presentations from IGNITE 2019.</p>
                 <ul>
-                    <li><a href="https://myignite.techcommunity.microsoft.com/sessions/81004" target="_blank">What's the latest with Azure Cosmos DB</a></li>
-                    <li><a href="https://myignite.techcommunity.microsoft.com/sessions/81002" target="_blank">A developer's guide to Azure Cosmos DB, from onboarding to going live in production</a></li>
-                    <li><a href="https://myignite.techcommunity.microsoft.com/sessions/79932" target="_blank">Data modelling and partitioning in Azure Cosmos DB: What every relational database user needs to know</a></li>
-                    <li><a href="https://myignite.techcommunity.microsoft.com/sessions/79933" target="_blank">Building event driven apps with Azure Cosmos DB and Azure Functions</a></li>
-                    <li><a href="https://myignite.techcommunity.microsoft.com/sessions/79931" target="_blank">Updates and best practices in Azure Cosmos DB API for Mongo DB</a></li>
-                    <li><a href="https://myignite.techcommunity.microsoft.com/sessions/81003" target="_blank">Multi-master and global distribution with Azure Cosmos DB</a></li>
-                    <li><a href="https://myignite.techcommunity.microsoft.com/sessions/84631" target="_blank">Enterprise Time Tracking Using Azure Cosmos DB</a></li>
-                    <li><a href="https://myignite.techcommunity.microsoft.com/sessions/89316" target="_blank">Channel 9: Key concepts on how to build high performance, highly available applications in the cloud</a></li>
+                    <li><a href="https://youtu.be/ZCG6weeP08M" target="_blank">What's the latest with Azure Cosmos DB</a></li>
+                    <li><a href="https://youtu.be/v3GnsHk6YZs" target="_blank">A developer's guide to Azure Cosmos DB, from onboarding to going live in production</a></li>
+                    <li><a href="https://youtu.be/utdxvAhIlcY" target="_blank">Data modeling and partitioning in Azure Cosmos DB: What every relational database user needs to know</a></li>
+                    <li><a href="https://youtu.be/faXkCccz5eA" target="_blank">Building event driven apps with Azure Cosmos DB and Azure Functions</a></li>
+                    <li><a href="https://youtu.be/w7d5BAlHGoI" target="_blank">Updates and best practices in Azure Cosmos DB API for Mongo DB</a></li>
+                    <li><a href="https://youtu.be/ddo1WVCPAfM" target="_blank">Multi-master and global distribution with Azure Cosmos DB</a></li>
                 </ul>
             </div>
         </div>
@@ -67,7 +77,7 @@
             </div>
             <div class="@swimLaneHelper.GetContentCssClass()">
                 <h2>BUILD 2019</h2>
-                <p>Watch our latest presentations from BUILD 2019 and download the decks.</p>
+                <p>Watch our presentations from BUILD 2019.</p>
                 <ul>
                     <li><a href="https://www.youtube.com/watch?v=fOQoQnQqwwU&list=PLlrxD0HtieHgspNIlv1x2H5_cxSRm7B17" target="_blank">Mission-critical multi-tenant apps with Cosmos DB multi-master</a></li>
                     <li><a href="https://www.youtube.com/watch?v=bQBeTeYUrR8&list=PLlrxD0HtieHgspNIlv1x2H5_cxSRm7B17" target="_blank">Best practices for Azure Cosmos DB: Data modeling, Partitioning and RUs</a></li>
