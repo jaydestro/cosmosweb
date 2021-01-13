@@ -15,7 +15,7 @@ namespace cosmosweb.Helpers
         private string _fileContents;
         private readonly RequestDelegate _next;
 
-        public AppOfflineMiddleware(RequestDelegate next, IHostingEnvironment env)
+        public AppOfflineMiddleware(RequestDelegate next, IWebHostEnvironment env)
         {
             if (next == null)
             {

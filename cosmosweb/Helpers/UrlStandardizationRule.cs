@@ -2,7 +2,7 @@
 using System.Text.RegularExpressions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Net.Http.Headers;
-using Microsoft.AspNetCore.Rewrite.Logging;
+//using Microsoft.AspNetCore.Rewrite.Logging;
 using Microsoft.AspNetCore.Rewrite;
 using System.Linq;
 using Microsoft.Extensions.Logging;

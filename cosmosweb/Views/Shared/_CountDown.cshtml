@@ -1,0 +1,66 @@
+﻿@{ var swimLaneHelper = new cosmosweb.Helpers.SwimLaneHelper(); }
+
+<head>
+    @RenderSection("JavaScript", required: true)
+</head>
+
+@section JavaScript
+{
+    <script type="text/javascript">
+
+        var endDate = new Date("Apr 20, 2021 12:00:00").getTime();
+
+        var timer = setInterval(function () {
+
+            let now = newDate().getTime();
+            let t = endDate - now;
+
+            if (t >= 0) {
+
+                let days = Math.floor(t / (1000 * 60 * 60 * 24));
+                let hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                let mins = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+                let secs = Math.floor((t % (1000 * 60)) / 1000);
+
+                document.getElementById("timer-days").innerHTML = days +
+                    "<span class='label'>DAY(S)</span>";
+
+                document.getElementById("timer-hours").innerHTML = ("0" + hours).slice(-2) +
+                    "<span class='label'>HR(S)</span>";
+
+                document.getElementById("timer-mins").innerHTML = ("0" + mins).slice(-2) +
+                    "<span class='label'>MIN(S)</span>";
+
+                document.getElementById("timer-secs").innerHTML = ("0" + secs).slice(-2) +
+                    "<span class='label'>SEC(S)</span>";
+
+            } else {
+
+                document.getElementById("timer").innerHTML = "The countdown is over!";
+
+            }
+
+        }, 1000);
+
+    </script>
+}
+
+<script language="javascript">
+
+</script>
+
+<div class="swim swim-blue pt-40 pb-40 pt-60-sm pb-60-sm">
+    <div class="container">
+        <div class="row vertical-align">
+            <div class="col-sm-2 col-sm-offset-1">
+                <img src="~/images/shared/cosmosdb_darktheme.png" role="presentation" alt="" class="img-responsive img-responsive-center logo" asp-append-version="true" />
+            </div>
+            <p id="timer">
+                <span id="timer-days"></span>
+                <span id="timer-hours"></span>
+                <span id="timer-mins"></span>
+                <span id="timer-secs"></span>
+            </p>
+        </div>
+    </div>
+</div>

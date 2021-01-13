@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Razor.TagHelpers;
+using Microsoft.Extensions.Hosting;
 using System;
 
 namespace cosmosweb.Helpers
@@ -10,7 +11,7 @@ namespace cosmosweb.Helpers
         private bool _shouldMinify;
         public bool Environmental { get; set; }        
 
-        public ScriptTagHelper(IHostingEnvironment env)
+        public ScriptTagHelper(IWebHostEnvironment env)
         {
             _shouldMinify = env.IsStaging() || env.IsProduction();
         }
