@@ -1,0 +1,129 @@
+﻿@{ ViewData["Title"] = "Azure Cosmos DB Developer Community";
+    ViewData["Description"] = "Azure Cosmos DB Conf is a 24 hour free online event.";
+
+    var swimLaneHelper = new cosmosweb.Helpers.SwimLaneHelper(); }
+
+@section header {
+    <h1>Azure Cosmos DB Conf</h1>
+}
+
+<div class="@swimLaneHelper.GetSwimLaneCssClass(includeDefaultPadding: false)">
+    <div class="container">
+        <div class="row vertical-align-sm">
+            <div class="@swimLaneHelper.GetIllustrationCssClass()">
+                <img src="~/images/shared/cosmosdb_lighttheme.png" role="presentation" alt="" class="img-responsive img-responsive-center" asp-append-version="true" />
+            </div>
+            <div class="@swimLaneHelper.GetContentCssClass()">
+                <h2>Azure Cosmos DB Conf</h2>
+                <p>
+                    Join us on April 20, 2021 for the very first Azure Cosmos DB Conf. Azure Cosmos DB Conf is a free, 24 hour virtual developer event co-organized by Microsoft and the Cosmos DB community.
+                    Sessions will be a combination of Microsoft and community delivered. Come and learn more about Azure Cosmos DB. See what others in the community are building.
+                </p>
+                <p></p>
+                <p>The CfP for Azure Cosmos DB Conf will open soon!!! Stay tuned...</p>
+                <!--<p>The CfP for Azure Cosmos DB Conf is open now until March 12, 2021 11:59 UTC. To submit a session visit <a href="https://sessionize.com/azure-cosmos-db-conf" target="_blank">Azure Cosmos DB Conf CfP on Sessionize.</a> guide.</p>
+                <p><a href="https://sessionize.com/azure-cosmos-db-conf" target="_blank" class="btn btn-default">Submit a session</a></p>
+                -->
+                <p>Be sure to keep an eye on upcoming announcements. Follow us at <a href="https://twitter.com/azurecosmosdb" target="_blank">@@AzureCosmosDB</a> and our hash tag <a href="https://twitter.com/search?q=%23CosmosDBConf" target="_blank">#CosmosDBConf</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@{ await Html.RenderPartialAsync("_TryCosmos"); }
+
+<!--
+<div class="@swimLaneHelper.GetSwimLaneCssClass()">
+    <div class="container">
+        <div class="media-grid">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="media">
+                        <div class="media-left" aria-hidden="true">
+                            <a href="~/community/github"><span class="ms-Image"><img src="~/images/community/github.svg" role="presentation" alt="" asp-append-version="true" /></span></a>
+                        </div>
+                        <div class="media-body">
+                            <h2 class="media-heading h3"><a href="~/community/github">Github</a></h2>
+                            <p>Find and fork repos with our <a href="~/community/github">official SDKs, tools and samples</a> along with tons of other tools, samples and complete reference apps built by Microsoft and our community.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="media">
+                        <div class="media-left" aria-hidden="true">
+                            <a href="https://twitter.com/AzureCosmosDB" target="_blank"><span class="ms-Image"><img src="~/images/community/twitter.svg" role="presentation" alt="" asp-append-version="true" /></span></a>
+                        </div>
+                        <div class="media-body">
+                            <h2 class="media-heading h3"><a href="https://twitter.com/AzureCosmosDB" target="_blank">Twitter</a></h2>
+                            <p><a href="https://twitter.com/AzureCosmosDB" target="_blank">@@AzureCosmosDB</a> is the main Twitter account you can follow to keep in touch with us and get updates. You can also keep a search of <a href="https://twitter.com/search?q=%23CosmosDB" target="_blank">#cosmosdb</a> for updates on Azure Cosmos DB from the community.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="media">
+                        <div class="media-left" aria-hidden="true">
+                            <a href="~/community/blog"><span class="ms-Image"><img src="~/images/community/blog.svg" role="presentation" alt="" asp-append-version="true" /></span></a>
+                        </div>
+                        <div class="media-body">
+                            <h2 class="media-heading h3"><a href="https://devblogs.microsoft.com/cosmosdb/" target="_blank">Blog</a></h2>
+                            <p>
+                                Stay up to date with the <a href="https://devblogs.microsoft.com/cosmosdb/" target="_blank">Azure Cosmos DB Blog </a> for the latest information, news and updates on Azure Cosmos DB as well as tips and tricks and valuable insights from our engineering team.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="media">
+                        <div class="media-left" aria-hidden="true">
+                            <a href="https://www.youtube.com/channel/UC9OJ32CzooNJNoP6_iIfxRw/videos?view=0&sort=dd&flow=grid" target="_blank"><span class="ms-Image"><img src="~/images/community/youtube.png" role="presentation" alt="" asp-append-version="true" /></span></a>
+                        </div>
+                        <div class="media-body">
+                            <h2 class="media-heading h3"><a href="https://www.youtube.com/channel/UC9OJ32CzooNJNoP6_iIfxRw/videos?view=0&sort=dd&flow=grid" target="_blank">YouTube</a></h2>
+                            <p>We publish lots of <a href="https://www.youtube.com/channel/UC9OJ32CzooNJNoP6_iIfxRw/videos?view=0&sort=dd&flow=grid" target="_blank">videos about Azure Cosmos DB</a> on YouTube including short how-to videos, interviews, and full-length technical sessions.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="media">
+                        <div class="media-left" aria-hidden="true">
+                            <a href="https://channel9.msdn.com/Search?term=cosmosdb&pubDate=year" target="_blank"><span class="ms-Image"><img src="~/images/community/ch9.png" role="presentation" alt="" asp-append-version="true" /></span></a>
+                        </div>
+                        <div class="media-body">
+                            <h2 class="media-heading h3"><a href="https://channel9.msdn.com/Search?term=cosmosdb&pubDate=year" target="_blank">Channel 9</a></h2>
+                            <p><a href="https://channel9.msdn.com/Search?term=cosmosdb&pubDate=year" target="_blank">Watch Azure Cosmos DB videos</a> on Channel 9 to stay up to date on our latest announcements.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="media">
+                        <div class="media-left" aria-hidden="true">
+                            <a href="https://feedback.azure.com/forums/263030-azure-cosmos-db" target="_blank"><span class="ms-Image"><img src="~/images/community/uservoice.png" role="presentation" alt="" asp-append-version="true" /></span></a>
+                        </div>
+                        <div class="media-body">
+                            <h2 class="media-heading h3"><a href="https://feedback.azure.com/forums/263030-azure-cosmos-db" target="_blank">User Voice</a></h2>
+                            <p>Visit our <a href="https://feedback.azure.com/forums/263030-azure-cosmos-db" target="_blank">User Voice</a> to see what features customers are asking for. Request and vote up features yourself.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="row">
+                <div class="col-md-4">
+                    <div class="media">
+                        <div class="media-left" aria-hidden="true">
+                            <a href="https://azure.com" target="_blank"><span class="ms-Image"><img src="~/images/community/newsletters.svg" role="presentation" alt="" asp-append-version="true" /></span></a>
+                        </div>
+                        <div class="media-body">
+                            <h2 class="media-heading h3"><a href="https://azure.com" target="_blank">Newsletters</a></h2>
+                            <p>Read our latest <a href="https://azure.com" target="_blank">Newsletters</a> to catchup on past announcements or stay current on recent releases and information.
+                              You can also <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRzqxo-fKv8ZPo2K8dv6C-KVUNDhQWlkxUTlYSlVQQzhHMUxKNVRPWlBRMC4u" target="_blank"></a>sign up</a> to receive our newsletters in your Inbox too.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+-->
