@@ -28,6 +28,8 @@
 
   <ItemGroup>
     <None Include="Areas\AzureAD\Pages\Account\SignedOut.cshtml" />
+    <None Include="wwwroot\lib\jquery.countdown\jquery.countdown.js" />
+    <None Include="wwwroot\lib\jquery.countdown\jquery.countdown.min.js" />
   </ItemGroup>
 
 

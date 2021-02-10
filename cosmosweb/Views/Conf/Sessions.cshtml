@@ -7,36 +7,15 @@
     <h1>Azure Cosmos DB Conf</h1>
 }
 
-<div class="@swimLaneHelper.GetSwimLaneCssClass(includeDefaultMargins: false)">
-    <!--    <div class="container architecture-guides">
-            <div class="media-grid media-grid-bottom-aligned-buttons">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="media">
-                            <div class="media-middle" aria-hidden="true">
-                                <a href="~/conf/sessions"><span class="ms-Icon ms-Icon--Waffle"></span></a>
-                            </div>
-                            <div class="media-body">
-                                <h2 class="media-heading h3"><a href="~/conf/sessions">Sessions</a></h2>
-                                <p>View the sessions</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="media">
-                            <div class="media-middle" aria-hidden="true">
-                                <a href="~/conf/speakers"><span class="ms-Icon ms-Icon--People"></span></a>
-                            </div>
-                            <div class="media-body">
-                                <h2 class="media-heading h3"><a href="~/conf/speakers">Speakers</a></h2>
-                                <p>Meet the speakers</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        -->
+
+
+<div class="@swimLaneHelper.GetSwimLaneCssClass(includeDefaultPadding: false)">
+    <div class="container">
+        <script type="text/javascript" src="https://sessionize.com/api/v2/z7zg9av4/view/GridSmart"></script>
+    </div>
+</div>
+
+<!--<div class="@swimLaneHelper.GetSwimLaneCssClass(includeDefaultPadding: false)">
     <div class="container">
         <div class="row vertical-align-sm">
             <div class="@swimLaneHelper.GetIllustrationCssClass()">
@@ -57,11 +36,6 @@
         </div>
     </div>
 </div>
-
-
-
-    
-
-@{ await Html.RenderPartialAsync("_CountDown"); }
+-->
 
 @{ await Html.RenderPartialAsync("_TryCosmos"); }
