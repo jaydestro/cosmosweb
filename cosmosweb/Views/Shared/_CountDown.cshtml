@@ -1,54 +1,42 @@
 ﻿@{ var swimLaneHelper = new cosmosweb.Helpers.SwimLaneHelper(); }
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
 
-<head>
-    @RenderSection("JavaScript", required: true)
-</head>
+@{
+    <div id="countdown"></div> 
+}
 
-@section JavaScript
-{
-    <script type="text/javascript">
+@section scripts {
+    <script src="~/lib/jquery.countdown/jquery.countdown.js"></script>
 
-        var endDate = new Date("Apr 20, 2021 12:00:00").getTime();
+    <script>
+        /* ---------------------------------------------------------
+         * Countdown
+         */
 
-        var timer = setInterval(function () {
+        var description = {
+            weeks: "weeks",
+            days: "days",
+            hours: "hours",
+            minutes: "minutes",
+            seconds: "seconds"
+        };
 
-            let now = newDate().getTime();
-            let t = endDate - now;
-
-            if (t >= 0) {
-
-                let days = Math.floor(t / (1000 * 60 * 60 * 24));
-                let hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                let mins = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
-                let secs = Math.floor((t % (1000 * 60)) / 1000);
-
-                document.getElementById("timer-days").innerHTML = days +
-                    "<span class='label'>DAY(S)</span>";
-
-                document.getElementById("timer-hours").innerHTML = ("0" + hours).slice(-2) +
-                    "<span class='label'>HR(S)</span>";
-
-                document.getElementById("timer-mins").innerHTML = ("0" + mins).slice(-2) +
-                    "<span class='label'>MIN(S)</span>";
-
-                document.getElementById("timer-secs").innerHTML = ("0" + secs).slice(-2) +
-                    "<span class='label'>SEC(S)</span>";
-
-            } else {
-
-                document.getElementById("timer").innerHTML = "The countdown is over!";
-
-            }
-
-        }, 1000);
-
+        // year/month/day
+        // target date is read from Configuration - by default, can be set in appsettings.json, command line, environment variable etc., due to the use of CreateDefaultBuilder in Program.cs (see https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-5.0#default-configuration)
+        $('#countdown').countdown('@Configuration["TargetDate"]', function (event) {
+            $(this).html(event.strftime(
+                '<div><b>%w</b> <span>' + description.weeks + '</span> </div>' +
+                '<div><b>%d</b> <span>' + description.days + '</span> </div>'  +
+                '<div><b>%H</b> <span>' + description.hours + '</span> </div>' +
+                '<div><b>%M</b> <span>' + description.minutes + '</span> </div>' +
+                '<div><b>%S</b> <span>' + description.seconds + '</span> </div>'
+           ));
+        });
     </script>
 }
 
-<script language="javascript">
-
-</script>
-
+<!--
 <div class="swim swim-blue pt-40 pb-40 pt-60-sm pb-60-sm">
     <div class="container">
         <div class="row vertical-align">
@@ -64,3 +52,4 @@
         </div>
     </div>
 </div>
+-->

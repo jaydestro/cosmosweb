@@ -16,5 +16,17 @@ namespace cosmosweb.Controllers
         {
             return View("Index");
         }
+
+        [Route("conf/sessions")]
+        public IActionResult Sessions()
+        {
+            return View("Sessions");
+        }
+
+        [Route("conf/speakers")]
+        public IActionResult Speakers()
+        {
+            return View("Speakers");
+        }
     }
 }

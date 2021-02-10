@@ -1,0 +1,17 @@
+﻿@{ ViewData["Title"] = "Azure Cosmos DB Developer Community";
+    ViewData["Description"] = "Azure Cosmos DB Conf is a free online event.";
+
+    var swimLaneHelper = new cosmosweb.Helpers.SwimLaneHelper(); }
+
+@section header {
+    <h1>Azure Cosmos DB Conf</h1>
+}
+
+<div class="@swimLaneHelper.GetSwimLaneCssClass(includeDefaultPadding: false)">
+    <div class="container">
+        <script type="text/javascript" src="https://sessionize.com/api/v2/z7zg9av4/view/SpeakerWall"></script>
+    </div>
+</div>
+
+
+@{ await Html.RenderPartialAsync("_TryCosmos"); }
