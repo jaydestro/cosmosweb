@@ -24,7 +24,7 @@
 
         // year/month/day
         // target date is read from Configuration - by default, can be set in appsettings.json, command line, environment variable etc., due to the use of CreateDefaultBuilder in Program.cs (see https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-5.0#default-configuration)
-        $('#countdown').countdown('@Configuration["TargetDate"]', function (event) {
+        $('#countdown').countdown('2021/4/20', function (event) {
             $(this).html(event.strftime(
                 '<div><b>%w</b> <span>' + description.weeks + '</span> </div>' +
                 '<div><b>%d</b> <span>' + description.days + '</span> </div>'  +

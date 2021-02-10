@@ -1,10 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Threading.Tasks;
+
 
 namespace cosmosweb.Controllers
 {
@@ -17,10 +13,10 @@ namespace cosmosweb.Controllers
             return View("Index");
         }
 
-        [Route("conf/sessions")]
-        public IActionResult Sessions()
+        [Route("conf/agenda")]
+        public IActionResult Agenda()
         {
-            return View("Sessions");
+            return View("Agenda");
         }
 
         [Route("conf/speakers")]
