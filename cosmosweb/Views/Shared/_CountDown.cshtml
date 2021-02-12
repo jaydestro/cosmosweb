@@ -2,54 +2,17 @@
 @using Microsoft.Extensions.Configuration
 @inject IConfiguration Configuration
 
-@{
-    <div id="countdown"></div> 
-}
 
-@section scripts {
-    <script src="~/lib/jquery.countdown/jquery.countdown.js"></script>
 
-    <script>
-        /* ---------------------------------------------------------
-         * Countdown
-         */
-
-        var description = {
-            weeks: "weeks",
-            days: "days",
-            hours: "hours",
-            minutes: "minutes",
-            seconds: "seconds"
-        };
-
-        // year/month/day
-        // target date is read from Configuration - by default, can be set in appsettings.json, command line, environment variable etc., due to the use of CreateDefaultBuilder in Program.cs (see https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-5.0#default-configuration)
-        $('#countdown').countdown('2021/4/20', function (event) {
-            $(this).html(event.strftime(
-                '<div><b>%w</b> <span>' + description.weeks + '</span> </div>' +
-                '<div><b>%d</b> <span>' + description.days + '</span> </div>'  +
-                '<div><b>%H</b> <span>' + description.hours + '</span> </div>' +
-                '<div><b>%M</b> <span>' + description.minutes + '</span> </div>' +
-                '<div><b>%S</b> <span>' + description.seconds + '</span> </div>'
-           ));
-        });
-    </script>
-}
-
-<!--
 <div class="swim swim-blue pt-40 pb-40 pt-60-sm pb-60-sm">
     <div class="container">
         <div class="row vertical-align">
             <div class="col-sm-2 col-sm-offset-1">
                 <img src="~/images/shared/cosmosdb_darktheme.png" role="presentation" alt="" class="img-responsive img-responsive-center logo" asp-append-version="true" />
             </div>
-            <p id="timer">
-                <span id="timer-days"></span>
-                <span id="timer-hours"></span>
-                <span id="timer-mins"></span>
-                <span id="timer-secs"></span>
+            <p id="countdown">                
             </p>
         </div>
     </div>
 </div>
--->
+
