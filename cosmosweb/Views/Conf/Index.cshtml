@@ -11,15 +11,15 @@
 <div class="@swimLaneHelper.GetSwimLaneCssClass(includeDefaultPadding: false)">
     <div class="container">
         @*<div class="row">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-8">
-                <span>
-                    <a href="~/conf/agenda" target="_self" class="btn btn-default">Agenda</a>
-                    <a href="~/conf/speakers" target="_self" class="btn btn-default">Speakers</a>
-                </span>
-            </div>
-            <div class="col-sm-2"></div>
-        </div>*@
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8">
+                    <span>
+                        <a href="~/conf/agenda" target="_self" class="btn btn-default">Agenda</a>
+                        <a href="~/conf/speakers" target="_self" class="btn btn-default">Speakers</a>
+                    </span>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>*@
         <div class="row">
             <div class="col-sm-2"></div>
             <div class="col-sm-4">
@@ -28,16 +28,16 @@
                 @*<h3>70 days, 23 hours, 15 minutes</h3>*@
                 <h3>@*@{ await Html.RenderPartialAsync("_CountDown"); }*@</h3>
                 @*<p></p>
-                <div title="Add to Calendar" class="addeventatc btn btn-default">
-                    Add to Calendar
-                    <span class="start">04/20/2021 09:00 AM</span>
-                    <span class="end">04/21/2021 04:00 AM</span>
-                    <span class="timezone">America/Los_Angeles</span>
-                    <span class="title">Azure Cosmsos DB Conf</span>
-                    <span class="description">Join us for the very first Azure Cosmos DB Conf, a free, virtual developer event co-organized by Microsoft and the Cosmos DB community. Visit <a href="https://gotcosmos.com/conf" target="_blank" class="btn btn-default">Azure Cosmos DB Conf to watch!</a></span>
-                    <span class="location">https://gotcosmos.com/conf</span>
-                    <span class="alarm_reminder">720</span>
-                </div>*@
+                    <div title="Add to Calendar" class="addeventatc btn btn-default">
+                        Add to Calendar
+                        <span class="start">04/20/2021 09:00 AM</span>
+                        <span class="end">04/21/2021 04:00 AM</span>
+                        <span class="timezone">America/Los_Angeles</span>
+                        <span class="title">Azure Cosmsos DB Conf</span>
+                        <span class="description">Join us for the very first Azure Cosmos DB Conf, a free, virtual developer event co-organized by Microsoft and the Cosmos DB community. Visit <a href="https://gotcosmos.com/conf" target="_blank" class="btn btn-default">Azure Cosmos DB Conf to watch!</a></span>
+                        <span class="location">https://gotcosmos.com/conf</span>
+                        <span class="alarm_reminder">720</span>
+                    </div>*@
             </div>
             <div class="col-sm-1"></div>
             <div class="col-sm-3">
@@ -82,7 +82,7 @@
             </div>
         </main>
     </div>
-    
+
 </div>
 
 
@@ -90,10 +90,10 @@
     <div class="container-fluid">
         <div class="row vertical-align-sm">
             <div class="@swimLaneHelper.GetIllustrationCssClass()">-->
-                @*<img src="~/images/shared/cosmosdb_lighttheme.png" role="presentation" alt="" class="img-responsive img-responsive-center" asp-append-version="true" />*@
-                <!--<img src="~/images/about/cosmos-logo.svg" role="presentation" alt="" class="img-responsive img-responsive-center img-responsive-swimlane" asp-append-version="true" />
+@*<img src="~/images/shared/cosmosdb_lighttheme.png" role="presentation" alt="" class="img-responsive img-responsive-center" asp-append-version="true" />*@
+<!--<img src="~/images/about/cosmos-logo.svg" role="presentation" alt="" class="img-responsive img-responsive-center img-responsive-swimlane" asp-append-version="true" />
             </div>
-            
+
             <div class="@swimLaneHelper.GetContentCssClass()">
                 <h2>Azure Cosmos DB Conf</h2>
                 <p>
@@ -127,6 +127,38 @@
 
 
 @{ await Html.RenderPartialAsync("_CountDown"); }
+
+
+
+@section scripts {
+    <script src="~/lib/jquery.countdown/jquery.countdown.js"></script>
+
+    <script>
+        /* ---------------------------------------------------------
+         * Countdown
+         */
+
+        var description = {
+            weeks: "weeks",
+            days: "days",
+            hours: "hours",
+            minutes: "minutes",
+            seconds: "seconds"
+        };
+
+        // year/month/day
+        // target date is read from Configuration - by default, can be set in appsettings.json, command line, environment variable etc., due to the use of CreateDefaultBuilder in Program.cs (see https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-5.0#default-configuration)
+        $('#countdown').countdown('2021/4/20', function (event) {
+            $(this).html(event.strftime(
+                '<div><b>%w</b> <span>' + description.weeks + '&nbsp;</span>' +
+                '<b>%d</b> <span>' + description.days + '&nbsp;</span>' +
+                '<b>%H</b> <span>' + description.hours + '&nbsp;</span>' +
+                '<b>%M</b> <span>' + description.minutes + '&nbsp;</span>' +
+                '<b>%S</b> <span>' + description.seconds + '</span></div>'
+            ));
+        });
+    </script>
+}
 
 @{ await Html.RenderPartialAsync("_TryCosmos"); }
 
