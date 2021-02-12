@@ -25,9 +25,8 @@
             <div class="col-sm-4">
                 <h2>Azure Cosmos DB Conf</h2>
                 <h3>April 20, 2021</h3>
-                @*<h3>70 days, 23 hours, 15 minutes</h3>*@
-                <h3>@*@{ await Html.RenderPartialAsync("_CountDown"); }*@</h3>
-                @*<p></p>
+                <h4 id="countdown"></h4>
+                <p></p>
                     <div title="Add to Calendar" class="addeventatc btn btn-default">
                         Add to Calendar
                         <span class="start">04/20/2021 09:00 AM</span>
@@ -37,7 +36,7 @@
                         <span class="description">Join us for the very first Azure Cosmos DB Conf, a free, virtual developer event co-organized by Microsoft and the Cosmos DB community. Visit <a href="https://gotcosmos.com/conf" target="_blank" class="btn btn-default">Azure Cosmos DB Conf to watch!</a></span>
                         <span class="location">https://gotcosmos.com/conf</span>
                         <span class="alarm_reminder">720</span>
-                    </div>*@
+                    </div>
             </div>
             <div class="col-sm-1"></div>
             <div class="col-sm-3">
@@ -55,6 +54,129 @@
                             Join us on April 20, 2021 for the very first Azure Cosmos DB Conf. Azure Cosmos DB Conf is a free online virtual developer event co-organized by Microsoft and the Cosmos DB community.
                             Sessions will be a combination of Microsoft and community delivered. Come and learn more about Azure Cosmos DB. See what others in the community are building.
                         </p>
+                        <p>
+                            We will run three live streams over a 24 hour period with live content and hosted by us on the Cosmos DB team! Here are the times for our streams.
+                        </p>
+                    </span>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-2">
+                    <span>
+                        <b><u>Seattle</u></b>
+                    </span>
+                </div>
+                <div class="col-sm-2">
+                    <span>
+                        <b><u>London</u></b>
+                    </span>
+                </div>
+                <div class="col-sm-2">
+                    <span>
+                        <b><u>Mumbai</u></b>
+                    </span>
+                </div>
+                <div class="col-sm-2">
+                    <span>
+                        <b><u>Sydney</u></b>
+                    </span>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-2">
+                    <span>
+                        (UTC-7:00)
+                    </span>
+                </div>
+                <div class="col-sm-2">
+                    <span>
+                        (UTC+0:00)
+                    </span>
+                </div>
+                <div class="col-sm-2">
+                    <span>
+                        (UTC+5:30)
+                    </span>
+                </div>
+                <div class="col-sm-2">
+                    <span>
+                        (UTC+10:00)
+                    </span>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-2">
+                    <span>
+                        4/20 9:00AM-12:00PM
+                    </span>
+                </div>
+                <div class="col-sm-2">
+                    <span>
+                        20-4 17:00-20:00
+                    </span>
+                </div>
+                <div class="col-sm-2">
+                    <span>
+                        20-4 22:30-01:30
+                    </span>
+                </div>
+                <div class="col-sm-2">
+                    <span>
+                        21-4 03:00-06:00
+                    </span>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-2">
+                    <span>
+                        4/20 8:00PM-11:00PM
+                    </span>
+                </div>
+                <div class="col-sm-2">
+                    <span>
+                        21-4 04:00-07:00
+                    </span>
+                </div>
+                <div class="col-sm-2">
+                    <span>
+                        21-4 09:30-12:30
+                    </span>
+                </div>
+                <div class="col-sm-2">
+                    <span>
+                        21-4 14:00-17:00
+                    </span>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-2">
+                    <span>
+                        4/21 1:00AM-4:00AM
+                    </span>
+                </div>
+                <div class="col-sm-2">
+                    <span>
+                        21-4 09:00-12:00
+                    </span>
+                </div>
+                <div class="col-sm-2">
+                    <span>
+                        21-4 14:30-17:30
+                    </span>
+                </div>
+                <div class="col-sm-2">
+                    <span>
+                        21-4 19:00-22:00
                     </span>
                 </div>
                 <div class="col-sm-2"></div>
@@ -64,7 +186,7 @@
                 <div class="col-sm-8">
                     <span>
                         <br /><br />
-                        <p>The CfP for Azure Cosmos DB Conf is open now until March 12, 2021 11:59 UTC. To learn more and to submit a session visit <a href="https://sessionize.com/azure-cosmos-db-conf" target="_blank">Azure Cosmos DB Conf CfP on Sessionize.</a> guide.</p>
+                        <p>The CfP for Azure Cosmos DB Conf is open now until March 12, 2021 11:59 UTC. To learn more and to submit a session visit <a href="https://sessionize.com/azure-cosmos-db-conf" target="_blank">Azure Cosmos DB Conf CfP on Sessionize</a> guide.</p>
                         <p><a href="https://sessionize.com/azure-cosmos-db-conf" target="_blank" class="btn btn-default">Submit a session!</a></p>
                     </span>
                 </div>
@@ -82,52 +204,10 @@
             </div>
         </main>
     </div>
-
 </div>
 
 
-<!--<div class="@swimLaneHelper.GetSwimLaneCssClass(includeDefaultMargins: false)">
-    <div class="container-fluid">
-        <div class="row vertical-align-sm">
-            <div class="@swimLaneHelper.GetIllustrationCssClass()">-->
-@*<img src="~/images/shared/cosmosdb_lighttheme.png" role="presentation" alt="" class="img-responsive img-responsive-center" asp-append-version="true" />*@
-<!--<img src="~/images/about/cosmos-logo.svg" role="presentation" alt="" class="img-responsive img-responsive-center img-responsive-swimlane" asp-append-version="true" />
-            </div>
-
-            <div class="@swimLaneHelper.GetContentCssClass()">
-                <h2>Azure Cosmos DB Conf</h2>
-                <p>
-                    Join us on April 20, 2021 for the very first Azure Cosmos DB Conf. Azure Cosmos DB Conf is a free online virtual developer event co-organized by Microsoft and the Cosmos DB community.
-                    Sessions will be a combination of Microsoft and community delivered. Come and learn more about Azure Cosmos DB. See what others in the community are building.
-                </p>
-                <p></p>
-                <div title="Add to Calendar" class="addeventatc btn btn-default">
-                    Add to Calendar
-                    <span class="start">04/20/2021 09:00 AM</span>
-                    <span class="end">04/21/2021 04:00 AM</span>
-                    <span class="timezone">America/Los_Angeles</span>
-                    <span class="title">Azure Cosmsos DB Conf</span>
-                    <span class="description">Join us for the very first Azure Cosmos DB Conf, a free, virtual developer event co-organized by Microsoft and the Cosmos DB community. Visit <a href="https://gotcosmos.com/conf" target="_blank" class="btn btn-default">Azure Cosmos DB Conf to watch!</a></span>
-                    <span class="location">https://gotcosmos.com/conf</span>
-                    <span class="alarm_reminder">720</span>
-                </div>
-                <p></p>
-                <p>The CfP for Azure Cosmos DB Conf is open now until March 12, 2021 11:59 UTC. To learn more and to submit a session visit <a href="https://sessionize.com/azure-cosmos-db-conf" target="_blank">Azure Cosmos DB Conf CfP on Sessionize.</a> guide.</p>
-                <p><a href="https://sessionize.com/azure-cosmos-db-conf" target="_blank" class="btn btn-default">Submit a session!</a></p>
-
-                <p><a href="~/conf/agenda" target="_self" class="btn btn-default">Agenda</a></p>
-                <p><a href="~/conf/speakers" target="_self" class="btn btn-default">Speakers</a></p>
-
-                <p>Be sure to keep an eye on upcoming announcements. Follow us at <a href="https://twitter.com/azurecosmosdb" target="_blank">@@AzureCosmosDB</a> and our hash tag <a href="https://twitter.com/search?q=%23CosmosDBConf" target="_blank">#CosmosDBConf</a></p>
-            </div>
-
-        </div>
-    </div>
-</div>-->
-
-
-@{ await Html.RenderPartialAsync("_CountDown"); }
-
+@*@{ await Html.RenderPartialAsync("_CountDown"); }*@
 
 
 @section scripts {
@@ -142,8 +222,7 @@
             weeks: "weeks",
             days: "days",
             hours: "hours",
-            minutes: "minutes",
-            seconds: "seconds"
+            minutes: "minutes"
         };
 
         // year/month/day
@@ -153,8 +232,7 @@
                 '<div><b>%w</b> <span>' + description.weeks + '&nbsp;</span>' +
                 '<b>%d</b> <span>' + description.days + '&nbsp;</span>' +
                 '<b>%H</b> <span>' + description.hours + '&nbsp;</span>' +
-                '<b>%M</b> <span>' + description.minutes + '&nbsp;</span>' +
-                '<b>%S</b> <span>' + description.seconds + '</span></div>'
+                '<b>%M</b> <span>' + description.minutes + '&nbsp;</span>'
             ));
         });
     </script>
