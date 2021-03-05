@@ -24,5 +24,11 @@ namespace cosmosweb.Controllers
         {
             return View("Speakers");
         }
+
+        [Route("conf/countdown")]
+        public IActionResult Countdown()
+        {
+            return View("CountDown");
+        }
     }
 }

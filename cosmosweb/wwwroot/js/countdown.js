@@ -13,7 +13,7 @@ var timer = setInterval(function () {
         let secs = Math.floor((t % (1000 * 60)) / 1000);
 
         document.getElementById("timer-days").innerHTML = days +
-            "<span class='label'>DAY(S)</span>";
+            "<span class='label' >DAY(S)</span>";
 
         document.getElementById("timer-hours").innerHTML = ("0" + hours).slice(-2) +
             "<span class='label'>HR(S)</span>";
