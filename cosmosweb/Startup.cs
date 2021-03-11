@@ -41,6 +41,7 @@ namespace cosmosweb
             services.AddSingleton<CookieConsentService>();
             services.AddSingleton<UHFService>();
             services.AddSingleton<SitemapService>();
+            services.AddSingleton<IEpisodeDatabase>(InitializeEpisodeDatabaseInstance());
 
             services.Configure<CookiePolicyOptions>(options =>
             {
@@ -65,7 +66,6 @@ namespace cosmosweb
                     .Build();
                 //options.Filters.Add(new AuthorizeFilter(policy));
             });
-            //.SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -96,13 +96,13 @@ namespace cosmosweb
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+        }
 
-            //app.UseMvc(routes =>
-            //{
-            //    routes.MapRoute(
-            //        name: "default",
-            //        template: "{controller=Home}/{action=Index}/{id?}");
-            //});
+        public static EpisodeDatabase InitializeEpisodeDatabaseInstance()
+        {
+            EpisodeDatabase episodeDatabase = new EpisodeDatabase();
+
+            return episodeDatabase;
         }
     }
 }
