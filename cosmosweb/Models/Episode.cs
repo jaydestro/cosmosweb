@@ -18,7 +18,10 @@ namespace cosmosweb.Models
         
         [JsonProperty(PropertyName = "description")]
         public string Description { get; set; }
-        
+
+        [JsonProperty(PropertyName = "youTubeVideoId")]
+        public string YouTubeVideoId { get; set; }
+
         [JsonProperty(PropertyName = "embedUri")]
         public string EmbedUri { get; set; }
         

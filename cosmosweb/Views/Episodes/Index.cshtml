@@ -26,10 +26,7 @@
                 @Html.DisplayNameFor(model => model.Description)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.EmbedUri)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.WatchUri)
+                @Html.DisplayNameFor(model => model.YouTubeVideoId)
             </th>
             <th></th>
         </tr>
@@ -48,10 +45,7 @@
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.EmbedUri)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.WatchUri)
+                @Html.DisplayFor(modelItem => item.YouTubeVideoId)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

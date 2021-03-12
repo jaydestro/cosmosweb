@@ -16,31 +16,6 @@ namespace cosmosweb.Controllers
             _episodeDatabase = episodeDatabase;
         }
 
-        [ActionName("Listings")]
-        public async Task<IActionResult> Listings()
-        {
-            string streamDate = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ");
-
-            return View(await _episodeDatabase.QueryEpisodesAsync($"SELECT * FROM c WHERE c.streamDate >= '{streamDate}' ORDER BY c.streamDate"));
-        }
-
-
-        [ActionName("_UpcomingEpisodes")]
-        public async Task<IActionResult> _UpcomingEpisodes()
-        {
-            string streamDate = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ");
-
-            return View(await _episodeDatabase.QueryEpisodesAsync($"SELECT * FROM c WHERE c.streamDate >= '{streamDate}' ORDER BY c.streamDate OFFSET 1 LIMIT 10"));
-        }
-
-        [ActionName("_PastEpisodes")]
-        public async Task<IActionResult> _PastEpisodes()
-        {
-            string streamDate = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ");
-
-            return View(await _episodeDatabase.QueryEpisodesAsync($"SELECT * FROM c WHERE c.streamDate <= '{streamDate}' ORDER BY c.streamDate DESC"));
-        }
-
         [ActionName("Index")]
         public async Task<IActionResult> Index()
         {
@@ -74,10 +49,13 @@ namespace cosmosweb.Controllers
 
         [HttpPost, ActionName("Create")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreateAsync([Bind("Title,StreamDate,Description,EmbedUri,WatchUri")] Episode episode)
+        public async Task<IActionResult> CreateAsync([Bind("Title,StreamDate,Description,YouTubeVideoId")] Episode episode)
         {
             if (ModelState.IsValid)
             {
+                episode.EmbedUri = $"https://www.youtube.com/embed/{episode.YouTubeVideoId}";
+                episode.WatchUri = $"https://youtu.be/{episode.YouTubeVideoId}";
+
                 await _episodeDatabase.CreateEpisodeAsync(episode);
 
                 return RedirectToAction(nameof(Index));
@@ -106,7 +84,7 @@ namespace cosmosweb.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost, ActionName("Edit")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("Id,Title,StreamDate,Description,EmbedUri,WatchUri")] Episode episode)
+        public async Task<IActionResult> Edit(string id, [Bind("Id,Title,StreamDate,Description,YouTubeVideoId")] Episode episode)
         {
             if (id != episode.Id)
             {
@@ -115,6 +93,9 @@ namespace cosmosweb.Controllers
 
             if (ModelState.IsValid)
             {
+                episode.EmbedUri = $"https://www.youtube.com/embed/{episode.YouTubeVideoId}";
+                episode.WatchUri = $"https://youtu.be/{episode.YouTubeVideoId}";
+
                 await _episodeDatabase.UpdateEpisodeAsync(episode);
                 
                 return RedirectToAction(nameof(Index));

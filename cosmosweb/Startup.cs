@@ -36,12 +36,11 @@ namespace cosmosweb
                 options.LowercaseUrls = true;
             });
 
-            //Moth ball Link Manager until or if we need it.
             //services.AddSingleton<LinkManager>();
             services.AddSingleton<CookieConsentService>();
             services.AddSingleton<UHFService>();
             services.AddSingleton<SitemapService>();
-            services.AddSingleton<IEpisodeDatabase>(InitializeEpisodeDatabaseInstance());
+            services.AddSingleton<IEpisodeDatabase>(InitializeEpisodeDatabaseInstance(Configuration));
 
             services.Configure<CookiePolicyOptions>(options =>
             {
@@ -98,9 +97,9 @@ namespace cosmosweb
             });
         }
 
-        public static EpisodeDatabase InitializeEpisodeDatabaseInstance()
+        public static EpisodeDatabase InitializeEpisodeDatabaseInstance(IConfiguration configuration)
         {
-            EpisodeDatabase episodeDatabase = new EpisodeDatabase();
+            EpisodeDatabase episodeDatabase = new EpisodeDatabase(configuration);
 
             return episodeDatabase;
         }

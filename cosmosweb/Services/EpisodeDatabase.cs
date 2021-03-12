@@ -5,11 +5,13 @@ using System.Threading.Tasks;
 using cosmosweb.Models;
 using System.Collections.Generic;
 using System;
+using System.Configuration;
 
 namespace cosmosweb.Services
 {
     public class EpisodeDatabase: IEpisodeDatabase
     {
+        private readonly IConfiguration _config;
         private readonly string databaseId = "cosmosweb";
         private readonly string containerId = "episodes";
         
@@ -19,15 +21,13 @@ namespace cosmosweb.Services
         private readonly string _pkValue = "LiveTv";
         private readonly PartitionKey _pk;
 
-        public EpisodeDatabase()
+        public EpisodeDatabase(IConfiguration config)
         {
+            _config = config;
+
             _pk = new PartitionKey(_pkValue);
 
-            IConfigurationRoot config = new ConfigurationBuilder()
-            .AddJsonFile("appsettings.json")
-            .Build();
-
-            connectionString = config["CosmosWebDb"];
+            connectionString = _config["EpisodesDB"];
 
             client = new CosmosClient(connectionString);
 
@@ -42,12 +42,6 @@ namespace cosmosweb.Services
             episode.Show = _pkValue;
 
             DateTime utcStreamDate = DateTime.Parse(episode.StreamDate);
-
-            //TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time");
-            //TimeZoneInfo.Local
-            
-            //TimeZoneInfo.ConvertTimeFromUtc(DateTime.Parse(episode.StreamDate), TimeZoneInfo.Local).ToString("yyyy-MM-ddTHH:mm:ssZ");
-            //DateTime.Parse(episode.StreamDate).ToLocalTime();
 
             episode.StreamDate = TimeZoneInfo.ConvertTimeToUtc(utcStreamDate, TimeZoneInfo.Local).ToString("yyyy-MM-ddTHH:mm:ssZ");
 
@@ -94,6 +88,8 @@ namespace cosmosweb.Services
 
         public async Task UpdateEpisodeAsync(Episode episode)
         {
+            episode.Show = _pkValue;
+
             await _container.ReplaceItemAsync<Episode>(episode, episode.Id, _pk);
         }
     }
