@@ -44,14 +44,15 @@
             </div>
             <div class="col-sm-1"></div>
         </div>
+        <div class="@swimLaneHelper.GetSwimLaneCssClass(includeDefaultPadding: false)">
+            @{ await Html.RenderPartialAsync("UpcomingEpisodes", upcomingEpisodes); }
+        </div>
+        <div class="@swimLaneHelper.GetSwimLaneCssClass(includeDefaultPadding: false)">
+            @{ await Html.RenderPartialAsync("PastEpisodes", pastEpisodes); }
+        </div>
     </div>
 </div>
-<div class="@swimLaneHelper.GetSwimLaneCssClass(includeDefaultPadding: false)">
-    @{ await Html.RenderPartialAsync("UpcomingEpisodes", upcomingEpisodes); }
-</div>
-<div class="@swimLaneHelper.GetSwimLaneCssClass(includeDefaultPadding: false)">
-    @{ await Html.RenderPartialAsync("PastEpisodes", pastEpisodes); }
-</div>
+
 
 @section scripts{
     <script>
