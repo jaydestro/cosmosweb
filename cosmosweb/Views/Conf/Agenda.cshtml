@@ -1,5 +1,5 @@
 ﻿@model cosmosweb.Models.ConferenceSchedule
-@{ ViewData["Title"] = "Azure Cosmos DB Developer Community";
+@{ ViewData["Title"] = "Azure Cosmos DB Conf Agenda";
     ViewData["Description"] = "Azure Cosmos DB Conf is a free online event.";
 
     var swimLaneHelper = new cosmosweb.Helpers.SwimLaneHelper(); }
@@ -25,6 +25,15 @@
         @{ await Html.RenderPartialAsync("OnDemand", Model.OnDemandSessions); }
     </div>
 </div>
+@section scripts{
+    <script>
+        $("time").each(function (elem) {
+            var utctimeval = $(this).html();
+            var date = new Date(utctimeval);
+            $(this).html(date.toLocaleString());
+        })
+    </script>
 
+}
 
 @{ await Html.RenderPartialAsync("_TryCosmos"); }

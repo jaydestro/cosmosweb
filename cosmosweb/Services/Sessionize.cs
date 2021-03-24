@@ -68,8 +68,6 @@ namespace cosmosweb.Services
 
             return schedule;
 
-
-
         }
 
 

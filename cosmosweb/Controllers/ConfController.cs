@@ -29,7 +29,10 @@ namespace cosmosweb.Controllers
         [Route("conf/agenda")]
         public async Task<IActionResult> Agenda()
         {
-            return View("Agenda");
+            if (ConferenceSchedule == null)
+                await LoadSessions();
+
+            return View("Agenda", ConferenceSchedule);
         }
 
         [Route("conf/speakers")]
