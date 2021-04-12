@@ -4,6 +4,7 @@ using cosmosweb.Services;
 using System.Threading.Tasks;
 using cosmosweb.Models;
 using System.Collections.Generic;
+using System;
 
 namespace cosmosweb.Controllers
 {
@@ -35,24 +36,28 @@ namespace cosmosweb.Controllers
             return View("Agenda", ConferenceSchedule);
         }
 
-        [Route("conf/speakers")]
-        public async Task<IActionResult> Speakers()
-        {
-            return View("Speakers");
-        }
-
-        [Route("conf/countdown")]
-        public async Task<IActionResult> Countdown()
-        {
-            return View("CountDown");
-        }
-        [Route("conf/agenda2")]
-        public async Task<IActionResult> Agenda2()
+        [Route("conf/livestream")]
+        public async Task<IActionResult> LiveStream()
         {
             if (ConferenceSchedule == null)
                 await LoadSessions();
 
-            return View("Agenda2", ConferenceSchedule);
+            return View("LiveStream", ConferenceSchedule.LiveSessions);
+        }
+
+        [Route("conf/ondemand")]
+        public async Task<IActionResult> OnDemand()
+        {
+            if (ConferenceSchedule == null)
+                await LoadSessions();
+
+            return View("OnDemand", ConferenceSchedule.OnDemandSessions);
+        }
+
+        [Route("conf/speakers")]
+        public async Task<IActionResult> Speakers()
+        {
+            return View("Speakers");
         }
     }
 }
