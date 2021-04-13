@@ -63,9 +63,9 @@
             minutes: "minutes"
         };
 
+        var goLive = new Date('2021-04-20T16:00:00Z');
         // year/month/day
-        // target date is read from Configuration - by default, can be set in appsettings.json, command line, environment variable etc., due to the use of CreateDefaultBuilder in Program.cs (see https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-5.0#default-configuration)
-        $('#countdown').countdown('2021/4/20 09:00', function (event) {
+        $('#countdown').countdown(goLive, function (event) {
             $(this).html(event.strftime(
                 '<div><b>%w</b> <span>' + description.weeks + '&nbsp;</span>' +
                 '<b>%d</b> <span>' + description.days + '&nbsp;</span>' +
