@@ -39,12 +39,21 @@
             int goOffAir = DateTime.Compare(showEndDateTime, currentDateTime);
             string watchUrl = "";
 
+
+
             if (goLive < 0) //Current Date less than Go Live
                 watchUrl = "";
-            else if(goOffAir < 0)
-                watchUrl = "";
-            else
+            else if(goOffAir < 0) //post show
+                if (item.Watch == "")
+                    watchUrl = "";
+                else
+                    watchUrl = item.Watch;
+            else //conference still live
+                if (item.Watch == "")
                 watchUrl = "https://docs.microsoft.com/en-us/learn/tv/?WT.mc_id=cosmosdb-20533-mjbrown";
+            else
+                watchUrl = item.Watch;
+
 
 
             <div class="row">
