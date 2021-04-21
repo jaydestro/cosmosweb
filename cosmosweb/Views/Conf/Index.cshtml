@@ -37,11 +37,11 @@
             <div class="col-sm-2"></div>
         </div>
 
-        @{ if (showState == "preshow")
+        @{ @*if (showState == "preshow")
                 await Html.RenderPartialAsync("preshow");
             else if (showState == "onair")
                 await Html.RenderPartialAsync("onair");
-            else if (showState == "offair")
+            else if (showState == "offair")*@
                 await Html.RenderPartialAsync("offair");
         }
     </div>
