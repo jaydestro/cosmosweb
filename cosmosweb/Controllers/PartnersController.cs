@@ -24,7 +24,14 @@ namespace cosmosweb.Controllers
             return View("Index");
         }
 
-        [Route("partners/sessions")]
+
+        [Route("partners/partnertechconnect")]
+        public async Task<IActionResult> PartnerTechConnect()
+        {
+            return View("PartnerTechConnect");
+        }
+
+        [Route("partners/partnertechconnect/sessions")]
         public async Task<IActionResult> Sessions()
         {
             if (PartnerTechSchedule == null)
@@ -32,12 +39,24 @@ namespace cosmosweb.Controllers
             return View("Sessions", PartnerTechSchedule.partnerSessions);
         }
 
-        [Route("partners/qna")]
+        [Route("partners/partnertechconnect/qna")]
         public async Task<IActionResult> QnA()
         {
             if (PartnerTechSchedule == null)
                 LoadSessions();
             return View("QnA", PartnerTechSchedule.qnaSessions);
+        }
+
+        [Route("partners/tools")]
+        public async Task<IActionResult> Tools()
+        {
+            return View("Tools");
+        }
+
+        [Route("partners/updates")]
+        public async Task<IActionResult> Updates()
+        {
+            return View("Updates");
         }
     }
 }
