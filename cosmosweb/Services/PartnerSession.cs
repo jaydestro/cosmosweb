@@ -14,7 +14,7 @@ namespace cosmosweb.Services
             PartnerTechSession pt1 = new PartnerTechSession() { Date = new DateTime(2021, 11, 02, 10, 00, 00, 00, DateTimeKind.Utc), Title = "Cosmos DB - Security" };
             PartnerTechSession pt2 = new PartnerTechSession() { Date = new DateTime(2021, 12, 07, 10, 00, 00, 00, DateTimeKind.Utc), Title = "Cosmos DB - Partitioning & Scaling" };
             PartnerTechSession pt3 = new PartnerTechSession() { Date = new DateTime(2022, 01, 04, 10, 00, 00, 00, DateTimeKind.Utc), Title = "Cosmos DB - Migration to SQL and MongoDB APIs" };
-            PartnerTechSession pt4 = new PartnerTechSession() { Date = new DateTime(2022, 02, 01, 10, 00, 00, 00, DateTimeKind.Utc), Title = "Cosmos DB - Development with Emulator" };
+            PartnerTechSession pt4 = new PartnerTechSession() { Date = new DateTime(2022, 02, 01, 10, 00, 00, 00, DateTimeKind.Utc), Title = "Cosmos DB - Migrating to Cassandra Managed Instance and API" };
             PartnerTechSession pt5 = new PartnerTechSession() { Date = new DateTime(2022, 03, 01, 10, 00, 00, 00, DateTimeKind.Utc), Title = "Cosmos DB - Querying with SQL API" };
             PartnerTechSession pt6 = new PartnerTechSession() { Date = new DateTime(2022, 05, 05, 10, 00, 00, 00, DateTimeKind.Utc), Title = "Cosmos DB - Request Units and throughput estimation" };
             List<PartnerTechSession> _sessions = new List<PartnerTechSession>();
