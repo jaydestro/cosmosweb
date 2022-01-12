@@ -1,4 +1,6 @@
-﻿$(function () { 
+﻿//no longer used
+
+$(function () {
 
     // Animation only happens on Bootstrap md/lg viewports
     if ($(window).width() < 992)

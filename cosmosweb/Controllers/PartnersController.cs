@@ -19,20 +19,20 @@ namespace cosmosweb.Controllers
         }
 
         [Route("partners")]
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
             return View("Index");
         }
 
 
         [Route("partners/partnertechconnect")]
-        public async Task<IActionResult> PartnerTechConnect()
+        public IActionResult PartnerTechConnect()
         {
             return View("PartnerTechConnect");
         }
 
         [Route("partners/partnertechconnect/sessions")]
-        public async Task<IActionResult> Sessions()
+        public IActionResult Sessions()
         {
             if (PartnerTechSchedule == null)
                 LoadSessions();
@@ -40,7 +40,7 @@ namespace cosmosweb.Controllers
         }
 
         [Route("partners/partnertechconnect/qna")]
-        public async Task<IActionResult> QnA()
+        public IActionResult QnA()
         {
             if (PartnerTechSchedule == null)
                 LoadSessions();
@@ -48,13 +48,13 @@ namespace cosmosweb.Controllers
         }
 
         [Route("partners/tools")]
-        public async Task<IActionResult> Tools()
+        public IActionResult Tools()
         {
             return View("Tools");
         }
 
         [Route("partners/updates")]
-        public async Task<IActionResult> Updates()
+        public IActionResult Updates()
         {
             return View("Updates");
         }

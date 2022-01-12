@@ -1,25 +1,47 @@
 ﻿@{
-    ViewData["Title"] = "Azure Cosmos DB | Multi-model. Globally distributed. Massively scalable.";
-    ViewData["Description"] = "Azure Cosmos DB is Microsoft's globally distributed, massively scalable, multi-model database service.";
+    ViewData["Title"] = "Azure Cosmos DB | Build or modernize scalable, high-performance apps.";
+    ViewData["Description"] = "Azure Cosmos DB is a fully managed NoSQL database service for modern app development.";
     ViewData["BodyCssClass"] = "home";
 
     var swimLaneHelper = new cosmosweb.Helpers.SwimLaneHelper();
 }
 
-@section scripts {
+@*@section scripts {
     <script src="~/bundles/js/home.js" asp-append-version="true" environmental="true"></script>
-}
+}*@
 
 @section header  {
-    <h1>Got Cosmos?</h1>
-    <p class="lead">Globally distributed. Massively scalable. Multi-model.<br />A fully managed database service for building <span class="tagline">cloud scale</span> apps.</p>
+    <h1>Azure Cosmos DB</h1>
+    <p class="lead">Fast NoSQL database with open API's for any scale</p>
     <p>
-        <a class="btn btn-white btn-lg btn-scale" href="~/learn/" role="button">Get Started</a>
-        <a class="btn btn-purple btn-lg btn-scale btn-normal-weight" href="https://azure.microsoft.com/try/cosmosdb/" target="_blank" role="button">Try for Free</a>
+        <a class="btn btn-white btn-lg btn-scale" href="https://azure.microsoft.com/try/cosmosdb/" target="_blank" role="button">Try for Free</a>
     </p>
 }
 
-<div class="@swimLaneHelper.GetSwimLaneCssClass(includeDefaultMargins:false)">
+<div class="@swimLaneHelper.GetSwimLaneCssClass()">
+    <div class="container">
+        <div class="text-left">
+            <h2>What is Azure Cosmos DB?</h2>
+            <p class="mb-40">
+                Azure Cosmos DB is Azure's highly scalable, distributed NoSQL database. Build new with the Core (SQL) API to enjoy all Azure Cosmos DB's features 
+                and SLA's, or leverage your existing Cassandra, MongoDB or Gremlin skillset by using on our our capatibility API's.
+            </p>
+        </div>
+        @{ await Html.RenderPartialAsync("_MultiModel"); }
+    </div>
+</div>
+
+<div class="@swimLaneHelper.GetSwimLaneCssClass()">
+    <div class="container">
+        <h2>Why choose Azure Cosmos DB</h2>
+        <p>
+            Find out why customers all over the world, in many different industries, rely on Azure Cosmos DB.
+        </p>
+        <p><a class="btn btn-white btn-lg btn-scale" role="button" href="~/about/customers">Meet customers</a></p>
+    </div>
+</div>
+
+@*<div class="@swimLaneHelper.GetSwimLaneCssClass(includeDefaultMargins:false)">
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-sm-6">
@@ -54,9 +76,9 @@
             </div>
         </div>
     </div>
-</div>
+</div>*@
 
-<div class="@swimLaneHelper.GetSwimLaneCssClass()">
+@*<div class="@swimLaneHelper.GetSwimLaneCssClass()">
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-sm-6">
@@ -91,7 +113,7 @@
             </div>
         </div>
     </div>
-</div>
+</div>*@
 
 <div class="@swimLaneHelper.GetSwimLaneCssClass(includeDefaultMargins:false) home-customers pt-40 pb-40">
     <div id="cusotmers" class="container text-center">

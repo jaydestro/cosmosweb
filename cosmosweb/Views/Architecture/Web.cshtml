@@ -1,7 +1,6 @@
-﻿
-@{
-    ViewData["Title"] = "Global Web Architecture Guidance";
-    ViewData["Description"] = "Learn how to architect globally web applications with Azure Cosmos DB.";
+﻿@{
+    ViewData["Title"] = "Web Architecture Guidance";
+    ViewData["Description"] = "Learn how to architect highly available and scalable web applications with Azure Cosmos DB.";
     var swimLaneHelper = new cosmosweb.Helpers.SwimLaneHelper();
 }
 
@@ -13,28 +12,12 @@
     <div class="container">
         <div class="row vertical-align-sm">
             <div class="@swimLaneHelper.GetIllustrationCssClass()">
-                <img src="~/images/architecture/web.png" alt="" role="presentation" class="img-responsive img-responsive-center img-responsive-swimlane" asp-append-version="true" />
-            </div>
-            <div class="@swimLaneHelper.GetContentCssClass()">
-                <h2>Globally distributed applications</h2>
-                <p>Azure Cosmos DB is a globally distributed database. Data written to Azure Cosmos DB can be replicated to any regions you select in milliseconds globally. This provides
-                   low-latency and high-availability to data to your users around the world.
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="@swimLaneHelper.GetSwimLaneCssClass()">
-    <div class="container">
-        <div class="row vertical-align-sm">
-            <div class="@swimLaneHelper.GetIllustrationCssClass()">
                 <img src="https://docs.microsoft.com/azure/architecture/reference-architectures/app-service-web-app/images/multi-region-web-app-diagram.png" alt="" role="presentation" class="img-responsive img-responsive-center img-responsive-swimlane" asp-append-version="true" />
             </div>
             <div class="@swimLaneHelper.GetContentCssClass()">
                 <h2>Multi-region web app</h2>
                 <p> This reference architecture shows how to run an Azure App Service application in multiple regions to achieve high availability.</p>
-                <p><a href="https://docs.microsoft.com/azure/architecture/reference-architectures/app-service-web-app/multi-region" target="_blank" class="btn btn-default">Read more on global web apps</a></p>
+                <p><a href="https://docs.microsoft.com/azure/architecture/reference-architectures/app-service-web-app/multi-region" target="_blank" class="btn btn-default">Read more on multi-region web apps</a></p>
             </div>
         </div>
     </div>
@@ -44,13 +27,13 @@
     <div class="container">
         <div class="row vertical-align-sm">
             <div class="@swimLaneHelper.GetIllustrationCssClass()">
-                <img src="~/images/illustrations/embed-github-snippet.svg" alt="" role="presentation" class="img-responsive img-responsive-center img-responsive-swimlane" asp-append-version="true" />
+                <img src="https://docs.microsoft.com/azure/architecture/example-scenario/digital-health/images/consumer_health_portal.png" alt="" role="presentation" class="img-responsive img-responsive-center img-responsive-swimlane" asp-append-version="true" />
             </div>
             <div class="@swimLaneHelper.GetContentCssClass()">
-                <h2>To-Do List sample web application</h2>
-                <p>See the concepts for creating a web app on Azure Cosmos DB.</p>
-                <p><a href="https://github.com/Azure-Samples/documentdb-dotnet-todo-app" target="_blank" class="btn btn-default">Explore Sample App on GitHub</a></p>
-
+                <h2>Consumer health portal on Azure</h2>
+                <p>This article describes a typical architecture of such a consumer health portal, that aligns with the pillars of the Azure Well Architected Framework. 
+                    You may choose to customize this architecture to meet your particular needs.</p>
+               <p><a href="https://docs.microsoft.com/azure/architecture/example-scenario/digital-health/health-portal" target="_blank" class="btn btn-default">Read more</a></p>
             </div>
         </div>
     </div>
@@ -60,14 +43,28 @@
     <div class="container">
         <div class="row vertical-align-sm">
             <div class="@swimLaneHelper.GetIllustrationCssClass()">
-                <img src="~/images/illustrations/toolbox.svg" alt="" role="presentation" class="img-responsive img-responsive-center img-responsive-swimlane" asp-append-version="true" />
+                <img src="https://docs.microsoft.com/azure/architecture/example-scenario/apps/media/scalable-apps-performance-modeling-site-reliability.png" alt="" role="presentation" class="img-responsive img-responsive-center img-responsive-swimlane" asp-append-version="true" />
             </div>
             <div class="@swimLaneHelper.GetContentCssClass()">
-                <h2>Additional Resources</h2>
-                <p>To learn more about building Web Applications with Azure Cosmos DB, check out these resources.</p>
-                <ul>
-                    <li><a href="https://docs.microsoft.com/azure/cosmos-db/sql-api-dotnet-application" target="_blank">ASP.NET MVC Tutorial with Azure Cosmos DB</a></li>
-                </ul>
+                <h2>Scalable cloud applications and SRE</h2>
+                <p>This article describes architecture and components for building scalable cloud applications and site reliability engineering (SRE), 
+                    a set of principles and practices for creating scalable and highly reliable software systems.</p>
+               <p><a href="https://docs.microsoft.com/azure/architecture/example-scenario/apps/scalable-apps-performance-modeling-site-reliability" target="_blank" class="btn btn-default">Read more</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="@swimLaneHelper.GetSwimLaneCssClass()">
+    <div class="container">
+        <div class="row vertical-align-sm">
+            <div class="@swimLaneHelper.GetIllustrationCssClass()">
+                <img src="https://docs.microsoft.com/samples/mspnp/vnet-integrated-serverless-microservices/vnet-integrated-serverless/media/projectarchitecture.png " alt="" role="presentation" class="img-responsive img-responsive-center img-responsive-swimlane" asp-append-version="true" />
+            </div>
+            <div class="@swimLaneHelper.GetContentCssClass()">
+                <h2>Virtual network integrated serverless microservices</h2>
+                <p>This reference architecture shows how to build microservices for a healthcare scenario that requires the use of a virtual network to keep requests and data secure.</p>
+               <p><a href="https://docs.microsoft.com/azure/architecture/reference-architectures/serverless/web-app" target="_blank" class="btn btn-default">Read more</a></p>
             </div>
         </div>
     </div>
