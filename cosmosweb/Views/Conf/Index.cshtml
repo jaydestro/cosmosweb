@@ -9,8 +9,8 @@
 
 @{ 
     DateTime currentDateTime = DateTime.Now; //UTC
-    DateTime showStartDateTime = new DateTime(2021, 04, 20, 15, 45, 00); //UTC
-    DateTime showEndDateTime = new DateTime(2021, 04, 21, 12, 00, 00);
+    DateTime showStartDateTime = new DateTime(2022, 04, 19, 15, 45, 00); //UTC
+    DateTime showEndDateTime = new DateTime(2021, 04, 20, 12, 00, 00); // Need to update with actual end time
     int goLive = DateTime.Compare(currentDateTime, showStartDateTime);
     int goOffAir = DateTime.Compare(showEndDateTime, currentDateTime);
     string showState = "preshow";
@@ -25,24 +25,20 @@
 
 <div class="@swimLaneHelper.GetSwimLaneCssClass(includeDefaultPadding: false)">
     <div class="container">
-        <div class="row">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-08">
-                <span>
-                    <a href="~/conf/livestream" target="_self" class="btn btn-default">Live</a>
-                    <a href="~/conf/ondemand" target="_self" class="btn btn-default">On-Demand</a>
-                    <a href="~/conf/speakers" target="_self" class="btn btn-default">Speakers</a>
-                </span>
-            </div>
-            <div class="col-sm-2"></div>
-        </div>
+        
 
         @{ if (showState == "preshow")
                 await Html.RenderPartialAsync("preshow");
             else if (showState == "onair")
+            {
+                await Html.RenderPartialAsync("_TopNav");
                 await Html.RenderPartialAsync("onair");
+            }
             else if (showState == "offair")
+            {
+                await Html.RenderPartialAsync("_TopNav");
                 await Html.RenderPartialAsync("offair");
+            }
         }
     </div>
     
@@ -63,7 +59,7 @@
             minutes: "minutes"
         };
 
-        var goLive = new Date('2021-04-20T16:00:00Z');
+        var goLive = new Date('2022-04-19T16:00:00Z');
         // year/month/day
         $('#countdown').countdown(goLive, function (event) {
             $(this).html(event.strftime(

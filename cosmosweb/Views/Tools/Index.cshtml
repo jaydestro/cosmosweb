@@ -1,7 +1,7 @@
 ﻿@{
     //@inject cosmosweb.Helpers.LinkManager LinkManager;
     ViewData["Title"] = "Azure Cosmos DB Tools";
-    ViewData["Description"] = "Explore and downloead tools for Azure Cosmos DB.";
+    ViewData["Description"] = "Explore and download tools for Azure Cosmos DB.";
 
     var swimLaneHelper = new cosmosweb.Helpers.SwimLaneHelper();
 }
@@ -12,6 +12,12 @@
 
 <div class="@swimLaneHelper.GetSwimLaneCssClass(includeDefaultPadding: false)">
     <div class="container">
+        <div class="text-left">
+            <h2>1st Party Tools</h2>
+            <p class="mb-40">
+                Tools and services available from Microsoft.
+            </p>
+        </div>
         <div class="row">
             <div class="col-md-4 col-sm-6">
                 <div class="min-height-165-sm">
@@ -19,7 +25,8 @@
                 </div>
                 <h2 class="h3 mt-20">Azure Cosmos DB Emulator</h2>
                 <p>
-                    Develop and test your application locally, without creating an Azure subscription or incurring any cost.
+                    Develop and test your application locally, without creating an Azure subscription or incurring any cost. Emulator available as a Windows download or Docker image. 
+                    Linux emulator (Preview) also available as a Docker image for SQL API only.
                 </p>
                 <p><a href="https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator" target="_blank">Learn about Azure Cosmos DB Emulator</a></p>
             </div>
@@ -37,54 +44,63 @@
                 <div class="min-height-165-sm">
                     <img src="~/images/tools/storage-explorer.svg" role="presentation" alt="" class="img-responsive img-responsive-center" asp-append-version="true" />
                 </div>
-                <h2 class="h3 mt-20">Azure Storage Explorer</h2>
+                <h2 class="h3 mt-20">Azure Data Factory</h2>
                 <p>
-                    Manage Azure Cosmos DB entities, manipulate data, update stored procedures and triggers along with other Azure entities like Storage blobs and queues.
+                    Integrate Azure Cosmos DB with Azure Data Factory. A fully managed, serverless data integration service that can connect to other databases and storage services across Azure.
                 </p>
-                <p><a href="https://docs.microsoft.com/azure/cosmos-db/storage-explorer" target="_blank">Get Azure Storage Explorer</a></p>
+                <p><a href="https://docs.microsoft.com/azure/data-factory/connector-azure-cosmos-db?tabs=data-factory" target="_blank">Explore Azure Cosmos DB Connector</a></p>
             </div>
         </div>
     </div>
 </div>
-<div class="@swimLaneHelper.GetSwimLaneCssClass()">
+
+<div class="@swimLaneHelper.GetSwimLaneCssClass(includeDefaultPadding: false)">
     <div class="container">
+        <div class="text-left">
+            <h2>3rd Party Tools</h2>
+            <p class="mb-40">
+                Tools and services available from our Partners.
+            </p>
+        </div>
         <div class="row">
             <div class="col-md-4 col-sm-6">
                 <div class="min-height-165-sm">
-                    <img src="~/images/tools/data-migration-guide.svg" role="presentation" alt="" class="img-responsive img-responsive-center" asp-append-version="true" />
+                    <img src="~/images/tools/alpaqa-logo.svg" role="presentation" alt="" class="img-responsive img-responsive-center" asp-append-version="true" />
                 </div>
-                <h2 class="h3 mt-20">Azure Database Migration Guide</h2>
-                <p>
-                    Step-by-step guidance for and tools for migrating Mongo DB and Cassandra databases and Azure Table storage to Cosmos DB.
-                    <ul>
-                        <li><a href="https://datamigration.microsoft.com/scenario/mongo-to-cosmos" target="_blank">Mongo DB migration</a></li>
-                        <li><a href="https://datamigration.microsoft.com/scenario/cassandra-to-cosmos" target="_blank">Cassandra migration</a></li>
-                    </ul>
+                <h2 class="h3 mt-20 text-center">Alpaqa Studio for Cosmos DB</h2>
+                <p class="min-height-80-sm">
+                    Your professional management studio for Microsoft Azure Cosmos DB.
                 </p>
-                <p><a href="https://datamigration.microsoft.com/" target="_blank">Learn about Database Migration Guide</a></p>
+                    <div class="row text-center">
+                <p><a class="btn btn-default btn-lg btn-scale" href="https://alpaqastudio.com/" target="_blank" role="button">Try Now</a></p>
+                </div>
             </div>
             <div class="col-md-4 col-sm-6">
                 <div class="min-height-165-sm">
-                    <img src="~/images/tools/migration.svg" role="presentation" alt="" class="img-responsive img-responsive-center" asp-append-version="true" />
+                    <img src="~/images/tools/cerebrata.svg" role="presentation" alt="" class="img-responsive img-responsive-center" asp-append-version="true" />
                 </div>
-                <h2 class="h3 mt-20">Data Migration Tool</h2>
-                <p>
-                    Import JSON files, CSV files, SQL, MongoDB, Azure Table storage, Amazon DynamoDB, and other SQL API containers into Azure Cosmos DB.
+                <h2 class="h3 mt-20 text-center">Cerebrata for Cosmos DB</h2>
+                <p class="min-height-80-sm">
+                    Cerebrata provides extensive features to manage your Cosmos DB accounts in multiple ways including Azure AD & Access Keys.
                 </p>
-                <p><a href="https://docs.microsoft.com/azure/cosmos-db/import-data" target="_blank">Learn about Data Migration Tool</a></p>
+                    <div class="row text-center">
+                <p><a class="btn btn-default btn-lg btn-scale" href="https://cerebrata.com/" target="_blank" role="button">Try Now</a></p>
+                    </div>
             </div>
-            <div class="col-md-4 col-sm-6">
-                <div class="min-height-165-sm">
-                    <img src="~/images/tools/bulk-executor.svg" role="presentation" alt="" class="img-responsive img-responsive-center" asp-append-version="true" />
+            <div class="col-md-4 col-sm-6 pb-40 pb-0-sm">
+                <div class="min-height-80-sm">
+                    <img src="/images/tools/neudesic.svg" role="presentation" alt="" class="img-responsive img-responsive-center" asp-append-version="true" />
                 </div>
-                <h2 class="h3 mt-20">Bulk Executor Library</h2>
-                <p>
-                    Perform bulk operations with significantly reduced client-side compute resources needed to saturate the throughput allocated to a container.
-                    Bulk Executor supports SQL API and also Gremlin (graph) import as well.
+                <h2 class="h3 mt-20 text-center">Neudesic’s KINISI Data Migration</h2>
+                <p class="min-height-80-sm">
+                    Neudesic’s KINISI Data Migration Accelerator-POC service offers accelerated feasibility and impact analysis for clients.
                 </p>
-                <p><a href="https://docs.microsoft.com/en-us/azure/cosmos-db/bulk-executor-overview" target="_blank">Learn about Bulk Executor Library</a></p>
+                    <div class="row text-center">
+                <p><a class="btn btn-default btn-lg btn-scale" href="https://www.neudesic.com/" target="_blank" role="button">Try Now</a></p>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
 @{ await Html.RenderPartialAsync("_TryCosmos"); }

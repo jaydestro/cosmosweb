@@ -7,17 +7,24 @@ namespace cosmosweb.Controllers
     [AllowAnonymous]
     public class LearnController : Controller
     {
-         public IActionResult Index()
+        public IActionResult Index()
         {
-            return View();
+            return View("sql");
         }
 
-        [Route ("workshops")]
-        [Route ("learn/workshops")]
-        public IActionResult Workshops()
+        [Route("learn/sql")]
+        public IActionResult Sql()
         {
-            return View("Workshops");
+            return View("sql");
         }
+
+        [Route("labs")]
+        [Route("learn/labs")]
+        public IActionResult Labs()
+        {
+            return View("labs");
+        }
+
 
         [Route("presentations")]
         [Route("decks")]
