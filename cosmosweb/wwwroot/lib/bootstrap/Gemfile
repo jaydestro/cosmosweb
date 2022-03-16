@@ -3,5 +3,5 @@ source 'https://rubygems.org'
 group :development, :test do
   gem 'jekyll', '>= 3.6.3'
   gem 'ffi', '>= 1.9.24'
-  gem 'jekyll-sitemap', '~> 0.11.0'
+  gem 'jekyll-sitemap', '~> 2.8.0'
 end
