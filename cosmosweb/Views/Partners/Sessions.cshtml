@@ -42,12 +42,20 @@
                             </div>
                             <div style="padding-left:4px;padding-right:4px;">
                                 <h4><b>@Html.DisplayFor(modelItem => item.Title)</b></h4>
-                                <p>@Html.DisplayFor(modelItem => item.Title)</p>
+                            </div>
+                            <div class="media">
+                                <div class="media-left">
+                                    <iframe width="280" height="157" src="@Html.DisplayFor(modelItem => item.EmbedUri)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <div class="media-body">
+                                    <h4><b><a href="@Html.DisplayFor(modelItem => item.WatchUri)" target="_blank">@Html.DisplayFor(modelItem => item.Title)</a></b></h4>
+                                    <p>@Html.DisplayFor(modelItem => item.Description)</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-2"></div>
+ 
             </div>
         }
     </div>

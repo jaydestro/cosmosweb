@@ -19,6 +19,15 @@ namespace cosmosweb.Models
         [JsonProperty(PropertyName = "date")]
         public DateTime Date { get; set; }
 
+        [JsonProperty(PropertyName = "description")]
+        public string Description { get; set; }
+
+        [JsonProperty(PropertyName = "embedUri")]
+        public string EmbedUri { get; set; }
+
+        [JsonProperty(PropertyName = "watchUri")]
+        public string WatchUri { get; set; }
+
     }
 
     public class QnASession
