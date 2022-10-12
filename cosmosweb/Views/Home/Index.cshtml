@@ -12,26 +12,28 @@
 
 @section header  {
     <h1>Azure Cosmos DB</h1>
-    <p class="lead">Fast NoSQL database with open API's for any scale</p>
+    <p class="lead">Fast distributed database with open API's for any scale</p>
     <p>
         <a class="btn btn-white btn-lg btn-scale" href="https://azure.microsoft.com/try/cosmosdb/" target="_blank" role="button">Try for Free</a>
     </p>
 }
 
-<div class="@swimLaneHelper.GetSwimLaneCssClass()">
+<!--<div class="@swimLaneHelper.GetSwimLaneCssClass()">-->
     <div class="container">
         <div class="text-left">
             <h2>What is Azure Cosmos DB?</h2>
             <p class="mb-40">
-                Azure Cosmos DB is Azure's highly scalable, distributed NoSQL database. Build new with the Core (SQL) API to enjoy all Azure Cosmos DB's features 
-                and SLA's, or leverage your existing Cassandra, MongoDB or Gremlin skillset by using on our compatibility API's.
+                Azure Cosmos DB is Microsoft's fully managed and serverless distributed database for applications of any size or scale, with support for NoSQL and relational workloads.
+                It offers turnkey global distribution across any number of Azure regions by transparently replicating your data wherever your users are. 
+                Customers can develop applications fast using their preferred open-source database engines, including PostgreSQL, MongoDB, and Cassandra. 
+                Azure Cosmos DB provides automatic scalability, enterprise-grade security, and cost-effective consumption-based pricing options.
             </p>
         </div>
         @{ await Html.RenderPartialAsync("_MultiModel"); }
     </div>
-</div>
+<!--</div>-->
 
-<div class="@swimLaneHelper.GetSwimLaneCssClass()">
+@*<div class="@swimLaneHelper.GetSwimLaneCssClass()">
     <div class="container">
         <h2>Why choose Azure Cosmos DB</h2>
         <p>
@@ -39,7 +41,7 @@
         </p>
         <p><a class="btn btn-white btn-lg btn-scale" role="button" href="~/about/customers">Meet customers</a></p>
     </div>
-</div>
+</div>*@
 
 @*<div class="@swimLaneHelper.GetSwimLaneCssClass(includeDefaultMargins:false)">
     <div class="container">

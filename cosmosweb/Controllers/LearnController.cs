@@ -9,13 +9,19 @@ namespace cosmosweb.Controllers
     {
         public IActionResult Index()
         {
-            return View("sql");
+            return View("nosql");
         }
 
         [Route("learn/sql")]
         public IActionResult Sql()
         {
             return View("sql");
+        }
+
+        [Route("learn/nosql")]
+        public IActionResult NoSql()
+        {
+            return View("nosql");
         }
 
         [Route("labs")]
