@@ -23,7 +23,7 @@
     <div class="container">
         
         @{
-            if(nextEpisode != null)
+            if(upcomingEpisodes != null)
             {
                 await Html.RenderPartialAsync("Featured", nextEpisode);
                 await Html.RenderPartialAsync("UpcomingEpisodes", upcomingEpisodes);

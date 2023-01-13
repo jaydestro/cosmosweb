@@ -8,10 +8,6 @@
     <ApplicationInsightsAnnotationResourceId>/subscriptions/220fc532-6091-423c-8ba0-66c2397d591b/resourcegroups/cosmosweb/providers/microsoft.insights/components/cosmosweb</ApplicationInsightsAnnotationResourceId>
     <UserSecretsId>d1d72385-17b9-463e-9f7f-0c94253ba605</UserSecretsId>
   </PropertyGroup>
-
-  <ItemGroup>
-		<FrameworkReference Include="Microsoft.AspNetCore.App" />
-  </ItemGroup>
 	
   <ItemGroup>
     <Content Remove="wwwroot\bundles\js\mecontrol-config.ts" />
