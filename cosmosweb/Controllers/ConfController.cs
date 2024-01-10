@@ -21,43 +21,43 @@ namespace cosmosweb.Controllers
             ConferenceSchedule = await sessionize.GetSessions();
         }
 
-        //[Route("conf")]
-        //public async Task<IActionResult> Index()
-        //{
-        //    return View("Index");
-        //}
+        [Route("conf")]
+        public async Task<IActionResult> Index()
+        {
+            return View("Index");
+        }
 
-        //[Route("conf/agenda")]
-        //public async Task<IActionResult> Agenda()
-        //{
-        //    if (ConferenceSchedule == null)
-        //        await LoadSessions();
+        [Route("conf/agenda")]
+        public async Task<IActionResult> Agenda()
+        {
+            if (ConferenceSchedule == null)
+                await LoadSessions();
 
-        //    return View("Agenda", ConferenceSchedule);
-        //}
+            return View("Agenda", ConferenceSchedule);
+        }
 
-        //[Route("conf/livestream")]
-        //public async Task<IActionResult> LiveStream()
-        //{
-        //    if (ConferenceSchedule == null)
-        //        await LoadSessions();
+        [Route("conf/livestream")]
+        public async Task<IActionResult> LiveStream()
+        {
+            if (ConferenceSchedule == null)
+                await LoadSessions();
 
-        //    return View("LiveStream", ConferenceSchedule.LiveSessions);
-        //}
+            return View("LiveStream", ConferenceSchedule.LiveSessions);
+        }
 
-        //[Route("conf/ondemand")]
-        //public async Task<IActionResult> OnDemand()
-        //{
-        //    if (ConferenceSchedule == null)
-        //        await LoadSessions();
+        [Route("conf/ondemand")]
+        public async Task<IActionResult> OnDemand()
+        {
+            if (ConferenceSchedule == null)
+                await LoadSessions();
 
-        //    return View("OnDemand", ConferenceSchedule.OnDemandSessions);
-        //}
+            return View("OnDemand", ConferenceSchedule.OnDemandSessions);
+        }
 
-        //[Route("conf/speakers")]
-        //public async Task<IActionResult> Speakers()
-        //{
-        //    return View("Speakers");
-        //}
+        [Route("conf/speakers")]
+        public async Task<IActionResult> Speakers()
+        {
+            return View("Speakers");
+        }
     }
 }
