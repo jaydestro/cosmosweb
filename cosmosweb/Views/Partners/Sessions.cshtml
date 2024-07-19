@@ -31,14 +31,14 @@
 
         @foreach (var item in Model)
         {
-            string utcTime = item.Date.ToString();
+            string utcTime = item.Date.ToString("dd-MMM-yyyy");
             <div class="row">
                 <div class="col-sm-2"></div>
                 <div class="col-sm-8">
                     <div class="media" style="border-style:solid;border-color:silver;border-width:thin;">
                         <div class="media-body">
                             <div style="background-color:#0078D4">
-                                <h4 style="color:#FFFFFF"><time>@utcTime</time></h4>
+                                <h4 style="color:#FFFFFF"><label>Date: @utcTime</label></h4>
                             </div>
                             <div style="padding-left:4px;padding-right:4px;">
                                 <h4><b>@Html.DisplayFor(modelItem => item.Title)</b></h4>
