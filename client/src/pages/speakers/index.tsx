@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import styles from '../index.module.css';
 import Link from '@docusaurus/Link';
 
-const FeatureList = [
+const SpeakerList = [
   {
     title: 'Kirill Gavrylyuk - Microsoft',
     name: 'Kirill',
@@ -45,7 +45,7 @@ export default function Speakers() {
           <div className="container mx-auto text-center">
             <h2 className={clsx('text-4xl font-bold text-blue-800 mb-8', styles.heading)}>Hear from the Azure Cosmos DB team, your favorite community members, and fresh faces.</h2>
             <div className="flex flex-wrap justify-center gap-6">
-              {FeatureList.map((props, idx) => (
+              {SpeakerList.map((props, idx) => (
                 <Feature key={idx} {...props} />
               ))}
             </div>
