@@ -39,7 +39,7 @@ body {
 .speakerGrid {
     display: flex;
     justify-content: center;
-    gap: 0.3rem;  /* Closer than before */
+    gap: 0.3rem;  /* Columns closer together */
     max-width: 1200px;
     width: 100%;
 }
@@ -57,7 +57,7 @@ body {
 .featureCard {
     width: 100%;
     max-width: 400px;
-    min-height: 410px;  /* ✅ Sets a fixed height for all cards */
+    min-height: 430px;  /* Uniform height for all cards */
     border-radius: 12px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -68,7 +68,7 @@ body {
     background: linear-gradient(135deg, #6FA3EF, #3B82F6);
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* ✅ Ensures uniform height */
+    justify-content: space-between; /* Prevents content shifting */
 }
 
 /* Dark Mode: Softer Gradient */
@@ -100,19 +100,19 @@ html[data-theme='dark'] .featureImg {
     border-color: #3399ff;
 }
 
-/* Speaker Text */
+/* Speaker Content */
 .featureContent {
     padding: 1rem;
     color: #FFFFFF;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* ✅ Prevents shifting */
-    flex-grow: 1; /* ✅ Ensures content stays evenly spaced */
+    justify-content: flex-start;
+    flex-grow: 1;
 }
 
-/* Speaker Name - Improved Readability */
+/* Speaker Name */
 .featureTitle {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
     font-size: 1.3rem;
     text-align: center;
     font-weight: 700;
@@ -120,32 +120,22 @@ html[data-theme='dark'] .featureImg {
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Dark Mode: Light Blue for Readability */
 html[data-theme='dark'] .featureTitle {
     color: #66b2ff;
     text-shadow: none;
 }
 
-/* Ensure Links Use the Correct Color */
-.featureLink {
-    text-decoration: none !important;
-    color: var(--ifm-link-color) !important;
-    font-weight: 600 !important;
-    transition: color 0.3s ease-in-out !important;
+/* Session Title */
+.featureSession {
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    color: var(--ifm-heading-color);
+    margin-bottom: 0.5rem;
 }
 
-.featureLink:hover {
-    color: var(--ifm-link-hover-color) !important;
-    text-decoration: underline !important;
-}
-
-/* Ensure Dark Mode Adjustments */
-html[data-theme='dark'] .featureLink {
-    color: var(--ifm-link-color-dark) !important;
-}
-
-html[data-theme='dark'] .featureLink:hover {
-    color: var(--ifm-link-hover-color-dark) !important;
+html[data-theme='dark'] .featureSession {
+    color: #66b2ff;
 }
 
 /* Speaker Bio */
@@ -164,7 +154,7 @@ html[data-theme='dark'] .featureLink:hover {
     gap: 6px;
     margin-top: auto;
     padding-top: 10px;
-    min-height: 32px; /* ✅ Keeps spacing even if no icons */
+    min-height: 32px; /* Keeps spacing even if no icons */
 }
 
 /* Icon Size & Hover Effect */
@@ -210,7 +200,7 @@ html[data-theme='dark'] .socialIcon.linkedin-logo {
 
     .featureCard {
         max-width: 100%;
-        min-height: unset; /* ✅ Removes fixed height on mobile */
+        min-height: unset;
     }
 
     .featureImg {
@@ -227,3 +217,4 @@ html[data-theme='dark'] .socialIcon.linkedin-logo {
         font-size: 3rem;
     }
 }
+
