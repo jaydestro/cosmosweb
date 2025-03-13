@@ -1,0 +1,191 @@
+/* Wrapper that holds both sections */
+.pageWrapper {
+  position: relative;
+  width: 100%;
+ 
+  background-position: center center;
+  background-size: cover; /* Makes sure the background image covers the entire screen */
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+ 
+
+/* Header section */
+.header {
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 400px;
+  display: block;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.headerText {
+  position: absolute;
+  left: 10%;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: right;
+  padding: 15px 20px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+ 
+  
+  /* Adaptive Background */
+  background: #f4f4f4(255, 255, 255, 0.8); /* Light mode default */
+  color: #060f1d; /* Black text for visibility */
+}
+
+[data-theme='dark'] .headerText {
+  background:#060f1d;
+  color: #fff; /* White text */
+}
+
+
+.logoWrapper {
+  margin-right: 15px;
+}
+
+.logo {
+  width: auto;
+}
+
+/* Styling for "Conf" part */
+.conf {
+  color: #4796e8;
+  font-weight: bold;
+  display: inline-block;
+  margin-left: 10px; /* Space between Azure CosmosDB and Conf */
+}
+
+/* Align text to the right */
+.textWrapper {
+  text-align: right;
+}
+
+.azureCosmos {
+  display: inline-block;
+}
+
+.date {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+  .headerText {
+    font-size: 1.5rem;
+    top: 25%;
+    left: 3%;
+    padding: 10px 15px;
+  }
+
+  .logo {
+    height: 30px;
+  }
+}
+
+/* Apply a background color based on the theme */
+html[data-theme='light'] .header {
+  background-color: #f4f4f4;
+}
+
+html[data-theme='dark'] .header {
+  background-color: #060f1d;
+}
+
+/* Section for content below the header */
+.section {
+  padding: 40px;
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Text content style */
+.textContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.textContent h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #4796e8;
+}
+
+.textContent p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.textContent ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.textContent li {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  background-color: rgba(0, 0, 120, 0.1);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.textContent li strong {
+  color: #4796e8;
+}
+
+.textContent li:hover {
+  background-color: rgba(0, 120, 212, 0.3);
+}
+
+/* Divider */
+.divider {
+  height: 2px;
+  background-color: #4796e8;
+  margin: 40px 0;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* FAQ Section */
+.faqItem {
+  margin-bottom: 20px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.faqQuestion {
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: rgba(0, 120, 212, 0.1);
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.faqQuestion:hover {
+  background-color: rgba(0, 120, 212, 0.2);
+}
+
+.faqAnswer {
+  font-size: 1.1rem;
+  background-color: rgba(0, 0, 120, 0.1);
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
