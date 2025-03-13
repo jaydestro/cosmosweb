@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from '@theme/Layout';
 import ListRowCard from '@site/src/components/ListRowCard';
 
-const ItemList = [
+const AgenndaList = [
     {
       title: 'Azure Cosmos DB Conf 2025 Keynote',
       img: require('@site/static/img/speakers/Kirill_Gavrylyuk.jpg'),
@@ -133,7 +133,7 @@ export default function Sprints() {
       <main>
         <div className="container">
           <br />
-          <ListRowCard itemList={ItemList} />
+          <ListRowCard itemList={AgenndaList} />
         </div>
       </main>
     </Layout>
