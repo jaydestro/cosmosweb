@@ -1,41 +1,59 @@
-.agendaMain {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.container {
-    max-width: 1200px;
-    width: 100%;
-    padding: 2rem;
-}
-
 .agendaHeading {
+    text-align: center;
     font-size: 2.5rem;
     font-weight: bold;
-    text-align: center;
     margin-bottom: 2rem;
 }
 
-.agendaGrid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
+.agendaIntro {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.sectionHeading {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 2rem 0;
 }
 
 .sessionCard {
-    width: 350px;
+    text-align: center; /* Centers all text inside */
+    max-width: 800px; /* Keeps layout clean */
+    margin: 1.5rem auto; /* Centers the card itself */
+    padding: 2rem;
     background: var(--ifm-background-color);
-    padding: 1.5rem;
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.speakerImageContainer {
-    display: flex;
-    justify-content: center;
+.sessionTitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.sessionTime {
+    font-size: 1rem;
     margin-bottom: 1rem;
+}
+
+.sessionDescription {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.speakerContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centers images */
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.speakerProfile {
+    text-align: center;
+    width: 150px; /* Keeps images uniform */
 }
 
 .speakerImage {
@@ -46,30 +64,22 @@
     border: 3px solid var(--ifm-link-color);
 }
 
-.sessionTitle {
-    font-size: 1.2rem;
+.speakerName {
+    margin-top: 0.5rem;
     font-weight: bold;
-    text-align: center;
 }
 
-.sessionType {
-    text-align: center;
-    font-weight: 500;
+.youtubeLink {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.7rem 1.5rem;
+    background-color: var(--ifm-color-primary);
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-.sessionDescription {
-    font-size: 0.9rem;
-}
-
-.speakerLink {
-    display: block;
-    text-align: center;
-    font-weight: bold;
-    color: var(--ifm-link-color);
-}
-.comingSoon {
-    text-align: center;
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin-top: 3rem;
+.youtubeLink:hover {
+    background-color: var(--ifm-color-primary-dark);
 }

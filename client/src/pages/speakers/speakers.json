@@ -11,8 +11,9 @@
             "duration": "25",
             "time": "TBD",
             "ondemand_only": true,
-            "youtube_url": "https://youtube.com/placeholder"
-        }
+            "youtube_url": ""
+        },
+        "linkedin": "https://www.linkedin.com/in/aleksey-s-7b0918/"
     },
     {
         "title": "Alexander Spiridonov",
@@ -26,8 +27,9 @@
             "duration": "25",
             "time": "TBD",
             "ondemand_only": true,
-            "youtube_url": "https://youtube.com/placeholder"
-        }
+            "youtube_url": ""
+        },
+        "linkedin": "https://www.linkedin.com/in/alspiridonov/"
     },
     {
         "title": "Anurag Dutt",
@@ -41,8 +43,9 @@
             "duration": "5",
             "time": "TBD",
             "ondemand_only": true,
-            "youtube_url": "https://youtube.com/placeholder"
-        }
+            "youtube_url": ""
+        },
+        "linkedin": "https://www.linkedin.com/in/anuragdutt01/"
     },
     {
         "title": "Brian Benz",
@@ -56,7 +59,7 @@
             "duration": "25",
             "time": "TBD",
             "ondemand_only": true,
-            "youtube_url": "https://youtube.com/placeholder"
+            "youtube_url": ""
         },
         "x": "https://twitter.com/bbenz",
         "linkedin": "https://www.linkedin.com/in/brianbenz/"
@@ -73,7 +76,7 @@
             "duration": "25",
             "time": "TBD",
             "ondemand_only": true,
-            "youtube_url": "https://youtube.com/placeholder"
+            "youtube_url": ""
         },
         "linkedin": "https://www.linkedin.com/in/caryzchai/"
     },
@@ -89,7 +92,7 @@
             "duration": "25",
             "time": "TBD",
             "ondemand_only": true,
-            "youtube_url": "https://youtube.com/placeholder"
+            "youtube_url": ""
         },
         "linkedin": "https://www.linkedin.com/in/divakar-kumar/"
     },
@@ -105,7 +108,7 @@
             "duration": "25",
             "time": "TBD",
             "ondemand_only": true,
-            "youtube_url": "https://youtube.com/placeholder"
+            "youtube_url": ""
         },
         "x": "https://x.com/FaraahCodes",
         "linkedin": "https://www.linkedin.com/in/farah-m-abdou-1a8a31222"
@@ -122,7 +125,7 @@
             "duration": "25",
             "time": "TBD",
             "ondemand_only": true,
-            "youtube_url": "https://youtube.com/placeholder"
+            "youtube_url": ""
         },
         "x": "https://twitter.com/jamescodella",
         "linkedin": "https://www.linkedin.com/in/jamescodella/"
@@ -139,7 +142,7 @@
             "duration": "5",
             "time": "TBD",
             "ondemand_only": true,
-            "youtube_url": "https://youtube.com/placeholder"
+            "youtube_url": ""
         },
         "x": "https://twitter.com/justinecocchi"
     },
@@ -155,7 +158,7 @@
             "duration": "25",
             "time": "TBD",
             "ondemand_only": true,
-            "youtube_url": "https://youtube.com/placeholder"
+            "youtube_url": ""
         },
         "x": "https://x.com/_kevincomba",
         "linkedin": "https://www.linkedin.com/in/kevin-comba-gatimu/"
@@ -170,9 +173,9 @@
             "title": "Keynote",
             "abstract": "Hear the latest and greatest from the Azure Cosmos DB team, including new features, customer stories, and a look at the future of the service.",
             "duration": "25",
-            "time": "TBD",
-            "ondemand_only": true,
-            "youtube_url": "https://youtube.com/placeholder"
+            "time": "09:00 AM",
+            "ondemand_only": false,
+            "youtube_url": ""
         },
         "x": "https://x.com/kirillg_msft",
         "linkedin": "https://www.linkedin.com/in/kirillgavrylyuk/"
@@ -189,7 +192,7 @@
             "duration": "25",
             "time": "TBD",
             "ondemand_only": true,
-            "youtube_url": "https://youtube.com/placeholder"
+            "youtube_url": ""
         },
         "linkedin": "https://www.linkedin.com/in/manijaman"
     },
@@ -205,8 +208,10 @@
             "duration": "25",
             "time": "TBD",
             "ondemand_only": true,
-            "youtube_url": "https://youtube.com/placeholder"
-        }
+            "youtube_url": ""
+        },
+        "x": "https://x.com/nitya",
+        "linkedin": "https://www.linkedin.com/in/nityan/"
     },
     {
         "title": "Olena Borzenko",
@@ -220,8 +225,10 @@
             "duration": "25",
             "time": "TBD",
             "ondemand_only": true,
-            "youtube_url": "https://youtube.com/placeholder"
-        }
+            "youtube_url": ""
+        },
+        "x": "https://x.com/borzenko_lena",
+        "linkedin": "https://www.linkedin.com/in/olena-borzenko/"
     },
     {
         "title": "Simon Kofod",
@@ -235,7 +242,7 @@
             "duration": "25",
             "time": "TBD",
             "ondemand_only": true,
-            "youtube_url": "https://youtube.com/placeholder"
+            "youtube_url": ""
         },
         "linkedin": "https://www.linkedin.com/in/simon-kofod/"
     },
@@ -251,8 +258,9 @@
             "duration": "25",
             "time": "TBD",
             "ondemand_only": true,
-            "youtube_url": "https://youtube.com/placeholder"
-        }
+            "youtube_url": ""
+        },
+        "linkedin": "https://www.linkedin.com/in/sudhanshukhera/"
     },
     {
         "title": "Srinivas Reddy Mosali",
@@ -266,7 +274,7 @@
             "duration": "25",
             "time": "TBD",
             "ondemand_only": true,
-            "youtube_url": "https://youtube.com/placeholder"
+            "youtube_url": ""
         },
         "linkedin": "https://www.linkedin.com/in/srinivas-reddy-mosali-b9548b141/"
     },
@@ -282,8 +290,9 @@
             "duration": "25",
             "time": "TBD",
             "ondemand_only": true,
-            "youtube_url": "https://youtube.com/placeholder"
-        }
+            "youtube_url": ""
+        },
+        "linkedin": "https://www.linkedin.com/in/vinkamat"
     },
     {
         "title": "Iria Osara",
@@ -297,7 +306,7 @@
             "duration": "25",
             "time": "TBD",
             "ondemand_only": true,
-            "youtube_url": "https://youtube.com/placeholder"
+            "youtube_url": ""
         },
         "x": "https://www.twitter.com/bigdataprincess",
         "linkedin": "https://www.linkedin.com/in/iriaeno"
@@ -314,8 +323,9 @@
             "duration": "5",
             "time": "TBD",
             "ondemand_only": true,
-            "youtube_url": "https://youtube.com/placeholder"
-        }
+            "youtube_url": ""
+        },
+        "linkedin": "https://www.linkedin.com/in/patty-chow/"
     },
     {
         "title": "Marius Högger",
@@ -329,7 +339,9 @@
             "duration": "5",
             "time": "TBD",
             "ondemand_only": true,
-            "youtube_url": "https://youtube.com/placeholder"
-        }
+            "youtube_url": ""
+        },
+        "linkedin": "https://www.linkedin.com/in/marius-h%C3%B6gger-484b55153/"
     }
+    
 ]
