@@ -5,314 +5,61 @@ import styles from './speakers.module.css';
 import Link from '@docusaurus/Link';
 import { useColorMode } from '@docusaurus/theme-common';
 
-// Social Media Icon Paths
+import speakerData from './speakers.json';
+
 const X_LOGO_LIGHT = '/img/icons/x-logo-black.png';
 const X_LOGO_DARK = '/img/icons/x-logo-white.png';
 const LINKEDIN_LOGO_LIGHT = '/img/icons/InBug-Black.png';
 const LINKEDIN_LOGO_DARK = '/img/icons/InBug-White.png';
 
-// Speaker List with Social Media Links
-const SpeakerList = [
-  {
-    "title": "Aleksey Savateyev",
-    "name": "Aleksey",
-    "img": "/img/speakers/Aleksey_Savateyev.jpg",
-    "intro": "Director, GBB, Azure Data & AI, Microsoft",
-    "bio": "Aleksey is a seasoned software architect currently focusing on all things data and AI, synergies between them, and practical applications on Azure.",
-    "session": {
-      "title": "OmniRAG - The Right Way to Do Retrieval Augmented Generation with Azure Cosmos DB",
-      "abstract": "OmniRAG is a new Retrieval-Augmented Generation (RAG) design pattern leveraging NL2Query capabilities and a Knowledge Graph for enhanced accuracy at lower cost."
-    }
-  },
-  {
-    "title": "Alexander Spiridonov",
-    "name": "Alexander",
-    "img": "/img/speakers/Alexander_Spiridonov.jpg",
-    "intro": "Solutions Architect, NVIDIA",
-    "bio": "Solutions Architect at NVIDIA, specializing in AI, data science, and cloud computing solutions. Passionate about building scalable AI-driven applications.",
-    "session": {
-      "title": "Accelerating Real-Time Analytics with Cosmos DB and GPU-Enhanced Serverless Apache Spark",
-      "abstract": "Leveraging Cosmos DB, Apache Spark, and GPU acceleration for real-time analytics."
-    }
-  },
-  {
-    "title": "Anurag Dutt",
-    "name": "Anurag",
-    "img": "/img/speakers/Anurag_Dutt.jpg",
-    "intro": "Multi-Cloud Engineer, Atos",
-    "bio": "Anurag is a Cloud Engineer with expertise in multi-cloud architectures, automation, and infrastructure management across AWS, Azure, and GCP.",
-    "session": {
-      "title": "Seamless Integration of Azure Cosmos DB with Azure Kubernetes Service (AKS) for Scalable Applications",
-      "abstract": "Modern cloud-native applications demand seamless scalability, high availability, and intelligent data processing. This session will explore how Azure Cosmos DB integrates with AKS to build resilient and highly scalable applications."
-    }
-  },
-  {
-    "title": "Brian Benz",
-    "name": "Brian",
-    "img": "/img/speakers/Brian_Benz.jpg",
-    "intro": "Java Champion & Cloud Advocate, Microsoft",
-    "bio": "Brian is a Java Champion and a Cloud Advocate at Microsoft, helping developers get the most out of Azure. Before joining Microsoft, he was a program manager, evangelist, solution architect, consultant, developer, and author at IBM, Deloitte, and other companies.",
-    "session": {
-      "title": "Accelerating Real-Time Analytics with Cosmos DB and GPU-Enhanced Serverless Apache Spark",
-      "abstract": "This session will show you how to create an end-to-end pipeline that leverages Azure Cosmos DB, Apache Spark, and serverless GPU acceleration to redefine real-time analytics."
-    },
-    "x": "https://twitter.com/bbenz",
-    "linkedin": "https://www.linkedin.com/in/brianbenz/"
-  },
-  {
-    "title": "Cary Chai",
-    "name": "Cary",
-    "img": "/img/speakers/Cary_Chai.jpg",
-    "intro": "Product Manager, Microsoft",
-    "bio": "I'm a Product Manager on Azure Container Apps at Microsoft, focused on enabling AI and serverless GPU workloads as well as networking scenarios. Passionate about building seamless developer experiences.",
-    "session": {
-      "title": "Accelerating Real-Time Analytics with Cosmos DB and GPU-Enhanced Serverless Apache Spark",
-      "abstract": "Learn how to ingest streaming data into Azure Cosmos DB and process it at scale using Apache Spark deployed on Azure Container Apps with GPU support."
-    },
-    "linkedin": "https://www.linkedin.com/in/caryzchai/"
-  },
-  {
-    "title": "Divakar Kumar",
-    "name": "Divakar",
-    "img": "/img/speakers/Divakar_Kumar.jpg",
-    "intro": "Technical Architect, FlyersSoft",
-    "bio": "Divakar Kumar is a Microsoft MVP in AI and a Microsoft Certified Trainer (MCT), working as a Technical Architect at FlyersSoft. He actively shares his knowledge through blogs, talks, and training sessions, empowering developers to harness the potential of AI in real-world applications.",
-    "session": {
-      "title": "Azure Cosmos DB in AI Workflows: From Knowledge Retrieval to Microsoft Fabric Integrations",
-      "abstract": "In this session, we'll explore how Azure Cosmos DB empowers cutting-edge AI workflows by seamlessly integrating diverse functionalities, including vector storage, semantic layering, and mirroring capabilities with Microsoft Fabric for enhanced data analytics and visualization."
-    },
-    "linkedin": "https://www.linkedin.com/in/divakar-kumar/"
-  },
-  {
-    "title": "Farah Abdou",
-    "name": "Farah",
-    "img": "/img/speakers/Farah_Abdou.jpg",
-    "intro": "Teaching Assistant, Uplimit",
-    "bio": "Farah Abdou is a Machine Learning and NLP Engineer with a strong focus on AI research and Microsoft technologies. As a Beta Microsoft Learn Student Ambassador, she has contributed to AI-driven projects, spoken at Microsoft conferences, and mentored teams in the Google Solutions Challenge, guiding them to the top 10 globally.",
-    "session": {
-      "title": "Enterprise AI-Powered Predictive Maintenance Platform",
-      "abstract": "An enterprise-grade predictive maintenance solution demonstrating how Azure Cosmos DB and AI technologies can create intelligent, scalable platforms for real-time equipment monitoring and failure prediction."
-    },
-    "x": "https://x.com/FaraahCodes",
-    "linkedin": "https://www.linkedin.com/in/farah-m-abdou-1a8a31222"
-  },
-  {
-    "title": "James Codella",
-    "name": "James",
-    "img": "/img/speakers/James_Codella.jpg",
-    "intro": "Principal Product Manager, Azure Cosmos DB, Microsoft",
-    "bio": "James is a Product Manager in Azure Cosmos DB working on NoSQL Query, vector search, and AI products. He has over 15 years of experience in data, analytics, and machine learning.",
-    "session": {
-      "title": "How Microsoft Powers AI Apps with DiskANN",
-      "abstract": "Exploring DiskANN’s role in Microsoft’s AI stack and its integration with Cosmos DB."
-    },
-    "x": "https://twitter.com/jamescodella",
-    "linkedin": "https://www.linkedin.com/in/jamescodella/"
-  },
-  {
-    "title": "Justine Cocchi",
-    "name": "Justine",
-    "img": "/img/speakers/Justine_Cocchi.jpg",
-    "intro": "Senior Program Manager, Microsoft",
-    "bio": "Justine is a Senior Program Manager on the Azure Cosmos DB team at Microsoft. She focuses on improving programmability for the API for NoSQL and enhancing developer experiences to help make customers more successful.",
-    "session": {
-      "title": "Real-World Examples of Real-Time Applications Using Change Feed",
-      "abstract": "Discover how Azure Cosmos DB’s change feed is revolutionizing real-time applications across various industries."
-    },
-    "x": "https://twitter.com/justinecocchi"
-  },
-  {
-    "title": "Kevin Gatimu",
-    "name": "Kevin",
-    "img": "/img/speakers/Kevin_Gatimu.jpg",
-    "intro": "Technical Trainer, Teach2Give | Microsoft MVP (Web & Cosmos DB)",
-    "bio": "I write technical blogs when I learn something new. Currently, I am a technical trainer, having trained over 100 students in Kenyan universities.",
-    "session": {
-      "title": "Building an Enterprise Knowledge Management System using Hybrid Search in Azure Cosmos DB",
-      "abstract": "This session dives deep into the powerful hybrid search capabilities of Azure Cosmos DB, specifically focusing on the integration of vector search with full-text search scoring (BM25) using Reciprocal Rank Fusion (RRF)."
-    },
-    "x": "https://x.com/_kevincomba",
-    "linkedin": "https://www.linkedin.com/in/kevin-comba-gatimu/"
-  },
-  {
-    "title": "Kirill Gavrylyuk",
-    "name": "Kirill",
-    "img": "/img/speakers/Kirill_Gavrylyuk.jpg",
-    "intro": "Vice President, GM, Azure Cosmos DB, Microsoft",
-    "bio": "Product Leader with experience of leading and growing multiple large-scale cloud services from inception to maturity. Responsibilities include product strategy, business strategy, product execution, and leading engineering teams to deliver global cloud services. 20 years of experience building cloud services, distributed systems, frameworks & tools.",
-    "session": {
-      "title": "Keynote",
-      "abstract": "Hear the latest and greatest from the Azure Cosmos DB team, including new features, customer stories, and a look at the future of the service."
-    },
-    "x": "https://x.com/kirillg_msft",
-    "linkedin": "https://www.linkedin.com/in/kirillgavrylyuk/"
-  },
-  {
-    "title": "Mani Jaman",
-    "name": "Mani",
-    "img": "/img/speakers/Mani_Jaman.jpg",
-    "intro": "Principal Architect, H&R Block",
-    "bio": "Principal Architect at H&R Block with over 20+ years of experience in IT, specializing in modernization and digital transformation.",
-    "session": {
-      "title": "Azure Cosmos DB for AI-Enabled Enterprise Apps",
-      "abstract": "Exploring Cosmos DB as a backbone for enterprise-grade AI applications."
-    },
-    "linkedin": "https://www.linkedin.com/in/manijaman"
-  },
-  {
-    "title": "Nitya Narasimhan",
-    "name": "Nitya",
-    "img": "/img/speakers/Nitya_Narasimhan.jpg",
-    "intro": "Senior AI Advocate, Microsoft",
-    "bio": "Nitya Narasimhan is a Ph.D. and Polyglot with 25+ years of experience in software R&D across industry, academia, and startups. She is currently a Senior AI Advocate at Microsoft.",
-    "session": {
-      "title": "Build a RAG-Based Retail Copilot Code-First on Azure AI Foundry",
-      "abstract": "This talk walks through the GenAIOps lifecycle for building a RAG-based custom chat AI with Azure AI Search and Azure Cosmos DB."
-    }
-  },
-  {
-    "title": "Olena Borzenko",
-    "name": "Olena",
-    "img": "/img/speakers/Olena_Borzenko.jpg",
-    "intro": "Coding Consultant & Microsoft MVP, Xebia",
-    "bio": "Olena is a coding consultant and Microsoft MVP specializing in event-driven architecture, clean code, and modern cloud-based application development.",
-    "session": {
-      "title": "Turning Data into Generative Chaos",
-      "abstract": "Exploring how AI and Azure Cosmos DB can transform data into generative art using Semantic Kernel and OpenAI’s LLMs."
-
-    }
-  },
-  {
-    "title": "Simon Kofod",
-    "name": "Simon",
-    "img": "/img/speakers/Simon_Kofod.jpg",
-    "intro": "Lead Software Developer, Novo Nordisk",
-    "bio": "With 25 years of diverse experience in software development, Simon has worked in both startups and large corporate environments, developing embedded software and large telco billing systems.",
-    "session": {
-      "title": "Reducing Database Costs to $1 with Azure Cosmos DB",
-      "abstract": "How to optimize data modeling and leverage serverless Cosmos DB for cost efficiency."
-    },
-    "linkedin": "https://www.linkedin.com/in/simon-kofod/"
-  },
-  {
-    "title": "Sudhanshu Khera",
-    "name": "Sudhanshu",
-    "img": "/img/speakers/Sudhanshu_Khera.jpg",
-    "intro": "Senior Product Manager, Microsoft",
-    "bio": "Sudhanshu is a Senior Product Manager at Microsoft, specializing in security for Azure Cosmos DB. Sudhanshu has over 17 years of experience in driving strategy and innovation in enterprise/B2B digital Identity and Access Management (IAM) and cybersecurity.",
-    "session": {
-      "title": "Enhancing Security in Azure Cosmos DB",
-      "abstract": "Best practices for securing Azure Cosmos DB with NSP and Managed Identity."
-    }
-  },
-  {
-    "title": "Srinivas Reddy Mosali",
-    "name": "Srinivas",
-    "img": "/img/speakers/Srinivas_Reddy_Mosali.jpg",
-    "intro": "Staff Systems Engineer, Visa Technology and Operations LLC",
-    "bio": "Srinivas Reddy Mosali is a seasoned Staff Systems Engineer at Visa Technology and Operations LLC, bringing over a decade of expertise in cloud-native infrastructure and emerging technologies.",
-    "session": {
-      "title": "Intelligent Resource Optimization: Mastering Azure Cosmos DB for Enterprise Workloads",
-      "abstract": "This talk demonstrates how we've optimized these Azure Cosmos DB implementations for AI workloads, achieving substantial performance improvements while reducing costs by 35%."
-    },
-    "linkedin": "https://www.linkedin.com/in/srinivas-reddy-mosali-b9548b141/"
-  },
-  {
-    "title": "Vin Kamat",
-    "name": "Vin",
-    "img": "/img/speakers/Vin_Kamat.jpg",
-    "intro": "Principal Architect, H&R Block",
-    "bio": "Principal Architect at H&R Block, with over two decades of experience in the industry. He specializes in enterprise architecture, Azure Cloud, and Generative AI.",
-    "session": {
-      "title": "Azure Cosmos DB for AI-Enabled Enterprise Apps",
-      "abstract": "Exploring Cosmos DB as a backbone for enterprise-grade AI applications."
-    }
-  },
-  {
-    "title": "Iria Osara",
-    "name": "Iria",
-    "img": "/img/speakers/Iria_Osara.jpg",
-    "intro": "Program Manager, Microsoft",
-    "bio": "Iria is a Program Manager within the Azure Cosmos DB team. Iria is passionate about cloud computing, big data, and helping the developer/data community understand more about Cosmos DB.",
-    "session": {
-      "title": "Enhancing Security in Azure Cosmos DB",
-      "abstract": "Best practices for securing Azure Cosmos DB with NSP and Managed Identity."
-    },
-    "x": "https://www.twitter.com/bigdataprincess",
-    "linkedin": "https://www.linkedin.com/in/iriaeno"
-  },
-  {
-    "title": "Patty Chow",
-    "name": "Patty",
-    "img": "/img/speakers/Patty_Chow.jpg",
-    "intro": "Product Manager, Microsoft",
-    "bio": "Patty Chow is a Product Manager on the Azure Cosmos DB team, leading initiatives to improve monitoring and open-source DocumentDB.",
-    "session": {
-      "title": "Unlocking the Power of Vector Search in DocumentDB",
-      "abstract": "Discover vector search capabilities in DocumentDB, an open-source project from Azure Cosmos DB, designed for advanced data retrieval."
-    }
-  },
-  {
-    "title": "Marius Högger",
-    "name": "Marius",
-    "img": "/img/speakers/Marius_Hogger.jpg",
-    "intro": "AI and Software Engineer, bbv Software Services AG",
-    "bio": "Marius Högger is a software engineer and AI consultant specializing in AI-driven multi-agent systems and scalable architectures.",
-    "session": {
-      "title": "Orchestrating Intelligent Agents",
-      "abstract": "How Azure Cosmos DB enables multi-agent system collaboration with AI-driven decision-making."
-    }
-  }
-];
-
-// Split Speakers for Two Columns
-const leftSpeakers = SpeakerList.filter((_, index) => index % 2 === 0);
-const rightSpeakers = SpeakerList.filter((_, index) => index % 2 !== 0);
-
-// TypeScript Props
 interface FeatureProps {
   img: string;
   title: string;
   name: string;
   intro: string;
+  bio: string;
   session: { title: string; abstract: string };
   x?: string;
   linkedin?: string;
 }
 
-// Speaker Card Component
-function Feature({ img, title, name, intro, session, x, linkedin }: FeatureProps) {
+function Feature({ img, title, name, intro, bio, session, x, linkedin }: FeatureProps) {
   const { colorMode } = useColorMode();
   const isDarkMode = colorMode === 'dark';
 
-  // Speaker Detail Page URL
-  const speakerUrl = `/speakers/speaker?name=${encodeURIComponent(name)}&title=${encodeURIComponent(title)}&intro=${encodeURIComponent(intro)}&sessionTitle=${encodeURIComponent(session.title)}&sessionAbstract=${encodeURIComponent(session.abstract)}&img=${encodeURIComponent(img)}`;
+  const speakerUrl = `/speakers/Speaker?name=${encodeURIComponent(name)}&title=${encodeURIComponent(title)}&intro=${encodeURIComponent(intro)}&bio=${encodeURIComponent(bio)}&sessionTitle=${encodeURIComponent(session.title)}&sessionAbstract=${encodeURIComponent(session.abstract)}&img=${encodeURIComponent(img)}${x ? `&x=${encodeURIComponent(x)}` : ''}${linkedin ? `&linkedin=${encodeURIComponent(linkedin)}` : ''}`;
 
   return (
     <div className={clsx(styles.featureCard)}>
-
-      {/* Clickable Image */}
-      <Link to={speakerUrl} className={clsx(styles.featureImgContainer)}>
+      <Link to={speakerUrl} className={styles.featureImgContainer}>
         <img className={styles.featureImg} alt={title} src={img} />
       </Link>
 
-      {/* Content & Links */}
-      <div className={clsx(styles.featureContent)}>
+      <div className={styles.featureContent}>
         <Link to={speakerUrl} className={styles.featureLink}>
           <h3 className={styles.featureTitle}>{title}</h3>
-          <p className={styles.featureIntro}>{intro}</p>
+        </Link>
+        <p className={styles.featureIntro}>{intro}</p>
+        <Link to={speakerUrl} className={styles.featureSessionLink}>
+          <p className={styles.featureSession}>{session.title}</p>
         </Link>
 
-        {/* Social Media Links */}
         <div className={styles.socialIcons}>
           {x && (
             <a href={x} target="_blank" rel="noopener noreferrer">
-              <img className={styles.socialIcon} src={isDarkMode ? X_LOGO_DARK : X_LOGO_LIGHT} alt="X Logo" />
+              <img
+                className={styles.socialIcon}
+                src={useColorMode().colorMode === 'dark' ? X_LOGO_DARK : X_LOGO_LIGHT}
+                alt="X Logo"
+              />
             </a>
           )}
           {linkedin && (
             <a href={linkedin} target="_blank" rel="noopener noreferrer">
-              <img className={styles.socialIcon} src={isDarkMode ? LINKEDIN_LOGO_DARK : LINKEDIN_LOGO_LIGHT} alt="LinkedIn Logo" />
+              <img className={styles.socialIcon}
+                src={useColorMode().colorMode === 'dark' ? LINKEDIN_LOGO_DARK : LINKEDIN_LOGO_LIGHT}
+                alt="LinkedIn Logo"
+              />
             </a>
           )}
         </div>
@@ -321,33 +68,22 @@ function Feature({ img, title, name, intro, session, x, linkedin }: FeatureProps
   );
 }
 
-// Main Speakers Page
 export default function Speakers() {
+  const speakers: FeatureProps[] = speakerData;
+
   return (
     <Layout description="Welcome to the Azure Cosmos DB Conf 2025 site">
       <main>
         <section className={styles.speakerSection}>
           <div className={styles.speakerContainer}>
-
-            {/* Heading */}
             <h2 className={styles.speakerHeading}>
               Meet the Azure Cosmos DB Conf 2025 speakers.
             </h2>
-
-            {/* Two-Column Layout */}
             <div className={styles.speakerGrid}>
-              <div className={styles.speakerColumn}>
-                {leftSpeakers.map((props, idx) => (
-                  <Feature key={idx} {...props} />
-                ))}
-              </div>
-              <div className={styles.speakerColumn}>
-                {rightSpeakers.map((props, idx) => (
-                  <Feature key={idx} {...props} />
-                ))}
-              </div>
+              {speakers.map((props) => (
+                <Feature key={props.name} {...props} />
+              ))}
             </div>
-
           </div>
         </section>
       </main>
