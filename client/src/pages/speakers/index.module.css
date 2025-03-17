@@ -295,3 +295,27 @@ body {
   margin: 0 auto;
   padding: 0 1.5rem;
 }
+
+.newsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.newsItem {
+  background: rgba(0, 0, 120, 0.1);
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.newsDate {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.videoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
