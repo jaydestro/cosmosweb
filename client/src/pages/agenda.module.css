@@ -1,0 +1,85 @@
+.agendaHeading {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.agendaIntro {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.sectionHeading {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 2rem 0;
+}
+
+.sessionCard {
+    text-align: center; /* Centers all text inside */
+    max-width: 800px; /* Keeps layout clean */
+    margin: 1.5rem auto; /* Centers the card itself */
+    padding: 2rem;
+    background: var(--ifm-background-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sessionTitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.sessionTime {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.sessionDescription {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.speakerContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centers images */
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.speakerProfile {
+    text-align: center;
+    width: 150px; /* Keeps images uniform */
+}
+
+.speakerImage {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--ifm-link-color);
+}
+
+.speakerName {
+    margin-top: 0.5rem;
+    font-weight: bold;
+}
+
+.youtubeLink {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.7rem 1.5rem;
+    background-color: var(--ifm-color-primary);
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.youtubeLink:hover {
+    background-color: var(--ifm-color-primary-dark);
+}

@@ -3,16 +3,32 @@ import Layout from '@theme/Layout';
 import styles from './conf.module.css';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import Link from '@docusaurus/Link'; // Import Link for navigation
 
 const faqs = [
   {
-    question: "Where can I see the Azure Cosmos DB Conf 2024 stream?",
-    content: `You can find the Azure Cosmos DB Conf 2024 video stream and on-demand sessions on the <a class="blue" href="https://youtube.com/MicrosoftDeveloper">Microsoft Developer YouTube Channel</a>`
+    "question": "Where can I see the Azure Cosmos DB Conf 2025 stream?",
+    "content": "You can find the Azure Cosmos DB Conf 2025 video stream and on-demand sessions on the <a class='blue' href='https://youtube.com/MicrosoftDeveloper'>Microsoft Developer YouTube Channel</a>."
   },
   {
-    question: "Is there a code of conduct for Azure Cosmos DB Conf 2024?",
-    content: `Azure Cosmos DB Conf 2024 falls under the <a class="blue" href="https://developer.microsoft.com/reactor/codeofconduct/">Reactor Code of Conduct</a>.
-    Please report any concerns, suspicious or disruptive activity or behavior via the <a class="blue" href="https://www.microsoft.com/legal/compliance/sbc/standards?activetab=pivot_1%3aprimaryr5">Microsoft Runs on Trust website</a>.`
+    "question": "Is there a code of conduct for Azure Cosmos DB Conf 2025?",
+    "content": "Azure Cosmos DB Conf 2025 falls under the <a class='blue' href='https://developer.microsoft.com/reactor/codeofconduct/'>Reactor Code of Conduct</a>. Please report any concerns, suspicious, or disruptive activity via the <a class='blue' href='https://www.microsoft.com/legal/compliance/sbc/standards?activetab=pivot_1%3aprimaryr5'>Microsoft Runs on Trust website</a>."
+  },
+  {
+    "question": "Is there any cost to attend Azure Cosmos DB Conf 2025?",
+    "content": "No, there are no costs to attend Azure Cosmos DB Conf 2025!"
+  },
+  {
+    "question": "I want to be a speaker, how do I apply?",
+    "content": "The Azure Cosmos DB Conf 2025 Call for Papers (CFP) is now closed. Stay tuned for 2026!"
+  },
+  {
+    "question": "How can I sponsor Azure Cosmos DB Conf 2025?",
+    "content": "Azure Cosmos DB Conf 2025 is not accepting sponsors. This event is organized and run completely by the Azure Cosmos DB team."
+  },
+  {
+    "question": "Do I need to register for Azure Cosmos DB Conf 2025?",
+    "content": "There's no registration required, but you can get updates for this event by signing up at the <a class='blue' href='https://developer.microsoft.com/reactor/events/21627/'>Microsoft Reactor page</a>."
   }
 ];
 
@@ -21,22 +37,21 @@ const ConfPage = () => {
 
   const lightImageUrl = useBaseUrl('/img/bg-header-white.jpg');
   const darkImageUrl = useBaseUrl('/img/bg-header-dark.jpg');
-  const lightBgImage = useBaseUrl('/img/BG-light-1.png'); // Light theme background
-  const darkBgImage = useBaseUrl('/img/BG-dark-1.png'); // Dark theme background
+  const lightBgImage = useBaseUrl('/img/BG-light-1.png');
+  const darkBgImage = useBaseUrl('/img/BG-dark-1.png');
 
   const [headerImage, setHeaderImage] = useState(lightImageUrl);
   const [commonBgImage, setCommonBgImage] = useState(lightBgImage);
-
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
 
   useEffect(() => {
     const updateTheme = () => {
       const newTheme = document.documentElement.getAttribute('data-theme');
       setHeaderImage(newTheme === 'dark' ? darkImageUrl : lightImageUrl);
-      setCommonBgImage(newTheme === 'dark' ? darkBgImage : lightBgImage); // Update background image based on theme
+      setCommonBgImage(newTheme === 'dark' ? darkBgImage : lightBgImage);
     };
 
-    updateTheme(); // Initialize on load
+    updateTheme();
     const observer = new MutationObserver(updateTheme);
     observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
 
@@ -44,11 +59,11 @@ const ConfPage = () => {
   }, [lightImageUrl, darkImageUrl, lightBgImage, darkBgImage]);
 
   const toggleFAQ = (index: number) => {
-    setOpenFAQ(openFAQ === index ? null : index); // Toggle the current FAQ open state
+    setOpenFAQ(openFAQ === index ? null : index);
   };
 
   return (
-    <Layout title="Azure CosmosDB Conf 2025" description="Join us for the biggest Azure CosmosDB event of the year!">
+    <Layout title="Azure Cosmos DB Conf 2025" description="Join us for the biggest Azure CosmosDB event of the year!">
       <div className={styles.pageWrapper} style={{ backgroundImage: `url(${commonBgImage})` }}>
         <div className={styles.header} style={{ backgroundImage: `url(${headerImage})` }}>
           <div className={styles.headerText}>
@@ -60,28 +75,28 @@ const ConfPage = () => {
                 <span className={styles.azureCosmos}>Azure Cosmos DB Conf</span>
                 <span className={styles.conf}>2025</span>
               </h1>
-              <p className={styles.date}>April 16 - 9:00 AM - 12:00 PM PT</p>
+              <p className={styles.date}>April 15 - 9:00 AM - 12:00 PM PT</p>
             </div>
           </div>
         </div>
 
-        {/* Introduction Section */}
-        <div className={styles.section}>
-          <div className={styles.textContent}>
-            <h2>About the Conference</h2>
-            <p>
-              Join us at Azure CosmosDB Conf 2025, where industry leaders and developers gather to explore the future of cloud databases.
-              <br />
-              Learn how to scale your applications globally with Azure CosmosDB’s powerful features.
-              <br />
-              Engage with hands-on labs and sessions led by experts in the field.
-              <br />
-              Network with professionals from around the world and take your cloud development to the next level.
-              <br />
-              Don't miss this opportunity to be part of a transformative experience!
-            </p>
-          </div>
-        </div>
+{/* Introduction Section */}
+<div className={styles.section}>
+  <div className={styles.textContent}>
+    <h2>About the Conference</h2>
+    <p>
+      Join us for our <strong>5th annual Azure Cosmos DB Conf</strong>, a <strong>free virtual developer event</strong> co-hosted by Microsoft and the Azure Cosmos DB community. 
+      <br /><br />
+      Tune in to learn why <strong>Azure Cosmos DB</strong> is the leading database for the era of <strong>AI and modern app development</strong>. 
+      Dive into a dynamic mix of sessions from <strong>Microsoft</strong> and community experts, showcasing their innovative projects and breakthroughs.
+      <br /><br />
+      Join our engaging <strong>3-hour live show</strong> on <strong>April 15, 2025</strong>, and explore additional sessions <strong>on-demand</strong>. 
+      <br /><br />
+      <strong>This is an event you won't want to miss!</strong>
+    </p>
+  </div>
+</div>
+
 
         {/* Divider */}
         <div className={styles.divider}></div>
@@ -90,26 +105,26 @@ const ConfPage = () => {
         <div className={styles.section}>
           <div className={styles.textContent}>
             <h2>Conference Agenda</h2>
-            <ul>
-              <li>
-                <strong>9:00 AM - Keynote Session</strong>: Introduction to Azure CosmosDB and its latest features.
-              </li>
-              <li>
-                <strong>10:30 AM - Break</strong>: Networking and refreshment break.
-              </li>
-              <li>
-                <strong>10:30 AM - Break</strong>: Networking and refreshment break.
-              </li>
-              <li>
-                <strong>10:30 AM - Break</strong>: Networking and refreshment break.
-              </li>
-              <li>
-                <strong>10:30 AM - Break</strong>: Networking and refreshment break.
-              </li>
-              <li>
-                <strong>5:00 PM - Closing Remarks</strong>: Final thoughts and thanks from the organizers.
-              </li>
-            </ul>
+            <p style={{ fontSize: '1.2rem', textAlign: 'center' }}>
+              The full agenda, including <strong>live streaming</strong> and <strong>on-demand sessions</strong>, will be available soon.
+              <br />
+              <strong>Check back later for the complete schedule!</strong>
+            </p>
+            <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
+              <Link to="/agenda" className={styles.agendaButton}>View Agenda</Link>
+            </div>
+
+            {/* 
+              === AGENDA BOXES (COMMENTED OUT) ===
+              These agenda items will be dynamically generated when the schedule is ready.
+              The data will be pulled from speakers.json in the agenda.tsx file.
+              
+              <ul>
+                <li><strong>9:00 AM - Keynote Session</strong>: Introduction to Azure CosmosDB and its latest features.</li>
+                <li><strong>10:30 AM - Break</strong>: Networking and refreshment break.</li>
+                <li><strong>5:00 PM - Closing Remarks</strong>: Final thoughts and thanks from the organizers.</li>
+              </ul>
+            */}
           </div>
         </div>
 
@@ -137,7 +152,6 @@ const ConfPage = () => {
             ))}
           </div>
         </div>
-
       </div>
     </Layout>
   );

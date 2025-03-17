@@ -1,32 +1,120 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Layout from '@theme/Layout';
+import { useLocation, useHistory } from '@docusaurus/router';
 import './Speaker.css';
 
-const Speaker = () => {
-  const searchParams = new URLSearchParams(window.location.search);
+const X_LOGO_LIGHT = '/img/icons/x-logo-black.png';
+const X_LOGO_DARK = '/img/icons/x-logo-white.png';
+const LINKEDIN_LOGO_LIGHT = '/img/icons/InBug-Black.png';
+const LINKEDIN_LOGO_DARK = '/img/icons/InBug-White.png';
 
-  const name = searchParams.get('name');
-  const title = searchParams.get('title');
-  const intro = searchParams.get('intro');
-  const sessionTitle = searchParams.get('sessionTitle');
-  const sessionAbstract = searchParams.get('sessionAbstract');
-  const img = searchParams.get('img');
+interface Speaker {
+  img: string;
+  name: string;
+  title: string;
+  intro: string;
+  bio: string;
+  sessionTitle: string;
+  sessionAbstract: string;
+  sessionDuration: string;
+  x?: string;
+  linkedin?: string;
+}
+
+const Speaker = () => {
+  const location = useLocation();
+  const history = useHistory();
+
+  const [speaker, setSpeaker] = useState<Speaker>({
+    name: '',
+    title: '',
+    intro: '',
+    bio: '',
+    sessionTitle: '',
+    sessionAbstract: '',
+    img: '',
+    sessionDuration: '',
+    x: '',
+    linkedin: '',
+  });
+
+  useEffect(() => {
+    if (location.search) {
+      const searchParams = new URLSearchParams(location.search);
+      setSpeaker({
+        img: searchParams.get('img') || '',
+        name: searchParams.get('name') || '',
+        title: searchParams.get('title') || '',
+        intro: searchParams.get('intro') || '',
+        bio: searchParams.get('bio') ? decodeURIComponent(searchParams.get('bio')!) : '',
+        sessionTitle: searchParams.get('sessionTitle') || '',
+        sessionAbstract: searchParams.get('sessionAbstract') || '',
+        sessionDuration: searchParams.get('sessionDuration') || '',
+        x: searchParams.get('x') || '',
+        linkedin: searchParams.get('linkedin') || '',
+      });
+    }
+  }, [location.search]);
+
+  // ✅ Detect dark mode safely without `useColorMode()`
+  const isDarkMode = typeof window !== 'undefined' && document.documentElement.dataset.theme === 'dark';
 
   return (
-    <Layout title={`${name} - Speaker Details`} description={`Details about ${name}'s session at Azure Cosmos DB Conf 2025`}>
+    <Layout
+      title={`${speaker.name} - Speaker Details`}
+      description={`Details about ${speaker.name}'s session at Azure Cosmos DB Conf 2025`}
+    >
       <div className="speaker-detail-container">
+        <button className="back-button" onClick={() => history.goBack()}>
+          ← Back to Speakers List
+        </button>
+
         <div className="speaker-card">
-          {img && (
-            <img src={img} alt={name} className="speaker-img" />
-          )}
+          {speaker.img && <img src={speaker.img} alt={speaker.name} className="speaker-img" />}
+
           <div className="speaker-content">
-            <h1>{title}</h1>
-            <p>{intro}</p>
-            <div className="session-details">
-              <h2>Session Details</h2>
-              <p><strong>Title:</strong> {sessionTitle}</p>
-              <p><strong>Abstract:</strong> {sessionAbstract}</p>
+            {/* Speaker Name & Title */}
+            <h1>{speaker.title}</h1>
+            <p>{speaker.intro}</p>
+
+            {/* ✅ Social Icons (Directly Below Name & Title) */}
+            <div className="social-icons">
+              {speaker.x && (
+                <a href={speaker.x} target="_blank" rel="noopener noreferrer">
+                  <img
+                    className="social-icon"
+                    src={isDarkMode ? X_LOGO_DARK : X_LOGO_LIGHT}
+                    alt="X Logo"
+                  />
+                </a>
+              )}
+              {speaker.linkedin && (
+                <a href={speaker.linkedin} target="_blank" rel="noopener noreferrer">
+                  <img
+                    className="social-icon"
+                    src={isDarkMode ? LINKEDIN_LOGO_DARK : LINKEDIN_LOGO_LIGHT}
+                    alt="LinkedIn Logo"
+                  />
+                </a>
+              )}
             </div>
+
+            {/* Session Details */}
+            <div className="session-details">
+              <h2>
+                Session Details ({speaker.sessionDuration === '5' ? '5 Minute Lightning Talk' : '25 Minute Session'})
+              </h2>
+              <p className="session-title">{speaker.sessionTitle}</p>
+              <p className="session-abstract">{speaker.sessionAbstract}</p>
+            </div>
+
+            {/* Speaker Bio */}
+            {speaker.bio && (
+              <div className="bio-section">
+                <h2>Speaker Bio</h2>
+                <p>{speaker.bio}</p>
+              </div>
+            )}
           </div>
         </div>
       </div>
