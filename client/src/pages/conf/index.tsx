@@ -80,23 +80,22 @@ const ConfPage = () => {
           </div>
         </div>
 
-{/* Introduction Section */}
-<div className={styles.section}>
-  <div className={styles.textContent}>
-    <h2>About the Conference</h2>
-    <p>
-      Join us for our <strong>5th annual Azure Cosmos DB Conf</strong>, a <strong>free virtual developer event</strong> co-hosted by Microsoft and the Azure Cosmos DB community. 
-      <br /><br />
-      Tune in to learn why <strong>Azure Cosmos DB</strong> is the leading database for the era of <strong>AI and modern app development</strong>. 
-      Dive into a dynamic mix of sessions from <strong>Microsoft</strong> and community experts, showcasing their innovative projects and breakthroughs.
-      <br /><br />
-      Join our engaging <strong>3-hour live show</strong> on <strong>April 15, 2025</strong>, and explore additional sessions <strong>on-demand</strong>. 
-      <br /><br />
-      <strong>This is an event you won't want to miss!</strong>
-    </p>
-  </div>
-</div>
-
+        {/* Introduction Section */}
+        <div className={styles.section}>
+          <div className={styles.textContent}>
+            <h2>About the Conference</h2>
+            <p>
+              Join us for our <strong>5th annual Azure Cosmos DB Conf</strong>, a <strong>free virtual developer event</strong> co-hosted by Microsoft and the Azure Cosmos DB community. 
+              <br /><br />
+              Tune in to learn why <strong>Azure Cosmos DB</strong> is the leading database for the era of <strong>AI and modern app development</strong>. 
+              Dive into a dynamic mix of sessions from <strong>Microsoft</strong> and community experts, showcasing their innovative projects and breakthroughs.
+              <br /><br />
+              Join our engaging <strong>3-hour live show</strong> on <strong>April 15, 2025</strong>, and explore additional sessions <strong>on-demand</strong>. 
+              <br /><br />
+              <strong>This is an event you won't want to miss!</strong>
+            </p>
+          </div>
+        </div>
 
         {/* Divider */}
         <div className={styles.divider}></div>
@@ -105,42 +104,25 @@ const ConfPage = () => {
         <div className={styles.section}>
           <div className={styles.textContent}>
             <h2>Conference Agenda</h2>
-            <p style={{ fontSize: '1.2rem', textAlign: 'center' }}>
+            <p className={styles.agendaIntro}>
               The full agenda, including <strong>live streaming</strong> and <strong>on-demand sessions</strong>, will be available soon.
-              <br />
-              <strong>Check back later for the complete schedule!</strong>
             </p>
-            <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
+            <div className={styles.agendaButtonContainer}>
               <Link to="/agenda" className={styles.agendaButton}>View Agenda</Link>
             </div>
-
-            {/* 
-              === AGENDA BOXES (COMMENTED OUT) ===
-              These agenda items will be dynamically generated when the schedule is ready.
-              The data will be pulled from speakers.json in the agenda.tsx file.
-              
-              <ul>
-                <li><strong>9:00 AM - Keynote Session</strong>: Introduction to Azure CosmosDB and its latest features.</li>
-                <li><strong>10:30 AM - Break</strong>: Networking and refreshment break.</li>
-                <li><strong>5:00 PM - Closing Remarks</strong>: Final thoughts and thanks from the organizers.</li>
-              </ul>
-            */}
           </div>
         </div>
 
         {/* Divider */}
         <div className={styles.divider}></div>
 
-        {/* Frequently Asked Questions Section */}
+        {/* FAQ Section */}
         <div id="faq-section" className={styles.section}>
           <div className={styles.textContent}>
             <h2>Frequently Asked Questions</h2>
             {faqs.map((faq, index) => (
               <div key={index} className={styles.faqItem}>
-                <div
-                  className={styles.faqQuestion}
-                  onClick={() => toggleFAQ(index)}
-                >
+                <div className={styles.faqQuestion} onClick={() => toggleFAQ(index)}>
                   <strong>{faq.question}</strong>
                 </div>
                 {openFAQ === index && (

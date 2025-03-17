@@ -2,7 +2,6 @@
 .pageWrapper {
   position: relative;
   width: 100%;
- 
   background-position: center center;
   background-size: cover; /* Makes sure the background image covers the entire screen */
   background-repeat: no-repeat;
@@ -10,7 +9,6 @@
   flex-direction: column;
   justify-content: flex-start;
 }
- 
 
 /* Header section */
 .header {
@@ -35,18 +33,16 @@
   border-radius: 8px;
   display: flex;
   align-items: center;
- 
   
   /* Adaptive Background */
-  background: #f4f4f4(255, 255, 255, 0.8); /* Light mode default */
+  background: rgba(255, 255, 255, 0.8); /* Light mode default */
   color: #060f1d; /* Black text for visibility */
 }
 
 [data-theme='dark'] .headerText {
-  background:#060f1d;
+  background: #060f1d;
   color: #fff; /* White text */
 }
-
 
 .logoWrapper {
   margin-right: 15px;
@@ -188,4 +184,24 @@ html[data-theme='dark'] .header {
   padding: 12px;
   border-radius: 8px;
   margin-top: 10px;
+}
+
+/* ========== NEW AGENDA BUTTON ========== */
+.agendaButtonContainer {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.agendaButton {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #0078d4;
+  color: #ffffff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.agendaButton:hover {
+  background-color: #005a9e;
 }
