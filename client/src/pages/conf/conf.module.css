@@ -1,28 +1,27 @@
-/* Wrapper that holds both sections */
-.pageWrapper {
-  position: relative;
-  width: 100%;
-  background-position: center center;
-  background-size: cover; /* Makes sure the background image covers the entire screen */
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* General Styling */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Header section */
+/* ========== HEADER SECTION ========== */
 .header {
   background-position: center center;
   background-repeat: no-repeat;
+  background-size: cover;
   width: 100%;
   height: 400px;
-  display: block;
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  position: relative;
 }
 
+/* Header Text - Now fully transparent, no background */
 .headerText {
   position: absolute;
   left: 10%;
@@ -33,17 +32,15 @@
   border-radius: 8px;
   display: flex;
   align-items: center;
-  
-  /* Adaptive Background */
-  background: rgba(255, 255, 255, 0.8); /* Light mode default */
-  color: #060f1d; /* Black text for visibility */
+  color: #060f1d; /* Default dark mode */
 }
 
+/* Ensure proper contrast in dark mode */
 [data-theme='dark'] .headerText {
-  background: #060f1d;
-  color: #fff; /* White text */
+  color: #ffffff;
 }
 
+/* Logo Styling */
 .logoWrapper {
   margin-right: 15px;
 }
@@ -52,15 +49,7 @@
   width: auto;
 }
 
-/* Styling for "Conf" part */
-.conf {
-  color: #4796e8;
-  font-weight: bold;
-  display: inline-block;
-  margin-left: 10px; /* Space between Azure CosmosDB and Conf */
-}
-
-/* Align text to the right */
+/* Header Text Layout */
 .textWrapper {
   text-align: right;
 }
@@ -69,16 +58,22 @@
   display: inline-block;
 }
 
+.conf {
+  color: #4796e8;
+  font-weight: bold;
+  display: inline-block;
+  margin-left: 10px;
+}
+
 .date {
   font-size: 1.2rem;
   margin-top: 10px;
 }
 
-/* Adjust for smaller screens */
+/* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
   .headerText {
     font-size: 1.5rem;
-    top: 25%;
     left: 3%;
     padding: 10px 15px;
   }
@@ -88,16 +83,19 @@
   }
 }
 
-/* Apply a background color based on the theme */
-html[data-theme='light'] .header {
-  background-color: #f4f4f4;
+/* ========== GENERAL SECTION STYLING ========== */
+.pageWrapper {
+  position: relative;
+  width: 100%;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
-html[data-theme='dark'] .header {
-  background-color: #060f1d;
-}
-
-/* Section for content below the header */
+/* Section Styling */
 .section {
   padding: 40px;
   margin-top: 20px;
@@ -109,7 +107,7 @@ html[data-theme='dark'] .header {
   text-align: center;
 }
 
-/* Text content style */
+/* Section Text Content */
 .textContent {
   max-width: 1200px;
   margin: 0 auto;
@@ -128,27 +126,6 @@ html[data-theme='dark'] .header {
   line-height: 1.6;
 }
 
-.textContent ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.textContent li {
-  font-size: 1.2rem;
-  margin-bottom: 15px;
-  background-color: rgba(0, 0, 120, 0.1);
-  padding: 10px;
-  border-radius: 8px;
-}
-
-.textContent li strong {
-  color: #4796e8;
-}
-
-.textContent li:hover {
-  background-color: rgba(0, 120, 212, 0.3);
-}
-
 /* Divider */
 .divider {
   height: 2px;
@@ -159,7 +136,7 @@ html[data-theme='dark'] .header {
   margin-right: 0;
 }
 
-/* FAQ Section */
+/* ========== FAQ STYLING ========== */
 .faqItem {
   margin-bottom: 20px;
   width: 100%;
@@ -186,7 +163,7 @@ html[data-theme='dark'] .header {
   margin-top: 10px;
 }
 
-/* ========== NEW AGENDA BUTTON ========== */
+/* ========== AGENDA BUTTON ========== */
 .agendaButtonContainer {
   text-align: center;
   margin-top: 1.5rem;
