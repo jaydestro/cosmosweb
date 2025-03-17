@@ -26,7 +26,7 @@ body {
   flex-direction: column;
   align-items: center;
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 /* Content section with text and video */
@@ -51,9 +51,7 @@ body {
 .textContainer h2 {
   font-size: 5rem; /* Larger font size */
   font-family: 'Croma Sans', sans-serif;
- 
   letter-spacing: 2px; /* Slight spacing between letters */
- 
   margin-bottom: 20px;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6); /* Add a subtle shadow to make the text pop */
   line-height: 1.1; /* Adjust line height for better spacing */
@@ -71,6 +69,49 @@ body {
   border: none;
 }
 
+/* Developer Cards Container */
+.developer-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 2rem 0;
+  width: 80%;
+}
+
+/* Individual Developer Card */
+.developer-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.developer-card:hover {
+  transform: translateY(-5px);
+}
+
+.developer-card-image {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.developer-card-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #0078d4;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.developer-card-link:hover {
+  text-decoration: underline;
+}
+
+/* Adjustments for smaller screens */
 @media only screen and (max-width: 768px) {
   .content {
     flex-direction: column;
@@ -91,6 +132,6 @@ body {
 
   /* Adjusting H2 size on smaller screens */
   .textContainer h2 {
-    font-size: 3rem; /* Reduce font size on smaller screens */
+    font-size: 3rem;
   }
 }
