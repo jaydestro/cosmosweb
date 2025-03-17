@@ -98,6 +98,14 @@ const config: Config = {
               className: 'mobile-only', 
             },
             {
+              label: 'News',
+              to: '/conf#news',
+            },
+            {
+              label: 'About Azure Cosmos DB Conf',
+              to: '/conf#about',
+            },
+            {
               label: 'Register',
               href: 'https://developer.microsoft.com/en-us/reactor/events/24779/',
             },
