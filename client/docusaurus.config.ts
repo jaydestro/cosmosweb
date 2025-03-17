@@ -93,6 +93,11 @@ const config: Config = {
           to: '/conf', type: 'dropdown', label: 'Azure Cosmos DB Conf', position: 'left',
           items: [
             {
+              label: 'Conf Home',
+              to: '/conf',
+              className: 'mobile-only', 
+            },
+            {
               label: 'Register',
               href: 'https://developer.microsoft.com/en-us/reactor/events/24779/',
             },
@@ -120,7 +125,8 @@ const config: Config = {
             {
               label: 'Code Of Conduct',
               to: '/coc',
-            },
+            }
+            
           ],
         },
         { label: 'Community', position: 'left' , to:'/community'},
