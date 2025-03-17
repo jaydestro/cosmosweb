@@ -6,24 +6,24 @@ import './community.css'; // Ensure you have styles.css imported
 
 const developerCommunityData = [
   {
-    name: 'John Doe',
-    imageUrl: 'https://loremflickr.com/200/200', // Random image
-    link: 'https://azure.microsoft.com/en-us/services/cosmos-db/',
+    name: 'Twitter',
+    imageUrl: '../img/icons/x-logo-black.png', 
+    link: 'https://x.com/AzureCosmosDB',
   },
   {
-    name: 'Jane Smith',
-    imageUrl: 'https://loremflickr.com/200/201', // Random image
-    link: 'https://azure.microsoft.com/en-us/services/cosmos-db/',
+    name: 'Blog',
+    imageUrl: '../img/rss.png', 
+    link: 'https://devblogs.microsoft.com/cosmosdb/',
   },
   {
-    name: 'Alice Johnson',
-    imageUrl: 'https://loremflickr.com/200/202', // Random image
-    link: 'https://azure.microsoft.com/en-us/services/cosmos-db/',
+    name: 'Youtube',
+    imageUrl: '../img/youtube.png', 
+    link: 'https://www.youtube.com/@AzureCosmosDB',
   },
   {
-    name: 'Bob Brown',
-    imageUrl: 'https://loremflickr.com/200/203', // Random image
-    link: 'https://azure.microsoft.com/en-us/services/cosmos-db/',
+    name: 'Global virtual user group',
+    imageUrl: '../img/meetup.png',  
+    link: 'https://www.meetup.com/azure-cosmos-db-global-user-group',
   },
 ];
 

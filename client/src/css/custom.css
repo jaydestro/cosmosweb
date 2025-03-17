@@ -69,7 +69,6 @@ html[data-theme='dark'] {
 
 /* Header Background */
 .navbar {
-  background: var(--header-bg) no-repeat center center;
   background-size: cover;
 }
 
@@ -116,3 +115,14 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Hide element by default */
+.mobile-only {
+  display: none;
+}
+
+/* Display element only on mobile view */
+@media (max-width: 768px) {
+  .mobile-only {
+    display: block;
+  }
+}
