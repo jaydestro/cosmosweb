@@ -1,0 +1,37 @@
+name: Deploy Docusaurus to App Service Slot
+
+on:
+  push:
+    branches:
+      - main  # Trigger deployment when you push to the main branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'  # Use the Node.js version compatible with your Docusaurus app
+
+    - name: Install Dependencies
+      run: |
+        cd client
+        npm install
+
+    - name: Build Docusaurus
+      run: |
+        cd client
+        npm run build  # Builds the static site, output is in client/build
+
+    - name: Deploy to Azure App Service Slot
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: cosmos-web
+        slot-name: v2  # Specify your deployment slot name here
+        package: ./client/build
+        publish-profile: ${{ secrets.AZURE_PUBLISH_PROFILE }}
