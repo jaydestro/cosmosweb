@@ -25,7 +25,11 @@ interface Speaker {
 }
 
 export default function Agenda() {
-  const [sortedAgenda, setSortedAgenda] = useState<{ live: { sessionTitle: string; speakers: Speaker[] }[]; ondemand: { sessionTitle: string; speakers: Speaker[] }[] }>({ live: [], ondemand: [] });
+  const [sortedAgenda, setSortedAgenda] = useState<{ 
+    live: { sessionTitle: string; speakers: Speaker[] }[]; 
+    tbd: { sessionTitle: string; speakers: Speaker[] }[]; 
+    ondemand: { sessionTitle: string; speakers: Speaker[] }[] 
+  }>({ live: [], tbd: [], ondemand: [] });
 
   useEffect(() => {
     const groupedSessions: { [key: string]: Speaker[] } = {};
@@ -46,10 +50,11 @@ export default function Agenda() {
         return timeA.localeCompare(timeB);
       });
 
-    const liveSessions = sortedSessions.filter((s) => !s.speakers[0].session.ondemand_only);
+    const liveSessions = sortedSessions.filter((s) => !s.speakers[0].session.ondemand_only && s.speakers[0].session.time !== "TBD");
+    const tbdSessions = sortedSessions.filter((s) => !s.speakers[0].session.ondemand_only && s.speakers[0].session.time === "TBD");
     const onDemandSessions = sortedSessions.filter((s) => s.speakers[0].session.ondemand_only);
 
-    setSortedAgenda({ live: liveSessions, ondemand: onDemandSessions });
+    setSortedAgenda({ live: liveSessions, tbd: tbdSessions, ondemand: onDemandSessions });
   }, []);
 
   return (
@@ -65,42 +70,19 @@ export default function Agenda() {
           {sortedAgenda.live.length > 0 && (
             <>
               <h2 className={styles.sectionHeading}>Live Sessions</h2>
-              {sortedAgenda.live.map(({ sessionTitle, speakers }) => {
-                const firstSpeaker = speakers[0];
+              {sortedAgenda.live.map(({ sessionTitle, speakers }) => (
+                <SessionCard key={sessionTitle} sessionTitle={sessionTitle} speakers={speakers} />
+              ))}
+            </>
+          )}
 
-                return (
-                  <div key={sessionTitle} className={styles.sessionCard}>
-                    <h2 className={styles.sessionTitle}>{sessionTitle}</h2>
-                    <p className={styles.sessionTime}>
-                      <strong>Time:</strong> {firstSpeaker.session.time} | <strong>Duration:</strong> {firstSpeaker.session.duration} min
-                    </p>
-                    <p className={styles.sessionDescription}>{firstSpeaker.session.abstract}</p>
-
-                    {/* Speaker Profiles with Links */}
-                    <div className={styles.speakerContainer}>
-                      {speakers.map((speaker) => {
-                        const speakerUrl = `/speakers/Speaker?name=${encodeURIComponent(speaker.name)}&title=${encodeURIComponent(speaker.title)}&intro=${encodeURIComponent(speaker.intro)}&bio=${encodeURIComponent(speaker.bio)}&sessionTitle=${encodeURIComponent(speaker.session.title)}&sessionAbstract=${encodeURIComponent(speaker.session.abstract)}&img=${encodeURIComponent(speaker.img)}${speaker.x ? `&x=${encodeURIComponent(speaker.x)}` : ''}${speaker.linkedin ? `&linkedin=${encodeURIComponent(speaker.linkedin)}` : ''}`;
-
-                        return (
-                          <div key={speaker.name} className={styles.speakerProfile}>
-                            <Link to={speakerUrl}>
-                              <img src={speaker.img} alt={speaker.name} className={styles.speakerImage} />
-                            </Link>
-                            <p className={styles.speakerName}>{speaker.title}</p>
-                          </div>
-                        );
-                      })}
-                    </div>
-
-                    {/* YouTube Link (Only if available) */}
-                    {firstSpeaker.session.youtube_url && firstSpeaker.session.youtube_url.trim() !== "" && (
-                      <a href={firstSpeaker.session.youtube_url} target="_blank" rel="noopener noreferrer" className={styles.youtubeLink}>
-                        Watch on YouTube
-                      </a>
-                    )}
-                  </div>
-                );
-              })}
+          {/* Agenda Times Coming Soon Section */}
+          {sortedAgenda.tbd.length > 0 && (
+            <>
+              <h2 className={styles.sectionHeading}>Agenda Times Coming Soon</h2>
+              {sortedAgenda.tbd.map(({ sessionTitle, speakers }) => (
+                <SessionCard key={sessionTitle} sessionTitle={sessionTitle} speakers={speakers} />
+              ))}
             </>
           )}
 
@@ -108,42 +90,9 @@ export default function Agenda() {
           {sortedAgenda.ondemand.length > 0 && (
             <>
               <h2 className={styles.sectionHeading}>On-Demand Sessions</h2>
-              {sortedAgenda.ondemand.map(({ sessionTitle, speakers }) => {
-                const firstSpeaker = speakers[0];
-
-                return (
-                  <div key={sessionTitle} className={styles.sessionCard}>
-                    <h2 className={styles.sessionTitle}>{sessionTitle}</h2>
-                    <p className={styles.sessionTime}>
-                      <strong>On-Demand</strong> | <strong>Duration:</strong> {firstSpeaker.session.duration} min
-                    </p>
-                    <p className={styles.sessionDescription}>{firstSpeaker.session.abstract}</p>
-
-                    {/* Speaker Profiles with Links */}
-                    <div className={styles.speakerContainer}>
-                      {speakers.map((speaker) => {
-                        const speakerUrl = `/speakers/Speaker?name=${encodeURIComponent(speaker.name)}&title=${encodeURIComponent(speaker.title)}&intro=${encodeURIComponent(speaker.intro)}&bio=${encodeURIComponent(speaker.bio)}&sessionTitle=${encodeURIComponent(speaker.session.title)}&sessionAbstract=${encodeURIComponent(speaker.session.abstract)}&img=${encodeURIComponent(speaker.img)}${speaker.x ? `&x=${encodeURIComponent(speaker.x)}` : ''}${speaker.linkedin ? `&linkedin=${encodeURIComponent(speaker.linkedin)}` : ''}`;
-
-                        return (
-                          <div key={speaker.name} className={styles.speakerProfile}>
-                            <Link to={speakerUrl}>
-                              <img src={speaker.img} alt={speaker.name} className={styles.speakerImage} />
-                            </Link>
-                            <p className={styles.speakerName}>{speaker.title}</p>
-                          </div>
-                        );
-                      })}
-                    </div>
-
-                    {/* YouTube Link (Only if available) */}
-                    {firstSpeaker.session.youtube_url && firstSpeaker.session.youtube_url.trim() !== "" && (
-                      <a href={firstSpeaker.session.youtube_url} target="_blank" rel="noopener noreferrer" className={styles.youtubeLink}>
-                        Watch on YouTube
-                      </a>
-                    )}
-                  </div>
-                );
-              })}
+              {sortedAgenda.ondemand.map(({ sessionTitle, speakers }) => (
+                <SessionCard key={sessionTitle} sessionTitle={sessionTitle} speakers={speakers} isOnDemand />
+              ))}
             </>
           )}
         </div>
@@ -151,3 +100,42 @@ export default function Agenda() {
     </Layout>
   );
 }
+
+// Helper Component for Rendering Session Cards
+const SessionCard = ({ sessionTitle, speakers, isOnDemand = false }: { sessionTitle: string; speakers: Speaker[]; isOnDemand?: boolean }) => {
+  const firstSpeaker = speakers[0];
+
+  return (
+    <div className={styles.sessionCard}>
+      <h2 className={styles.sessionTitle}>{sessionTitle}</h2>
+      <p className={styles.sessionTime}>
+        {isOnDemand ? <strong>On-Demand</strong> : <><strong>Time:</strong> {firstSpeaker.session.time}</>} 
+        {" | "} <strong>Duration:</strong> {firstSpeaker.session.duration} min
+      </p>
+      <p className={styles.sessionDescription}>{firstSpeaker.session.abstract}</p>
+
+      {/* Speaker Profiles with Links */}
+      <div className={styles.speakerContainer}>
+        {speakers.map((speaker) => {
+          const speakerUrl = `/speakers/Speaker?name=${encodeURIComponent(speaker.name)}&title=${encodeURIComponent(speaker.title)}&intro=${encodeURIComponent(speaker.intro)}&bio=${encodeURIComponent(speaker.bio)}&sessionTitle=${encodeURIComponent(speaker.session.title)}&sessionAbstract=${encodeURIComponent(speaker.session.abstract)}&img=${encodeURIComponent(speaker.img)}${speaker.x ? `&x=${encodeURIComponent(speaker.x)}` : ''}${speaker.linkedin ? `&linkedin=${encodeURIComponent(speaker.linkedin)}` : ''}`;
+
+          return (
+            <div key={speaker.name} className={styles.speakerProfile}>
+              <Link to={speakerUrl}>
+                <img src={speaker.img} alt={speaker.name} className={styles.speakerImage} />
+              </Link>
+              <p className={styles.speakerName}>{speaker.title}</p>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* YouTube Link (Only if available) */}
+      {firstSpeaker.session.youtube_url && firstSpeaker.session.youtube_url.trim() !== "" && (
+        <a href={firstSpeaker.session.youtube_url} target="_blank" rel="noopener noreferrer" className={styles.youtubeLink}>
+          Watch on YouTube
+        </a>
+      )}
+    </div>
+  );
+};
