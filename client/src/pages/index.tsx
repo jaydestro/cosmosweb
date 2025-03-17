@@ -11,17 +11,17 @@ const developerCommunityData = [
   {
     name: 'Discover Templates',
     imageUrl: '../img/logo.svg',  
-    link: 'https://azure.microsoft.com/en-us/services/cosmos-db/',
+    link: 'https://azurecosmosdb.github.io/gallery/',
   },
   {
     name: 'Learn more about Azure Cosmos DB',
     imageUrl: '../img/icons/msft.png', 
-    link: 'https://azure.microsoft.com/en-us/services/cosmos-db/',
+    link: 'https://learn.microsoft.com/en-us/azure/cosmos-db/',
   },
   {
     name: 'Azure Cosmos DB community',
     imageUrl:'../img/logo.svg',  
-    link: 'https://azure.microsoft.com/en-us/services/cosmos-db/',
+    link: '/community',
   } 
 ];
 
