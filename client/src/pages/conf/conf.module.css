@@ -14,27 +14,27 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  height: 400px;
+  height: 450px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
+  text-align: center;
   position: relative;
 }
 
-/* Header Text - Now fully transparent, no background */
+/* Header Text */
 .headerText {
   position: absolute;
   left: 10%;
-  font-size: 2rem;
-  font-weight: bold;
   text-align: right;
   padding: 15px 20px;
   border-radius: 8px;
   display: flex;
   align-items: center;
-  color: #060f1d; /* Light mode text */
+  color: #060f1d;
 }
 
+/* Dark Mode Adjustments */
 [data-theme='dark'] .headerText {
   color: #ffffff;
 }
@@ -53,10 +53,14 @@ body {
   text-align: right;
 }
 
-.azureCosmos {
-  display: inline-block;
+/* Make "Azure Cosmos DB Conf 2025" the same size as "Latest News" */
+.textWrapper h1 {
+  font-size: 2.5rem; /* Matches .sectionHeading */
+  font-weight: bold;
+  line-height: 1.2;
 }
 
+/* Keep "2025" in blue */
 .conf {
   color: #4796e8;
   font-weight: bold;
@@ -64,6 +68,7 @@ body {
   margin-left: 10px;
 }
 
+/* Ensure date & time match "Session Agenda Coming Soon" */
 .date {
   font-size: 1.2rem;
   margin-top: 10px;
@@ -106,33 +111,12 @@ body {
   text-align: center;
 }
 
-/* Section Text Content */
-.textContent {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.textContent h2 {
+/* Section Headings */
+.section h2 {
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 20px;
   color: #4796e8;
-}
-
-.textContent p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-}
-
-/* Divider */
-.divider {
-  height: 2px;
-  background-color: #4796e8;
-  margin: 40px 0;
-  width: 100%;
-  margin-left: 0;
-  margin-right: 0;
 }
 
 /* ========== NEWS SECTION ========== */
@@ -141,29 +125,30 @@ body {
   padding: 50px 0;
 }
 
-/* News Section Anchor for Smooth Scrolling */
-.newsSection a {
-  display: block;
-  position: relative;
-  top: -80px;
-  visibility: hidden;
+.newsSection h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #4796e8;
 }
 
 /* News Grid Layout */
 .newsGrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   gap: 30px;
   max-width: 1200px;
   margin: auto;
-  align-items: center;
 }
 
-/* News List */
+/* Left: News List */
 .newsList {
+  width: 50%;
   text-align: left;
 }
 
+/* Individual News Items */
 .newsItem {
   margin-bottom: 20px;
   padding: 15px;
@@ -188,22 +173,34 @@ body {
   font-size: 1rem;
 }
 
-/* Embedded YouTube Video */
+/* Right: Embedded YouTube Video */
+.newsVideo {
+  width: 50%;
+  display: flex;
+  align-self: flex-start;
+}
+
 .newsVideo iframe {
   width: 100%;
-  height: 400px;
+  height: 300px;
   border-radius: 10px;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .newsGrid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     text-align: center;
   }
 
   .newsList {
     text-align: center;
+    width: 100%;
+  }
+
+  .newsVideo {
+    width: 100%;
+    justify-content: center;
   }
 
   .newsVideo iframe {
@@ -211,7 +208,34 @@ body {
   }
 }
 
-/* ========== FAQ SECTION ========== */
+/* ========== AGENDA SECTION ========== */
+.agendaSection {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #f1f7ff;
+}
+
+/* Agenda Button */
+.agendaButtonContainer {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.agendaButton {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #0078d4;
+  color: #ffffff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.agendaButton:hover {
+  background-color: #005a9e;
+}
+
+/* ========== FAQ STYLING ========== */
 .faqItem {
   margin-bottom: 20px;
   width: 100%;
@@ -238,99 +262,39 @@ body {
   margin-top: 10px;
 }
 
-/* ========== AGENDA BUTTON ========== */
-.agendaButtonContainer {
-  text-align: center;
-  margin-top: 1.5rem;
+/* ====== DIVIDER STYLING ====== */
+.divider {
+  height: 2px;
+  background-color: #4796e8; /* Ensure the divider has a visible color */
+  margin: 40px auto; /* Adds spacing */
+  width: 80%; /* Ensures dividers are not full-width */
 }
-
-.agendaButton {
-  display: inline-block;
-  padding: 12px 24px;
-  background-color: #0078d4;
-  color: #ffffff;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.agendaButton:hover {
-  background-color: #005a9e;
-}
-
-/* ========== FEATURED SPEAKER SECTION ========== */
-.speakerSection {
-  background-color: #e6f0ff;
-  padding: 3rem 0;
-}
-
-.headingText {
-  font-family: 'Poppins', sans-serif;
-  font-size: 2.5rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  margin-bottom: 2rem;
-  text-align: center;
-  background: linear-gradient(90deg, #0066cc, #3399ff);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-fill-color: transparent;
-}
-
-/* ========== FEATURE CARDS ========== */
-.feature {
-  display: flex;
-  justify-content: center;
-  margin: 1rem;
-}
-
-.featureLink {
-  text-decoration: none;
-}
-
-/* Card Styling */
-.featureCard {
-  width: 100%;
-  max-width: 350px;
-  background: white;
-  border-radius: 12px;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.featureCard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 51, 102, 0.15);
-}
-
-/* Image Styling */
-.featureImgContainer {
-  display: flex;
-  justify-content: center;
+/* ====== ABOUT SECTION ====== */
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 30px;
   align-items: center;
-  background-color: #f0f4ff;
+  max-width: 1200px;
+  margin: auto;
 }
 
-.featureImg {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
+/* About Image Styling */
+.aboutImage img {
+  width: 100%; /* Responsive */
+  max-width: 600px; /* Prevents oversized images */
+  height: auto;
+  border-radius: 10px; /* Optional: rounded corners */
 }
 
-/* Text Content Styling */
-.featureContent {
-  padding: 1rem;
-  background-color: white;
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .aboutGrid {
+    grid-template-columns: 1fr; /* Stack on small screens */
+    text-align: center;
+  }
 
-.featureTitle {
-  margin-bottom: 0.5rem;
-  font-size: 1.2rem;
-  color: #003366;
-}
-
-.featureIntro {
-  color: #666666;
-  font-size: 0.9rem;
+  .aboutImage img {
+    max-width: 100%;
+  }
 }
