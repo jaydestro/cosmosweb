@@ -48,7 +48,9 @@ const ConfPage = () => {
       {/* ====== META TAGS FOR SOCIAL MEDIA PREVIEW ====== */}
       <meta property="og:title" content="Azure Cosmos DB Conf 2025" />
       <meta property="og:description" content="Join us for the biggest Azure Cosmos DB event of the year!" />
-      <meta property="og:image" content={useBaseUrl("/img/Cosmos_Conf_Main_Thumbnail.jpg")} />
+      <meta property="og:image" content="https://developer.azurecosmosdb.com/img/Cosmos_Conf_Main_Thumbnail.jpg" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       <meta property="og:url" content="https://developer.azurecosmosdb.com/conf" />
       <meta name="twitter:card" content="summary_large_image" />
 
