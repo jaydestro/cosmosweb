@@ -107,7 +107,7 @@ const ConfPage = () => {
     {/* Left: About Image */}
     <div className={styles.aboutImage}>
       <img 
-        src={useBaseUrl("/img/work-outside.webp")} 
+        src={useBaseUrl("/img/work-outside.png")} 
         alt="People working outside with a laptop" 
       />
     </div>
