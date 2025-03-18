@@ -5,6 +5,10 @@ on:
     branches:
       - v2  # Trigger deployment when you push to the v2 branch
 
+permissions:
+  id-token: write  # Required for OIDC authentication
+  contents: read   # Needed for checking out the repo
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -28,11 +32,19 @@ jobs:
         cd client
         npm run build  # Builds the static site, output is in client/build
 
+    # ✅ Azure Login using OIDC
+    - name: Login to Azure using OIDC
+      uses: azure/login@v1
+      with:
+        client-id: ${{ secrets.AZURE_CLIENT_ID }}
+        tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+        subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+    # ✅ Deploy to Azure Web App
     - name: Deploy to Azure App Service
       uses: azure/webapps-deploy@v2
       with:
         app-name: cosmos-web
         package: ./client/build
-        publish-profile: ${{ secrets.AZURE_PUBLISH_PROFILE }}
       env:
         DEBUG: true  # Enable debug logging to capture more details
