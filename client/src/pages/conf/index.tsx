@@ -89,7 +89,7 @@ const ConfPage = () => {
               <iframe
                 width="100%"
                 height="400"
-                src="https://www.youtube.com/embed/UidCjXoFY1s"
+                src="https://www.youtube.com/embed/eeJzDF9huYU"
                 title="Latest News Video"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
