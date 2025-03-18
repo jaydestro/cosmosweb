@@ -6,6 +6,8 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Link from "@docusaurus/Link";
 import newsData from "./news.json";
 import faqsData from "./faqs.json";
+import { Helmet } from "react-helmet";
+
 
 const ConfPage = () => {
   const { siteConfig } = useDocusaurusContext();
@@ -18,6 +20,8 @@ const ConfPage = () => {
   const [headerImage, setHeaderImage] = useState(lightImageUrl);
   const [commonBgImage, setCommonBgImage] = useState(lightBgImage);
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
+  const [showAllNews, setShowAllNews] = useState(false);
+
 
   useEffect(() => {
     const updateTheme = () => {
@@ -40,26 +44,29 @@ const ConfPage = () => {
     setOpenFAQ(openFAQ === index ? null : index);
   };
 
+  
   return (
     <Layout
       title="Azure Cosmos DB Conf 2025"
       description="Join us for the biggest Azure Cosmos DB event of the year!"
     >
-      {/* ====== META TAGS FOR SOCIAL MEDIA PREVIEW ====== */}
-      <meta property="og:title" content="Azure Cosmos DB Conf 2025" />
-      <meta property="og:description" content="Join us for the biggest Azure Cosmos DB event of the year!" />
-      <meta property="og:url" content="https://developer.azurecosmosdb.com/conf" />
-      <meta property="og:image" content="https://developer.azurecosmosdb.com/img/Cosmos_Conf_Main_Thumbnail.jpg?v=2" />
-      <meta property="og:image:alt" content="Azure Cosmos DB Conf 2025" />
-      <meta property="og:image:type" content="image/jpeg" />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
+      <Helmet>
+        {/* Open Graph Meta Tags for LinkedIn and Facebook */}
+        <meta property="og:title" content="Azure Cosmos DB Conf 2025" />
+        <meta property="og:description" content="Join us for the biggest Azure Cosmos DB event of the year!" />
+        <meta property="og:url" content="https://developer.azurecosmosdb.com/conf" />
+        <meta property="og:image" content="https://developer.azurecosmosdb.com/img/Cosmos_Conf_Main_Thumbnail.jpg?v=3" />
+        <meta property="og:image:alt" content="Azure Cosmos DB Conf 2025" />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
 
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Azure Cosmos DB Conf 2025" />
-      <meta name="twitter:description" content="Join us for the biggest Azure Cosmos DB event of the year!" />
-      <meta name="twitter:image" content="https://developer.azurecosmosdb.com/img/Cosmos_Conf_Main_Thumbnail.jpg?v=2" />
-
+        {/* Twitter-specific Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Azure Cosmos DB Conf 2025" />
+        <meta name="twitter:description" content="Join us for the biggest Azure Cosmos DB event of the year!" />
+        <meta name="twitter:image" content="https://developer.azurecosmosdb.com/img/Cosmos_Conf_Main_Thumbnail.jpg?v=3" />
+      </Helmet>
 
       <div className={styles.pageWrapper} style={{ backgroundImage: `url(${commonBgImage})` }}>
         <div className={styles.header} style={{ backgroundImage: `url(${headerImage})` }}>
@@ -78,33 +85,37 @@ const ConfPage = () => {
           </div>
         </div>
 
-        {/* ====== NEWS SECTION ====== */}
-        <div id="news" className={styles.newsSection}>
-          <h2 className={styles.sectionHeading}>Latest News</h2>
-          <div className={styles.newsGrid}>
-            <div className={styles.newsList}>
-              {newsData.map((newsItem, index) => (
-                <div key={index} className={styles.newsItem}>
-                  <h3>{newsItem.title}</h3>
-                  <p className={styles.newsDate}>{newsItem.date}</p>
-                  <p dangerouslySetInnerHTML={{ __html: newsItem.content }} />
-                </div>
-              ))}
-            </div>
-
-            <div className={styles.newsVideo}>
-              <iframe
-                width="100%"
-                height="400"
-                src="https://www.youtube.com/embed/eeJzDF9huYU"
-                title="Video"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div>
-          </div>
+{/* ====== NEWS SECTION ====== */}
+<div id="news" className={styles.newsSection}>
+  <h2 className={styles.sectionHeading}>Latest News</h2>
+  <div className={styles.newsGrid}>
+    <div className={styles.newsList}>
+      {newsData.slice(0, showAllNews ? newsData.length : 3).map((newsItem, index) => (
+        <div key={index} className={styles.newsItem}>
+          <h3>{newsItem.title}</h3>
+          <p className={styles.newsDate}>{newsItem.date}</p>
+          <p dangerouslySetInnerHTML={{ __html: newsItem.content }} />
         </div>
+      ))}
+      {newsData.length > 3 && (
+        <button onClick={() => setShowAllNews(!showAllNews)} className={styles.showMoreButton}>
+          {showAllNews ? "Show Less" : "Show More"}
+        </button>
+      )}
+    </div>
 
+    <div className={styles.newsVideo}>
+      <iframe
+        width="100%"
+        height="400"
+        src="https://www.youtube.com/embed/eeJzDF9huYU"
+        title="Video"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      ></iframe>
+    </div>
+  </div>
+</div>
         {/* ====== Divider Before About Section ====== */}
         <div className={styles.divider}></div>
 

@@ -27,7 +27,7 @@ body {
     color: #1E40AF; /* Darker blue for light mode */
     text-align: center;
     margin-bottom: 2rem;
-    font-family: 'Croma Sans', sans-serif;
+    font-family: 'Helvetica', sans-serif;
     text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
 }
 
