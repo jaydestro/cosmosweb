@@ -48,13 +48,18 @@ const ConfPage = () => {
       {/* ====== META TAGS FOR SOCIAL MEDIA PREVIEW ====== */}
       <meta property="og:title" content="Azure Cosmos DB Conf 2025" />
       <meta property="og:description" content="Join us for the biggest Azure Cosmos DB event of the year!" />
+      <meta property="og:url" content="https://developer.azurecosmosdb.com/conf" />
       <meta property="og:image" content="https://developer.azurecosmosdb.com/img/Cosmos_Conf_Main_Thumbnail.jpg?v=2" />
       <meta property="og:image:alt" content="Azure Cosmos DB Conf 2025" />
       <meta property="og:image:type" content="image/jpeg" />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
-      <meta property="og:url" content="https://developer.azurecosmosdb.com/conf" />
+
       <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Azure Cosmos DB Conf 2025" />
+      <meta name="twitter:description" content="Join us for the biggest Azure Cosmos DB event of the year!" />
+      <meta name="twitter:image" content="https://developer.azurecosmosdb.com/img/Cosmos_Conf_Main_Thumbnail.jpg?v=2" />
+
 
       <div className={styles.pageWrapper} style={{ backgroundImage: `url(${commonBgImage})` }}>
         <div className={styles.header} style={{ backgroundImage: `url(${headerImage})` }}>
@@ -114,15 +119,15 @@ const ConfPage = () => {
               <h2>About the Conference</h2>
               <p>
                 Join us for our <strong>5th annual Azure Cosmos DB Conf</strong>, a{" "}
-                <strong>free virtual developer event</strong> co-hosted by Microsoft and the 
+                <strong>free virtual developer event</strong> co-hosted by Microsoft and the
                 Azure Cosmos DB community.
                 <br /><br />
-                Tune in to learn why <strong>Azure Cosmos DB</strong> is the leading database for the era 
-                of <strong>AI and modern app development</strong>. Dive into a dynamic mix of sessions 
-                from <strong>Microsoft</strong> and community experts, showcasing their innovative 
+                Tune in to learn why <strong>Azure Cosmos DB</strong> is the leading database for the era
+                of <strong>AI and modern app development</strong>. Dive into a dynamic mix of sessions
+                from <strong>Microsoft</strong> and community experts, showcasing their innovative
                 projects and breakthroughs.
                 <br /><br />
-                Join our engaging <strong>3-hour live show</strong> on <strong>April 15, 2025</strong>, and 
+                Join our engaging <strong>3-hour live show</strong> on <strong>April 15, 2025</strong>, and
                 explore additional sessions <strong>on-demand</strong>.
                 <br /><br />
                 <strong>This is an event you won't want to miss!</strong>
@@ -139,7 +144,7 @@ const ConfPage = () => {
           <div className={styles.textContent}>
             <h2>Event Agenda</h2>
             <p>
-              The <strong>full event agenda</strong> will be available soon! 
+              The <strong>full event agenda</strong> will be available soon!
               <br /><br />
               In the meantime, you can explore the <strong>list of sessions</strong> by clicking the button below.
             </p>
