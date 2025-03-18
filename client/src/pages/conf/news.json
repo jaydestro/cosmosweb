@@ -1,19 +1,22 @@
 [
-
-    {
-      "title": "Session Agenda Coming Soon",
-      "date": "March 18, 2025",
-      "content": "The full session agenda is almost here! Stay tuned for a detailed schedule featuring live and on-demand content."
-    },
-    {
-      "title": "Keynote Speaker Revealed",
-      "date": "March 10, 2025",
-      "content": "Kirill Gavrylyuk, VP of Azure Cosmos DB, will deliver the keynote, sharing exciting announcements and the future of AI-driven databases."
-    },
-    {
-      "title": "Azure Cosmos DB Conf 2025 CFP Closed!",
-      "date": "Feb 25, 2025",
-      "content": "Azure Cosmos DB Cconf 2025 Call for Papers (CFP) is now closed. Thank you to all who submitted their proposals!"
-    }
-  ]
-  
+  {
+    "title": "Meet the Speakers",
+    "date": "March 17, 2025",
+    "content": "Get ready to meet the incredible lineup of speakers joining us for Azure Cosmos DB Conf 2025! <a href='/speakers'>Check out the speaker list</a> and see who’s presenting this year."
+  },
+  {
+    "title": "Session Agenda Coming Soon",
+    "date": "March 15, 2025",
+    "content": "The full session agenda is almost here! Stay tuned for a detailed schedule featuring live and on-demand content. <a href='/agenda'>View the agenda</a> as it updates."
+  },
+  {
+    "title": "Keynote Speaker Revealed",
+    "date": "March 10, 2025",
+    "content": "Kirill Gavrylyuk, VP of Azure Cosmos DB, will deliver the keynote, sharing exciting announcements and the future of AI-driven databases."
+  },
+  {
+    "title": "Azure Cosmos DB Conf 2025 CFP Closed!",
+    "date": "Feb 25, 2025",
+    "content": "Azure Cosmos DB Conf 2025 Call for Papers (CFP) is now closed. Thank you to all who submitted their proposals!"
+  }
+]

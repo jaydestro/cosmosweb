@@ -43,7 +43,7 @@ const ConfPage = () => {
   return (
     <Layout
       title="Azure Cosmos DB Conf 2025"
-      description="Join us for the biggest Azure CosmosDB event of the year!"
+      description="Join us for the biggest Azure Cosmos DB event of the year!"
     >
       <div
         className={styles.pageWrapper}
@@ -75,7 +75,6 @@ const ConfPage = () => {
         <div id="news" className={styles.newsSection}>
           <h2 className={styles.sectionHeading}>Latest News</h2>
           <div className={styles.newsGrid}>
-            {/* Left: News List */}
             <div className={styles.newsList}>
               {newsData.map((newsItem, index) => (
                 <div key={index} className={styles.newsItem}>
@@ -86,14 +85,12 @@ const ConfPage = () => {
               ))}
             </div>
 
-            {/* Right: Embedded YouTube Video */}
             <div className={styles.newsVideo}>
               <iframe
                 width="100%"
                 height="400"
                 src="https://www.youtube.com/embed/UidCjXoFY1s"
                 title="Latest News Video"
-                frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>
@@ -101,37 +98,68 @@ const ConfPage = () => {
           </div>
         </div>
 
-        {/* Divider */}
+        {/* ====== Divider Before About Section ====== */}
         <div className={styles.divider}></div>
 
-        {/* ====== ABOUT SECTION ====== */}
-        <div id="about" className={styles.section}>
+{/* ====== ABOUT SECTION ====== */}
+<div id="about" className={styles.section}>
+  <div className={styles.aboutGrid}>
+    {/* Left: About Image */}
+    <div className={styles.aboutImage}>
+      <img 
+        src={useBaseUrl("/img/work-outside.webp")} 
+        alt="People working outside with a laptop" 
+      />
+    </div>
+
+    {/* Right: About Text */}
+    <div className={styles.textContent}>
+      <h2>About the Conference</h2>
+      <p>
+        Join us for our <strong>5th annual Azure Cosmos DB Conf</strong>, a{" "}
+        <strong>free virtual developer event</strong> co-hosted by Microsoft and the 
+        Azure Cosmos DB community.
+        <br />
+        <br />
+        Tune in to learn why <strong>Azure Cosmos DB</strong> is the leading database for the era 
+        of <strong>AI and modern app development</strong>. Dive into a dynamic mix of sessions 
+        from <strong>Microsoft</strong> and community experts, showcasing their innovative 
+        projects and breakthroughs.
+        <br />
+        <br />
+        Join our engaging <strong>3-hour live show</strong> on <strong>April 15, 2025</strong>, and 
+        explore additional sessions <strong>on-demand</strong>.
+        <br />
+        <br />
+        <strong>This is an event you won't want to miss!</strong>
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
+        {/* ====== Divider Before Agenda Section ====== */}
+        <div className={styles.divider}></div>
+
+        {/* ====== AGENDA SECTION ====== */}
+        <div id="agenda" className={styles.section}>
           <div className={styles.textContent}>
-            <h2>About the Conference</h2>
+            <h2>Event Agenda</h2>
             <p>
-              Join us for our <strong>5th annual Azure Cosmos DB Conf</strong>, a{" "}
-              <strong>free virtual developer event</strong> co-hosted by
-              Microsoft and the Azure Cosmos DB community.
-              <br />
-              <br />
-              Tune in to learn why <strong>Azure Cosmos DB</strong> is the
-              leading database for the era of <strong>AI and modern app development</strong>. Dive
-              into a dynamic mix of sessions from <strong>Microsoft</strong> and
-              community experts, showcasing their innovative projects and
-              breakthroughs.
-              <br />
-              <br />
-              Join our engaging <strong>3-hour live show</strong> on{" "}
-              <strong>April 15, 2025</strong>, and explore additional sessions{" "}
-              <strong>on-demand</strong>.
-              <br />
-              <br />
-              <strong>This is an event you won't want to miss!</strong>
+              The <strong>full event agenda</strong> will be available soon! 
+              <br /><br />
+              In the meantime, you can explore the <strong>list of sessions</strong> by clicking the button below.
             </p>
+            <div className={styles.agendaButtonContainer}>
+              <Link to="/agenda" className={styles.agendaButton}>
+                View Full Agenda
+              </Link>
+            </div>
           </div>
         </div>
 
-        {/* Divider */}
+        {/* ====== Divider Before FAQ Section ====== */}
         <div className={styles.divider}></div>
 
         {/* ====== FAQ SECTION ====== */}
@@ -155,6 +183,9 @@ const ConfPage = () => {
             ))}
           </div>
         </div>
+
+        {/* ====== Divider After FAQ Section ====== */}
+        <div className={styles.divider}></div>
       </div>
     </Layout>
   );
