@@ -26,7 +26,7 @@ body {
 .headerText {
   position: absolute;
   left: 10%;
-  text-align: right;
+  text-align: left;
   padding: 15px 20px;
   border-radius: 8px;
   display: flex;
@@ -35,18 +35,32 @@ body {
   color: #060f1d;
 }
 
-/* Title & Date Styling */
+/* Title Styling */
 .headerText h1 {
-  font-size: 3.5rem; /* Bigger for better visibility */
+  font-size: 3.5rem; /* Bigger title for visibility */
   font-weight: 700;
   margin-bottom: 10px;
   line-height: 1.2;
 }
 
+/* Ensuring proper font and spacing for "Azure Cosmos DB Conf" */
+.azureCosmos {
+  font-weight: bold;
+  display: inline-block;
+}
+
+.conf {
+  color: #4796e8; /* 2025 in blue */
+  font-weight: bold;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+/* Date Styling */
 .date {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #333; /* Ensure good contrast */
+  color: #333; /* Ensuring contrast */
 }
 
 /* Dark Mode Adjustments */
@@ -286,3 +300,37 @@ body {
     max-width: 100%;
   }
 }
+
+.titleWrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  height: 60px; /* Adjust as needed */
+}
+
+.eventTitle {
+  font-size: 2.8rem; /* Reduced from 3.5rem (-20%) */
+  font-weight: 700;
+  display: flex;
+  flex-wrap: nowrap; /* Prevents wrapping */
+  align-items: center; /* Ensures inline alignment */
+  gap: 10px; /* Adds spacing */
+}
+
+.conf {
+  color: #4796e8;
+  font-weight: bold;
+}
+
+
+/* Keep the date size unchanged */
+.date {
+  font-size: 1.6rem; /* Previously 1.2rem, reduced slightly */
+  font-weight: 500;
+  margin-top: 6px;
+  text-align: left; /* Keeps alignment with "Azure Cosmos DB Conf" */
+}
+
