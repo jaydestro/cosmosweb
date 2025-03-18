@@ -17,7 +17,7 @@ const config: Config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'azurecosmsodb', // Usually your GitHub org/user name.
+  organizationName: 'azurecosmosdb', // Usually your GitHub org/user name.
   projectName: 'azurecosmosdbconf', // Usually your repo name.
 
   onBrokenLinks: 'throw',
