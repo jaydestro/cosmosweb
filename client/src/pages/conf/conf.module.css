@@ -1,8 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-
 /* ========== GENERAL STYLING ========== */
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Helvetica', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -334,3 +332,18 @@ body {
   text-align: left; /* Keeps alignment with "Azure Cosmos DB Conf" */
 }
 
+.showMoreButton {
+  display: block;
+  margin: 10px auto;
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #0078d4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.showMoreButton:hover {
+  background-color: #005ea6;
+}
