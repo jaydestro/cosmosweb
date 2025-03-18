@@ -45,27 +45,25 @@ const ConfPage = () => {
       title="Azure Cosmos DB Conf 2025"
       description="Join us for the biggest Azure Cosmos DB event of the year!"
     >
-      <div
-        className={styles.pageWrapper}
-        style={{ backgroundImage: `url(${commonBgImage})` }}
-      >
-        <div
-          className={styles.header}
-          style={{ backgroundImage: `url(${headerImage})` }}
-        >
+      {/* ====== META TAGS FOR SOCIAL MEDIA PREVIEW ====== */}
+      <meta property="og:title" content="Azure Cosmos DB Conf 2025" />
+      <meta property="og:description" content="Join us for the biggest Azure Cosmos DB event of the year!" />
+      <meta property="og:image" content={useBaseUrl("/img/Cosmos_Conf_Main_Thumbnail.jpg")} />
+      <meta property="og:url" content="https://developer.azurecosmosdb.com/conf" />
+      <meta name="twitter:card" content="summary_large_image" />
+
+      <div className={styles.pageWrapper} style={{ backgroundImage: `url(${commonBgImage})` }}>
+        <div className={styles.header} style={{ backgroundImage: `url(${headerImage})` }}>
           <div className={styles.headerText}>
-            <div className={styles.logoWrapper}>
-              <img
-                src={useBaseUrl("/img/logo.svg")}
-                alt="Conf Logo"
-                className={styles.logo}
-              />
-            </div>
-            <div className={styles.textWrapper}>
-              <h1>
-                <span className={styles.azureCosmos}>Azure Cosmos DB Conf</span>
-                <span className={styles.conf}>2025</span>
-              </h1>
+            <div className={styles.headerContent}>
+              {/* ====== Logo & Title Aligned Horizontally ====== */}
+              <div className={styles.titleWrapper}>
+                <img src={useBaseUrl("/img/logo.svg")} alt="Conf Logo" className={styles.logo} />
+                <h1 className={styles.eventTitle}>
+                  <span className={styles.azureCosmos}>Azure Cosmos DB Conf</span>
+                  <span className={styles.conf}>2025</span>
+                </h1>
+              </div>
               <p className={styles.date}>April 15 - 9:00 AM - 12:00 PM PT</p>
             </div>
           </div>
@@ -101,43 +99,33 @@ const ConfPage = () => {
         {/* ====== Divider Before About Section ====== */}
         <div className={styles.divider}></div>
 
-{/* ====== ABOUT SECTION ====== */}
-<div id="about" className={styles.section}>
-  <div className={styles.aboutGrid}>
-    {/* Left: About Image */}
-    <div className={styles.aboutImage}>
-      <img 
-        src={useBaseUrl("/img/work-outside.png")} 
-        alt="People working outside with a laptop" 
-      />
-    </div>
+        {/* ====== ABOUT SECTION ====== */}
+        <div id="about" className={styles.section}>
+          <div className={styles.aboutGrid}>
+            <div className={styles.aboutImage}>
+              <img src={useBaseUrl("/img/work-outside.png")} alt="People working outside with a laptop" />
+            </div>
 
-    {/* Right: About Text */}
-    <div className={styles.textContent}>
-      <h2>About the Conference</h2>
-      <p>
-        Join us for our <strong>5th annual Azure Cosmos DB Conf</strong>, a{" "}
-        <strong>free virtual developer event</strong> co-hosted by Microsoft and the 
-        Azure Cosmos DB community.
-        <br />
-        <br />
-        Tune in to learn why <strong>Azure Cosmos DB</strong> is the leading database for the era 
-        of <strong>AI and modern app development</strong>. Dive into a dynamic mix of sessions 
-        from <strong>Microsoft</strong> and community experts, showcasing their innovative 
-        projects and breakthroughs.
-        <br />
-        <br />
-        Join our engaging <strong>3-hour live show</strong> on <strong>April 15, 2025</strong>, and 
-        explore additional sessions <strong>on-demand</strong>.
-        <br />
-        <br />
-        <strong>This is an event you won't want to miss!</strong>
-      </p>
-    </div>
-  </div>
-</div>
-
-
+            <div className={styles.textContent}>
+              <h2>About the Conference</h2>
+              <p>
+                Join us for our <strong>5th annual Azure Cosmos DB Conf</strong>, a{" "}
+                <strong>free virtual developer event</strong> co-hosted by Microsoft and the 
+                Azure Cosmos DB community.
+                <br /><br />
+                Tune in to learn why <strong>Azure Cosmos DB</strong> is the leading database for the era 
+                of <strong>AI and modern app development</strong>. Dive into a dynamic mix of sessions 
+                from <strong>Microsoft</strong> and community experts, showcasing their innovative 
+                projects and breakthroughs.
+                <br /><br />
+                Join our engaging <strong>3-hour live show</strong> on <strong>April 15, 2025</strong>, and 
+                explore additional sessions <strong>on-demand</strong>.
+                <br /><br />
+                <strong>This is an event you won't want to miss!</strong>
+              </p>
+            </div>
+          </div>
+        </div>
 
         {/* ====== Divider Before Agenda Section ====== */}
         <div className={styles.divider}></div>
@@ -168,10 +156,7 @@ const ConfPage = () => {
             <h2>Frequently Asked Questions</h2>
             {faqsData.map((faq, index) => (
               <div key={index} className={styles.faqItem}>
-                <div
-                  className={styles.faqQuestion}
-                  onClick={() => toggleFAQ(index)}
-                >
+                <div className={styles.faqQuestion} onClick={() => toggleFAQ(index)}>
                   <strong>{faq.question}</strong>
                 </div>
                 {openFAQ === index && (
