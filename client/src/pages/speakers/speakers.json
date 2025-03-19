@@ -23,7 +23,7 @@
         "bio": "Solutions Architect at NVIDIA, specializing in AI, data science, and cloud computing solutions. Passionate about building scalable AI-driven applications.",
         "session": {
             "title": "Accelerating Real-Time Analytics with Cosmos DB and GPU-Enhanced Serverless Apache Spark",
-            "abstract": "Leveraging Cosmos DB, Apache Spark, and GPU acceleration for real-time analytics.",
+            "abstract": "This session will show you how to create an end-to-end pipeline that leverages Azure Cosmos DB, Apache Spark, and serverless GPU acceleration to redefine real-time analytics. Learn how to ingest streaming data into Azure Cosmos DB and process it at scale using Apache Spark deployed on Azure Container Apps with GPU support. The focus of the presentation is a demo that highlights how GPU acceleration can dramatically reduce processing times and enable sophisticated machine learning workflows..",
             "duration": "25",
             "time": "TBD",
             "ondemand_only": false,
@@ -318,8 +318,8 @@
         "intro": "Product Manager, Microsoft",
         "bio": "Patty Chow is a Product Manager on the Azure Cosmos DB team, leading initiatives to improve monitoring and open-source DocumentDB. Passionate about community engagement and knowledge-sharing.",
         "session": {
-            "title": "Unlocking the Power of Vector Search in DocumentDB",
-            "abstract": "Discover the power of vector search in DocumentDB, an open-source project built on Azure Cosmos DB’s vCore-based MongoDB API. Learn how to integrate vector search into your applications, enhance your data retrieval strategies, and leverage this powerful capability effectively in just 5 minutes!",
+            "title": "Getting Started with DocumentDB and Open Source",
+            "abstract": "Curious about open-source databases? Join us as we explore DocumentDB, the open-source engine powering Azure Cosmos DB for MongoDB vCore. This session will provide a comprehensive overview of DocumentDB, its architecture and its versatile use cases. Additionally, we will discuss the benefits of its permissive MIT license and guide you through getting started.\n\nDon't miss this opportunity to learn more about the open-source future of NoSQL!",
             "duration": "5",
             "time": "TBD",
             "ondemand_only": false,
@@ -342,6 +342,22 @@
             "youtube_url": ""
         },
         "linkedin": "https://www.linkedin.com/in/marius-h%C3%B6gger-484b55153/"
-    }
+    },
+    {
+        "title": "Senthil Chandrasuriyan",
+        "name": "Senthil",
+        "img": "/img/speakers/Senthil_Chandrasuriyan.jpg",
+        "intro": "Solutions Architect, QVC",
+        "bio": "Senior Solutions Architect with several years of experience in design & delivery of external-facing web/mobile apps serving millions of requests every hour and sophisticated backend applications.",
+        "session": {
+            "title": "Building a Centralized Product Data Hub with Azure Cosmos DB at QVC",
+            "abstract": "In this session, we’ll explore how Azure Cosmos DB serves as the foundational backbone for centralized product services at QVC, enabling seamless aggregation and management of product, pricing, promotional, and inventory data.\n\nWe’ll walk through the architecture, covering data ingestion from multiple sources—including ERP systems, PIM, pricing, and order/inventory management systems—using Azure Data Factory and Azure Functions. You’ll see how Azure Cosmos DB’s global distribution, multi-region writes, and real-time replication ensure high availability and low-latency data access across all sales channels.\n\n**Key topics include:**\n\n- **Product, Pricing, and Promo Aggregation** – Leveraging Azure Cosmos DB’s flexible schema and high-throughput capabilities to store, query, and dynamically calculate data.\n- **Inventory Management** – Utilizing Azure Cosmos DB’s change feed for real-time inventory updates and ensuring consistency across multiple channels.\n- **Real-Time Data Replication & Change Data Capture (CDC)** – Maintaining data integrity and performance while synchronizing updates across sales platforms.\n- **Integration with Sales Channels & Third-Party Systems** – Using GraphQL/REST APIs, Azure Logic Apps, and Azure Functions to seamlessly connect with online stores, marketplaces, and personalization engines.\n\nBy the end of this session, attendees will understand how to harness Azure Cosmos DB to build a scalable, high-performance data hub that powers real-time analytics, seamless third-party integrations, and efficient product data management for global retail operations.",
+            "duration": "25",
+            "time": "TBD",
+            "ondemand_only": false,
+            "youtube_url": ""
+        },
+        "linkedin": "https://www.linkedin.com/in/senthilkumaranc/"
+    } 
     
 ]
