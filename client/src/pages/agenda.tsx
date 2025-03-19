@@ -3,6 +3,8 @@ import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import speakersData from "./speakers/speakers.json"; // Import speakers data
 import styles from "./agenda.module.css";
+import ReactMarkdown from "react-markdown";
+
 
 interface Session {
   title: string;
@@ -25,10 +27,10 @@ interface Speaker {
 }
 
 export default function Agenda() {
-  const [sortedAgenda, setSortedAgenda] = useState<{ 
-    live: { sessionTitle: string; speakers: Speaker[] }[]; 
-    tbd: { sessionTitle: string; speakers: Speaker[] }[]; 
-    ondemand: { sessionTitle: string; speakers: Speaker[] }[] 
+  const [sortedAgenda, setSortedAgenda] = useState<{
+    live: { sessionTitle: string; speakers: Speaker[] }[];
+    tbd: { sessionTitle: string; speakers: Speaker[] }[];
+    ondemand: { sessionTitle: string; speakers: Speaker[] }[]
   }>({ live: [], tbd: [], ondemand: [] });
 
   useEffect(() => {
@@ -102,6 +104,7 @@ export default function Agenda() {
 }
 
 // Helper Component for Rendering Session Cards
+
 const SessionCard = ({ sessionTitle, speakers, isOnDemand = false }: { sessionTitle: string; speakers: Speaker[]; isOnDemand?: boolean }) => {
   const firstSpeaker = speakers[0];
 
@@ -109,10 +112,14 @@ const SessionCard = ({ sessionTitle, speakers, isOnDemand = false }: { sessionTi
     <div className={styles.sessionCard}>
       <h2 className={styles.sessionTitle}>{sessionTitle}</h2>
       <p className={styles.sessionTime}>
-        {isOnDemand ? <strong>On-Demand</strong> : <><strong>Time:</strong> {firstSpeaker.session.time}</>} 
+        {isOnDemand ? <strong>On-Demand</strong> : <><strong>Time:</strong> {firstSpeaker.session.time}</>}
         {" | "} <strong>Duration:</strong> {firstSpeaker.session.duration} min
       </p>
-      <p className={styles.sessionDescription}>{firstSpeaker.session.abstract}</p>
+
+      {/* Render Markdown correctly */}
+      <div className={styles.sessionDescription}>
+        <ReactMarkdown>{firstSpeaker.session.abstract}</ReactMarkdown>
+      </div>
 
       {/* Speaker Profiles with Links */}
       <div className={styles.speakerContainer}>
@@ -139,3 +146,4 @@ const SessionCard = ({ sessionTitle, speakers, isOnDemand = false }: { sessionTi
     </div>
   );
 };
+

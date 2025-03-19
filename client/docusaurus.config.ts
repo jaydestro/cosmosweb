@@ -208,7 +208,7 @@ const config: Config = {
     announcementBar: {
       id: 'Add Your Project!',
       content:
-        'Join us for <a href="https://azurecosmosdb.github.io/azurecosmosdbconf/"><b>#AzureCosmosDBConf</b></a> on April 15  |  Learn with <a href="https://azurecosmosdb.github.io/azurecosmosdbconf/"><b>#AzureCosmosDBConf</b></a>',
+        'Join us for <b><a href="https://aka.ms/AzureCosmosDBConf">Azure Cosmos DB Conf</a></b> on April 15 | <b><a href="https://aka.ms/RegisterAzureCosmosDBConf">Click here to register</a></b> with Microsoft Reactor for updates.',
       backgroundColor: '#50E6FF',
       textColor: '#552F99',
       isCloseable: false,

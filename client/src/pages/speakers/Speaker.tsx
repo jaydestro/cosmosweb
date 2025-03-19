@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Layout from '@theme/Layout';
+import ReactMarkdown from 'react-markdown'; // ✅ Import ReactMarkdown for proper formatting
 import { useLocation, useHistory } from '@docusaurus/router';
 import './Speaker.css';
 
@@ -105,14 +106,22 @@ const Speaker = () => {
                 Session Details ({speaker.sessionDuration === '5' ? '5 Minute Lightning Talk' : '25 Minute Session'})
               </h2>
               <p className="session-title">{speaker.sessionTitle}</p>
-              <p className="session-abstract">{speaker.sessionAbstract}</p>
+
+              {/* ✅ Use ReactMarkdown for proper session abstract formatting */}
+              <div className="session-abstract">
+                <ReactMarkdown>{speaker.sessionAbstract}</ReactMarkdown>
+              </div>
             </div>
 
             {/* Speaker Bio */}
             {speaker.bio && (
               <div className="bio-section">
                 <h2>Speaker Bio</h2>
-                <p>{speaker.bio}</p>
+                
+                {/* ✅ Use ReactMarkdown for proper bio formatting */}
+                <div className="bio-text">
+                  <ReactMarkdown>{speaker.bio}</ReactMarkdown>
+                </div>
               </div>
             )}
           </div>
