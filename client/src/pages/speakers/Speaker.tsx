@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Layout from '@theme/Layout';
 import { useLocation, useHistory } from '@docusaurus/router';
+import speakersData from './speakers.json'; // ✅ Import JSON
 import './Speaker.css';
 
 const X_LOGO_LIGHT = '/img/icons/x-logo-black.png';
@@ -8,74 +9,82 @@ const X_LOGO_DARK = '/img/icons/x-logo-white.png';
 const LINKEDIN_LOGO_LIGHT = '/img/icons/InBug-Black.png';
 const LINKEDIN_LOGO_DARK = '/img/icons/InBug-White.png';
 
+interface Session {
+  title: string;
+  abstract: string;
+  duration: string; // "5" or "25"
+  time: string;
+  ondemand_only: boolean;
+  youtube_url?: string;
+}
+
 interface Speaker {
   img: string;
   name: string;
   title: string;
   intro: string;
   bio: string;
-  sessionTitle: string;
-  sessionAbstract: string;
-  sessionDuration: string;
+  session: Session;
   x?: string;
   linkedin?: string;
 }
 
-const Speaker = () => {
+const Speaker: React.FC = () => {
   const location = useLocation();
   const history = useHistory();
   const [fromAgenda, setFromAgenda] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(
-    typeof window !== 'undefined' && document.documentElement.dataset.theme === 'dark'
-  );
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [speaker, setSpeaker] = useState<Speaker | null>(null);
 
-  const [speaker, setSpeaker] = useState<Speaker>({
-    name: '',
-    title: '',
-    intro: '',
-    bio: '',
-    sessionTitle: '',
-    sessionAbstract: '',
-    img: '',
-    sessionDuration: '',
-    x: '',
-    linkedin: '',
-  });
-
+  // ✅ Fetch speaker details from JSON instead of relying only on query params
   useEffect(() => {
-    if (location.search) {
-      const searchParams = new URLSearchParams(location.search);
-      setSpeaker({
-        img: searchParams.get('img') || '',
-        name: searchParams.get('name') || '',
-        title: searchParams.get('title') || '',
-        intro: searchParams.get('intro') || '',
-        bio: searchParams.get('bio') ? decodeURIComponent(searchParams.get('bio')!) : '',
-        sessionTitle: searchParams.get('sessionTitle') || '',
-        sessionAbstract: searchParams.get('sessionAbstract') || '',
-        sessionDuration: searchParams.get('sessionDuration') || '',
-        x: searchParams.get('x') || '',
-        linkedin: searchParams.get('linkedin') || '',
-      });
+    const searchParams = new URLSearchParams(location.search);
+    const speakerName = searchParams.get('name');
 
-      if (searchParams.get('from') === 'agenda') {
-        setFromAgenda(true);
-      }
+    if (!speakerName) {
+      return;
     }
 
-    // ✅ Detect theme change dynamically
+    const matchedSpeaker = speakersData.find((s) => s.name.toLowerCase() === speakerName.toLowerCase());
+
+    if (matchedSpeaker) {
+      setSpeaker(matchedSpeaker);
+      setFromAgenda(searchParams.get('from') === 'agenda');
+    }
+  }, [location.search]);
+
+  // ✅ Detect and update theme dynamically after mount
+  useEffect(() => {
     const updateTheme = () => {
       setIsDarkMode(document.documentElement.dataset.theme === 'dark');
     };
 
-    updateTheme(); // Initial check
+    updateTheme(); // Initial theme check
+
     const observer = new MutationObserver(updateTheme);
     observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
 
-    return () => {
-      observer.disconnect();
-    };
-  }, [location.search]);
+    return () => observer.disconnect();
+  }, []);
+
+  // ✅ Ensure session duration displays correctly
+  const getSessionLength = (duration: string): string => {
+    return duration === '5'
+      ? '5 Minute Lightning Talk'
+      : duration === '25'
+      ? '25 Minute Session'
+      : 'Session Details';
+  };
+
+  if (!speaker) {
+    return (
+      <Layout title="Speaker Not Found">
+        <div className="speaker-detail-container">
+          <h1>Speaker Not Found</h1>
+        </div>
+      </Layout>
+    );
+  }
 
   return (
     <Layout
@@ -120,11 +129,9 @@ const Speaker = () => {
 
             {/* Session Details */}
             <div className="session-details">
-              <h2>
-                Session Details ({speaker.sessionDuration === '5' ? '5 Minute Lightning Talk' : '25 Minute Session'})
-              </h2>
-              <p className="session-title">{speaker.sessionTitle}</p>
-              <p className="session-abstract">{speaker.sessionAbstract}</p>
+              <h2>{getSessionLength(speaker.session.duration)}</h2>
+              <p className="session-title">{speaker.session.title}</p>
+              <p className="session-abstract">{speaker.session.abstract}</p>
             </div>
 
             {/* Speaker Bio */}
