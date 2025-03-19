@@ -105,8 +105,18 @@ export default function Agenda() {
 
 // Helper Component for Rendering Session Cards
 
+const truncateText = (text: string, maxLength: number) => {
+  if (text.length <= maxLength) return text;
+  const truncated = text.substring(0, text.lastIndexOf(" ", maxLength)) + "...";
+  return truncated;
+};
+
 const SessionCard = ({ sessionTitle, speakers, isOnDemand = false }: { sessionTitle: string; speakers: Speaker[]; isOnDemand?: boolean }) => {
   const firstSpeaker = speakers[0];
+  const maxAbstractLength = 200; // ✅ Adjust character limit as needed
+
+  // ✅ Construct the speaker detail page URL
+  const speakerUrl = `/speakers/Speaker?name=${encodeURIComponent(firstSpeaker.name)}&title=${encodeURIComponent(firstSpeaker.title)}&intro=${encodeURIComponent(firstSpeaker.intro)}&bio=${encodeURIComponent(firstSpeaker.bio)}&sessionTitle=${encodeURIComponent(firstSpeaker.session.title)}&sessionAbstract=${encodeURIComponent(firstSpeaker.session.abstract)}&img=${encodeURIComponent(firstSpeaker.img)}${firstSpeaker.x ? `&x=${encodeURIComponent(firstSpeaker.x)}` : ''}${firstSpeaker.linkedin ? `&linkedin=${encodeURIComponent(firstSpeaker.linkedin)}` : ''}`;
 
   return (
     <div className={styles.sessionCard}>
@@ -116,25 +126,22 @@ const SessionCard = ({ sessionTitle, speakers, isOnDemand = false }: { sessionTi
         {" | "} <strong>Duration:</strong> {firstSpeaker.session.duration} min
       </p>
 
-      {/* Render Markdown correctly */}
-      <div className={styles.sessionDescription}>
-        <ReactMarkdown>{firstSpeaker.session.abstract}</ReactMarkdown>
+      {/* ✅ Truncate Abstract with "Read More" Link */}
+      <div className={styles.sessionAbstract}>
+        <ReactMarkdown>{truncateText(firstSpeaker.session.abstract, maxAbstractLength)}</ReactMarkdown>
+        <Link to={speakerUrl} className={styles.readMoreLink}>Read More</Link>
       </div>
 
-      {/* Speaker Profiles with Links */}
+      {/* Speaker Profiles */}
       <div className={styles.speakerContainer}>
-        {speakers.map((speaker) => {
-          const speakerUrl = `/speakers/Speaker?name=${encodeURIComponent(speaker.name)}&title=${encodeURIComponent(speaker.title)}&intro=${encodeURIComponent(speaker.intro)}&bio=${encodeURIComponent(speaker.bio)}&sessionTitle=${encodeURIComponent(speaker.session.title)}&sessionAbstract=${encodeURIComponent(speaker.session.abstract)}&img=${encodeURIComponent(speaker.img)}${speaker.x ? `&x=${encodeURIComponent(speaker.x)}` : ''}${speaker.linkedin ? `&linkedin=${encodeURIComponent(speaker.linkedin)}` : ''}`;
-
-          return (
-            <div key={speaker.name} className={styles.speakerProfile}>
-              <Link to={speakerUrl}>
-                <img src={speaker.img} alt={speaker.name} className={styles.speakerImage} />
-              </Link>
-              <p className={styles.speakerName}>{speaker.title}</p>
-            </div>
-          );
-        })}
+        {speakers.map((speaker) => (
+          <div key={speaker.name} className={styles.speakerProfile}>
+            <Link to={speakerUrl}>
+              <img src={speaker.img} alt={speaker.name} className={styles.speakerImage} />
+            </Link>
+            <p className={styles.speakerName}>{speaker.title}</p>
+          </div>
+        ))}
       </div>
 
       {/* YouTube Link (Only if available) */}
@@ -146,4 +153,3 @@ const SessionCard = ({ sessionTitle, speakers, isOnDemand = false }: { sessionTi
     </div>
   );
 };
-
