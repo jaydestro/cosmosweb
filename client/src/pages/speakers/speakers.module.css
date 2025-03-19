@@ -56,14 +56,14 @@ html[data-theme='dark'] .speakerHeading {
     background: white;
     border: 1px solid #D1D5DB; /* Subtle border for light mode */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    color: black; /* Ensure readable text in light mode */
+    color: black;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 html[data-theme='dark'] .featureCard {
     background: linear-gradient(135deg, #2a3d66, #1a1f36);
     border-color: var(--ifm-toc-border-color-dark, #444950);
-    color: white; /* White text in dark mode */
+    color: white;
 }
 
 /* Speaker Image */
@@ -99,7 +99,7 @@ html[data-theme='dark'] .featureImg {
     text-align: center;
     font-weight: 700;
     margin-bottom: 0.3rem;
-    color: #1E3A8A; /* Dark blue for light mode */
+    color: #1E3A8A;
 }
 
 html[data-theme='dark'] .featureTitle {
@@ -124,7 +124,7 @@ html[data-theme='dark'] .featureSession {
     font-size: 1rem;
     text-align: center;
     flex-grow: 1;
-    color: #374151; /* Dark gray for readability */
+    color: #374151;
 }
 
 html[data-theme='dark'] .featureIntro {
@@ -140,14 +140,27 @@ html[data-theme='dark'] .featureIntro {
     padding-top: 10px;
 }
 
+/* Icon Style */
 .socialIcon {
     width: 18px;
     height: 18px;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.2s ease;
 }
 
+/* Light Mode Icon Colors */
+.socialIcon {
+    fill: #1E40AF;
+}
+
+/* Dark Mode Icon Colors */
+html[data-theme='dark'] .socialIcon {
+    fill: #66b2ff;
+}
+
+/* Hover Effect */
 .socialIcon:hover {
     opacity: 0.8;
+    transform: scale(1.1);
 }
 
 /* Responsive Styles */

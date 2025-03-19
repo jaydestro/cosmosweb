@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Layout from '@theme/Layout';
-import ReactMarkdown from 'react-markdown'; // ✅ Import ReactMarkdown for proper formatting
 import { useLocation, useHistory } from '@docusaurus/router';
 import './Speaker.css';
 
@@ -25,6 +24,10 @@ interface Speaker {
 const Speaker = () => {
   const location = useLocation();
   const history = useHistory();
+  const [fromAgenda, setFromAgenda] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(
+    typeof window !== 'undefined' && document.documentElement.dataset.theme === 'dark'
+  );
 
   const [speaker, setSpeaker] = useState<Speaker>({
     name: '',
@@ -54,11 +57,25 @@ const Speaker = () => {
         x: searchParams.get('x') || '',
         linkedin: searchParams.get('linkedin') || '',
       });
-    }
-  }, [location.search]);
 
-  // ✅ Detect dark mode safely without `useColorMode()`
-  const isDarkMode = typeof window !== 'undefined' && document.documentElement.dataset.theme === 'dark';
+      if (searchParams.get('from') === 'agenda') {
+        setFromAgenda(true);
+      }
+    }
+
+    // ✅ Detect theme change dynamically
+    const updateTheme = () => {
+      setIsDarkMode(document.documentElement.dataset.theme === 'dark');
+    };
+
+    updateTheme(); // Initial check
+    const observer = new MutationObserver(updateTheme);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [location.search]);
 
   return (
     <Layout
@@ -66,8 +83,9 @@ const Speaker = () => {
       description={`Details about ${speaker.name}'s session at Azure Cosmos DB Conf 2025`}
     >
       <div className="speaker-detail-container">
-        <button className="back-button" onClick={() => history.goBack()}>
-          ← Back to Speakers List
+        {/* ✅ Back Button: Dynamic label based on navigation source */}
+        <button className="back-button" onClick={() => history.push(fromAgenda ? '/agenda' : '/speakers')}>
+          ← {fromAgenda ? 'Back to Agenda' : 'Back to Speakers List'}
         </button>
 
         <div className="speaker-card">
@@ -78,7 +96,7 @@ const Speaker = () => {
             <h1>{speaker.title}</h1>
             <p>{speaker.intro}</p>
 
-            {/* ✅ Social Icons (Directly Below Name & Title) */}
+            {/* ✅ Social Icons */}
             <div className="social-icons">
               {speaker.x && (
                 <a href={speaker.x} target="_blank" rel="noopener noreferrer">
@@ -106,22 +124,14 @@ const Speaker = () => {
                 Session Details ({speaker.sessionDuration === '5' ? '5 Minute Lightning Talk' : '25 Minute Session'})
               </h2>
               <p className="session-title">{speaker.sessionTitle}</p>
-
-              {/* ✅ Use ReactMarkdown for proper session abstract formatting */}
-              <div className="session-abstract">
-                <ReactMarkdown>{speaker.sessionAbstract}</ReactMarkdown>
-              </div>
+              <p className="session-abstract">{speaker.sessionAbstract}</p>
             </div>
 
             {/* Speaker Bio */}
             {speaker.bio && (
               <div className="bio-section">
                 <h2>Speaker Bio</h2>
-                
-                {/* ✅ Use ReactMarkdown for proper bio formatting */}
-                <div className="bio-text">
-                  <ReactMarkdown>{speaker.bio}</ReactMarkdown>
-                </div>
+                <p>{speaker.bio}</p>
               </div>
             )}
           </div>
