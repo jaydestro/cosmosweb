@@ -188,7 +188,7 @@
         "bio": "Principal Architect at H&R Block with over 20+ years of experience in IT, specializing in modernization and digital transformation. Expertise includes cloud computing, automation, and capability-based software design and development. Skilled in implementing technology strategies that align with business objectives.",
         "session": {
             "title": "Azure Cosmos DB as the Backbone for AI-Enabled Enterprise Applications",
-            "abstract": "Explore H&R Block's journey adopting Azure Cosmos DB as the backbone for modernization and cloud transformation. This session includes a demo of a Data Analytics Agent processing chat transcripts, extracting insights, and supporting interactive Q&A sessions—all in real time.",
+            "abstract": "Explore H&R Block’s journey adopting Azure Cosmos DB for modernization and cloud transformation. See how we leverage Azure Cosmos DB as a backbone for AI-enabled enterprise applications, demonstrated with a real-time analytics agent built on .NET, C#, Semantic Kernel, and Azure OpenAI, providing actionable insights from conversational data.",
             "duration": "25",
             "time": "TBD",
             "ondemand_only": false,
@@ -286,7 +286,7 @@
         "bio": "Principal Architect at H&R Block, with over two decades of industry experience. Specializes in enterprise architecture, Azure Cloud, and Generative AI. Vin has led key initiatives like DIY AI Tax Assist, earning multiple leadership awards and patents in conversational AI.",
         "session": {
             "title": "Azure Cosmos DB as the Backbone for AI-Enabled Enterprise Applications",
-            "abstract": "Explore H&R Block’s journey adopting Azure Cosmos DB for modernization and cloud transformation. See how we leverage Cosmos DB as a backbone for AI-enabled enterprise applications, demonstrated with a real-time analytics agent built on .NET, C#, Semantic Kernel, and Azure OpenAI, providing actionable insights from conversational data.",
+            "abstract": "Explore H&R Block’s journey adopting Azure Cosmos DB for modernization and cloud transformation. See how we leverage Azure Cosmos DB as a backbone for AI-enabled enterprise applications, demonstrated with a real-time analytics agent built on .NET, C#, Semantic Kernel, and Azure OpenAI, providing actionable insights from conversational data.",
             "duration": "25",
             "time": "TBD",
             "ondemand_only": false,
@@ -358,6 +358,5 @@
             "youtube_url": ""
         },
         "linkedin": "https://www.linkedin.com/in/senthilkumaranc/"
-    } 
-    
+    }
 ]
