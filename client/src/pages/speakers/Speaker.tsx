@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Layout from '@theme/Layout';
 import { useLocation, useHistory } from '@docusaurus/router';
-import speakersData from './speakers.json'; // ✅ Import JSON
+import speakersData from './speakers.json';
 import './Speaker.css';
 
 const X_LOGO_LIGHT = '/img/icons/x-logo-black.png';
@@ -12,7 +12,7 @@ const LINKEDIN_LOGO_DARK = '/img/icons/InBug-White.png';
 interface Session {
   title: string;
   abstract: string;
-  duration: string; // "5" or "25"
+  duration: string;
   time: string;
   ondemand_only: boolean;
   youtube_url?: string;
@@ -32,28 +32,27 @@ interface Speaker {
 const Speaker: React.FC = () => {
   const location = useLocation();
   const history = useHistory();
-  const [fromAgenda, setFromAgenda] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [speaker, setSpeaker] = useState<Speaker | null>(null);
+  const [speaker, setSpeaker] = useState<Speaker | undefined>(undefined); // ✅ Initialize as undefined
+  const [fromAgenda, setFromAgenda] = useState(false);
 
-  // ✅ Fetch speaker details from JSON instead of relying only on query params
+  // ✅ Fetch speaker details from JSON
   useEffect(() => {
     const searchParams = new URLSearchParams(location.search);
     const speakerName = searchParams.get('name');
 
     if (!speakerName) {
+      setSpeaker(null); // ✅ If no name in URL, set to null (meaning "not found")
       return;
     }
 
     const matchedSpeaker = speakersData.find((s) => s.name.toLowerCase() === speakerName.toLowerCase());
+    
+    setSpeaker(matchedSpeaker ?? null); // ✅ Set to the speaker if found, otherwise set to null
+    setFromAgenda(searchParams.get('from') === 'agenda');
+  }, []);
 
-    if (matchedSpeaker) {
-      setSpeaker(matchedSpeaker);
-      setFromAgenda(searchParams.get('from') === 'agenda');
-    }
-  }, [location.search]);
-
-  // ✅ Detect and update theme dynamically after mount
+  // ✅ Detect theme mode using MutationObserver
   useEffect(() => {
     const updateTheme = () => {
       setIsDarkMode(document.documentElement.dataset.theme === 'dark');
@@ -69,30 +68,37 @@ const Speaker: React.FC = () => {
 
   // ✅ Ensure session duration displays correctly
   const getSessionLength = (duration: string): string => {
-    return duration === '5'
-      ? '5 Minute Lightning Talk'
-      : duration === '25'
-      ? '25 Minute Session'
-      : 'Session Details';
+    switch (duration) {
+      case '5':
+        return '5-Minute Lightning Talk';
+      case '25':
+        return '25-Minute Session';
+      default:
+        return `Session (${duration} minutes)`;
+    }
   };
 
+  // ✅ Don't render anything until `useEffect` runs and sets `speaker`
+  if (speaker === undefined) return null;
+
+  // ✅ Show "Speaker Not Found" only if speaker is null (not undefined)
   if (!speaker) {
     return (
       <Layout title="Speaker Not Found">
-        <div className="speaker-detail-container">
-          <h1>Speaker Not Found</h1>
+        <div className="speaker-detail-container not-found">
+          <h1>Oops! Speaker Not Found 😢</h1>
+          <p>We couldn't find the speaker you're looking for. Try checking the list again.</p>
+          <button className="back-button" onClick={() => history.push('/speakers')}>
+            ← Back to Speakers
+          </button>
         </div>
       </Layout>
     );
   }
 
   return (
-    <Layout
-      title={`${speaker.name} - Speaker Details`}
-      description={`Details about ${speaker.name}'s session at Azure Cosmos DB Conf 2025`}
-    >
+    <Layout title={`${speaker.name} - Speaker Details`} description={`Details about ${speaker.name}'s session at Azure Cosmos DB Conf 2025`}>
       <div className="speaker-detail-container">
-        {/* ✅ Back Button: Dynamic label based on navigation source */}
         <button className="back-button" onClick={() => history.push(fromAgenda ? '/agenda' : '/speakers')}>
           ← {fromAgenda ? 'Back to Agenda' : 'Back to Speakers List'}
         </button>
@@ -101,40 +107,28 @@ const Speaker: React.FC = () => {
           {speaker.img && <img src={speaker.img} alt={speaker.name} className="speaker-img" />}
 
           <div className="speaker-content">
-            {/* Speaker Name & Title */}
             <h1>{speaker.title}</h1>
             <p>{speaker.intro}</p>
 
-            {/* ✅ Social Icons */}
             <div className="social-icons">
               {speaker.x && (
                 <a href={speaker.x} target="_blank" rel="noopener noreferrer">
-                  <img
-                    className="social-icon"
-                    src={isDarkMode ? X_LOGO_DARK : X_LOGO_LIGHT}
-                    alt="X Logo"
-                  />
+                  <img className="social-icon" src={isDarkMode ? X_LOGO_DARK : X_LOGO_LIGHT} alt="X Logo" />
                 </a>
               )}
               {speaker.linkedin && (
                 <a href={speaker.linkedin} target="_blank" rel="noopener noreferrer">
-                  <img
-                    className="social-icon"
-                    src={isDarkMode ? LINKEDIN_LOGO_DARK : LINKEDIN_LOGO_LIGHT}
-                    alt="LinkedIn Logo"
-                  />
+                  <img className="social-icon" src={isDarkMode ? LINKEDIN_LOGO_DARK : LINKEDIN_LOGO_LIGHT} alt="LinkedIn Logo" />
                 </a>
               )}
             </div>
 
-            {/* Session Details */}
             <div className="session-details">
               <h2>{getSessionLength(speaker.session.duration)}</h2>
               <p className="session-title">{speaker.session.title}</p>
               <p className="session-abstract">{speaker.session.abstract}</p>
             </div>
 
-            {/* Speaker Bio */}
             {speaker.bio && (
               <div className="bio-section">
                 <h2>Speaker Bio</h2>
