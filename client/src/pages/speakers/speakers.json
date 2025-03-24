@@ -35,7 +35,7 @@
         "title": "Anurag Dutt",
         "name": "Anurag",
         "img": "/img/speakers/Anurag_Dutt.jpg",
-        "intro": "Multi-Cloud Engineer, Atos",
+        "intro": "Multi-Cloud Engineer",
         "bio": "Anurag is a Cloud Engineer with expertise in multi-cloud architectures, automation, and infrastructure management across AWS, Azure, and GCP. Passionate about cloud-native technologies and open-source, he helps teams optimize cloud workloads for scalability, security, and cost efficiency. With hands-on experience in IaC, Kubernetes, and DevOps, Anurag simplifies complex cloud concepts into practical, real-world strategies for developers and engineers.",
         "session": {
             "title": "Seamless Integration of Azure Cosmos DB with Azure Kubernetes Service (AKS)",
