@@ -25,10 +25,12 @@ body {
   font-size: 1rem;
   border: none;
   background: linear-gradient(135deg, #6FA3EF, #3B82F6);
-  color: black; /* Readable in light mode */
+  color: black;
   cursor: pointer;
   border-radius: 6px;
   font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .back-button:hover {
@@ -36,7 +38,12 @@ body {
   color: white;
 }
 
-/* Dark Mode: Adjust Button Gradient */
+/* Register button reused back-button style */
+.register-link-button {
+  align-self: center;
+  margin-top: 2rem;
+}
+
 html[data-theme='dark'] .back-button {
   background: linear-gradient(135deg, #2a3d66, #1a1f36);
   color: white;
@@ -80,11 +87,17 @@ html[data-theme='dark'] .speaker-img {
   border-color: #66b2ff;
 }
 
+/* Speaker Content */
+.speaker-content {
+  width: 100%;
+  margin-top: 1rem;
+}
+
 /* Speaker Name */
 .speaker-title {
   font-size: 2rem;
   font-weight: bold;
-  color: #1E3A8A; /* Dark blue for light mode */
+  color: #1E3A8A;
   margin-top: 1rem;
 }
 
@@ -92,7 +105,7 @@ html[data-theme='dark'] .speaker-title {
   color: #66b2ff;
 }
 
-/* Speaker Intro (Job Title & Company) */
+/* Speaker Intro */
 .speaker-intro {
   font-size: 1.2rem;
   color: #374151;
@@ -112,21 +125,13 @@ html[data-theme='dark'] .speaker-intro {
 }
 
 .social-icon {
-  font-size: 24px;
-  transition: opacity 0.3s ease-in-out;
+  width: 24px;
+  height: 24px;
+  transition: opacity 0.3s ease;
 }
 
 .social-icon:hover {
-  opacity: 0.7;
-}
-
-/* Twitter and LinkedIn Colors */
-.twitter-icon {
-  color: #1DA1F2;
-}
-
-.linkedin-icon {
-  color: #0077B5;
+  opacity: 0.8;
 }
 
 /* Session Details */
@@ -146,7 +151,6 @@ html[data-theme='dark'] .session-details h2 {
   color: #66b2ff;
 }
 
-/* Session Title */
 .session-title {
   font-size: 1.4rem;
   font-weight: bold;
@@ -155,10 +159,9 @@ html[data-theme='dark'] .session-details h2 {
 }
 
 html[data-theme='dark'] .session-title {
-  color: #cce6ff; /* ✅ Matches .speaker-bio text color */
+  color: #cce6ff;
 }
 
-/* Session Abstract */
 .session-abstract {
   font-size: 1rem;
   color: #374151;
@@ -170,16 +173,28 @@ html[data-theme='dark'] .session-abstract {
   color: #cce6ff;
 }
 
-/* Session Duration */
-.session-duration {
-  font-size: 1rem;
-  color: #2563EB;
-  font-weight: normal;
+/* YouTube button */
+.youtube-button {
   margin-top: 1rem;
+  background: #ef4444;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
 }
 
-html[data-theme='dark'] .session-duration {
-  color: #66b2ff;
+.youtube-button:hover {
+  background: #b91c1c;
+}
+
+html[data-theme='dark'] .youtube-button {
+  background: #7f1d1d;
+}
+
+html[data-theme='dark'] .youtube-button:hover {
+  background: #991b1b;
 }
 
 /* Speaker Bio */
@@ -228,20 +243,4 @@ html[data-theme='dark'] .speaker-bio {
   .bio-section {
     width: 100%;
   }
-}
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 6px;
-  margin-top: 10px;
-}
-
-.social-icon {
-  width: 24px;
-  height: 24px;
-  transition: opacity 0.3s ease;
-}
-
-.social-icon:hover {
-  opacity: 0.8;
 }
