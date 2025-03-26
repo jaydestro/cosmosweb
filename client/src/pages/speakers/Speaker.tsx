@@ -33,32 +33,29 @@ const Speaker: React.FC = () => {
   const location = useLocation();
   const history = useHistory();
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [speaker, setSpeaker] = useState<Speaker | undefined>(undefined); // ✅ Initialize as undefined
+  const [speaker, setSpeaker] = useState<Speaker | undefined>(undefined);
   const [fromAgenda, setFromAgenda] = useState(false);
 
-  // ✅ Fetch speaker details from JSON
   useEffect(() => {
     const searchParams = new URLSearchParams(location.search);
     const speakerName = searchParams.get('name');
 
     if (!speakerName) {
-      setSpeaker(null); // ✅ If no name in URL, set to null (meaning "not found")
+      setSpeaker(null);
       return;
     }
 
     const matchedSpeaker = speakersData.find((s) => s.name.toLowerCase() === speakerName.toLowerCase());
-    
-    setSpeaker(matchedSpeaker ?? null); // ✅ Set to the speaker if found, otherwise set to null
+    setSpeaker(matchedSpeaker ?? null);
     setFromAgenda(searchParams.get('from') === 'agenda');
   }, []);
 
-  // ✅ Detect theme mode using MutationObserver
   useEffect(() => {
     const updateTheme = () => {
       setIsDarkMode(document.documentElement.dataset.theme === 'dark');
     };
 
-    updateTheme(); // Initial theme check
+    updateTheme();
 
     const observer = new MutationObserver(updateTheme);
     observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
@@ -66,7 +63,6 @@ const Speaker: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
-  // ✅ Ensure session duration displays correctly
   const getSessionLength = (duration: string): string => {
     switch (duration) {
       case '5':
@@ -78,10 +74,8 @@ const Speaker: React.FC = () => {
     }
   };
 
-  // ✅ Don't render anything until `useEffect` runs and sets `speaker`
   if (speaker === undefined) return null;
 
-  // ✅ Show "Speaker Not Found" only if speaker is null (not undefined)
   if (!speaker) {
     return (
       <Layout title="Speaker Not Found">
@@ -97,27 +91,31 @@ const Speaker: React.FC = () => {
   }
 
   return (
-    <Layout title={`${speaker.name} - Speaker Details`} description={`Details about ${speaker.name}'s session at Azure Cosmos DB Conf 2025`}>
+    <Layout
+      title={`${speaker.name} - Speaker Details`}
+      description={`Details about ${speaker.name}'s session at Azure Cosmos DB Conf 2025`}
+    >
       <div className="speaker-detail-container">
         <button className="back-button" onClick={() => history.push(fromAgenda ? '/agenda' : '/speakers')}>
           ← {fromAgenda ? 'Back to Agenda' : 'Back to Speakers List'}
         </button>
 
         <div className="speaker-card">
-          {speaker.img && <img src={speaker.img} alt={speaker.name} className="speaker-img" />}
+          {speaker.img && <img src={speaker.img} alt={`Photo of ${speaker.name}`} className="speaker-img" />}
 
           <div className="speaker-content">
-            <h1>{speaker.title}</h1>
+            <h1 className="speaker-title">{speaker.name}</h1>
+            <h2 className="speaker-intro">{speaker.title}</h2>
             <p>{speaker.intro}</p>
 
             <div className="social-icons">
               {speaker.x && (
-                <a href={speaker.x} target="_blank" rel="noopener noreferrer">
+                <a key="x-link" href={speaker.x} target="_blank" rel="noopener noreferrer">
                   <img className="social-icon" src={isDarkMode ? X_LOGO_DARK : X_LOGO_LIGHT} alt="X Logo" />
                 </a>
               )}
               {speaker.linkedin && (
-                <a href={speaker.linkedin} target="_blank" rel="noopener noreferrer">
+                <a key="linkedin-link" href={speaker.linkedin} target="_blank" rel="noopener noreferrer">
                   <img className="social-icon" src={isDarkMode ? LINKEDIN_LOGO_DARK : LINKEDIN_LOGO_LIGHT} alt="LinkedIn Logo" />
                 </a>
               )}
@@ -127,14 +125,35 @@ const Speaker: React.FC = () => {
               <h2>{getSessionLength(speaker.session.duration)}</h2>
               <p className="session-title">{speaker.session.title}</p>
               <p className="session-abstract">{speaker.session.abstract}</p>
+
+              {speaker.session.youtube_url && (
+                <a
+                  className="youtube-button"
+                  href={speaker.session.youtube_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  ▶️ Watch Session on YouTube
+                </a>
+              )}
             </div>
 
             {speaker.bio && (
               <div className="bio-section">
                 <h2>Speaker Bio</h2>
-                <p>{speaker.bio}</p>
+                <p className="speaker-bio">{speaker.bio}</p>
               </div>
             )}
+
+            {/* Register button styled like back button */}
+            <a
+              className="back-button register-link-button"
+              href="https://aka.ms/RegisterAzureCosmosDBConf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Register Now
+            </a>
           </div>
         </div>
       </div>
