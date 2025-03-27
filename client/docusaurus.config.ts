@@ -63,6 +63,15 @@ const config: Config = {
           customCss: './src/css/custom.css',
         },
       } satisfies Preset.Options,
+      {
+          gtag: {
+            trackingID: 'G-06VJPSGDCQ',
+            anonymizeIP: true,
+          },
+          theme: {
+            customCss: require.resolve("./src/css/custom.css"),
+          }
+        }
     ],
   ],
   plugins: [
