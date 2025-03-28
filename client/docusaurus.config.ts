@@ -77,9 +77,9 @@ const config: Config = {
       },
     ],
    [
-      '@docusaurus/plugin-google-gtag',
+      '@docusaurus/plugin-google-analytics',
       {
-        trackingID: 'G-06VJPSGDCQ', // Replace with your Google Analytics Tracking ID
+        trackingID: 'G-06VJPSGDCQ',  
         anonymizeIP: true,
       },
     ],
