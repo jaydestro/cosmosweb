@@ -63,15 +63,6 @@ const config: Config = {
           customCss: './src/css/custom.css',
         },
       } satisfies Preset.Options,
-      {
-          gtag: {
-            trackingID: 'G-06VJPSGDCQ',
-            anonymizeIP: true,
-          },
-          theme: {
-            customCss: require.resolve("./src/css/custom.css"),
-          }
-        }
     ],
   ],
   plugins: [
@@ -85,6 +76,14 @@ const config: Config = {
         disableInDev: false,
       },
     ],
+   [
+      '@docusaurus/plugin-google-gtag',
+      {
+        trackingID: 'G-06VJPSGDCQ', // Replace with your Google Analytics Tracking ID
+        anonymizeIP: true,
+      },
+    ],
+    
   ],
   themeConfig: {
     // Replace with your project's social card
