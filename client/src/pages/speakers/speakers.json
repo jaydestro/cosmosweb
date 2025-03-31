@@ -138,7 +138,7 @@
         "bio": "Justine is a Senior Program Manager on the Azure Cosmos DB team at Microsoft. She focuses on improving programmability for the API for NoSQL and enhancing developer experiences to help make customers more successful. This includes experiences with the change feed, caching and materialized views.",
         "session": {
             "title": "Real-world examples of real-time applications using change feed",
-            "abstract": "Discover how to use Azure Cosmos DB’s change feed to build real-time applications. From gaming to retail, change feed powers dynamic, instant experiences. We’ll explore the various ways to leverage change feed in your own workloads to solve real-world problems.",
+            "abstract": "Discover how to use Azure Cosmos DB's change feed to build real-time applications. From gaming to retail, change feed powers dynamic, instant experiences. We'll explore the various ways to leverage change feed in your own workloads to solve real-world problems.",
             "duration": "5",
             "time": "TBD",
             "ondemand_only": false,
