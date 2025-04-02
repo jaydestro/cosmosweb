@@ -76,14 +76,17 @@ const config: Config = {
         disableInDev: false,
       },
     ],
-   [
-      '@docusaurus/plugin-google-analytics',
-      {
-        trackingID: 'G-06VJPSGDCQ',  
-        anonymizeIP: true,
-      },
+   presets: [
+      [
+        '@docusaurus/preset-classic',
+        {
+          gtag: {
+            trackingID: 'G-06VJPSGDCQ',
+            anonymizeIP: true,
+          },
+        }
+      ],
     ],
-    
   ],
   themeConfig: {
     // Replace with your project's social card
