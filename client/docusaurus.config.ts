@@ -45,6 +45,11 @@ const config: Config = {
         theme: {
           customCss: './src/css/custom.css',
         },
+        // ✅ Correctly placed gtag tracking
+        gtag: {
+          trackingID: 'G-06VJPSGDCQ',
+          anonymizeIP: true,
+        },
       } satisfies Preset.Options,
     ],
   ],
@@ -146,11 +151,6 @@ const config: Config = {
       backgroundColor: '#50E6FF',
       textColor: '#552F99',
       isCloseable: false,
-    },
-
-    gtag: {
-      trackingID: 'G-06VJPSGDCQ',
-      anonymizeIP: true,
     },
   },
 };
