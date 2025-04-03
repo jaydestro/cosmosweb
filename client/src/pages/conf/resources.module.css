@@ -1,0 +1,96 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: var(--ifm-background-color);
+    color: var(--ifm-font-color-base);
+  }
+  
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #1E3A8A;
+  }
+  
+  .icon {
+    width: 36px;
+    height: 36px;
+    margin-right: 0.75rem;
+  }
+  
+  .card {
+    max-width: 800px;
+    width: 100%;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid #D1D5DB;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .simpleList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .listItem {
+    margin-bottom: 1.5rem;
+  }
+  
+  .linkRow {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .bulletIcon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+  
+  .link {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #1E40AF;
+  }
+  
+  .link:hover {
+    text-decoration: underline;
+  }
+  
+  .description {
+    font-size: 1rem;
+    margin: 0.3rem 0 0.5rem;
+    color: #374151;
+  }
+  
+  /* Dark mode overrides */
+  html[data-theme='dark'] {
+    .title {
+      color: #66b2ff;
+    }
+  
+    .card {
+      background: linear-gradient(135deg, #2a3d66, #1a1f36);
+      border-color: var(--ifm-toc-border-color-dark, #444950);
+    }
+  
+    .link {
+      color: #66b2ff;
+    }
+  
+    .description {
+      color: #cce6ff;
+    }
+  }
+  

@@ -103,43 +103,58 @@ const config: Config = {
             {
               label: 'Conf Home',
               to: '/conf',
+              activeBaseRegex: '^/conf/resources/?$',
               className: 'mobile-only', 
             },
             {
-              label: 'News',
-              to: '/conf#news',
-            },
-            {
               label: 'About Azure Cosmos DB Conf',
+              activeBaseRegex: '^/conf/resources/?$',
               to: '/conf#about',
             },
             {
+              label: 'News',
+              activeBaseRegex: '^/conf/resources/?$',
+              to: '/conf#news',
+            },
+            {
               label: 'Register',
+              activeBaseRegex: '^/conf/resources/?$',
               href: 'https://developer.microsoft.com/en-us/reactor/events/24779/',
             },
             {
               label: 'Agenda',
+              activeBaseRegex: '^/conf/resources/?$',
               to: '/agenda',
             },
             {
               label: 'Speakers',
+              activeBaseRegex: '^/conf/resources/?$',
               to: '/speakers',
             },
             {
+              label: 'Resources',
+              activeBaseRegex: '^/conf/resources/?$',
+              to: 'conf/resources',
+            },
+            {
               label: 'Archive',
+              activeBaseRegex: '^/conf/resources/?$',
               href: '/archive',
             },
             {
               label: 'FAQ',
+              activeBaseRegex: '^/conf/resources/?$',
               to: '/conf#faq-section',
             },
             {
               label: 'Socials',
+              activeBaseRegex: '^/conf/resources/?$',
               to: '/conf#faq-section',
 
             },
             {
               label: 'Code Of Conduct',
+              activeBaseRegex: '^/conf/resources/?$',
               to: '/coc',
             }
             
@@ -167,12 +182,12 @@ const config: Config = {
               href: 'https://stackoverflow.com/tags/azure-cosmosdb/info',
             },
             {
-              label: 'Youtube',
-              href: 'https://www.youtube.com/@AzureCosmosDB',
+              label: 'YouTube',
+              href: 'http://aka.ms/AzureCosmosDBYouTube',
             },
             {
               label: 'X',
-              href: 'https://x.com/azurecosmsodb',
+              href: 'https://x.com/azurecosmosdb',
             },
             {
               label: 'LinkedIn',
