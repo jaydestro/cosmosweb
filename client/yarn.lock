@@ -1638,7 +1638,7 @@
     "react-json-view-lite" "^1.2.0"
     "tslib" "^2.6.0"
 
-"@docusaurus/plugin-google-analytics@3.7.0":
+"@docusaurus/plugin-google-analytics@^3.0.1", "@docusaurus/plugin-google-analytics@3.7.0":
   "integrity" "sha512-otIqiRV/jka6Snjf+AqB360XCeSv7lQC+DKYW+EUZf6XbuE8utz5PeUQ8VuOcD8Bk5zvT1MC4JKcd5zPfDuMWA=="
   "resolved" "https://registry.npmjs.org/@docusaurus/plugin-google-analytics/-/plugin-google-analytics-3.7.0.tgz"
   "version" "3.7.0"
@@ -1648,7 +1648,7 @@
     "@docusaurus/utils-validation" "3.7.0"
     "tslib" "^2.6.0"
 
-"@docusaurus/plugin-google-gtag@3.7.0":
+"@docusaurus/plugin-google-gtag@^3.6.1", "@docusaurus/plugin-google-gtag@3.7.0":
   "integrity" "sha512-M3vrMct1tY65ModbyeDaMoA+fNJTSPe5qmchhAbtqhDD/iALri0g9LrEpIOwNaoLmm6lO88sfBUADQrSRSGSWA=="
   "resolved" "https://registry.npmjs.org/@docusaurus/plugin-google-gtag/-/plugin-google-gtag-3.7.0.tgz"
   "version" "3.7.0"
@@ -4561,6 +4561,8 @@
   "version" "0.0.0"
   dependencies:
     "@docusaurus/core" "3.7.0"
+    "@docusaurus/plugin-google-analytics" "^3.0.1"
+    "@docusaurus/plugin-google-gtag" "^3.6.1"
     "@docusaurus/plugin-ideal-image" "^3.7.0"
     "@docusaurus/preset-classic" "3.7.0"
     "@docusaurus/theme-common" "^3.7.0"

@@ -1,0 +1,28 @@
+[
+    {
+        "title": "Azure Cosmos DB Documentation",
+        "url": "https://learn.microsoft.com/azure/cosmos-db/",
+        "description": "Read the official docs for guidance, tutorials, and reference material."
+      },
+    {
+      "title": "Azure Cosmos DB Samples Gallery",
+      "url": "https://azurecosmosdb.github.io/gallery/",
+      "description": "Your best source for patterns and content for Azure Cosmos DB"
+    },
+    {
+      "title": "Explore Azure Cosmos DB Design Patterns",
+      "url": "https://aka.ms/AzureCosmosDB/DesignPatterns",
+      "description": "Learn how to structure your applications for performance and scalability."
+    },
+    {
+      "title": "Azure Cosmos DB on YouTube",
+      "url": "http://aka.ms/AzureCosmosDBYouTube",
+      "description": "The Azure Cosmos DB YouTube channel features tutorials, use cases, and event recordings"
+    },
+    {
+        "title": "GitHub Samples",
+        "url": "https://github.com/Azure-Samples",
+        "description": "Browse sample applications and templates from Microsoft."
+      }
+  ]
+  

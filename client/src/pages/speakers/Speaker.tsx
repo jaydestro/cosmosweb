@@ -104,8 +104,7 @@ const Speaker: React.FC = () => {
           {speaker.img && <img src={speaker.img} alt={`Photo of ${speaker.name}`} className="speaker-img" />}
 
           <div className="speaker-content">
-            <h1 className="speaker-title">{speaker.name}</h1>
-            <h2 className="speaker-intro">{speaker.title}</h2>
+            <h1 className="speaker-intro">{speaker.title}</h1>
             <p>{speaker.intro}</p>
 
             <div className="social-icons">
