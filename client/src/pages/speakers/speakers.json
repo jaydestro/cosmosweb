@@ -16,22 +16,6 @@
         "linkedin": "https://www.linkedin.com/in/aleksey-s-7b0918/"
     },
     {
-        "title": "Alexander Spiridonov",
-        "name": "Alexander",
-        "img": "/img/speakers/Alexander_Spiridonov.jpg",
-        "intro": "Solutions Architect, NVIDIA",
-        "bio": "Solutions Architect at NVIDIA, specializing in AI, data science, and cloud computing solutions. Passionate about building scalable AI-driven applications.",
-        "session": {
-            "title": "Accelerating Real-Time Analytics with Cosmos DB and GPU-Enhanced Serverless Apache Spark",
-            "abstract": "This session will show you how to create an end-to-end pipeline that leverages Azure Cosmos DB, Apache Spark, and serverless GPU acceleration to redefine real-time analytics. Learn how to ingest streaming data into Azure Cosmos DB and process it at scale using Apache Spark deployed on Azure Container Apps with GPU support. The focus of the presentation is a demo that highlights how GPU acceleration can dramatically reduce processing times and enable sophisticated machine learning workflows..",
-            "duration": "25",
-            "time": "TBD",
-            "ondemand_only": false,
-            "youtube_url": ""
-        },
-        "linkedin": "https://www.linkedin.com/in/alspiridonov/"
-    },
-    {
         "title": "Anurag Dutt",
         "name": "Anurag",
         "img": "/img/speakers/Anurag_Dutt.jpg",
@@ -63,22 +47,6 @@
         },
         "x": "https://twitter.com/bbenz",
         "linkedin": "https://www.linkedin.com/in/brianbenz/"
-    },
-    {
-        "title": "Cary Chai",
-        "name": "Cary",
-        "img": "/img/speakers/Cary_Chai.jpg",
-        "intro": "Product Manager, Microsoft",
-        "bio": "I'm a Product Manager on Azure Container Apps at Microsoft, focused on enabling AI and serverless GPU workloads as well as networking scenarios. Passionate about building seamless developer experiences, I’m excited to learn more about your AI and PaaS needs and explore how we can better support your workloads. I was also previously a product manager on Azure Functions.",
-        "session": {
-            "title": "Accelerating Real-Time Analytics with Cosmos DB and GPU-Enhanced Serverless Apache Spark",
-            "abstract": "This session will show you how to create an end-to-end pipeline that leverages Azure Cosmos DB, Apache Spark, and serverless GPU acceleration to redefine real-time analytics. Learn how to ingest streaming data into Azure Cosmos DB and process it at scale using Apache Spark deployed on Azure Container Apps with GPU support. The focus of the presentation is a demo that highlights how GPU acceleration can dramatically reduce processing times and enable sophisticated machine learning workflows.",
-            "duration": "25",
-            "time": "TBD",
-            "ondemand_only": false,
-            "youtube_url": ""
-        },
-        "linkedin": "https://www.linkedin.com/in/caryzchai/"
     },
     {
         "title": "Divakar Kumar",
