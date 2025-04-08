@@ -2,36 +2,24 @@ import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
-
 const config: Config = {
-  title: 'Azure Cosmos DB Conf 2025',
+  title: 'Azure Cosmos DB Dev Home',
   tagline: 'Infinite Scale, Instant Impact!',
   favicon: 'img/favicon.ico',
 
-  // Set the production url of your site here
-  url: 'https://azurecosmosdb.github.io',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
+  url: 'https://developer.azurecosmosdb.com',
   baseUrl: '/',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'azurecosmosdb', // Usually your GitHub org/user name.
-  projectName: 'azurecosmosdbconf', // Usually your repo name.
+  organizationName: 'azurecosmosdb',
+  projectName: 'azurecosmosdbconf',
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
   },
-
-
 
   presets: [
     [
@@ -39,8 +27,6 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
@@ -50,11 +36,8 @@ const config: Config = {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
@@ -65,101 +48,110 @@ const config: Config = {
       } satisfies Preset.Options,
     ],
   ],
+
   plugins: [
     [
       '@docusaurus/plugin-ideal-image',
       {
         quality: 70,
-        max: 1030, // max resized image's size.
-        min: 640, // min resized image's size. if original is lower, use that size.
-        steps: 2, // the max number of images generated between min and max (inclusive)
+        max: 1030,
+        min: 640,
+        steps: 2,
         disableInDev: false,
       },
     ],
-   [
+    [
       '@docusaurus/plugin-google-analytics',
       {
-        trackingID: 'G-06VJPSGDCQ',  
+        trackingID: 'G-06VJPSGDCQ',
         anonymizeIP: true,
       },
     ],
-    
   ],
+
   themeConfig: {
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
       title: 'Developer Home',
       logo: {
-        alt: 'Azure Cosmos DB Conf 2025',
+        alt: 'Azure Cosmos DB Dev Home',
         src: 'img/logo.svg',
-
       },
       items: [
-        { label: 'Gallery', position: 'left', href: 'https://azurecosmosdb.github.io/gallery/', },      
         {
-          to: '/conf', type: 'dropdown', label: 'Azure Cosmos DB Conf', position: 'left',
+          label: 'Gallery',
+          position: 'left',
+          href: 'https://azurecosmosdb.github.io/gallery/',
+        },
+        {
+          to: '/conf',
+          type: 'dropdown',
+          label: 'Azure Cosmos DB Conf',
+          position: 'left',
           items: [
             {
               label: 'Conf Home',
               to: '/conf',
-              activeBaseRegex: '^/conf/resources/?$',
-              className: 'mobile-only', 
+              activeBaseRegex: '^/conf/?$',
+              className: 'mobile-only',
             },
             {
               label: 'About Azure Cosmos DB Conf',
-              activeBaseRegex: '^/conf/resources/?$',
               to: '/conf#about',
+              activeBaseRegex: '^/conf#about$',
             },
             {
               label: 'News',
-              activeBaseRegex: '^/conf/resources/?$',
               to: '/conf#news',
+              activeBaseRegex: '^/conf#news$',
             },
             {
               label: 'Register',
-              activeBaseRegex: '^/conf/resources/?$',
               href: 'https://developer.microsoft.com/en-us/reactor/events/24779/',
+              // no activeBaseRegex needed
             },
             {
               label: 'Agenda',
-              activeBaseRegex: '^/conf/resources/?$',
               to: '/agenda',
+              activeBaseRegex: '^/agenda/?$',
             },
             {
               label: 'Speakers',
-              activeBaseRegex: '^/conf/resources/?$',
               to: '/speakers',
+              activeBaseRegex: '^/speakers/?$',
             },
             {
               label: 'Resources',
+              to: '/conf/resources',
               activeBaseRegex: '^/conf/resources/?$',
-              to: 'conf/resources',
             },
             {
               label: 'Archive',
-              activeBaseRegex: '^/conf/resources/?$',
               href: '/archive',
+              activeBaseRegex: '^/archive/?$',
             },
             {
               label: 'FAQ',
-              activeBaseRegex: '^/conf/resources/?$',
               to: '/conf#faq-section',
+              activeBaseRegex: '^/conf#faq-section$',
             },
             {
               label: 'Socials',
-              activeBaseRegex: '^/conf/resources/?$',
               to: '/conf#faq-section',
-
+              activeBaseRegex: '^/conf#faq-section$',
             },
             {
               label: 'Code Of Conduct',
-              activeBaseRegex: '^/conf/resources/?$',
               to: '/coc',
-            }
-            
+              activeBaseRegex: '^/coc/?$',
+            },
           ],
         },
-        { label: 'Community', position: 'left' , to:'/community'},
+        {
+          label: 'Community',
+          position: 'left',
+          to: '/community',
+        },
       ],
     },
     footer: {
@@ -191,8 +183,7 @@ const config: Config = {
             {
               label: 'LinkedIn',
               href: 'https://www.linkedin.com/company/azure-cosmos-db',
-
-            }
+            },
           ],
         },
         {
@@ -215,18 +206,17 @@ const config: Config = {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
-
     colorMode: {
       defaultMode: 'light',
       disableSwitch: false,
       respectPrefersColorScheme: false,
     },
-
-    metadata: [{
-      name: 'twitter:card',
-      content: 'Welcome to the Azure Cosmos DB Conf 2025!',
-    }],
-
+    metadata: [
+      {
+        name: 'twitter:card',
+        content: 'Azure Cosmos DB Dev Home',
+      },
+    ],
     announcementBar: {
       id: 'Add Your Project!',
       content:
@@ -235,7 +225,7 @@ const config: Config = {
       textColor: '#552F99',
       isCloseable: false,
     },
-  }
+  },
 };
 
 export default config;
