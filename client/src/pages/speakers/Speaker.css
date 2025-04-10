@@ -244,3 +244,28 @@ html[data-theme='dark'] .speaker-bio {
     width: 100%;
   }
 }
+
+/* Speaker.css (add at the bottom or wherever you prefer) */
+
+/* 
+  This container enforces a 16:9 aspect ratio by:
+  - Setting "position: relative; overflow: hidden;"
+  - Using "padding-top: 56.25%" (i.e., 9/16) 
+*/
+.video-embed-responsive {
+  position: relative;
+  width: 100%;       /* Fill the parent container's width */
+  max-width: 1920px; /* Optional: limit how wide it can stretch, remove if not needed */
+  padding-top: 56.25%; /* 16:9 ratio => 9/16 = 0.5625 => 56.25% */
+  margin: 1rem auto;   /* Center horizontally, add some vertical spacing */
+  overflow: hidden;
+}
+
+/* The iframe inside will be absolutely positioned to fill the container */
+.video-embed-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

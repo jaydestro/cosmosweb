@@ -10,8 +10,8 @@
             "abstract": "OmniRAG is a new Retrieval-Augmented Generation (RAG) design pattern that allows AI to dynamically select the source of context based on the detected user’s intent, leveraging NL2Query capabilities and a Knowledge Graph to deliver the highest accuracy at the lowest cost. CosmosAIGraph is the first implementation of OmniRAG, fully utilizing the power of Azure Cosmos DB as a persistent store with built-in vector search and Apache Jena as an indexed RDF triple store. This session will cover both the OmniRAG pattern and a live demo of CosmosAIGraph in action.",
             "duration": "25",
             "time": "TBD",
-            "ondemand_only": false,
-            "youtube_url": ""
+            "ondemand_only": true,
+            "youtube_url": "https://www.youtube.com/embed/qXSur9LIfok?si=tQeQNgPjzhaspu7c"
         },
         "linkedin": "https://www.linkedin.com/in/aleksey-s-7b0918/"
     },
@@ -26,8 +26,8 @@
             "abstract": "Modern cloud-native applications demand seamless scalability, high availability, and intelligent data processing. In this session, we will explore how Azure Cosmos DB integrates with Azure Kubernetes Service (AKS) to build resilient and highly scalable applications.",
             "duration": "5",
             "time": "TBD",
-            "ondemand_only": false,
-            "youtube_url": ""
+            "ondemand_only": true,
+            "youtube_url": "https://www.youtube.com/embed/qXSur9LIfok?si=tQeQNgPjzhaspu7c"
         },
         "linkedin": "https://www.linkedin.com/in/anuragdutt01/"
     },
@@ -42,8 +42,8 @@
             "abstract": "This session will show you how to create an end-to-end pipeline that leverages Azure Cosmos DB, Apache Spark, and serverless GPU acceleration to redefine real-time analytics. Learn how to ingest streaming data into Azure Cosmos DB and process it at scale using Apache Spark deployed on Azure Container Apps with GPU support. The focus of the presentation is a demo that highlights how GPU acceleration can dramatically reduce processing times and enable sophisticated machine learning workflows.",
             "duration": "25",
             "time": "TBD",
-            "ondemand_only": false,
-            "youtube_url": ""
+            "ondemand_only": true,
+            "youtube_url": "https://www.youtube.com/embed/qXSur9LIfok?si=tQeQNgPjzhaspu7c"
         },
         "x": "https://twitter.com/bbenz",
         "linkedin": "https://www.linkedin.com/in/brianbenz/"
@@ -59,8 +59,8 @@
             "abstract": "Explore how Azure Cosmos DB empowers AI workflows by integrating vector storage, semantic layering, and mirroring capabilities with Microsoft Fabric for enhanced data analytics and visualization. Durable Multi-Agents utilize Azure Cosmos DB to orchestrate complex, scalable, reliable AI-powered operations.",
             "duration": "25",
             "time": "TBD",
-            "ondemand_only": false,
-            "youtube_url": ""
+            "ondemand_only": true,
+            "youtube_url": "https://www.youtube.com/embed/qXSur9LIfok?si=tQeQNgPjzhaspu7c"
         },
         "linkedin": "https://www.linkedin.com/in/divakar-kumar/"
     },
@@ -75,8 +75,8 @@
             "abstract": "An enterprise-grade predictive maintenance solution demonstrating how Azure Cosmos DB and AI technologies can create intelligent, scalable platforms for real-time equipment monitoring and failure prediction.",
             "duration": "25",
             "time": "TBD",
-            "ondemand_only": false,
-            "youtube_url": ""
+            "ondemand_only": true,
+            "youtube_url": "https://www.youtube.com/embed/qXSur9LIfok?si=tQeQNgPjzhaspu7c"
         },
         "x": "https://x.com/FaraahCodes",
         "linkedin": "https://www.linkedin.com/in/farah-m-abdou-1a8a31222"
@@ -91,9 +91,9 @@
             "title": "How Microsoft powers planet-scale AI apps with DiskANN",
             "abstract": "Join us for a deep dive into DiskANN, the state-of-the-art vector search system powering Microsoft services like Bing Search, Advertisements, and the Bing, M365, and Windows Copilots. We'll discuss the motivation behind DiskANN, explore its cutting-edge design, review the latest performance benchmarks, and provide a sneak peek at upcoming improvements. We'll also examine how DiskANN is integrated into Azure Cosmos DB, delivering a serverless, pay-per-use, high-performance vector database that empowers developers to build intelligent applications at any scale.",
             "duration": "25",
-            "time": "TBD",
+            "time": "09:35:00 AM PT",
             "ondemand_only": false,
-            "youtube_url": ""
+            "youtube_url": "https://www.youtube.com/embed/qXSur9LIfok?si=tQeQNgPjzhaspu7c"
         },
         "x": "https://twitter.com/jamescodella",
         "linkedin": "https://www.linkedin.com/in/jamescodella/"
@@ -108,9 +108,9 @@
             "title": "Real-world examples of real-time applications using change feed",
             "abstract": "Discover how to use Azure Cosmos DB's change feed to build real-time applications. From gaming to retail, change feed powers dynamic, instant experiences. We'll explore the various ways to leverage change feed in your own workloads to solve real-world problems.",
             "duration": "5",
-            "time": "TBD",
+            "time": "09:55:00 AM PT",
             "ondemand_only": false,
-            "youtube_url": ""
+            "youtube_url": "https://www.youtube.com/embed/qXSur9LIfok?si=tQeQNgPjzhaspu7c"
         },
         "x": "https://twitter.com/justinecocchi"
     },
@@ -125,8 +125,8 @@
             "abstract": "This session dives deep into the powerful hybrid search capabilities of Azure Cosmos DB, specifically focusing on the integration of vector search with full-text search scoring (BM25) using Reciprocal Rank Fusion (RRF). Learn how to build an enterprise knowledge management system leveraging Azure Cosmos DB with Nest.js, combining semantic similarity matching and keyword matching for enhanced search results. This demo-heavy session will showcase the implementation of hybrid search features, including vector search, full-text search, and the RRF fusion algorithm.",
             "duration": "25",
             "time": "TBD",
-            "ondemand_only": false,
-            "youtube_url": ""
+            "ondemand_only": true,
+            "youtube_url": "https://www.youtube.com/embed/qXSur9LIfok?si=tQeQNgPjzhaspu7c"
         },
         "x": "https://x.com/_kevincomba",
         "linkedin": "https://www.linkedin.com/in/kevin-comba-gatimu/"
@@ -139,11 +139,11 @@
         "bio": "Product Leader with experience of leading and growing multiple large scale cloud services from inception to maturity. Responsibilities include product strategy, business strategy, product execution, and leading engineering teams to deliver global cloud services. 20 years of experience building cloud services, distributed systems, frameworks & tools.",
         "session": {
             "title": "Keynote",
-            "abstract": "Hear the latest and greatest from the Azure Cosmos DB team, including new features, customer stories, and a look at the future of the service.",
+            "abstract": "Explore new features, watch real-world demos, and enjoy interviews with customers from DocuSign and H&R Block. Get a firsthand look at how these advancements are shaping the future of Azure Cosmos DB—and discover insights that can transform your own applications.",
             "duration": "25",
-            "time": "TBD",
+            "time": "09:05:00 AM PT",
             "ondemand_only": false,
-            "youtube_url": ""
+            "youtube_url": "https://www.youtube.com/embed/qXSur9LIfok?si=tQeQNgPjzhaspu7c"
         },
         "x": "https://x.com/kirillg_msft",
         "linkedin": "https://www.linkedin.com/in/kirillgavrylyuk/"
@@ -155,12 +155,12 @@
         "intro": "Principal Architect, H&R Block",
         "bio": "Principal Architect at H&R Block with over 20+ years of experience in IT, specializing in modernization and digital transformation. Expertise includes cloud computing, automation, and capability-based software design and development. Skilled in implementing technology strategies that align with business objectives.",
         "session": {
-            "title": "Azure Cosmos DB as the Backbone for AI-Enabled Enterprise Applications",
+            "title": "Closing Keynote: Azure Cosmos DB as the Backbone for AI-Enabled Enterprise Applications",
             "abstract": "Explore H&R Block’s journey adopting Azure Cosmos DB for modernization and cloud transformation. See how we leverage Azure Cosmos DB as a backbone for AI-enabled enterprise applications, demonstrated with a real-time analytics agent built on .NET, C#, Semantic Kernel, and Azure OpenAI, providing actionable insights from conversational data.",
             "duration": "25",
-            "time": "TBD",
+            "time": "11:25:00 AM PT",
             "ondemand_only": false,
-            "youtube_url": ""
+            "youtube_url": "https://www.youtube.com/embed/qXSur9LIfok?si=tQeQNgPjzhaspu7c"
         },
         "linkedin": "https://www.linkedin.com/in/manijaman"
     },
@@ -174,9 +174,9 @@
             "title": "Build a RAG-based Retail Copilot Code-First on Azure AI Foundry",
             "abstract": "Want to build a RAG-based custom chat AI code-first but don’t know where to start? We'll deconstruct Contoso Chat, an open-source sample teaching you to build a retail chat AI with product data in Azure AI Search and customer data in Azure Cosmos DB. Walk through the GenAIOps lifecycle and tools on the Azure AI Foundry platform, plus gain a sandbox sample to explore and extend!",
             "duration": "25",
-            "time": "TBD",
+            "time": "10:00:00 AM PT",
             "ondemand_only": false,
-            "youtube_url": ""
+            "youtube_url": "https://www.youtube.com/embed/qXSur9LIfok?si=tQeQNgPjzhaspu7c"
         },
         "x": "https://x.com/nitya",
         "linkedin": "https://www.linkedin.com/in/nityan/"
@@ -191,9 +191,9 @@
             "title": "Turning Data Into Generative Chaos",
             "abstract": "What if a database could be more than just a data platform—what if it could be an instrument for creative exploration? I'll share experiments using Azure Cosmos DB, OpenAI’s LLMs, and Semantic Kernel to power generative art. We'll explore how modern AI and databases can inspire creativity, turning simple data into dynamic algorithmic visuals with p5.js.",
             "duration": "25",
-            "time": "TBD",
+            "time": "11:00:00 AM PT",
             "ondemand_only": false,
-            "youtube_url": ""
+            "youtube_url": "https://www.youtube.com/embed/qXSur9LIfok?si=tQeQNgPjzhaspu7c"
         },
         "x": "https://x.com/borzenko_lena",
         "linkedin": "https://www.linkedin.com/in/olena-borzenko/"
@@ -208,9 +208,9 @@
             "title": "Reducing database costs to $1 with data modeling, Azure Web PubSub, and the Cosmos serverless plan",
             "abstract": "Many perceive Azure Cosmos DB as costly. Yet with proper data modeling and serverless capabilities, significant cost reductions are achievable. We'll explore a real-world case study where migration from a $280/month RDBMS setup to Cosmos DB reduced costs to under $1/month, improving end-user experience and reducing eCO₂ footprint.",
             "duration": "25",
-            "time": "TBD",
+            "time": "10:35:00 AM PT",
             "ondemand_only": false,
-            "youtube_url": ""
+            "youtube_url": "https://www.youtube.com/embed/qXSur9LIfok?si=tQeQNgPjzhaspu7c"
         },
         "linkedin": "https://www.linkedin.com/in/simon-kofod/"
     },
@@ -225,8 +225,8 @@
             "abstract": "In this session, we'll discuss best practices for enhancing security in Azure Cosmos DB. Topics include Network Security Perimeter (NSP), Managed Identity, secure communications, and authentication management, with a demo on transitioning to Entra ID authentication.",
             "duration": "25",
             "time": "TBD",
-            "ondemand_only": false,
-            "youtube_url": ""
+            "ondemand_only": true,
+            "youtube_url": "https://www.youtube.com/embed/qXSur9LIfok?si=tQeQNgPjzhaspu7c"
         },
         "linkedin": "https://www.linkedin.com/in/sudhanshukhera/"
     },
@@ -241,8 +241,8 @@
             "abstract": "We've integrated Azure Cosmos DB into our AI architecture, optimizing for performance and reducing costs by 35%. The session features live demonstrations of change feed pipelines, custom monitoring dashboards, multi-region deployments, optimized data modeling, and Azure Functions for model serving. Attendees will leave with practical strategies for resource optimization and cost management.",
             "duration": "25",
             "time": "TBD",
-            "ondemand_only": false,
-            "youtube_url": ""
+            "ondemand_only": true,
+            "youtube_url": "https://www.youtube.com/embed/qXSur9LIfok?si=tQeQNgPjzhaspu7c"
         },
         "linkedin": "https://www.linkedin.com/in/srinivas-reddy-mosali-b9548b141/"
     },
@@ -253,12 +253,12 @@
         "intro": "Principal Architect, H&R Block",
         "bio": "Principal Architect at H&R Block, with over two decades of industry experience. Specializes in enterprise architecture, Azure Cloud, and Generative AI. Vin has led key initiatives like DIY AI Tax Assist, earning multiple leadership awards and patents in conversational AI.",
         "session": {
-            "title": "Azure Cosmos DB as the Backbone for AI-Enabled Enterprise Applications",
+            "title": "Closing Keynote: Azure Cosmos DB as the Backbone for AI-Enabled Enterprise Applications",
             "abstract": "Explore H&R Block’s journey adopting Azure Cosmos DB for modernization and cloud transformation. See how we leverage Azure Cosmos DB as a backbone for AI-enabled enterprise applications, demonstrated with a real-time analytics agent built on .NET, C#, Semantic Kernel, and Azure OpenAI, providing actionable insights from conversational data.",
             "duration": "25",
-            "time": "TBD",
+            "time": "11:25:00 AM PT",
             "ondemand_only": false,
-            "youtube_url": ""
+            "youtube_url": "https://www.youtube.com/embed/qXSur9LIfok?si=tQeQNgPjzhaspu7c"
         },
         "linkedin": "https://www.linkedin.com/in/vinkamat"
     },
@@ -273,8 +273,8 @@
             "abstract": "In this session, we'll discuss best practices for securing Azure Cosmos DB using Network Security Perimeter (NSP) and Managed Identity. Attendees will learn to configure secure communications, implement managed identities for authentication, and migrate from local authentication to Entra ID.",
             "duration": "25",
             "time": "TBD",
-            "ondemand_only": false,
-            "youtube_url": ""
+            "ondemand_only": true,
+            "youtube_url": "https://www.youtube.com/embed/qXSur9LIfok?si=tQeQNgPjzhaspu7c"
         },
         "x": "https://www.twitter.com/bigdataprincess",
         "linkedin": "https://www.linkedin.com/in/iriaeno"
@@ -290,8 +290,8 @@
             "abstract": "Curious about open-source databases? Join us as we explore DocumentDB, the open-source engine powering Azure Cosmos DB for MongoDB vCore. This session will provide a comprehensive overview of DocumentDB, its architecture and its versatile use cases. Additionally, we will discuss the benefits of its permissive MIT license and guide you through getting started.\n\nDon't miss this opportunity to learn more about the open-source future of NoSQL!",
             "duration": "5",
             "time": "TBD",
-            "ondemand_only": false,
-            "youtube_url": ""
+            "ondemand_only": true,
+            "youtube_url": "https://www.youtube.com/embed/qXSur9LIfok?si=tQeQNgPjzhaspu7c"
         },
         "linkedin": "https://www.linkedin.com/in/patty-chow/"
     },
@@ -305,9 +305,9 @@
             "title": "Orchestrating Intelligent Agents",
             "abstract": "In this lightning talk, discover how Azure Cosmos DB serves as the cornerstone for scalable multi-agent systems, enabling seamless AI agent communication and collaboration. Learn about practical implementations of AI agent protocols within Azure Cosmos DB.",
             "duration": "5",
-            "time": "TBD",
+            "time": "10:25:00 AM PT",
             "ondemand_only": false,
-            "youtube_url": ""
+            "youtube_url": "https://www.youtube.com/embed/qXSur9LIfok?si=tQeQNgPjzhaspu7c"
         },
         "linkedin": "https://www.linkedin.com/in/marius-h%C3%B6gger-484b55153/"
     },
@@ -321,9 +321,9 @@
             "title": "Building a Centralized Product Data Hub with Azure Cosmos DB at QVC",
             "abstract": "Discover how QVC leverages Azure Cosmos DB to centralize product, pricing, promotional, and inventory data. This session covers real-time data ingestion, change feed-based inventory updates, and multi-region replication. Learn how QVC integrates Azure Data Factory, Functions, and GraphQL APIs to create a scalable, high-performance product data hub for seamless sales channel integration.",
             "duration": "25",
-            "time": "TBD",
+            "time": "10:50:00 AM PT",
             "ondemand_only": false,
-            "youtube_url": ""
+            "youtube_url": "https://www.youtube.com/embed/qXSur9LIfok?si=tQeQNgPjzhaspu7c"
         },
         "linkedin": "https://www.linkedin.com/in/senthilkumaranc/"
     }

@@ -3,26 +3,26 @@ import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
 import useBaseUrl from '@docusaurus/useBaseUrl';
- 
+
 const title = "Azure Cosmos DB Samples Gallery";
 const description = "Your best source for patterns and content for Azure Cosmos DB";
 const subtitle = "Featured Resources";
 const developerCommunityData = [
   {
     name: 'Discover Templates',
-    imageUrl: '../img/logo.svg',  
+    imageUrl: '../img/logo.svg',
     link: 'https://azurecosmosdb.github.io/gallery/',
   },
   {
     name: 'Learn more about Azure Cosmos DB',
-    imageUrl: '../img/icons/msft.png', 
+    imageUrl: '../img/icons/msft.png',
     link: 'https://learn.microsoft.com/en-us/azure/cosmos-db/',
   },
   {
     name: 'Azure Cosmos DB community',
-    imageUrl:'../img/logo.svg',  
+    imageUrl: '../img/logo.svg',
     link: '/community',
-  } 
+  }
 ];
 
 
@@ -58,7 +58,7 @@ export default function Home() {
   }, []);
 
   return (
-    <Layout title={`Hello from ${siteConfig.title}`} description="Welcome to the Azure Cosmos DB Conf 2025 site">
+    <Layout title="Azure Cosmos DB Dev Home" description="Azure Cosmos DB Dev Home">
       <main className={styles.mainContainer}>
         <div className={styles.coverPageContainer}>
           <img
@@ -72,7 +72,7 @@ export default function Home() {
           <div className={styles.textContainer}>
             <h2>Azure Cosmos DB</h2>
             <p>Your best source for patterns and content for Azure Cosmos DB</p>
-          </div>     
+          </div>
         </div>
         <div className="developer-cards">
           {developerCommunityData.map((developer, index) => (

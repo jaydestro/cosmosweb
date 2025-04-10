@@ -45,10 +45,12 @@ const Speaker: React.FC = () => {
       return;
     }
 
-    const matchedSpeaker = speakersData.find((s) => s.name.toLowerCase() === speakerName.toLowerCase());
+    const matchedSpeaker = speakersData.find(
+      (s) => s.name.toLowerCase() === speakerName.toLowerCase()
+    );
     setSpeaker(matchedSpeaker ?? null);
     setFromAgenda(searchParams.get('from') === 'agenda');
-  }, []);
+  }, [location.search]);
 
   useEffect(() => {
     const updateTheme = () => {
@@ -58,7 +60,10 @@ const Speaker: React.FC = () => {
     updateTheme();
 
     const observer = new MutationObserver(updateTheme);
-    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['data-theme'],
+    });
 
     return () => observer.disconnect();
   }, []);
@@ -96,12 +101,17 @@ const Speaker: React.FC = () => {
       description={`Details about ${speaker.name}'s session at Azure Cosmos DB Conf 2025`}
     >
       <div className="speaker-detail-container">
-        <button className="back-button" onClick={() => history.push(fromAgenda ? '/agenda' : '/speakers')}>
+        <button
+          className="back-button"
+          onClick={() => history.push(fromAgenda ? '/agenda' : '/speakers')}
+        >
           ← {fromAgenda ? 'Back to Agenda' : 'Back to Speakers List'}
         </button>
 
         <div className="speaker-card">
-          {speaker.img && <img src={speaker.img} alt={`Photo of ${speaker.name}`} className="speaker-img" />}
+          {speaker.img && (
+            <img src={speaker.img} alt={`Photo of ${speaker.name}`} className="speaker-img" />
+          )}
 
           <div className="speaker-content">
             <h1 className="speaker-intro">{speaker.title}</h1>
@@ -109,13 +119,31 @@ const Speaker: React.FC = () => {
 
             <div className="social-icons">
               {speaker.x && (
-                <a key="x-link" href={speaker.x} target="_blank" rel="noopener noreferrer">
-                  <img className="social-icon" src={isDarkMode ? X_LOGO_DARK : X_LOGO_LIGHT} alt="X Logo" />
+                <a
+                  key="x-link"
+                  href={speaker.x}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    className="social-icon"
+                    src={isDarkMode ? X_LOGO_DARK : X_LOGO_LIGHT}
+                    alt="X Logo"
+                  />
                 </a>
               )}
               {speaker.linkedin && (
-                <a key="linkedin-link" href={speaker.linkedin} target="_blank" rel="noopener noreferrer">
-                  <img className="social-icon" src={isDarkMode ? LINKEDIN_LOGO_DARK : LINKEDIN_LOGO_LIGHT} alt="LinkedIn Logo" />
+                <a
+                  key="linkedin-link"
+                  href={speaker.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    className="social-icon"
+                    src={isDarkMode ? LINKEDIN_LOGO_DARK : LINKEDIN_LOGO_LIGHT}
+                    alt="LinkedIn Logo"
+                  />
                 </a>
               )}
             </div>
@@ -125,15 +153,17 @@ const Speaker: React.FC = () => {
               <p className="session-title">{speaker.session.title}</p>
               <p className="session-abstract">{speaker.session.abstract}</p>
 
+              {/* Fully responsive 16:9 video embed */}
               {speaker.session.youtube_url && (
-                <a
-                  className="youtube-button"
-                  href={speaker.session.youtube_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  ▶️ Watch Session on YouTube
-                </a>
+                <div className="video-embed-responsive">
+                  <iframe
+                    src={speaker.session.youtube_url}
+                    title={`${speaker.session.title} YouTube Video`}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
               )}
             </div>
 
