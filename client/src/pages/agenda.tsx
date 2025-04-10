@@ -173,12 +173,25 @@ function SessionCard({
           );
         })}
       </div>
+      {speakers[0].session.youtube_url && (() => {
+  const match = speakers[0].session.youtube_url.match(/\/embed\/([^?]+)/);
+  const videoId = match ? match[1] : null;
+  const youtubeLink = videoId ? `https://www.youtube.com/watch?v=${videoId}` : null;
 
-      {speakers[0].session.youtube_url && (
-        <a href={speakers[0].session.youtube_url} target="_blank" rel="noopener noreferrer" className={styles.youtubeLink}>
-          Watch on YouTube
-        </a>
-      )}
+  return youtubeLink ? (
+    <div className={styles.readMoreContainer}>
+      <a
+        href={youtubeLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.readMoreButton}
+      >
+        Watch on YouTube
+      </a>
+    </div>
+  ) : null;
+})()}
+
     </div>
   );
 }
