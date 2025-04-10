@@ -211,7 +211,18 @@ body {
 .agendaSection {
   padding: 50px 20px;
   text-align: center;
-  background-color: #f1f7ff;
+  /* 
+    The lines below have been removed/commented out 
+    so it inherits the site's default background:
+  
+    background-color: #f1f7ff;
+  
+    [data-theme='dark'] .agendaSection {
+      background-color: #2d2d2d;
+    }
+  
+    color overrides can also be removed or set to inherit
+  */
 }
 
 /* Agenda Button */
@@ -323,7 +334,6 @@ body {
   font-weight: bold;
 }
 
-
 /* Keep the date size unchanged */
 .date {
   font-size: 1.6rem; /* Previously 1.2rem, reduced slightly */
@@ -346,4 +356,44 @@ body {
 
 .showMoreButton:hover {
   background-color: #005ea6;
+}
+
+/* ========== DYNAMIC AGENDA LIST STYLES ========== */
+.agendaList {
+  margin-top: 30px;
+  text-align: left; /* So times & titles can be left-aligned */
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.agendaItem {
+  margin-bottom: 20px;
+}
+
+.agendaTime {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+[data-theme="dark"] .agendaTime {
+  color: #ddd;
+}
+
+.agendaTitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #4796e8;
+  margin: 4px 0;
+}
+
+.agendaSpeaker {
+  margin: 0;
+  font-weight: normal;
+  color: #555;
+}
+
+[data-theme="dark"] .agendaSpeaker {
+  color: #ccc;
 }

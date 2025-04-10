@@ -1,28 +1,27 @@
 [
-    {
-        "title": "Azure Cosmos DB Documentation",
-        "url": "https://learn.microsoft.com/azure/cosmos-db/",
-        "description": "Read the official docs for guidance, tutorials, and reference material."
-      },
-    {
-      "title": "Azure Cosmos DB Samples Gallery",
-      "url": "https://azurecosmosdb.github.io/gallery/",
-      "description": "Your best source for patterns and content for Azure Cosmos DB"
-    },
-    {
-      "title": "Explore Azure Cosmos DB Design Patterns",
-      "url": "https://aka.ms/AzureCosmosDB/DesignPatterns",
-      "description": "Learn how to structure your applications for performance and scalability."
-    },
-    {
-      "title": "Azure Cosmos DB on YouTube",
-      "url": "http://aka.ms/AzureCosmosDBYouTube",
-      "description": "The Azure Cosmos DB YouTube channel features tutorials, use cases, and event recordings"
-    },
-    {
-        "title": "GitHub Samples",
-        "url": "https://github.com/Azure-Samples",
-        "description": "Browse sample applications and templates from Microsoft."
-      }
-  ]
-  
+  {
+    "title": "Azure Cosmos DB Conf 2025 Evaluation",
+    "url": "https://aka.ms/EvalCosmosConf2025",
+    "description": "Help us shape next year’s event—take a moment to fill out our conference evaluation form!"
+  },
+  {
+    "title": "Microsoft Learn Training: Build Generative AI applications with Azure Cosmos DB",
+    "url": "https://learn.microsoft.com/en-us/training/modules/build-generative-ai-applications-with-azure-cosmos-db-nosql/",
+    "description": "Unlock the power of Azure Cosmos DB for NoSQL and learn to build AI-driven applications in this hands-on learning module!"
+  },
+  {
+    "title": "Azure Cosmos DB Documentation",
+    "url": "https://learn.microsoft.com/azure/cosmos-db/",
+    "description": "Read the official docs for guidance, tutorials, and reference material."
+  },
+  {
+    "title": "Azure Cosmos DB Samples Gallery",
+    "url": "https://azurecosmosdb.github.io/gallery/",
+    "description": "Your best source for patterns and content for Azure Cosmos DB"
+  },
+  {
+    "title": "Azure Cosmos DB on YouTube",
+    "url": "http://aka.ms/AzureCosmosDBYouTube",
+    "description": "The Azure Cosmos DB YouTube channel features tutorials, use cases, and event recordings"
+  }
+]
