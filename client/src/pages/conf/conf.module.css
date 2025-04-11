@@ -35,33 +35,30 @@ body {
 
 /* Title Styling */
 .headerText h1 {
-  font-size: 3.5rem; /* Bigger title for visibility */
+  font-size: 3.5rem;
   font-weight: 700;
   margin-bottom: 10px;
   line-height: 1.2;
 }
 
-/* Ensuring proper font and spacing for "Azure Cosmos DB Conf" */
 .azureCosmos {
   font-weight: bold;
   display: inline-block;
 }
 
 .conf {
-  color: #4796e8; /* 2025 in blue */
+  color: #4796e8;
   font-weight: bold;
   display: inline-block;
   margin-left: 10px;
 }
 
-/* Date Styling */
 .date {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #333; /* Ensuring contrast */
+  color: #333;
 }
 
-/* Dark Mode Adjustments */
 [data-theme='dark'] .headerText {
   color: #ffffff;
 }
@@ -70,7 +67,6 @@ body {
   color: #f0f0f0;
 }
 
-/* Responsive Adjustments */
 @media (max-width: 768px) {
   .headerText {
     font-size: 1.5rem;
@@ -99,7 +95,6 @@ body {
   justify-content: flex-start;
 }
 
-/* Section Styling */
 .section {
   padding: 40px;
   margin-top: 20px;
@@ -111,7 +106,6 @@ body {
   text-align: center;
 }
 
-/* Section Headings */
 .section h2 {
   font-size: 2.5rem;
   font-weight: bold;
@@ -132,7 +126,6 @@ body {
   color: #4796e8;
 }
 
-/* News Grid Layout */
 .newsGrid {
   display: flex;
   justify-content: space-between;
@@ -142,13 +135,11 @@ body {
   margin: auto;
 }
 
-/* Left: News List */
 .newsList {
   width: 50%;
   text-align: left;
 }
 
-/* Individual News Items */
 .newsItem {
   margin-bottom: 20px;
   padding: 15px;
@@ -172,7 +163,6 @@ body {
   color: #ddd;
 }
 
-/* Right: Embedded YouTube Video */
 .newsVideo {
   width: 50%;
   display: flex;
@@ -185,7 +175,6 @@ body {
   border-radius: 10px;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .newsGrid {
     flex-direction: column;
@@ -211,21 +200,8 @@ body {
 .agendaSection {
   padding: 50px 20px;
   text-align: center;
-  /* 
-    The lines below have been removed/commented out 
-    so it inherits the site's default background:
-  
-    background-color: #f1f7ff;
-  
-    [data-theme='dark'] .agendaSection {
-      background-color: #2d2d2d;
-    }
-  
-    color overrides can also be removed or set to inherit
-  */
 }
 
-/* Agenda Button */
 .agendaButtonContainer {
   text-align: center;
   margin-top: 1.5rem;
@@ -290,7 +266,6 @@ body {
   margin: auto;
 }
 
-/* About Image Styling */
 .aboutImage img {
   width: 100%;
   max-width: 600px;
@@ -298,7 +273,6 @@ body {
   border-radius: 10px;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .aboutGrid {
     grid-template-columns: 1fr;
@@ -317,16 +291,16 @@ body {
 }
 
 .logo {
-  height: 60px; /* Adjust as needed */
+  height: 60px;
 }
 
 .eventTitle {
-  font-size: 2.8rem; /* Reduced from 3.5rem (-20%) */
+  font-size: 2.8rem;
   font-weight: 700;
   display: flex;
-  flex-wrap: nowrap; /* Prevents wrapping */
-  align-items: center; /* Ensures inline alignment */
-  gap: 10px; /* Adds spacing */
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 10px;
 }
 
 .conf {
@@ -334,12 +308,11 @@ body {
   font-weight: bold;
 }
 
-/* Keep the date size unchanged */
 .date {
-  font-size: 1.6rem; /* Previously 1.2rem, reduced slightly */
+  font-size: 1.6rem;
   font-weight: 500;
   margin-top: 6px;
-  text-align: left; /* Keeps alignment with "Azure Cosmos DB Conf" */
+  text-align: left;
 }
 
 .showMoreButton {
@@ -361,7 +334,7 @@ body {
 /* ========== DYNAMIC AGENDA LIST STYLES ========== */
 .agendaList {
   margin-top: 30px;
-  text-align: left; /* So times & titles can be left-aligned */
+  text-align: left;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
@@ -396,4 +369,42 @@ body {
 
 [data-theme="dark"] .agendaSpeaker {
   color: #ccc;
+}
+
+/* ========== MOBILE FIX FOR AGENDA SECTION ========== */
+@media (max-width: 768px) {
+  .agendaList {
+    padding: 0 1rem;
+    text-align: left;
+  }
+
+  .agendaItem {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    background-color: rgba(0, 120, 212, 0.05);
+  }
+
+  .agendaTime {
+    font-size: 1rem;
+    margin-bottom: 6px;
+  }
+
+  .agendaTitle {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+  }
+
+  .agendaSpeaker {
+    font-size: 0.95rem;
+    color: #333;
+  }
+
+  [data-theme="dark"] .agendaSpeaker {
+    color: #ccc;
+  }
 }
