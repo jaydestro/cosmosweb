@@ -25,7 +25,7 @@ const Resources: React.FC = () => {
         <div className={styles.card}>
           {/* Summary text moved inside the same card as the links */}
           <p className={styles.summary}>
-            Below you'll find several key resources for Azure Cosmos DB including official documentation, tutorials, event recordings, and more. Feel free to browse the links and explore further.
+          Want to learn more about Azure Cosmos DB? Check out this curated list of resources including documentation, tutorials, recordings, developer guides, and more.
           </p>
           
           <ul className={styles.simpleList}>
