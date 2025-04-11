@@ -35,6 +35,7 @@ const Speaker: React.FC = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [speaker, setSpeaker] = useState<Speaker | undefined>(undefined);
   const [fromAgenda, setFromAgenda] = useState(false);
+  const [embedUrl, setEmbedUrl] = useState<string | null>(null);
 
   useEffect(() => {
     const searchParams = new URLSearchParams(location.search);
@@ -67,6 +68,19 @@ const Speaker: React.FC = () => {
 
     return () => observer.disconnect();
   }, []);
+
+  // Set embed video URL based on time
+  useEffect(() => {
+    const unlockTime = new Date('2025-04-15T21:00:00Z'); // 2PM PT = 21:00 UTC
+    const now = new Date();
+
+    if (now >= unlockTime && speaker?.session?.youtube_url) {
+      setEmbedUrl(speaker.session.youtube_url);
+    } else {
+      // fallback to placeholder video
+      setEmbedUrl('https://www.youtube.com/embed/qXSur9LIfok?si=tQeQNgPjzhaspu7c');
+    }
+  }, [speaker]);
 
   const getSessionLength = (duration: string): string => {
     switch (duration) {
@@ -153,11 +167,11 @@ const Speaker: React.FC = () => {
               <p className="session-title">{speaker.session.title}</p>
               <p className="session-abstract">{speaker.session.abstract}</p>
 
-              {/* Fully responsive 16:9 video embed */}
-              {speaker.session.youtube_url && (
+              {/* Responsive 16:9 embed that switches after unlock time */}
+              {embedUrl && (
                 <div className="video-embed-responsive">
                   <iframe
-                    src={speaker.session.youtube_url}
+                    src={embedUrl}
                     title={`${speaker.session.title} YouTube Video`}
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -174,7 +188,6 @@ const Speaker: React.FC = () => {
               </div>
             )}
 
-            {/* Register button styled like back button */}
             <a
               className="back-button register-link-button"
               href="https://aka.ms/RegisterAzureCosmosDBConf"
