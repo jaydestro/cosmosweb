@@ -9,7 +9,7 @@
             "title": "OmniRAG - the right way to do Retrieval Augmented Generation with Azure Cosmos DB",
             "abstract": "OmniRAG is a new Retrieval-Augmented Generation (RAG) design pattern that allows AI to dynamically select the source of context based on the detected user’s intent, leveraging NL2Query capabilities and a Knowledge Graph to deliver the highest accuracy at the lowest cost. CosmosAIGraph is the first implementation of OmniRAG, fully utilizing the power of Azure Cosmos DB as a persistent store with built-in vector search and Apache Jena as an indexed RDF triple store. This session will cover both the OmniRAG pattern and a live demo of CosmosAIGraph in action.",
             "duration": "25",
-            "time": "TBD",
+            "time": "",
             "ondemand_only": true,
             "youtube_url": "https://www.youtube.com/embed/qXSur9LIfok?si=tQeQNgPjzhaspu7c"
         },
@@ -25,7 +25,7 @@
             "title": "Seamless Integration of Azure Cosmos DB with Azure Kubernetes Service (AKS)",
             "abstract": "Modern cloud-native applications demand seamless scalability, high availability, and intelligent data processing. In this session, we will explore how Azure Cosmos DB integrates with Azure Kubernetes Service (AKS) to build resilient and highly scalable applications.",
             "duration": "5",
-            "time": "TBD",
+            "time": "",
             "ondemand_only": true,
             "youtube_url": "https://www.youtube.com/embed/qXSur9LIfok?si=tQeQNgPjzhaspu7c"
         },
@@ -41,7 +41,7 @@
             "title": "Accelerating Real-Time Analytics with Cosmos DB and GPU-Enhanced Serverless Apache Spark",
             "abstract": "This session will show you how to create an end-to-end pipeline that leverages Azure Cosmos DB, Apache Spark, and serverless GPU acceleration to redefine real-time analytics. Learn how to ingest streaming data into Azure Cosmos DB and process it at scale using Apache Spark deployed on Azure Container Apps with GPU support. The focus of the presentation is a demo that highlights how GPU acceleration can dramatically reduce processing times and enable sophisticated machine learning workflows.",
             "duration": "25",
-            "time": "TBD",
+            "time": "",
             "ondemand_only": true,
             "youtube_url": "https://www.youtube.com/embed/qXSur9LIfok?si=tQeQNgPjzhaspu7c"
         },
@@ -58,7 +58,7 @@
             "title": "Azure Cosmos DB in AI Workflows: From Knowledge Retrieval to Microsoft Fabric Integrations",
             "abstract": "Explore how Azure Cosmos DB empowers AI workflows by integrating vector storage, semantic layering, and mirroring capabilities with Microsoft Fabric for enhanced data analytics and visualization. Durable Multi-Agents utilize Azure Cosmos DB to orchestrate complex, scalable, reliable AI-powered operations.",
             "duration": "25",
-            "time": "TBD",
+            "time": "",
             "ondemand_only": true,
             "youtube_url": "https://www.youtube.com/embed/qXSur9LIfok?si=tQeQNgPjzhaspu7c"
         },
@@ -74,7 +74,7 @@
             "title": "Enterprise AI-Powered Predictive Maintenance Platform",
             "abstract": "An enterprise-grade predictive maintenance solution demonstrating how Azure Cosmos DB and AI technologies can create intelligent, scalable platforms for real-time equipment monitoring and failure prediction.",
             "duration": "25",
-            "time": "TBD",
+            "time": "",
             "ondemand_only": true,
             "youtube_url": "https://www.youtube.com/embed/qXSur9LIfok?si=tQeQNgPjzhaspu7c"
         },
@@ -124,7 +124,7 @@
             "title": "Building an Enterprise Knowledge Management System using Hybrid Search in Azure Cosmos DB",
             "abstract": "This session dives deep into the powerful hybrid search capabilities of Azure Cosmos DB, specifically focusing on the integration of vector search with full-text search scoring (BM25) using Reciprocal Rank Fusion (RRF). Learn how to build an enterprise knowledge management system leveraging Azure Cosmos DB with Nest.js, combining semantic similarity matching and keyword matching for enhanced search results. This demo-heavy session will showcase the implementation of hybrid search features, including vector search, full-text search, and the RRF fusion algorithm.",
             "duration": "25",
-            "time": "TBD",
+            "time": "",
             "ondemand_only": true,
             "youtube_url": "https://www.youtube.com/embed/qXSur9LIfok?si=tQeQNgPjzhaspu7c"
         },
@@ -224,7 +224,7 @@
             "title": "Enhancing Security in Azure Cosmos DB: Best Practices",
             "abstract": "In this session, we'll discuss best practices for enhancing security in Azure Cosmos DB. Topics include Network Security Perimeter (NSP), Managed Identity, secure communications, and authentication management, with a demo on transitioning to Entra ID authentication.",
             "duration": "25",
-            "time": "TBD",
+            "time": "",
             "ondemand_only": true,
             "youtube_url": "https://www.youtube.com/embed/qXSur9LIfok?si=tQeQNgPjzhaspu7c"
         },
@@ -240,7 +240,7 @@
             "title": "Intelligent Resource Optimization: Mastering Azure Cosmos DB for Enterprise Workloads",
             "abstract": "We've integrated Azure Cosmos DB into our AI architecture, optimizing for performance and reducing costs by 35%. The session features live demonstrations of change feed pipelines, custom monitoring dashboards, multi-region deployments, optimized data modeling, and Azure Functions for model serving. Attendees will leave with practical strategies for resource optimization and cost management.",
             "duration": "25",
-            "time": "TBD",
+            "time": "",
             "ondemand_only": true,
             "youtube_url": "https://www.youtube.com/embed/qXSur9LIfok?si=tQeQNgPjzhaspu7c"
         },
@@ -272,7 +272,7 @@
             "title": "Enhancing Security in Azure Cosmos DB: Best Practices",
             "abstract": "In this session, we'll discuss best practices for securing Azure Cosmos DB using Network Security Perimeter (NSP) and Managed Identity. Attendees will learn to configure secure communications, implement managed identities for authentication, and migrate from local authentication to Entra ID.",
             "duration": "25",
-            "time": "TBD",
+            "time": "",
             "ondemand_only": true,
             "youtube_url": "https://www.youtube.com/embed/qXSur9LIfok?si=tQeQNgPjzhaspu7c"
         },
@@ -289,7 +289,7 @@
             "title": "Getting Started with DocumentDB and Open Source",
             "abstract": "Curious about open-source databases? Join us as we explore DocumentDB, the open-source engine powering Azure Cosmos DB for MongoDB vCore. This session will provide a comprehensive overview of DocumentDB, its architecture and its versatile use cases. Additionally, we will discuss the benefits of its permissive MIT license and guide you through getting started.\n\nDon't miss this opportunity to learn more about the open-source future of NoSQL!",
             "duration": "5",
-            "time": "TBD",
+            "time": "",
             "ondemand_only": true,
             "youtube_url": "https://www.youtube.com/embed/qXSur9LIfok?si=tQeQNgPjzhaspu7c"
         },
