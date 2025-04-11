@@ -320,7 +320,7 @@
         "session": {
             "title": "Building a Centralized Product Data Hub with Azure Cosmos DB at QVC",
             "abstract": "Discover how QVC leverages Azure Cosmos DB to centralize product, pricing, promotional, and inventory data. This session covers real-time data ingestion, change feed-based inventory updates, and multi-region replication. Learn how QVC integrates Azure Data Factory, Functions, and GraphQL APIs to create a scalable, high-performance product data hub for seamless sales channel integration.",
-            "duration": "25",
+            "duration": "5",
             "time": "10:50:00 AM PT",
             "ondemand_only": false,
             "youtube_url": "https://www.youtube.com/embed/KrIxuPJTTs8"
