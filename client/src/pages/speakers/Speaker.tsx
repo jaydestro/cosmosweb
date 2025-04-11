@@ -71,7 +71,7 @@ const Speaker: React.FC = () => {
 
   // Set embed video URL based on time
   useEffect(() => {
-    const unlockTime = new Date('2025-04-15T21:00:00Z'); // 2PM PT = 21:00 UTC
+    const unlockTime = new Date("2025-04-15T11:00:00-07:00"); // 11 AM PT
     const now = new Date();
 
     if (now >= unlockTime && speaker?.session?.youtube_url) {
@@ -167,7 +167,6 @@ const Speaker: React.FC = () => {
               <p className="session-title">{speaker.session.title}</p>
               <p className="session-abstract">{speaker.session.abstract}</p>
 
-              {/* Responsive 16:9 embed that switches after unlock time */}
               {embedUrl && (
                 <div className="video-embed-responsive">
                   <iframe
@@ -188,14 +187,16 @@ const Speaker: React.FC = () => {
               </div>
             )}
 
-            <a
-              className="back-button register-link-button"
-              href="https://aka.ms/RegisterAzureCosmosDBConf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Register Now
-            </a>
+            {embedUrl === 'https://www.youtube.com/embed/qXSur9LIfok?si=tQeQNgPjzhaspu7c' && (
+              <a
+                className="back-button register-link-button"
+                href="https://aka.ms/RegisterAzureCosmosDBConf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Register Now
+              </a>
+            )}
           </div>
         </div>
       </div>
