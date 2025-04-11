@@ -121,6 +121,11 @@ const config: Config = {
               activeBaseRegex: '^/speakers/?$',
             },
             {
+              label: 'Customer Interviews',
+              to: '/speakers/interviews',
+              activeBaseRegex: '^/speakers/interviews/?$',
+            },
+            {
               label: 'Resources',
               to: '/conf/resources',
               activeBaseRegex: '^/conf/resources/?$',
