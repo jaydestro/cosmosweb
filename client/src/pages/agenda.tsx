@@ -71,7 +71,6 @@ export default function Agenda() {
     <Layout title="Azure Cosmos DB Conf 2025 Agenda" description="Explore the sessions for Azure Cosmos DB Conf 2025">
       <main>
         <div className="container">
-          {/* Ensure the heading stays consistent in both light & dark mode */}
           <h1 className={styles.agendaHeading}>Azure Cosmos DB Conf 2025 Agenda</h1>
           <p className={styles.agendaIntro}>
             You'll find all the <strong>live streaming</strong> and <strong>on-demand sessions</strong> here.
@@ -101,14 +100,12 @@ export default function Agenda() {
           )}
         </div>
 
-        {/* Modal for session abstracts */}
         {modalAbstract && <Modal abstract={modalAbstract} onClose={() => setModalAbstract(null)} />}
       </main>
     </Layout>
   );
 }
 
-/* Function to truncate the abstract without cutting words */
 function truncateAbstract(text: string, maxLength: number) {
   if (text.length <= maxLength) return text;
 
@@ -116,7 +113,7 @@ function truncateAbstract(text: string, maxLength: number) {
   let lastSpaceIndex = truncatedText.lastIndexOf(" ");
 
   if (lastSpaceIndex !== -1) {
-    truncatedText = truncatedText.substring(0, lastSpaceIndex); // Trim to last full word
+    truncatedText = truncatedText.substring(0, lastSpaceIndex);
   }
 
   return `${truncatedText}...`;
@@ -143,7 +140,6 @@ function SessionCard({
 
       <div className={styles.sessionAbstract}>
         <ReactMarkdown>{truncateAbstract(speakers[0].session.abstract, 200)}</ReactMarkdown>
-        {/* ✅ Centered "Read More" button */}
         <div className={styles.readMoreContainer}>
           <button className={styles.readMoreButton} onClick={() => setModalAbstract(speakers[0].session.abstract)}>
             Read More
@@ -173,34 +169,39 @@ function SessionCard({
           );
         })}
       </div>
+
+      {/* Conditionally render YouTube button after April 15, 2025 2:00 PM PT */}
       {speakers[0].session.youtube_url && (() => {
-  const match = speakers[0].session.youtube_url.match(/\/embed\/([^?]+)/);
-  const videoId = match ? match[1] : null;
-  const youtubeLink = videoId ? `https://www.youtube.com/watch?v=${videoId}` : null;
+        const now = new Date();
+        const unlockTime = new Date("2025-04-15T14:00:00-07:00"); // 2 PM PT (UTC-7)
+        if (now < unlockTime) return null;
 
-  return youtubeLink ? (
-    <div className={styles.readMoreContainer}>
-      <a
-        href={youtubeLink}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={styles.readMoreButton}
-      >
-        Watch on YouTube
-      </a>
-    </div>
-  ) : null;
-})()}
+        const match = speakers[0].session.youtube_url.match(/\/embed\/([^?]+)/);
+        const videoId = match ? match[1] : null;
+        const youtubeLink = videoId ? `https://www.youtube.com/watch?v=${videoId}` : null;
 
+        return youtubeLink ? (
+          <div className={styles.readMoreContainer}>
+            <a
+              href={youtubeLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.readMoreButton}
+            >
+              Watch on YouTube
+            </a>
+          </div>
+        ) : null;
+      })()}
     </div>
   );
 }
 
 const Modal = ({ abstract, onClose }: { abstract: string; onClose: () => void }) => {
   useEffect(() => {
-    document.body.style.overflow = "hidden"; // Prevent scrolling when modal is open
+    document.body.style.overflow = "hidden";
     return () => {
-      document.body.style.overflow = "auto"; // Restore scrolling when modal is closed
+      document.body.style.overflow = "auto";
     };
   }, []);
 
