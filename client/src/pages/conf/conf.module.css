@@ -412,3 +412,20 @@ body {
     color: #ccc;
   }
 }
+
+@media (max-width: 768px) {
+  .newsItem {
+    border-left: none;
+    text-align: center;
+    background: rgba(0, 120, 212, 0.05); /* still keeping a soft background for contrast */
+  }
+
+  .newsItem h3 {
+    color: #4796e8;
+    margin-bottom: 0.5rem;
+  }
+
+  .newsItem p {
+    text-align: center;
+  }
+}
