@@ -222,14 +222,6 @@ const config: Config = {
         content: 'Azure Cosmos DB Dev Home',
       },
     ],
-    announcementBar: {
-      id: 'Add Your Project!',
-      content:
-        'Join us for <b><a href="https://aka.ms/AzureCosmosDBConf">Azure Cosmos DB Conf</a></b> on April 15 | <b><a href="https://aka.ms/RegisterAzureCosmosDBConf">Click here to register</a></b> with Microsoft Reactor for updates.',
-      backgroundColor: '#50E6FF',
-      textColor: '#552F99',
-      isCloseable: false,
-    },
   },
 };
 
