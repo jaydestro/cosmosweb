@@ -51,16 +51,6 @@ const config: Config = {
 
   plugins: [
     [
-      '@docusaurus/plugin-ideal-image',
-      {
-        quality: 70,
-        max: 1030,
-        min: 640,
-        steps: 2,
-        disableInDev: false,
-      },
-    ],
-    [
       '@docusaurus/plugin-google-analytics',
       {
         trackingID: 'G-06VJPSGDCQ',
@@ -105,26 +95,26 @@ const config: Config = {
               to: '/conf#news',
               activeBaseRegex: '^/conf#news$',
             },
-            {
-              label: 'Register',
-              href: 'https://developer.microsoft.com/en-us/reactor/events/24779/',
+          //  {
+          //    label: 'Register',
+          //    href: 'https://developer.microsoft.com/en-us/reactor/events/24779/',
               // no activeBaseRegex needed
-            },
-            {
-              label: 'Agenda',
-              to: '/agenda',
-              activeBaseRegex: '^/agenda/?$',
-            },
-            {
-              label: 'Speakers',
-              to: '/speakers',
-              activeBaseRegex: '^/speakers/?$',
-            },
-            {
-              label: 'Customer Interviews',
-              to: '/speakers/interviews',
-              activeBaseRegex: '^/speakers/interviews/?$',
-            },
+        //    },
+            // {
+            //   label: 'Agenda',
+            //   to: '/agenda',
+            //   activeBaseRegex: '^/agenda/?$',
+            // },
+           // {
+           //   label: 'Speakers',
+           //   to: '/speakers',
+           //   activeBaseRegex: '^/speakers/?$',
+           // },
+          //{
+           //   label: 'Customer Interviews',
+          //    to: '/speakers/interviews',
+          //    activeBaseRegex: '^/speakers/interviews/?$',
+          //  },
             {
               label: 'Resources',
               to: '/conf/resources',

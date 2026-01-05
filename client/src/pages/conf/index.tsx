@@ -9,6 +9,10 @@ import faqsData from "./faqs.json";
 import speakersData from "../speakers/speakers.json"; // <--- NEW IMPORT
 import { Helmet } from "react-helmet";
 
+const CONF_YEAR = "2026";
+const CONF_DATE_DISPLAY = "April 28 - 9:00 AM - 12:00 PM PT";
+const CONF_DATE_LONG = "April 28, 2026";
+
 const ConfPage = () => {
   const { siteConfig } = useDocusaurusContext();
 
@@ -110,12 +114,12 @@ const ConfPage = () => {
 
   return (
     <Layout
-      title="Azure Cosmos DB Conf 2025"
+      title={`Azure Cosmos DB Conf ${CONF_YEAR}`}
       description="Join us for the biggest Azure Cosmos DB event of the year!"
     >
       <Helmet>
         {/* Open Graph Meta Tags for LinkedIn and Facebook */}
-        <meta property="og:title" content="Azure Cosmos DB Conf 2025" />
+        <meta property="og:title" content={`Azure Cosmos DB Conf ${CONF_YEAR}`} />
         <meta
           property="og:description"
           content="Join us for the biggest Azure Cosmos DB event of the year!"
@@ -128,14 +132,14 @@ const ConfPage = () => {
           property="og:image"
           content="https://developer.azurecosmosdb.com/img/Cosmos_Conf_Main_Thumbnail.jpg?v=3"
         />
-        <meta property="og:image:alt" content="Azure Cosmos DB Conf 2025" />
+        <meta property="og:image:alt" content="Azure Cosmos DB Conf 2026" />
         <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
 
         {/* Twitter-specific Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Azure Cosmos DB Conf 2025" />
+        <meta name="twitter:title" content="Azure Cosmos DB Conf 2026" />
         <meta
           name="twitter:description"
           content="Join us for the biggest Azure Cosmos DB event of the year!"
@@ -165,10 +169,10 @@ const ConfPage = () => {
                 />
                 <h1 className={styles.eventTitle}>
                   <span className={styles.azureCosmos}>Azure Cosmos DB Conf</span>
-                  <span className={styles.conf}>2025</span>
+                  <span className={styles.conf}>{CONF_YEAR}</span>
                 </h1>
               </div>
-              <p className={styles.date}>April 15 - 9:00 AM - 12:00 PM PT</p>
+              <p className={styles.date}>{CONF_DATE_DISPLAY}</p>
             </div>
           </div>
         </div>
@@ -228,7 +232,7 @@ const ConfPage = () => {
           textAlign: "center",
         }}
       >
-        <h3>Watch the Azure Cosmos DB Conf 2025 Stream</h3>
+        <h3>{`Watch the Azure Cosmos DB Conf 2025 Recap`}</h3>
 
         {/* 16:9 Letterbox Video */}
         <div
@@ -248,111 +252,26 @@ const ConfPage = () => {
               width: "100%",
               height: "100%",
             }}
-            src="https://www.youtube.com/embed/qXSur9LIfok"
+            src="https://www.youtube.com/embed/x7pJvNgiDL8"
             title="Video"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           />
         </div>
 
-        {/* ====== EVALUATION FORM BUTTON ====== */}
+        {/* ====== 2025 PLAYLIST BUTTON ====== */}
         <div style={{ marginBottom: "1rem" }}>
           <a
-            href="https://aka.ms/EvalCosmosConf2025"
+            href="https://youtube.com/playlist?list=PLmamF3YkHLoLQhnFsKWhtKu_Tp0uXPFdn&si=B1DGS-0AM3ey6eRe"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.agendaButton} /* Same style as "View Full Agenda" */
           >
-            Fill out our evaluation form (available during the show)
+            Watch the Azure Cosmos DB Conf 2025 playlist
           </a>
         </div>
       </div>
     </div>
-  </div>
-</div>
-
-
-
-        {/* ====== Divider Before Agenda Section ====== */}
-        <div className={styles.divider}></div>
-
-{/* ====== AGENDA SECTION ====== */}
-<div id="agenda" className={`${styles.section} ${styles.agendaSection}`}>
-  <div className={styles.textContent}>
-    <h2>Event Agenda</h2>
-    <p>
-      Below you’ll find the live sessions for Azure Cosmos DB Conf 2025!
-      <br />
-      <br />
-      You can click the button below to see the full agenda, including on-demand sessions.
-    </p>
-    <div className={styles.agendaButtonContainer}>
-      <Link to="/agenda" className={styles.agendaButton}>
-        View Full Agenda
-      </Link>
-    </div>
-
-    {/* ====== GROUP SESSIONS ====== */}
-    {/* 1. Build groupedSessions by session title */}
-    {(() => {
-      const groupedByTitle: Record<string, {
-        title: string;
-        time: string;
-        speakers: any[];
-      }> = {};
-
-      liveSessions.forEach((speaker) => {
-        const { session } = speaker;
-        const { title, time } = session;
-
-        if (!groupedByTitle[title]) {
-          groupedByTitle[title] = {
-            title,
-            time,
-            speakers: [],
-          };
-        }
-        groupedByTitle[title].speakers.push(speaker);
-      });
-
-      // Convert to array for sorting
-      const groupedSessions = Object.values(groupedByTitle);
-
-      // Sort by session time
-      groupedSessions.sort((a, b) => parseTimeString(a.time) - parseTimeString(b.time));
-
-      return (
-        <div className={styles.agendaList}>
-          {groupedSessions.map((group, index) => {
-            const { title, time, speakers } = group;
-            return (
-              <div key={index} className={styles.agendaItem}>
-                {/* Time */}
-                <div className={styles.agendaTime}>
-                  {time === "TBD" ? "TBD" : time}
-                </div>
-
-                {/* Session Title */}
-                <div className={styles.agendaTitle}>{title}</div>
-
-                {/* Combined Speakers */}
-                <div className={styles.agendaSpeaker}>
-                  {speakers.map((spkr, sIndex) => (
-                    <React.Fragment key={sIndex}>
-                      <Link to={buildSpeakerLink(spkr)}>
-                        {spkr.title} – {spkr.intro}
-                      </Link>
-                      {/* Separator if multiple speakers */}
-                      {sIndex < speakers.length - 1 && <span> | </span>}
-                    </React.Fragment>
-                  ))}
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      );
-    })()}
   </div>
 </div>
 
@@ -373,7 +292,7 @@ const ConfPage = () => {
             <div className={styles.textContent}>
               <h2>About the Conference</h2>
               <p>
-                Join us for our <strong>5th annual Azure Cosmos DB Conf</strong>, a{" "}
+                Join us for our <strong>6th annual Azure Cosmos DB Conf</strong>, a{" "}
                 <strong>free virtual developer event</strong> co-hosted by Microsoft and the
                 Azure Cosmos DB community.
                 <br />
@@ -385,7 +304,7 @@ const ConfPage = () => {
                 <br />
                 <br />
                 Join our engaging <strong>3-hour live show</strong> on{" "}
-                <strong>April 15, 2025</strong>, and explore additional sessions{" "}
+                <strong>{CONF_DATE_LONG}</strong>, and explore additional sessions{" "}
                 <strong>on-demand</strong>.
                 <br />
                 <br />
@@ -404,19 +323,26 @@ const ConfPage = () => {
           <div className={styles.textContent}>
             <h2>Frequently Asked Questions</h2>
             {faqsData.map((faq, index) => (
+              (() => {
+                const question = String(faq.question).replace(/\b2025\b|\b2026\b/g, CONF_YEAR);
+                const content = String(faq.content).replace(/\b2025\b|\b2026\b/g, CONF_YEAR);
+
+                return (
               <div key={index} className={styles.faqItem}>
                 <div
                   className={styles.faqQuestion}
                   onClick={() => toggleFAQ(index)}
                 >
-                  <strong>{faq.question}</strong>
+                  <strong>{question}</strong>
                 </div>
                 {openFAQ === index && (
                   <div className={styles.faqAnswer}>
-                    <p dangerouslySetInnerHTML={{ __html: faq.content }} />
+                    <p dangerouslySetInnerHTML={{ __html: content }} />
                   </div>
                 )}
               </div>
+                );
+              })()
             ))}
           </div>
         </div>

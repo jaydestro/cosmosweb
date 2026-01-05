@@ -3,6 +3,7 @@ import Layout from '@theme/Layout';
 import styles from './archive.module.css';
 
 const timelineData = [
+  { year: '2025', text: 'Azure Cosmos DB conf 2025', video: 'https://youtube.com/playlist?list=PLmamF3YkHLoLQhnFsKWhtKu_Tp0uXPFdn&si=B1DGS-0AM3ey6eRe' },
   { year: '2024', text: 'Azure Cosmos DB conf 2024', video: 'https://www.youtube.com/watch?v=D-nknTYX0-w&list=PLlrxD0HtieHgQxPGa9JJdbbUpmkuIshh4' },
   { year: '2023', text: 'Azure Cosmos DB conf 2023', video: 'https://www.youtube.com/playlist?list=PLmamF3YkHLoLd5dQ0aji5QRhxQQAh0SIn' },
   { year: '2022', text: 'Azure Cosmos DB conf 2022', video: 'https://youtube.com/playlist?list=PLmamF3YkHLoLa2ELTHUhoSMx89w329bOD&si=Genzse5fz73sFc7v' },
