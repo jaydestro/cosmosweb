@@ -16,8 +16,8 @@ const CONF_DATE_LONG = "April 28, 2026";
 const ConfPage = () => {
   const { siteConfig } = useDocusaurusContext();
 
-  const lightImageUrl = useBaseUrl("/img/bg-header-white.jpg");
-  const darkImageUrl = useBaseUrl("/img/bg-header-dark.jpg");
+  const lightImageUrl = useBaseUrl("/img/CosmosConf26_Hero_container.png");
+  const darkImageUrl = useBaseUrl("/img/CosmosConf26_Hero_container.png");
   const lightBgImage = useBaseUrl("/img/BG-light-1.png");
   const darkBgImage = useBaseUrl("/img/BG-dark-1.png");
 
@@ -157,25 +157,7 @@ const ConfPage = () => {
         <div
           className={styles.header}
           style={{ backgroundImage: `url(${headerImage})` }}
-        >
-          <div className={styles.headerText}>
-            <div className={styles.headerContent}>
-              {/* ====== Logo & Title Aligned Horizontally ====== */}
-              <div className={styles.titleWrapper}>
-                <img
-                  src={useBaseUrl("/img/logo.svg")}
-                  alt="Conf Logo"
-                  className={styles.logo}
-                />
-                <h1 className={styles.eventTitle}>
-                  <span className={styles.azureCosmos}>Azure Cosmos DB Conf</span>
-                  <span className={styles.conf}>{CONF_YEAR}</span>
-                </h1>
-              </div>
-              <p className={styles.date}>{CONF_DATE_DISPLAY}</p>
-            </div>
-          </div>
-        </div>
+        />
 
 {/* ====== NEWS SECTION ====== */}
 <div id="news" className={styles.newsSection}>
@@ -293,19 +275,20 @@ const ConfPage = () => {
               <h2>About the Conference</h2>
               <p>
                 Join us for our <strong>6th annual Azure Cosmos DB Conf</strong>, a{" "}
-                <strong>free virtual developer event</strong> co-hosted by Microsoft and the
-                Azure Cosmos DB community.
+                <strong>free virtual developer event</strong> co-hosted by <strong>Microsoft</strong>{" "}
+                and the <strong>Azure Cosmos DB community</strong>.
                 <br />
                 <br />
-                Tune in to learn why <strong>Azure Cosmos DB</strong> is the leading database
-                for the era of <strong>AI and modern app development</strong>. Dive into a
-                dynamic mix of sessions from <strong>Microsoft</strong> and community experts,
-                showcasing their innovative projects and breakthroughs.
+                Tune in to learn why <strong>Azure Cosmos DB</strong>—including{" "}
+                <strong>Azure DocumentDB</strong>, the newly renamed <strong>vCore-based Azure Cosmos DB for NoSQL</strong>
+                —is the leading database platform for the era of <strong>AI</strong> and{" "}
+                <strong>modern app development</strong>. Dive into a <strong>dynamic mix of sessions</strong> from{" "}
+                <strong>Microsoft</strong> and <strong>community experts</strong>, showcasing their innovative projects and
+                breakthroughs.
                 <br />
                 <br />
-                Join our engaging <strong>3-hour live show</strong> on{" "}
-                <strong>{CONF_DATE_LONG}</strong>, and explore additional sessions{" "}
-                <strong>on-demand</strong>.
+                Join our engaging <strong>3-hour live show</strong> on <strong>{CONF_DATE_LONG}</strong>, and explore additional
+                sessions <strong>on-demand</strong>.
                 <br />
                 <br />
                 <strong>This is an event you won't want to miss!</strong>
