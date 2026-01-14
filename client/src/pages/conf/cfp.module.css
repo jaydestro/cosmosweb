@@ -11,11 +11,14 @@
   background: linear-gradient(180deg, #ffffff 0%, #d6ebff 100%);
 }
 
-/* ========== HERO (matches /conf) ========== */
+[data-theme='dark'] .pageWrapper {
+  background: linear-gradient(180deg, #000000 0%, #0d2e42 100%);
+}
+
+/* ========== HERO (matches /conf + Resources) ========== */
 .hero {
   width: 100%;
   display: flex;
-  /* Asset is 1600x560. */
   height: clamp(360px, 35vw, 560px);
   padding: 10px 200px;
   flex-direction: column;
@@ -40,10 +43,6 @@
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
-}
-
-[data-theme='dark'] .pageWrapper {
-  background: linear-gradient(180deg, #000000 0%, #0d2e42 100%);
 }
 
 .container {
@@ -110,7 +109,7 @@
 }
 
 .summary {
-  margin: 0 0 20px;
+  margin: 0 0 14px;
   font-size: 16px;
   font-weight: 400;
   color: #000000;
@@ -118,6 +117,58 @@
 
 [data-theme='dark'] .summary {
   color: #ffffff;
+}
+
+.ctaRow {
+  width: 100%;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 4px 0 18px;
+}
+
+.ctaPrimary,
+.ctaSecondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+
+.ctaPrimary {
+  background: #0078d4;
+  color: #ffffff;
+}
+
+.ctaPrimary:hover {
+  background: #106ebe;
+  color: #ffffff;
+}
+
+.ctaSecondary {
+  background: rgba(255, 255, 255, 0.60);
+  color: #0078d4;
+  border-color: rgba(0, 120, 212, 0.25);
+}
+
+.ctaSecondary:hover {
+  background: rgba(255, 255, 255, 0.75);
+  color: #0078d4;
+}
+
+[data-theme='dark'] .ctaSecondary {
+  background: rgba(255, 255, 255, 0.08);
+  color: #7cc6ff;
+  border-color: rgba(124, 198, 255, 0.35);
+}
+
+[data-theme='dark'] .ctaSecondary:hover {
+  background: rgba(255, 255, 255, 0.14);
 }
 
 .simpleList {
@@ -177,9 +228,8 @@
 
 .link {
   font-size: 20px;
-  font-weight: 700;
-  color: #0078d4;
   font-weight: 600;
+  color: #0078d4;
   text-decoration: underline;
 }
 
@@ -188,6 +238,16 @@
 }
 
 [data-theme='dark'] .link {
+  color: #7cc6ff;
+}
+
+.linkText {
+  font-size: 20px;
+  font-weight: 600;
+  color: #0078d4;
+}
+
+[data-theme='dark'] .linkText {
   color: #7cc6ff;
 }
 
@@ -224,7 +284,8 @@
     padding: 24px 20px;
   }
 
-  .link {
+  .link,
+  .linkText {
     font-size: 18px;
   }
 }
@@ -249,8 +310,8 @@
     height: 18px;
   }
 
-  .link {
+  .link,
+  .linkText {
     font-size: 16px;
   }
 }
-  
