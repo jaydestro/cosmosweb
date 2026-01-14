@@ -97,7 +97,8 @@ const config: Config = {
   })(),
 
   themeConfig: {
-    image: 'img/docusaurus-social-card.jpg',
+    // Default social preview image (must exist under /static).
+    image: 'img/conf/cosmos_conf_2026_card.jpg',
     navbar: {
       title: 'Developer Home',
       logo: {
@@ -252,7 +253,7 @@ const config: Config = {
     metadata: [
       {
         name: 'twitter:card',
-        content: 'Azure Cosmos DB Dev Home',
+        content: 'summary_large_image',
       },
     ],
   },
