@@ -1,6 +1,6 @@
 [
   {
-    "question": "Where can I see the Azure Cosmos DB Conf 2026 stream?",
+    "question": "Where can I see the Azure Cosmos DB Conf stream?",
     "content": "You can find the Azure Cosmos DB Conf 2026 video stream and on-demand sessions on the <a class='blue' href='https://youtube.com/AzureCosmosDB' target='_blank' rel='noopener noreferrer'>Azure Cosmos DB YouTube Channel</a>."
   },
   {
@@ -12,8 +12,8 @@
     "content": "No, there are no costs to attend Azure Cosmos DB Conf 2026!"
   },
   {
-    "question": "I want to be a speaker, how do I apply?",
-    "content": "The Azure Cosmos DB Conf 2026 Call for Papers (CFP) is now closed. Stay tuned for 2026!"
+    "question": "I want to be a speaker — how do I apply?",
+    "content": "Submit your session proposal through the <a class='blue' href='https://aka.ms/cosmosconfcfp' target='_blank' rel='noopener noreferrer'>Azure Cosmos DB Conf 2026 Call for Proposals</a>. The CFP is open through February 21, 2026."
   },
   {
     "question": "How can I sponsor Azure Cosmos DB Conf 2026?",
@@ -21,6 +21,6 @@
   },
   {
     "question": "Do I need to register for Azure Cosmos DB Conf 2026?",
-    "content": "You may register with the Microsoft Reactor to receive event updates. Registration is free and not required to attend Azure Cosmos DB Conf 2026. Simply visit the event page on April 28, 2026, to join the live stream and access on-demand sessions."
+    "content": "Registration is free and not required to attend Azure Cosmos DB Conf 2026. If you’d like to register to receive event updates, you can register here: <a class='blue' href='https://aka.ms/cosmosconfreg' target='_blank' rel='noopener noreferrer'>https://aka.ms/cosmosconfreg</a>."
   }
 ]

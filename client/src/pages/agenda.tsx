@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Redirect } from "@docusaurus/router";
 import Layout from "@theme/Layout";
 import speakersData from "./speakers/speakers.json";
 import styles from "./agenda.module.css";
@@ -25,6 +26,11 @@ interface Speaker {
 }
 
 export default function Agenda() {
+  // TEMP: The standalone `/agenda` page is hidden for now.
+  // To re-enable: set this to false (and optionally remove the import), then restore any links.
+  const HIDE_AGENDA_PAGE = true;
+  if (HIDE_AGENDA_PAGE) return <Redirect to="/conf" />;
+
   const [sortedAgenda, setSortedAgenda] = useState<{
     live: { sessionTitle: string; speakers: Speaker[] }[];
     tbd: { sessionTitle: string; speakers: Speaker[] }[];

@@ -2,6 +2,21 @@ import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
+function readBool(envValue: string | undefined, defaultValue: boolean): boolean {
+  if (envValue == null) return defaultValue;
+
+  const normalized = envValue.trim().toLowerCase();
+  if (['1', 'true', 'yes', 'on'].includes(normalized)) return true;
+  if (['0', 'false', 'no', 'off'].includes(normalized)) return false;
+
+  return defaultValue;
+}
+
+function readString(envValue: string | undefined): string | null {
+  const value = envValue?.trim();
+  return value ? value : null;
+}
+
 const config: Config = {
   title: 'Azure Cosmos DB Dev Home',
   tagline: 'Infinite Scale, Instant Impact!',
@@ -59,6 +74,26 @@ const config: Config = {
     ],
   ],
 
+  // Values here are serialized into the client bundle and are safe to read in the browser.
+  // Use these for `/conf` feature toggles so we don't rely on `process` being defined client-side.
+  customFields: (() => {
+    const conf: Record<string, unknown> = {};
+
+    // Only set overrides when the env var is explicitly provided.
+    // Defaults live in `src/pages/conf/confSettings.json`.
+    if (process.env.CONF_SHOW_STREAM !== undefined) {
+      conf.showStream = readBool(process.env.CONF_SHOW_STREAM, true);
+    }
+    if (process.env.CONF_SHOW_AGENDA !== undefined) {
+      conf.showAgenda = readBool(process.env.CONF_SHOW_AGENDA, true);
+    }
+    if (process.env.CONF_STREAM_EMBED_URL !== undefined) {
+      conf.streamEmbedUrl = readString(process.env.CONF_STREAM_EMBED_URL);
+    }
+
+    return { conf };
+  })(),
+
   themeConfig: {
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
@@ -86,20 +121,20 @@ const config: Config = {
               className: 'mobile-only',
             },
             {
+              label: 'News',
+              to: '/conf#news',
+              // Hash anchors don't reliably work with activeBaseRegex; omit.
+            },
+            {
               label: 'About Azure Cosmos DB Conf',
               to: '/conf#about',
               activeBaseRegex: '^/conf#about$',
             },
             {
-              label: 'News',
-              to: '/conf#news',
-              activeBaseRegex: '^/conf#news$',
-            },
-          //  {
-          //    label: 'Register',
-          //    href: 'https://developer.microsoft.com/en-us/reactor/events/24779/',
+              label: 'Register',
+              href: 'https://aka.ms/cosmosconfreg',
               // no activeBaseRegex needed
-        //    },
+         },
             // {
             //   label: 'Agenda',
             //   to: '/agenda',
