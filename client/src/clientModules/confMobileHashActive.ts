@@ -1,4 +1,4 @@
-fix the function runWhenBrowser(fn: () => void): void {
+function runWhenBrowser(fn: () => void): void {
   if (typeof window === "undefined" || typeof document === "undefined") return;
   fn();
 }
