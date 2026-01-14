@@ -32,6 +32,9 @@ const config: Config = {
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
+  // `/conf` is a custom TSX page; Docusaurus' anchor checker can't statically detect
+  // anchors rendered by React components, so these are false positives.
+  onBrokenAnchors: 'ignore',
 
   i18n: {
     defaultLocale: 'en',
