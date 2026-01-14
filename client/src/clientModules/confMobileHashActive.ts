@@ -4,9 +4,11 @@ function runWhenBrowser(fn: () => void): void {
 }
 
 function isConfHomePathname(pathname: string): boolean {
-  // Docusaurus may run under a baseUrl, but in our site baseUrl is '/'.
-  // Be defensive and match the end of the path.
   return pathname === "/conf" || pathname === "/conf/" || pathname.endsWith("/conf") || pathname.endsWith("/conf/");
+}
+
+function isSidebarOpen(): boolean {
+  return document.documentElement.classList.contains("navbar-sidebar--show");
 }
 
 function setActiveForConfHash(): void {
@@ -42,19 +44,31 @@ function setActiveForConfHash(): void {
 }
 
 runWhenBrowser(() => {
-  const applySoon = () => {
-    // The menu can render async; try a couple frames.
-    requestAnimationFrame(() => setActiveForConfHash());
-    setTimeout(() => setActiveForConfHash(), 0);
-    setTimeout(() => setActiveForConfHash(), 150);
+  let pending = false;
+
+  const scheduleUpdate = () => {
+    if (pending) return;
+    pending = true;
+    requestAnimationFrame(() => {
+      pending = false;
+      setActiveForConfHash();
+    });
   };
 
-  window.addEventListener("hashchange", applySoon, { passive: true });
-  window.addEventListener("popstate", applySoon, { passive: true });
+  window.addEventListener("hashchange", scheduleUpdate, { passive: true });
+  window.addEventListener("popstate", scheduleUpdate, { passive: true });
 
-  // When the mobile sidebar opens, its links may be inserted after the click.
-  const observer = new MutationObserver(() => applySoon());
-  observer.observe(document.body, { attributes: true, childList: true, subtree: true });
+  // Only observe the html element for the sidebar-open class change (very cheap).
+  const observer = new MutationObserver((mutations) => {
+    for (const m of mutations) {
+      if (m.attributeName === "class" && isSidebarOpen()) {
+        // Sidebar just opened; schedule one update after links render.
+        setTimeout(scheduleUpdate, 50);
+        break;
+      }
+    }
+  });
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
 
-  applySoon();
+  scheduleUpdate();
 });
