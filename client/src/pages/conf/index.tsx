@@ -8,7 +8,8 @@ import newsData from "./news.json";
 import faqsData from "./faqs.json";
 import speakersData from "../speakers/speakers.json"; // <--- NEW IMPORT
 import { Helmet } from "react-helmet";
-import { getConfSettings } from "./confSettings";
+import { getConfSettings } from "../../conf/confSettings";
+import ConfFooter from "./ConfFooter";
 
 const CONF_YEAR = "2026";
 const CONF_DATE_DISPLAY = "April 28 - 9:00 AM - 12:00 PM PT";
@@ -17,7 +18,6 @@ const CONF_DATE_LONG = "April 28, 2026";
 const ConfPage = () => {
   const { siteConfig } = useDocusaurusContext();
   const { showAgenda, showStream, streamEmbedUrl } = getConfSettings(siteConfig);
-  const currentYear = new Date().getFullYear();
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
   const [showAllNews, setShowAllNews] = useState(false);
 
@@ -134,6 +134,40 @@ const ConfPage = () => {
           <span className={styles.srOnly}>{`Azure Cosmos DB Conf ${CONF_YEAR}`}</span>
         </header>
 
+        <section className={styles.introSection} aria-labelledby="conf-intro">
+          <div className={styles.introInner}>
+            <div className={styles.introCard}>
+              <h2 id="conf-intro" className={styles.introTitle}>
+                What is Azure Cosmos DB Conf?
+              </h2>
+              <p className={styles.introCopy}>
+                Azure Cosmos DB Conf is a free virtual event featuring expert-led sessions, demos, and real-world
+                guidance on building globally distributed apps with Azure Cosmos DB.
+              </p>
+              <p className={styles.introCopySecondary}>
+                Join us on <strong>{CONF_DATE_LONG}</strong> for live content and on-demand sessions.
+              </p>
+
+              <div className={styles.introActions}>
+                <a
+                  className={styles.introPrimaryButton}
+                  href="https://aka.ms/cosmosconfreg"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  🔔 Register for updates
+                </a>
+                <Link className={styles.introSecondaryButton} to="/conf/cfp">
+                  🎤 Call for Proposals
+                </Link>
+                <a className={styles.introTertiaryButton} href="#about">
+                  ℹ️ Learn more
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {showStream && (
           <>
             {/* ====== STREAM SECTION (Figma node 6:234) ====== */}
@@ -181,7 +215,8 @@ const ConfPage = () => {
         )}
 
         {/* ====== NEWS SECTION (Desktop Light layout) ====== */}
-        <section className={styles.newsSection} aria-labelledby="news">
+        <section className={styles.newsSection} aria-labelledby="news-heading">
+          <div id="news" className={styles.sectionAnchor} />
           <div className={styles.newsInner}>
             <div className={styles.newsTitleColumn}>
               <img
@@ -191,7 +226,7 @@ const ConfPage = () => {
                 aria-hidden="true"
                 loading="lazy"
               />
-              <h2 id="news" className={styles.newsTitle}>
+              <h2 id="news-heading" className={styles.newsTitle}>
                 Latest news
               </h2>
               <p className={styles.newsDescription}>
@@ -296,7 +331,8 @@ const ConfPage = () => {
         )}
 
         {/* ====== ABOUT SECTION (Figma frame 1:2) ====== */}
-        <section className={styles.aboutSection} aria-labelledby="about">
+        <section className={styles.aboutSection} aria-labelledby="about-heading">
+          <div id="about" className={styles.sectionAnchor} />
           <div className={styles.aboutCard}>
             <div className={styles.aboutCardInner}>
               <div className={styles.aboutVisual} aria-hidden="true">
@@ -309,7 +345,7 @@ const ConfPage = () => {
               </div>
 
               <div className={styles.aboutText}>
-                <h2 id="about" className={styles.aboutTitle}>
+                <h2 id="about-heading" className={styles.aboutTitle}>
                   About the conference
                 </h2>
                 <div className={styles.aboutCopy}>
@@ -347,10 +383,11 @@ const ConfPage = () => {
         </section>
 
         {/* ====== FAQ SECTION (Figma frame 1:2) ====== */}
-        <section className={styles.faqSection} aria-labelledby="faq-section">
+        <section className={styles.faqSection} aria-labelledby="faq-heading">
+          <div id="faq-section" className={styles.sectionAnchor} />
           <div className={styles.faqInner}>
             <div className={styles.faqTitleColumn}>
-              <h2 id="faq-section" className={styles.faqTitle}>
+              <h2 id="faq-heading" className={styles.faqTitle}>
                 Frequently asked questions
               </h2>
             </div>
@@ -407,102 +444,8 @@ const ConfPage = () => {
         </section>
 
         {/* ====== CONF FOOTER (Figma frame 1:2) ====== */}
-        <footer className={styles.confFooter}>
-          <div className={styles.confFooterInner}>
-            <div className={styles.confFooterTop}>
-              <div className={styles.confFooterLogo}>
-                <img
-                  className={styles.confFooterLogoMark}
-                  src={useBaseUrl("/img/logo.svg")}
-                  alt="Azure Cosmos DB"
-                  width={72}
-                  height={72}
-                  loading="lazy"
-                />
-                <div className={styles.confFooterLogoText}>
-                  <div className={styles.confFooterLogoLine}>Azure Cosmos DB</div>
-                  <div className={styles.confFooterLogoLine}>
-                    Conf <span className={styles.confFooterYear}>{CONF_YEAR}</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className={styles.confFooterLinks}>
-                <div className={styles.confFooterColumn}>
-                  <div className={styles.confFooterColumnTitle}>Docs</div>
-                  <a
-                    className={styles.confFooterLink}
-                    href="https://learn.microsoft.com/en-us/azure/cosmos-db/introduction"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Tutorial
-                  </a>
-                </div>
-                <div className={styles.confFooterColumn}>
-                  <div className={styles.confFooterColumnTitle}>Community</div>
-                  <a
-                    className={styles.confFooterLink}
-                    href="https://stackoverflow.com/tags/azure-cosmosdb/info"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Stack Overflow
-                  </a>
-                  <a
-                    className={styles.confFooterLink}
-                    href="http://aka.ms/AzureCosmosDBYouTube"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    YouTube
-                  </a>
-                  <a
-                    className={styles.confFooterLink}
-                    href="https://x.com/azurecosmosdb"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    X
-                  </a>
-                  <a
-                    className={styles.confFooterLink}
-                    href="https://www.linkedin.com/company/azure-cosmos-db"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    LinkedIn
-                  </a>
-                </div>
-                <div className={styles.confFooterColumn}>
-                  <div className={styles.confFooterColumnTitle}>More</div>
-                  <a
-                    className={styles.confFooterLink}
-                    href="https://devblogs.microsoft.com/cosmosdb/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Blog
-                  </a>
-                  <a
-                    className={styles.confFooterLink}
-                    href="https://github.com/AzureCosmosDB"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    GitHub
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div className={styles.confFooterBottom}>
-              <p className={styles.confFooterCopyright}>
-                Copyright © {currentYear} Azure Cosmos DB - Built with ❤️{"\u00A0"}
-              </p>
-            </div>
-          </div>
-        </footer>
+        <div id="socials" className={styles.sectionAnchor} />
+        <ConfFooter confYear={CONF_YEAR} />
       </div>
     </Layout>
   );

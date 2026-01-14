@@ -89,6 +89,12 @@
   border: 0;
 }
 
+.sectionAnchor {
+  height: 0;
+  scroll-margin-top: calc(var(--ifm-navbar-height, 60px) + 16px);
+  pointer-events: none;
+}
+
 .headerText {
   position: absolute;
   left: 10%;
@@ -162,6 +168,158 @@
 
 [data-theme='dark'] .pageWrapper {
   background: linear-gradient(180deg, #000000 0%, #0d2e42 100%);
+}
+
+/* ========== INTRO BLURB (under hero) ========== */
+.introSection {
+  width: 100%;
+  font-family:
+    "Segoe Sans",
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+}
+
+.introInner {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 60px 0;
+}
+
+.introCard {
+  width: 100%;
+  padding: 28px 32px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.70) 0%, rgba(255, 255, 255, 0.30) 100%);
+  outline: 2px solid #ffffff;
+  outline-offset: -2px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+}
+
+[data-theme='dark'] .introCard {
+  background:
+    linear-gradient(0deg, rgba(116.86, 116.86, 116.86, 0.20) 0%, rgba(116.86, 116.86, 116.86, 0.20) 100%),
+    linear-gradient(180deg, rgba(16, 16, 16, 0.70) 0%, rgba(0, 0, 0, 0.30) 100%);
+  outline-color: #5b5b5b;
+  color: #ffffff;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.introTitle {
+  margin: 0 0 10px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #0078d4;
+  text-align: left;
+}
+
+[data-theme='dark'] .introTitle {
+  color: #ffffff;
+}
+
+.introCopy,
+.introCopySecondary {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000000;
+  text-align: left;
+  max-width: 980px;
+}
+
+.introCopy {
+  margin-bottom: 10px;
+}
+
+.introCopySecondary {
+  margin-bottom: 14px;
+}
+
+[data-theme='dark'] .introCopy,
+[data-theme='dark'] .introCopySecondary {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.introActions {
+  width: 100%;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.introPrimaryButton,
+.introSecondaryButton,
+.introTertiaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+
+.introPrimaryButton {
+  background: #0078d4;
+  color: #ffffff;
+}
+
+.introPrimaryButton:hover {
+  background: #106ebe;
+  color: #ffffff;
+}
+
+.introSecondaryButton {
+  background: rgba(255, 255, 255, 0.60);
+  color: #0078d4;
+  border-color: rgba(0, 120, 212, 0.25);
+}
+
+.introSecondaryButton:hover {
+  background: rgba(255, 255, 255, 0.75);
+  color: #0078d4;
+}
+
+[data-theme='dark'] .introSecondaryButton {
+  background: rgba(255, 255, 255, 0.08);
+  color: #7cc6ff;
+  border-color: rgba(124, 198, 255, 0.35);
+}
+
+[data-theme='dark'] .introSecondaryButton:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.introTertiaryButton {
+  background: #0078d4;
+  color: #ffffff;
+  border-color: transparent;
+}
+
+.introTertiaryButton:hover {
+  background: #106ebe;
+  color: #ffffff;
+}
+
+[data-theme='dark'] .introTertiaryButton {
+  background: #0078d4;
+  color: #ffffff;
+  border-color: transparent;
+}
+
+[data-theme='dark'] .introTertiaryButton:hover {
+  background: #106ebe;
 }
 
 .section {
@@ -1632,11 +1790,29 @@
 }
 
 .confFooterLink {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
   font-size: 20px;
   color: #000000;
   text-decoration: none;
   margin-top: 10px;
+}
+
+.confFooterLinkIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1em;
+  height: 1em;
+  flex: 0 0 1em;
+  color: inherit;
+}
+
+.confFooterLinkIcon > svg {
+  width: 1em;
+  height: 1em;
+  display: block;
 }
 
 [data-theme='dark'] .confFooterLink {
@@ -1765,4 +1941,75 @@
 
 .showMoreButton:hover {
   background-color: #005ea6;
+}
+
+@media (max-width: 996px) {
+  .introInner {
+    padding: 24px 20px 0;
+  }
+
+  .introCard {
+    padding: 20px;
+  }
+
+  .introTitle {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 600px) {
+  .introActions {
+    gap: 10px 14px;
+  }
+
+  .introPrimaryButton,
+  .introSecondaryButton,
+  .introTertiaryButton {
+    padding: 0;
+    border-radius: 0;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    text-decoration: underline;
+    justify-content: flex-start;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .introPrimaryButton,
+  .introSecondaryButton,
+  .introTertiaryButton {
+    color: #0078d4;
+  }
+
+  .introPrimaryButton:hover,
+  .introSecondaryButton:hover,
+  .introTertiaryButton:hover {
+    background: transparent;
+    color: #0078d4;
+    text-decoration: underline;
+  }
+
+  [data-theme='dark'] .introPrimaryButton,
+  [data-theme='dark'] .introSecondaryButton,
+  [data-theme='dark'] .introTertiaryButton {
+    color: #7cc6ff;
+  }
+
+  [data-theme='dark'] .introPrimaryButton:hover,
+  [data-theme='dark'] .introSecondaryButton:hover,
+  [data-theme='dark'] .introTertiaryButton:hover {
+    background: transparent;
+    color: #7cc6ff;
+    text-decoration: underline;
+  }
+
+  .introPrimaryButton:active,
+  .introSecondaryButton:active,
+  .introTertiaryButton:active,
+  .introPrimaryButton:focus,
+  .introSecondaryButton:focus,
+  .introTertiaryButton:focus {
+    background: transparent;
+    outline: none;
+  }
 }
