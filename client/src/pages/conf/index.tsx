@@ -131,6 +131,43 @@ const ConfPage = () => {
       <div className={styles.pageWrapper}>
         {/* ====== HERO (Figma node 170:158) ====== */}
         <header className={styles.hero} data-node-id="170:158">
+          <div className={styles.heroInner} data-node-id="126:79">
+            <div className={styles.heroLogoRow} data-node-id="126:80">
+              <picture>
+                <source
+                  srcSet={useBaseUrl("/img/conf/hero_logo_mark.avif")}
+                  type="image/avif"
+                />
+                <source
+                  srcSet={useBaseUrl("/img/conf/hero_logo_mark.webp")}
+                  type="image/webp"
+                />
+                <img
+                  className={styles.heroLogoMark}
+                  src={useBaseUrl("/img/conf/hero_logo_mark.png")}
+                  alt=""
+                />
+              </picture>
+              <picture>
+                <source
+                  srcSet={useBaseUrl("/img/conf/hero_logo_wordmark.avif")}
+                  type="image/avif"
+                />
+                <source
+                  srcSet={useBaseUrl("/img/conf/hero_logo_wordmark.webp")}
+                  type="image/webp"
+                />
+                <img
+                  className={styles.heroWordmarkImage}
+                  src={useBaseUrl("/img/conf/hero_logo_wordmark.png")}
+                  alt={`Azure Cosmos DB Conf ${CONF_YEAR}`}
+                />
+              </picture>
+            </div>
+            <p className={styles.heroDate} data-node-id="126:112">
+              {CONF_DATE_DISPLAY}
+            </p>
+          </div>
           <span className={styles.srOnly}>{`Azure Cosmos DB Conf ${CONF_YEAR}`}</span>
         </header>
 
@@ -336,12 +373,16 @@ const ConfPage = () => {
           <div className={styles.aboutCard}>
             <div className={styles.aboutCardInner}>
               <div className={styles.aboutVisual} aria-hidden="true">
-                <img
-                  className={styles.aboutVisualLogo}
-                  src={useBaseUrl("/img/conf/about_left.png")}
-                  alt=""
-                  loading="lazy"
-                />
+                <picture>
+                  <source srcSet={useBaseUrl("/img/conf/about_left.avif")} type="image/avif" />
+                  <source srcSet={useBaseUrl("/img/conf/about_left.webp")} type="image/webp" />
+                  <img
+                    className={styles.aboutVisualLogo}
+                    src={useBaseUrl("/img/conf/about_left.png")}
+                    alt=""
+                    loading="lazy"
+                  />
+                </picture>
               </div>
 
               <div className={styles.aboutText}>

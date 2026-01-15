@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from '@theme/Layout';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import resourcesData from './resources.json';
 import styles from './resources.module.css';
 import ConfFooter from './ConfFooter';
@@ -25,7 +26,44 @@ const Resources: React.FC = () => {
       noFooter
     >
       <div className={styles.pageWrapper}>
-        <header className={styles.hero}>
+        <header className={styles.hero} data-node-id="126:78">
+          <div className={styles.heroInner} data-node-id="126:79">
+            <div className={styles.heroLogoRow} data-node-id="126:80">
+              <picture>
+                <source
+                  srcSet={useBaseUrl("/img/conf/hero_logo_mark.avif")}
+                  type="image/avif"
+                />
+                <source
+                  srcSet={useBaseUrl("/img/conf/hero_logo_mark.webp")}
+                  type="image/webp"
+                />
+                <img
+                  className={styles.heroLogoMark}
+                  src={useBaseUrl("/img/conf/hero_logo_mark.png")}
+                  alt=""
+                />
+              </picture>
+              <picture>
+                <source
+                  srcSet={useBaseUrl("/img/conf/hero_logo_wordmark.avif")}
+                  type="image/avif"
+                />
+                <source
+                  srcSet={useBaseUrl("/img/conf/hero_logo_wordmark.webp")}
+                  type="image/webp"
+                />
+                <img
+                  className={styles.heroWordmarkImage}
+                  src={useBaseUrl("/img/conf/hero_logo_wordmark.png")}
+                  alt="Azure Cosmos DB Conf 2026"
+                />
+              </picture>
+            </div>
+            <p className={styles.heroDate} data-node-id="126:112">
+              April 28 - 9:00 AM - 12:00 PM PT
+            </p>
+          </div>
           <span className={styles.srOnly}>Azure Cosmos DB Conf Resources</span>
         </header>
         <div className={styles.container}>
