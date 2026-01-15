@@ -10,10 +10,139 @@ import speakersData from "../speakers/speakers.json"; // <--- NEW IMPORT
 import { Helmet } from "react-helmet";
 import { getConfSettings } from "../../conf/confSettings";
 import ConfFooter from "./ConfFooter";
+import resourcesData from "./resources.json";
 
 const CONF_YEAR = "2026";
 const CONF_DATE_DISPLAY = "April 28 - 9:00 AM - 12:00 PM PT";
 const CONF_DATE_LONG = "April 28, 2026";
+const CFP_URL = "https://aka.ms/CosmosConfCFP-site";
+
+interface Resource {
+  title: string;
+  url: string;
+  description: string;
+}
+
+interface ResourceSection {
+  title: string;
+  description?: string;
+  items: Resource[];
+}
+
+interface CfpItem {
+  title: string;
+  description: string;
+  url?: string;
+}
+
+interface CfpSection {
+  title: string;
+  description?: string;
+  items: CfpItem[];
+}
+
+const cfpSections: CfpSection[] = [
+  {
+    title: "Submit a proposal",
+    description:
+      "Submit your session idea on the official CFP site. Deadlines, requirements, and status updates are maintained there.",
+    items: [
+      {
+        title: "Open the CFP submission site",
+        url: CFP_URL,
+        description: "Use this link to submit, edit, or track your proposal.",
+      },
+    ],
+  },
+  {
+    title: "What we’re looking for",
+    description:
+      "Practical, high-signal talks that help builders ship with Azure Cosmos DB and the DocumentDB ecosystem.",
+    items: [
+      {
+        title: "Real-world lessons learned",
+        description: "Architecture tradeoffs, reliability, cost optimization, and performance debugging.",
+      },
+      {
+        title: "Demos and hands-on walkthroughs",
+        description: "Show a pattern end-to-end: data modeling, partitioning, query design, and operations.",
+      },
+      {
+        title: "Ecosystem and integrations",
+        description: "Tooling, SDKs, data pipelines, observability, and app patterns.",
+      },
+    ],
+  },
+  {
+    title: "Suggested topic areas",
+    items: [
+      {
+        title: "Data modeling and partitioning",
+        description: "Designing for scale, hot partition avoidance, hierarchical partition keys, and access patterns.",
+      },
+      {
+        title: "Performance and cost",
+        description: "RU optimization, indexing strategies, query tuning, and troubleshooting latency.",
+      },
+      {
+        title: "Reliability and global scale",
+        description: "Multi-region strategies, change feed patterns, backup/restore, and incident readiness.",
+      },
+      {
+        title: "AI app patterns",
+        description: "Chat history, contextual memory, RAG patterns, and (where relevant) vector search usage.",
+      },
+    ],
+  },
+  {
+    title: "Before you submit",
+    items: [
+      {
+        title: "Keep it audience-first",
+        description:
+          "Be explicit about what attendees will learn, who it’s for, and what they can apply immediately.",
+      },
+      {
+        title: "Share the real-world story",
+        description:
+          "We love honest lessons learned and the tradeoffs that shaped your architecture decisions.",
+      },
+      {
+        title: "Stay practical",
+        description:
+          "Hands-on demos and specific guidance resonate most with builders attending the event.",
+      },
+    ],
+  },
+];
+
+const archiveTimelineData = [
+  {
+    year: "2025",
+    text: "Azure Cosmos DB Conf 2025",
+    embedUrl: "https://www.youtube.com/embed/videoseries?list=PLmamF3YkHLoLQhnFsKWhtKu_Tp0uXPFdn",
+  },
+  {
+    year: "2024",
+    text: "Azure Cosmos DB Conf 2024",
+    embedUrl: "https://www.youtube.com/embed/videoseries?list=PLlrxD0HtieHgQxPGa9JJdbbUpmkuIshh4",
+  },
+  {
+    year: "2023",
+    text: "Azure Cosmos DB Conf 2023",
+    embedUrl: "https://www.youtube.com/embed/videoseries?list=PLmamF3YkHLoLd5dQ0aji5QRhxQQAh0SIn",
+  },
+  {
+    year: "2022",
+    text: "Azure Cosmos DB Conf 2022",
+    embedUrl: "https://www.youtube.com/embed/videoseries?list=PLmamF3YkHLoLa2ELTHUhoSMx89w329bOD",
+  },
+  {
+    year: "2021",
+    text: "Azure Cosmos DB Conf 2021",
+    embedUrl: "https://www.youtube.com/embed/videoseries?list=PLmamF3YkHLoLN_24E41jSPVilv5B3GTBg",
+  },
+];
 
 const ConfPage = () => {
   const { siteConfig } = useDocusaurusContext();
@@ -480,6 +609,163 @@ const ConfPage = () => {
                   </article>
                 );
               })}
+            </div>
+          </div>
+        </section>
+
+        {/* ====== CFP SECTION ====== */}
+        <section className={styles.cfpSection} aria-labelledby="cfp-heading">
+          <div id="cfp" className={styles.sectionAnchor} />
+          <div className={styles.cfpContainer}>
+            <h2 id="cfp-heading" className={styles.cfpTitle}>
+              <img
+                src="/img/planet-1.png"
+                alt=""
+                aria-hidden="true"
+                className={styles.cfpIcon}
+              />
+              Call for Proposals
+            </h2>
+
+            <div className={styles.cfpCard}>
+              <p className={styles.cfpSummary}>
+                Want to speak at Azure Cosmos DB Conf? Submit your session proposal using the official CFP site.
+              </p>
+              <div className={styles.cfpCtaRow}>
+                <a className={styles.cfpCtaPrimary} href={CFP_URL} target="_blank" rel="noopener noreferrer">
+                  Submit a proposal
+                </a>
+                <a className={styles.cfpCtaSecondary} href={CFP_URL} target="_blank" rel="noopener noreferrer">
+                  CFP details
+                </a>
+              </div>
+
+              {cfpSections.map((section) => (
+                <section key={section.title} className={styles.cfpSectionBlock}>
+                  <h3 className={styles.cfpSectionTitle}>{section.title}</h3>
+                  {section.description ? (
+                    <p className={styles.cfpSectionDescription}>{section.description}</p>
+                  ) : null}
+                  <ul className={styles.cfpSimpleList}>
+                    {section.items.map((item) => (
+                      <li key={`${section.title}-${item.title}`} className={styles.cfpListItem}>
+                        <div className={styles.cfpLinkRow}>
+                          <img
+                            src="/img/planet-1.png"
+                            alt=""
+                            aria-hidden="true"
+                            className={styles.cfpBulletIcon}
+                            loading="lazy"
+                          />
+                          {item.url ? (
+                            <a
+                              href={item.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={styles.cfpLink}
+                            >
+                              {item.title}
+                            </a>
+                          ) : (
+                            <span className={styles.cfpLinkText}>{item.title}</span>
+                          )}
+                        </div>
+                        <p className={styles.cfpDescription}>{item.description}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ====== RESOURCES SECTION ====== */}
+        <section className={styles.resourcesSection} aria-labelledby="resources-heading">
+          <div id="resources" className={styles.sectionAnchor} />
+          <div className={styles.resourcesContainer}>
+            <h2 id="resources-heading" className={styles.resourcesTitle}>
+              <img
+                src="/img/planet-1.png"
+                alt=""
+                aria-hidden="true"
+                className={styles.resourcesIcon}
+              />
+              Resources
+            </h2>
+
+            <div className={styles.resourcesCard}>
+              <p className={styles.resourcesSummary}>
+                A curated set of links for Azure Cosmos DB, Azure DocumentDB, and the open-source DocumentDB project.
+              </p>
+
+              {(resourcesData as ResourceSection[]).map((section) => (
+                <section key={section.title} className={styles.resourcesSectionBlock}>
+                  <h3 className={styles.resourcesSectionTitle}>{section.title}</h3>
+                  {section.description ? (
+                    <p className={styles.resourcesSectionDescription}>{section.description}</p>
+                  ) : null}
+                  <ul className={styles.resourcesSimpleList}>
+                    {section.items.map((res: Resource) => (
+                      <li key={res.url} className={styles.resourcesListItem}>
+                        <div className={styles.resourcesLinkRow}>
+                          <img
+                            src="/img/planet-1.png"
+                            alt=""
+                            aria-hidden="true"
+                            className={styles.resourcesBulletIcon}
+                            loading="lazy"
+                          />
+                          <a
+                            href={res.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.resourcesLink}
+                          >
+                            {res.title}
+                          </a>
+                        </div>
+                        <p className={styles.resourcesDescription}>{res.description}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ====== ARCHIVE SECTION ====== */}
+        <section className={styles.archiveSection} aria-labelledby="archive-heading">
+          <div id="archive" className={styles.sectionAnchor} />
+          <div className={styles.archiveContainer}>
+            <h2 id="archive-heading" className={styles.archiveTitle}>
+              <img
+                src="/img/planet-1.png"
+                alt=""
+                aria-hidden="true"
+                className={styles.archiveIcon}
+              />
+              Azure Cosmos DB Conf Archive
+            </h2>
+
+            <div className={styles.archiveTimeline}>
+              {archiveTimelineData.map((item, index) => (
+                <div key={index} className={styles.archiveTimelineItem}>
+                  <div className={styles.archiveTimelineYear}>{item.year}</div>
+                  <div className={styles.archiveTimelineContent}>
+                    <p className={styles.archiveTimelineText}>{item.text}</p>
+                    <iframe
+                      className={styles.archiveTimelineVideo}
+                      src={item.embedUrl}
+                      title={`Azure Cosmos DB Conf ${item.year} playlist`}
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>

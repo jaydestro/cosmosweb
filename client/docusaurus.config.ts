@@ -144,18 +144,18 @@ const config: Config = {
             },
             {
               label: 'Call for Proposals',
-              to: '/conf/cfp',
-              activeBasePath: '/conf/cfp',
+              to: '/conf#cfp',
+              activeBaseRegex: '^$',
             },
             {
               label: 'Resources',
-              to: '/conf/resources',
-              activeBasePath: '/conf/resources',
+              to: '/conf#resources',
+              activeBaseRegex: '^$',
             },
             {
               label: 'Archive',
-              to: '/archive',
-              activeBaseRegex: '^/archive/?$',
+              to: '/conf#archive',
+              activeBaseRegex: '^$',
             },
             {
               label: 'FAQ',
