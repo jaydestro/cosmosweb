@@ -1825,6 +1825,56 @@
   width: 100%;
 }
 
+.resourcesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 48px;
+  width: 100%;
+  margin-bottom: 32px;
+  position: relative;
+}
+
+.resourcesGrid::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  width: 1px;
+  height: 85%;
+  background: rgba(0, 0, 0, 0.08);
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+[data-theme='dark'] .resourcesGrid::after {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.resourcesGrid .resourcesSectionBlock + .resourcesSectionBlock {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.resourcesSectionBlock + .resourcesSectionBlock {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='dark'] .resourcesSectionBlock + .resourcesSectionBlock {
+  border-top-color: rgba(255, 255, 255, 0.14);
+}
+
+.resourcesCard > .resourcesSectionBlock {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  margin-top: 28px;
+  padding-top: 20px;
+}
+
+[data-theme='dark'] .resourcesCard > .resourcesSectionBlock {
+  border-top-color: rgba(255, 255, 255, 0.14);
+}
+
 .cfpSectionBlock + .cfpSectionBlock,
 .resourcesSectionBlock + .resourcesSectionBlock {
   margin-top: 28px;
@@ -2011,6 +2061,26 @@
 
   .archiveTimelineYear {
     left: -46px;
+  }
+
+  .resourcesGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+
+  .resourcesGrid::after {
+    display: none;
+  }
+
+  .resourcesGrid .resourcesSectionBlock + .resourcesSectionBlock {
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  [data-theme='dark'] .resourcesGrid .resourcesSectionBlock + .resourcesSectionBlock {
+    border-top-color: rgba(255, 255, 255, 0.14);
   }
 }
 

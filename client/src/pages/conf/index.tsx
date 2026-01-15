@@ -395,39 +395,84 @@ const ConfPage = () => {
               <p className={styles.resourcesSummary}>
                 A curated set of links for Azure Cosmos DB, Azure DocumentDB, and the open-source DocumentDB project.
               </p>
+              {(() => {
+                const sections = resourcesData as ResourceSection[];
+                const [cosmosSection, documentSection, ossSection] = sections;
 
-              {(resourcesData as ResourceSection[]).map((section) => (
-                <section key={section.title} className={styles.resourcesSectionBlock}>
-                  <h3 className={styles.resourcesSectionTitle}>{section.title}</h3>
-                  {section.description ? (
-                    <p className={styles.resourcesSectionDescription}>{section.description}</p>
-                  ) : null}
-                  <ul className={styles.resourcesSimpleList}>
-                    {section.items.map((res: Resource) => (
-                      <li key={res.url} className={styles.resourcesListItem}>
-                        <div className={styles.resourcesLinkRow}>
-                          <img
-                            src="/img/planet-1.png"
-                            alt=""
-                            aria-hidden="true"
-                            className={styles.resourcesBulletIcon}
-                            loading="lazy"
-                          />
-                          <a
-                            href={res.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={styles.resourcesLink}
-                          >
-                            {res.title}
-                          </a>
-                        </div>
-                        <p className={styles.resourcesDescription}>{res.description}</p>
-                      </li>
-                    ))}
-                  </ul>
-                </section>
-              ))}
+                return (
+                  <>
+                    <div className={styles.resourcesGrid}>
+                      {[cosmosSection, documentSection]
+                        .filter(Boolean)
+                        .map((section) => (
+                          <section key={section.title} className={styles.resourcesSectionBlock}>
+                            <h3 className={styles.resourcesSectionTitle}>{section.title}</h3>
+                            {section.description ? (
+                              <p className={styles.resourcesSectionDescription}>{section.description}</p>
+                            ) : null}
+                            <ul className={styles.resourcesSimpleList}>
+                              {section.items.map((res: Resource) => (
+                                <li key={res.url} className={styles.resourcesListItem}>
+                                  <div className={styles.resourcesLinkRow}>
+                                    <img
+                                      src="/img/planet-1.png"
+                                      alt=""
+                                      aria-hidden="true"
+                                      className={styles.resourcesBulletIcon}
+                                      loading="lazy"
+                                    />
+                                    <a
+                                      href={res.url}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className={styles.resourcesLink}
+                                    >
+                                      {res.title}
+                                    </a>
+                                  </div>
+                                  <p className={styles.resourcesDescription}>{res.description}</p>
+                                </li>
+                              ))}
+                            </ul>
+                          </section>
+                        ))}
+                    </div>
+
+                    {ossSection ? (
+                      <section className={styles.resourcesSectionBlock}>
+                        <h3 className={styles.resourcesSectionTitle}>{ossSection.title}</h3>
+                        {ossSection.description ? (
+                          <p className={styles.resourcesSectionDescription}>{ossSection.description}</p>
+                        ) : null}
+                        <ul className={styles.resourcesSimpleList}>
+                          {ossSection.items.map((res: Resource) => (
+                            <li key={res.url} className={styles.resourcesListItem}>
+                              <div className={styles.resourcesLinkRow}>
+                                <img
+                                  src="/img/planet-1.png"
+                                  alt=""
+                                  aria-hidden="true"
+                                  className={styles.resourcesBulletIcon}
+                                  loading="lazy"
+                                />
+                                <a
+                                  href={res.url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className={styles.resourcesLink}
+                                >
+                                  {res.title}
+                                </a>
+                              </div>
+                              <p className={styles.resourcesDescription}>{res.description}</p>
+                            </li>
+                          ))}
+                        </ul>
+                      </section>
+                    ) : null}
+                  </>
+                );
+              })()}
             </div>
           </div>
         </section>
