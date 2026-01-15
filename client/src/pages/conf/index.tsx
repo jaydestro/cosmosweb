@@ -192,6 +192,25 @@ const ConfPage = () => {
         {/* ====== HERO (Figma node 170:158) ====== */}
         <header className={styles.hero} data-node-id="170:158">
           <span className={styles.srOnly}>{`Azure Cosmos DB Conf ${CONF_YEAR}`}</span>
+          <div className={styles.heroInner}>
+            <div className={styles.heroTitleRow}>
+              <img
+                src="/img/planet-1.png"
+                alt=""
+                aria-hidden="true"
+                className={styles.heroPlanet}
+                loading="lazy"
+              />
+              <div className={styles.heroTextStack}>
+                <h1 className={styles.heroTitle}>
+                  Azure Cosmos
+                  <br />
+                  DB Conf <span className={styles.heroYear}>{CONF_YEAR}</span>
+                </h1>
+                <p className={styles.heroDateLine}>{CONF_DATE_DISPLAY}</p>
+              </div>
+            </div>
+          </div>
         </header>
 
         <section className={styles.introSection} aria-labelledby="conf-intro">

@@ -15,10 +15,11 @@
   background: linear-gradient(180deg, #000000 0%, #0d2e42 100%);
 }
 
-/* ========== HERO (matches /conf + Resources) ========== */
+/* ========== HERO (matches /conf) ========== */
 .hero {
   width: 100%;
   display: flex;
+  /* Asset is 1920x400. */
   height: clamp(240px, 20vw, 400px);
   padding: 10px 200px;
   flex-direction: column;
@@ -83,7 +84,7 @@
 
 .card {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
   padding: 40px;
   border-radius: 20px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.70) 0%, rgba(255, 255, 255, 0.30) 100%);
@@ -92,9 +93,8 @@
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: flex-start;
-  gap: 10px;
+  gap: 12px;
   box-sizing: border-box;
 }
 
@@ -108,162 +108,92 @@
   backdrop-filter: blur(10px);
 }
 
-.summary {
-  margin: 0 0 14px;
+.copy {
+  margin: 0;
   font-size: 16px;
   font-weight: 400;
   color: #000000;
 }
 
-[data-theme='dark'] .summary {
-  color: #ffffff;
+[data-theme='dark'] .copy {
+  color: rgba(255, 255, 255, 0.9);
 }
 
-.ctaRow {
+.actions {
   width: 100%;
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
-  margin: 4px 0 18px;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 8px;
 }
 
-.ctaPrimary,
-.ctaSecondary {
+.primaryButton,
+.secondaryButton,
+.tertiaryButton {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 16px;
   border-radius: 999px;
-  font-size: 14px;
-  font-weight: 700;
+  padding: 10px 18px;
+  font-weight: 600;
+  font-size: 16px;
   text-decoration: none;
   border: 1px solid transparent;
+  transition:
+    transform 120ms ease,
+    box-shadow 120ms ease,
+    background 120ms ease,
+    color 120ms ease;
 }
 
-.ctaPrimary {
+.primaryButton {
   background: #0078d4;
   color: #ffffff;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
-.ctaPrimary:hover {
-  background: #106ebe;
+.primaryButton:hover {
+  background: #0067b8;
+  transform: translateY(-1px);
+}
+
+.secondaryButton {
+  background: #ffffff;
+  color: #0d2e42;
+  border-color: #0d2e42;
+}
+
+.tertiaryButton {
+  background: transparent;
+  color: #0d2e42;
+  border-color: transparent;
+}
+
+[data-theme='dark'] .secondaryButton {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+[data-theme='dark'] .tertiaryButton {
   color: #ffffff;
 }
 
-.ctaSecondary {
-  background: rgba(255, 255, 255, 0.60);
-  color: #0078d4;
-  border-color: rgba(0, 120, 212, 0.25);
-}
-
-.ctaSecondary:hover {
-  background: rgba(255, 255, 255, 0.75);
-  color: #0078d4;
-}
-
-[data-theme='dark'] .ctaSecondary {
-  background: rgba(255, 255, 255, 0.08);
-  color: #7cc6ff;
-  border-color: rgba(124, 198, 255, 0.35);
-}
-
-[data-theme='dark'] .ctaSecondary:hover {
-  background: rgba(255, 255, 255, 0.14);
-}
-
-.simpleList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.section {
-  width: 100%;
-}
-
-.section + .section {
-  margin-top: 28px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-[data-theme='dark'] .section + .section {
-  border-top-color: rgba(255, 255, 255, 0.14);
-}
-
-.sectionTitle {
-  margin: 0 0 8px;
-  font-size: 22px;
-  font-weight: 700;
-  color: #0078d4;
-}
-
-.sectionDescription {
-  margin: 0 0 16px;
+.dateLine {
+  margin-top: 6px;
   font-size: 16px;
-  font-weight: 400;
-  color: #000000;
-}
-
-[data-theme='dark'] .sectionDescription {
-  color: rgba(255, 255, 255, 0.85);
-}
-
-.listItem {
-  margin-bottom: 18px;
-}
-
-.linkRow {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 6px;
-}
-
-.bulletIcon {
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
-}
-
-.link {
-  font-size: 20px;
   font-weight: 600;
-  color: #0078d4;
-  text-decoration: underline;
+  color: #0d2e42;
 }
 
-.link:hover {
-  text-decoration: underline;
-}
-
-[data-theme='dark'] .link {
-  color: #7cc6ff;
-}
-
-.linkText {
-  font-size: 20px;
-  font-weight: 600;
-  color: #0078d4;
-}
-
-[data-theme='dark'] .linkText {
-  color: #7cc6ff;
-}
-
-.description {
-  font-size: 16px;
-  margin: 0;
-  color: #000000;
-}
-
-[data-theme='dark'] .description {
+[data-theme='dark'] .dateLine {
   color: #ffffff;
 }
 
 @media (max-width: 996px) {
   .hero {
-    /* Mobile/tablet: show the full hero image (no cropping). */
     height: auto;
     aspect-ratio: 1920 / 400;
     padding: 0;
@@ -283,11 +213,6 @@
   .card {
     padding: 24px 20px;
   }
-
-  .link,
-  .linkText {
-    font-size: 18px;
-  }
 }
 
 @media (max-width: 600px) {
@@ -301,17 +226,20 @@
     height: 28px;
   }
 
-  .linkRow {
-    gap: 8px;
+  .actions {
+    gap: 10px 14px;
   }
 
-  .bulletIcon {
-    width: 18px;
-    height: 18px;
-  }
-
-  .link,
-  .linkText {
-    font-size: 16px;
+  .primaryButton,
+  .secondaryButton,
+  .tertiaryButton {
+    padding: 0;
+    border-radius: 0;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    text-decoration: underline;
+    justify-content: flex-start;
+    -webkit-tap-highlight-color: transparent;
   }
 }
