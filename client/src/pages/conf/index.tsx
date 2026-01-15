@@ -121,26 +121,31 @@ const archiveTimelineData = [
   {
     year: "2025",
     text: "Azure Cosmos DB Conf 2025",
+    playlistUrl: "https://www.youtube.com/playlist?list=PLmamF3YkHLoLQhnFsKWhtKu_Tp0uXPFdn",
     embedUrl: "https://www.youtube.com/embed/videoseries?list=PLmamF3YkHLoLQhnFsKWhtKu_Tp0uXPFdn",
   },
   {
     year: "2024",
     text: "Azure Cosmos DB Conf 2024",
+    playlistUrl: "https://www.youtube.com/playlist?list=PLlrxD0HtieHgQxPGa9JJdbbUpmkuIshh4",
     embedUrl: "https://www.youtube.com/embed/videoseries?list=PLlrxD0HtieHgQxPGa9JJdbbUpmkuIshh4",
   },
   {
     year: "2023",
     text: "Azure Cosmos DB Conf 2023",
-    embedUrl: "https://www.youtube.com/embed/videoseries?list=PLmamF3YkHLoLd5dQ0aji5QRhxQQAh0SIn",
+    playlistUrl: "https://www.youtube.com/playlist?list=PLlrxD0HtieHj3SsXKrnikSKeHQ7PCfa3u",
+    embedUrl: "https://www.youtube.com/embed/videoseries?list=PLlrxD0HtieHj3SsXKrnikSKeHQ7PCfa3u",
   },
   {
     year: "2022",
     text: "Azure Cosmos DB Conf 2022",
+    playlistUrl: "https://www.youtube.com/playlist?list=PLmamF3YkHLoLa2ELTHUhoSMx89w329bOD",
     embedUrl: "https://www.youtube.com/embed/videoseries?list=PLmamF3YkHLoLa2ELTHUhoSMx89w329bOD",
   },
   {
     year: "2021",
     text: "Azure Cosmos DB Conf 2021",
+    playlistUrl: "https://www.youtube.com/playlist?list=PLmamF3YkHLoLN_24E41jSPVilv5B3GTBg",
     embedUrl: "https://www.youtube.com/embed/videoseries?list=PLmamF3YkHLoLN_24E41jSPVilv5B3GTBg",
   },
 ];
@@ -442,12 +447,30 @@ const ConfPage = () => {
             </h2>
 
             <div className={styles.archiveCard}>
+              <p className={styles.archiveSubheader}>
+                This archive collects past Azure Cosmos DB Conf events. Click the links below to open the full
+                playlist, including all on-demand sessions, and watch the live show recordings.
+              </p>
               <div className={styles.archiveTimeline}>
                 {archiveTimelineData.map((item, index) => (
                   <div key={index} className={styles.archiveTimelineItem}>
-                    <div className={styles.archiveTimelineYear}>{item.year}</div>
+                    <a
+                      className={styles.archiveTimelineYear}
+                      href={item.playlistUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {item.year}
+                    </a>
                     <div className={styles.archiveTimelineContent}>
-                      <p className={styles.archiveTimelineText}>{item.text}</p>
+                      <a
+                        className={styles.archiveTimelineTextLink}
+                        href={item.playlistUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {item.text}
+                      </a>
                       <iframe
                         className={styles.archiveTimelineVideo}
                         src={item.embedUrl}

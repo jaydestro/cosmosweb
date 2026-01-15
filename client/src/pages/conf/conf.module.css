@@ -53,7 +53,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 10px;
+  gap: 4px;
 }
 
 .heroPlanet {
@@ -560,7 +560,7 @@
   .streamCtaButton {
     width: 100%;
     max-width: 420px;
-    font-size: 18px;
+    padding: 40px 60px 0;
   }
 }
 
@@ -1513,7 +1513,6 @@
   width: 100%;
   justify-content: center;
   align-items: center;
-  margin-top: 16px;
 }
 
 .aboutRegisterButton {
@@ -1726,6 +1725,17 @@
   box-sizing: border-box;
 }
 
+.archiveSubheader {
+  margin: 0 0 16px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #0d2e42;
+}
+
+[data-theme='dark'] .archiveSubheader {
+  color: #ffffff;
+}
+
 [data-theme='dark'] .cfpCard,
 [data-theme='dark'] .resourcesCard,
 [data-theme='dark'] .archiveCard {
@@ -1932,6 +1942,19 @@
   padding: 6px 12px;
   border-radius: 999px;
   font-size: 14px;
+  text-decoration: none;
+}
+
+.archiveTimelineTextLink {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #000000;
+  text-decoration: underline;
+}
+
+[data-theme='dark'] .archiveTimelineTextLink {
+  color: #ffffff;
 }
 
 .archiveTimelineContent {

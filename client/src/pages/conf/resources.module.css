@@ -15,8 +15,8 @@
 .hero {
   width: 100%;
   display: flex;
-  /* Asset is 1920x400. */
-  height: clamp(240px, 20vw, 400px);
+  /* Asset is 1600x560. */
+  height: clamp(360px, 35vw, 560px);
   padding: 10px 200px;
   flex-direction: column;
   justify-content: center;
@@ -24,7 +24,7 @@
   gap: 40px;
   align-self: stretch;
   position: relative;
-  background-image: url('/img/conf/hero_bg_v2.png');
+  background-image: url('/img/CosmosConf26_Hero_container.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -205,7 +205,7 @@
   .hero {
     /* Mobile/tablet: show the full hero image (no cropping). */
     height: auto;
-    aspect-ratio: 1920 / 400;
+    aspect-ratio: 1600 / 560;
     padding: 0;
     background-size: contain;
     background-position: center;
