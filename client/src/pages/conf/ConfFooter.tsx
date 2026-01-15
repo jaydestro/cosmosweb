@@ -3,8 +3,6 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 import styles from "./conf.module.css";
 import {
   FaBookOpen,
-  FaCalendarCheck,
-  FaClipboardList,
   FaFileLines,
   FaDiscord,
   FaGithub,
@@ -141,28 +139,6 @@ export default function ConfFooter({ confYear = "2026" }: ConfFooterProps) {
 
             <div className={styles.confFooterColumn}>
               <div className={styles.confFooterColumnTitle}>More</div>
-              <a
-                className={styles.confFooterLink}
-                href="https://aka.ms/cosmosconfreg"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className={styles.confFooterLinkIcon} aria-hidden="true">
-                  <FaCalendarCheck />
-                </span>
-                <span>Register for free</span>
-              </a>
-              <a
-                className={styles.confFooterLink}
-                href="https://aka.ms/cosmosconfcfp"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className={styles.confFooterLinkIcon} aria-hidden="true">
-                  <FaClipboardList />
-                </span>
-                <span>Call for Proposals</span>
-              </a>
               <a
                 className={styles.confFooterLink}
                 href="https://devblogs.microsoft.com/cosmosdb/"

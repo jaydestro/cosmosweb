@@ -16,12 +16,14 @@ const WhatIsConfPage: React.FC = () => {
       wrapperClassName={styles.layoutWrapper}
       noFooter
     >
-      <div className={styles.pageWrapper}>
+      <div className={styles.pageWrapper}
+>
         <header className={styles.hero}>
           <span className={styles.srOnly}>{`Azure Cosmos DB Conf ${CONF_YEAR}`}</span>
         </header>
 
-        <div className={styles.container}>
+        <div className={styles.container}
+>
           <h1 className={styles.title}>
             <img src="/img/planet-1.png" alt="" aria-hidden="true" className={styles.icon} />
             What is Azure Cosmos DB Conf?

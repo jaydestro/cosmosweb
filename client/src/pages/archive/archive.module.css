@@ -67,6 +67,42 @@
   gap: 12px;
 }
 
+.archiveIntro {
+  max-width: 900px;
+  margin: 0 auto 24px;
+}
+
+.subheader {
+  margin: 0 0 16px;
+  font-size: 18px;
+  color: #0d2e42;
+  font-weight: 500;
+  text-align: center;
+}
+
+[data-theme='dark'] .subheader {
+  color: #ffffff;
+}
+
+.playlistLinks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px 16px;
+  margin: 0 auto;
+  max-width: 900px;
+  text-align: left;
+}
+
+.playlistLinks a {
+  color: #0078d4;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+[data-theme='dark'] .playlistLinks a {
+  color: #7cc6ff;
+}
+
 .icon {
   width: 36px;
   height: 36px;
@@ -101,6 +137,14 @@
   justify-content: center;
   font-size: 14px;
   line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.timelineYear:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .timelineContent {
@@ -128,6 +172,19 @@
   font-size: 16px;
   font-weight: 700;
   color: #0d2e42;
+}
+
+.timelineTextLink {
+  display: inline-flex;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #0d2e42;
+  text-decoration: underline;
+}
+
+[data-theme='dark'] .timelineTextLink {
+  color: #ffffff;
 }
 
 [data-theme='dark'] .timelineText {
