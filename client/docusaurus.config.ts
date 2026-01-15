@@ -17,6 +17,9 @@ function readString(envValue: string | undefined): string | null {
   return value ? value : null;
 }
 
+const showStreamNav = readBool(process.env.CONF_SHOW_STREAM, false);
+const showAgendaNav = readBool(process.env.CONF_SHOW_AGENDA, false);
+
 const config: Config = {
   title: 'Azure Cosmos DB Dev Home',
   tagline: 'Infinite Scale, Instant Impact!',
@@ -45,6 +48,10 @@ const config: Config = {
     [
       'classic',
       {
+        gtag: {
+          trackingID: 'G-06VJPSGDCQ',
+          anonymizeIP: true,
+        },
         docs: {
           sidebarPath: './sidebars.ts',
           editUrl:
@@ -56,8 +63,6 @@ const config: Config = {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
@@ -69,15 +74,7 @@ const config: Config = {
     ],
   ],
 
-  plugins: [
-    [
-      '@docusaurus/plugin-google-analytics',
-      {
-        trackingID: 'G-06VJPSGDCQ',
-        anonymizeIP: true,
-      },
-    ],
-  ],
+  plugins: [],
 
   // Values here are serialized into the client bundle and are safe to read in the browser.
   // Use these for `/conf` feature toggles so we don't rely on `process` being defined client-side.
@@ -126,6 +123,24 @@ const config: Config = {
               activeBaseRegex: '^/conf/?$',
               className: 'mobile-only',
             },
+            ...(showStreamNav
+              ? [
+                  {
+                    label: 'Stream',
+                    to: '/conf#stream',
+                    activeBaseRegex: '^$',
+                  },
+                ]
+              : []),
+            ...(showAgendaNav
+              ? [
+                  {
+                    label: 'Agenda',
+                    to: '/conf#agenda',
+                    activeBaseRegex: '^$',
+                  },
+                ]
+              : []),
             {
               label: 'News',
               to: '/conf#news',
@@ -145,18 +160,18 @@ const config: Config = {
             },
             {
               label: 'Call for Proposals',
-              to: '/conf/cfp',
-              activeBasePath: '/conf/cfp',
+              to: '/conf#cfp',
+              activeBaseRegex: '^$',
             },
             {
               label: 'Resources',
-              to: '/conf/resources',
-              activeBasePath: '/conf/resources',
+              to: '/conf#resources',
+              activeBaseRegex: '^$',
             },
             {
               label: 'Archive',
-              to: '/archive',
-              activeBaseRegex: '^/archive/?$',
+              to: '/conf#archive',
+              activeBaseRegex: '^$',
             },
             {
               label: 'FAQ',
