@@ -17,15 +17,15 @@ function readString(envValue: string | undefined): string | null {
   return value ? value : null;
 }
 
+const showStreamNav = readBool(process.env.CONF_SHOW_STREAM, false);
+const showAgendaNav = readBool(process.env.CONF_SHOW_AGENDA, false);
+
 const config: Config = {
   title: 'Azure Cosmos DB Dev Home',
   tagline: 'Infinite Scale, Instant Impact!',
   favicon: 'img/favicon.ico',
 
-  clientModules: [
-    './src/clientModules/confMobileHashActive.ts',
-    './src/clientModules/clientErrorLogger.ts',
-  ],
+  clientModules: ['./src/clientModules/confMobileHashActive.ts'],
 
   url: 'https://developer.azurecosmosdb.com',
   baseUrl: '/',
@@ -63,8 +63,6 @@ const config: Config = {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
@@ -125,6 +123,24 @@ const config: Config = {
               activeBaseRegex: '^/conf/?$',
               className: 'mobile-only',
             },
+            ...(showStreamNav
+              ? [
+                  {
+                    label: 'Stream',
+                    to: '/conf#stream',
+                    activeBaseRegex: '^$',
+                  },
+                ]
+              : []),
+            ...(showAgendaNav
+              ? [
+                  {
+                    label: 'Agenda',
+                    to: '/conf#agenda',
+                    activeBaseRegex: '^$',
+                  },
+                ]
+              : []),
             {
               label: 'News',
               to: '/conf#news',

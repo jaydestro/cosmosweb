@@ -61,22 +61,12 @@ export default function Home() {
     <Layout title="Azure Cosmos DB Dev Home" description="Azure Cosmos DB Dev Home">
       <main className={styles.mainContainer}>
         <div className={styles.coverPageContainer}>
-          {(() => {
-            const backgroundBase = isDarkMode ? "backgroundDark" : "backgroundLight";
-            const basePath = useBaseUrl(`/img/${backgroundBase}`);
-            return (
-              <picture>
-                <source srcSet={`${basePath}.avif`} type="image/avif" />
-                <source srcSet={`${basePath}.webp`} type="image/webp" />
-                <img
-                  src={`${basePath}.png`}
-                  className={styles.cover}
-                  onError={({ currentTarget }) => { currentTarget.style.display = "none"; }}
-                  alt=""
-                />
-              </picture>
-            );
-          })()}
+          <img
+            src={isDarkMode ? useBaseUrl("/img/backgroundDark.png") : useBaseUrl("/img/backgroundLight.png")}
+            className={styles.cover}
+            onError={({ currentTarget }) => { currentTarget.style.display = "none"; }}
+            alt=""
+          />
         </div>
         <div className={styles.content}>
           <div className={styles.textContainer}>
