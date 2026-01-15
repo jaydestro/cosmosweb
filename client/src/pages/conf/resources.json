@@ -10,27 +10,27 @@
       },
       {
         "title": "Azure Cosmos DB Introduction",
-        "url": "https://learn.microsoft.com/en-us/azure/cosmos-db/introduction",
+        "url": "https://learn.microsoft.com/azure/cosmos-db/introduction",
         "description": "High-level overview, core concepts, and when to use Cosmos DB."
       },
       {
         "title": "Azure Cosmos DB Emulator",
-        "url": "https://learn.microsoft.com/en-us/azure/cosmos-db/emulator",
+        "url": "https://learn.microsoft.com/azure/cosmos-db/emulator",
         "description": "Run Cosmos DB locally for development and testing."
       },
       {
         "title": "Request Units (RUs) in Azure Cosmos DB",
-        "url": "https://learn.microsoft.com/en-us/azure/cosmos-db/request-units",
+        "url": "https://learn.microsoft.com/azure/cosmos-db/request-units",
         "description": "Understand RU pricing/performance and how operations are charged."
       },
       {
         "title": "Measure request unit charge",
-        "url": "https://learn.microsoft.com/en-us/azure/cosmos-db/find-request-unit-charge",
+        "url": "https://learn.microsoft.com/azure/cosmos-db/find-request-unit-charge",
         "description": "See how to capture RU charge from responses and optimize workloads."
       },
       {
         "title": "Plan and manage costs for Azure Cosmos DB",
-        "url": "https://learn.microsoft.com/en-us/azure/cosmos-db/plan-manage-costs",
+        "url": "https://learn.microsoft.com/azure/cosmos-db/plan-manage-costs",
         "description": "Cost estimation guidance, common RU costs, and pricing considerations."
       },
       {
@@ -40,17 +40,17 @@
       },
       {
         "title": "Partitioning and horizontal scaling",
-        "url": "https://learn.microsoft.com/en-us/azure/cosmos-db/partitioning-overview",
+        "url": "https://learn.microsoft.com/azure/cosmos-db/partitioning-overview",
         "description": "Choose a good partition key and understand logical/physical partitions."
       },
       {
         "title": "Change feed in Azure Cosmos DB",
-        "url": "https://learn.microsoft.com/en-us/azure/cosmos-db/change-feed",
+        "url": "https://learn.microsoft.com/azure/cosmos-db/change-feed",
         "description": "Build event-driven systems, streaming pipelines, and real-time processing."
       },
       {
         "title": "Vector search in Azure Cosmos DB for NoSQL",
-        "url": "https://learn.microsoft.com/en-us/azure/cosmos-db/vector-search",
+        "url": "https://learn.microsoft.com/azure/cosmos-db/vector-search",
         "description": "Learn about vector indexing and vector search for AI/RAG scenarios."
       },
       {
@@ -91,27 +91,27 @@
     "items": [
       {
         "title": "Azure DocumentDB (with MongoDB compatibility) overview",
-        "url": "https://learn.microsoft.com/en-us/azure/documentdb/overview",
+        "url": "https://learn.microsoft.com/azure/documentdb/overview",
         "description": "What Azure DocumentDB is, how it scales, and compatibility details."
       },
       {
         "title": "Azure DocumentDB FAQ",
-        "url": "https://learn.microsoft.com/en-us/azure/documentdb/faq",
+        "url": "https://learn.microsoft.com/azure/documentdb/faq",
         "description": "Common questions about features, pricing, and how it relates to Cosmos DB."
       },
       {
         "title": "Azure DocumentDB release notes",
-        "url": "https://learn.microsoft.com/en-us/azure/documentdb/release-notes",
+        "url": "https://learn.microsoft.com/azure/documentdb/release-notes",
         "description": "Track service updates, new features, and notable changes over time."
       },
       {
         "title": "Azure DocumentDB vs Azure Cosmos DB decision guide",
-        "url": "https://learn.microsoft.com/en-us/azure/documentdb/compare-cosmos-db",
+        "url": "https://learn.microsoft.com/azure/documentdb/compare-cosmos-db",
         "description": "Compare scaling model, cost model, global distribution, and query focus."
       },
       {
         "title": "Migrate from Azure Cosmos DB for MongoDB to Azure DocumentDB",
-        "url": "https://learn.microsoft.com/en-us/azure/cosmos-db/mongodb/how-to-migrate-documentdb",
+        "url": "https://learn.microsoft.com/azure/cosmos-db/mongodb/how-to-migrate-documentdb",
         "description": "Migration guidance for moving from Cosmos DB for MongoDB (vCore) to Azure DocumentDB."
       }
     ]
@@ -122,12 +122,12 @@
     "items": [
       {
         "title": "DocumentDB OSS overview (engine powering Azure DocumentDB)",
-        "url": "https://learn.microsoft.com/en-us/azure/documentdb/oss",
+        "url": "https://learn.microsoft.com/azure/documentdb/oss",
         "description": "Overview of the open-source DocumentDB project and how it works."
       },
       {
         "title": "Get started with DocumentDB OSS (Docker)",
-        "url": "https://learn.microsoft.com/en-us/azure/documentdb/oss#getting-started-with-documentdb",
+        "url": "https://learn.microsoft.com/azure/documentdb/oss#getting-started-with-documentdb",
         "description": "Run DocumentDB locally using Docker and connect with psql."
       },
       {
