@@ -1,16 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import Layout from "@theme/Layout";
 import styles from "./conf.module.css";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Link from "@docusaurus/Link";
-import newsData from "./news.json";
-import faqsData from "./faqs.json";
 import resourcesData from "./resources.json";
-import speakersData from "../speakers/speakers.json"; // <--- NEW IMPORT
 import { Helmet } from "react-helmet";
 import { getConfSettings } from "../../conf/confSettings";
 import ConfFooter from "./ConfFooter";
+import StreamSection from "./sections/StreamSection";
+import AgendaSection from "./sections/AgendaSection";
+import NewsSection from "./sections/NewsSection";
+import FaqSection from "./sections/FaqSection";
 
 const CONF_YEAR = "2026";
 const CONF_DATE_DISPLAY = "April 28 - 9:00 AM - 12:00 PM PT";
@@ -147,76 +148,6 @@ const archiveTimelineData = [
 const ConfPage = () => {
   const { siteConfig } = useDocusaurusContext();
   const { showAgenda, showStream, streamEmbedUrl } = getConfSettings(siteConfig);
-  const [openFAQ, setOpenFAQ] = useState<number | null>(null);
-  const [showAllNews, setShowAllNews] = useState(false);
-
-  // ====== FAQ TOGGLE ======
-  const toggleFAQ = (index: number) => {
-    setOpenFAQ(openFAQ === index ? null : index);
-  };
-
-  // ====== AGENDA HELPER FUNCTIONS ======
-  // Parse time strings like "09:05:00 AM PT" into a sortable numeric value.
-  // "TBD" -> Infinity (so those end up last).
-  const parseTimeString = (timeString: string): number => {
-    if (!timeString || timeString.toUpperCase().includes("TBD")) {
-      return Infinity;
-    }
-    // Remove trailing " PT" if present
-    const noPT = timeString.replace(" PT", "").trim(); // e.g. "09:05:00 AM"
-    const [timePart, ampm] = noPT.split(" ");
-    if (!timePart || !ampm) return Infinity;
-
-    const [hhStr, mmStr, ssStr] = timePart.split(":");
-    let hh = Number(hhStr) || 0;
-    const mm = Number(mmStr) || 0;
-    const ss = Number(ssStr) || 0;
-
-    // Convert 12-hour to 24-hour
-    if (ampm.toUpperCase() === "PM" && hh < 12) {
-      hh += 12;
-    } else if (ampm.toUpperCase() === "AM" && hh === 12) {
-      hh = 0;
-    }
-
-    // Return total seconds from midnight
-    return hh * 3600 + mm * 60 + ss;
-  };
-
-  // Get only sessions where ondemand_only = false
-  let liveSessions = speakersData.filter(
-    (speaker) => speaker.session && speaker.session.ondemand_only === false
-  );
-
-  // Sort them by session time
-  liveSessions.sort(
-    (a, b) => parseTimeString(a.session.time) - parseTimeString(b.session.time)
-  );
-
-  // Helper to build the dynamic speaker page link with query params
-  const buildSpeakerLink = (speaker: any) => {
-    const baseUrl = "/speakers/Speaker/";
-    const params = new URLSearchParams({
-      name: speaker.name,
-      title: encodeURIComponent(speaker.title || ""),
-      intro: encodeURIComponent(speaker.intro || ""),
-      bio: encodeURIComponent(speaker.bio || ""),
-      sessionTitle: encodeURIComponent(speaker.session?.title || ""),
-      sessionAbstract: encodeURIComponent(speaker.session?.abstract || ""),
-      img: encodeURIComponent(speaker.img || ""),
-      from: "agenda",
-    });
-
-    // Add x and linkedin if they exist
-    if (speaker.x) {
-      params.set("x", encodeURIComponent(speaker.x));
-    }
-    if (speaker.linkedin) {
-      params.set("linkedin", encodeURIComponent(speaker.linkedin));
-    }
-
-    return `${baseUrl}?${params.toString()}`;
-  };
 
   return (
     <Layout
@@ -297,169 +228,11 @@ const ConfPage = () => {
           </div>
         </section>
 
-        {showStream && (
-          <>
-            {/* ====== STREAM SECTION (Figma node 6:234) ====== */}
-            <section className={styles.streamSection} data-node-id="6:234">
-              <div id="stream" className={styles.sectionAnchor} />
-              <div className={styles.streamOuter}>
-                <div className={styles.streamInner}>
-                  <h2 className={styles.streamTitle} data-node-id="6:226">
-                    Watch the Azure Cosmos DB Conf {CONF_YEAR} Stream
-                  </h2>
+        {showStream && <StreamSection confYear={CONF_YEAR} streamEmbedUrl={streamEmbedUrl} />}
 
-                  <div className={styles.streamVideoFrame} data-node-id="6:225">
-                    {streamEmbedUrl ? (
-                      <iframe
-                        className={styles.streamVideo}
-                        src={streamEmbedUrl}
-                        title={`Azure Cosmos DB Conf ${CONF_YEAR} stream`}
-                        frameBorder={0}
-                        allow="autoplay; encrypted-media; picture-in-picture"
-                        allowFullScreen
-                      />
-                    ) : (
-                      <div className={styles.streamVideoPlaceholder} aria-hidden="true" />
-                    )}
-                  </div>
+        {showAgenda && <AgendaSection confYear={CONF_YEAR} />}
 
-                  <div className={styles.streamCta} data-node-id="6:233">
-                    <button
-                      type="button"
-                      className={styles.streamCtaButton}
-                      data-node-id="6:232"
-                      disabled
-                      aria-disabled="true"
-                      title="Available during the live show"
-                    >
-                      <span data-node-id="6:228">Fill out our evaluation form</span>
-                    </button>
-                    <p className={styles.streamCtaNote} data-node-id="6:230">
-                      (available during the show)
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </>
-        )}
-
-        {showAgenda && (
-          <>
-            {/* ====== AGENDA SECTION (Figma frame 1:2) ====== */}
-            <section className={styles.agendaSection} aria-labelledby="agenda">
-              <div id="agenda" className={styles.sectionAnchor} />
-              <div className={styles.agendaContainer}>
-                <div className={styles.agendaContent}>
-                  <div className={styles.agendaHeader}>
-                    <div className={styles.agendaIconRow}>
-                      <img
-                        className={`${styles.sectionIconImage} ${styles.agendaIconImage}`}
-                        src={useBaseUrl("/img/icons/icon_agenda.png")}
-                        alt=""
-                        aria-hidden="true"
-                        loading="lazy"
-                      />
-                    </div>
-
-                    <div className={styles.agendaHeaderContent}>
-                      <div className={styles.agendaTitleGroup}>
-                        <h2 className={styles.agendaTitle}>
-                          Event agenda
-                        </h2>
-                        <div className={styles.agendaDescription}>
-                          Below you’ll find the live sessions for Azure Cosmos DB Conf {CONF_YEAR}!
-                          <br />
-                          You can click the button below to see the full agenda, including on-demand
-                          sessions.
-                        </div>
-                      </div>
-
-                      <Link className={styles.agendaPrimaryButton} to="/agenda">
-                        <span className={styles.agendaPrimaryButtonText}>View full agenda</span>
-                      </Link>
-                    </div>
-                  </div>
-
-                  <div className={styles.agendaCards}>
-                    {liveSessions.slice(0, 8).map((speaker, index) => (
-                      <article key={index} className={styles.agendaCard}>
-                        <div className={styles.agendaTime}>
-                          <span>{speaker.session?.time || "TBD"}</span>
-                        </div>
-                        <div className={styles.agendaCardContent}>
-                          <h3 className={styles.agendaCardTitle}>
-                            {speaker.session?.title || "Session"}
-                          </h3>
-                          <p className={styles.agendaCardSpeaker}>
-                            <Link className={styles.agendaSpeakerLink} to={buildSpeakerLink(speaker)}>
-                              {speaker.name}
-                            </Link>
-                            {speaker.title ? ` – ${speaker.title}` : ""}
-                          </p>
-                        </div>
-                        <Link className={styles.agendaCardButton} to={buildSpeakerLink(speaker)}>
-                          Watch now
-                        </Link>
-                      </article>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </section>
-          </>
-        )}
-
-        {/* ====== NEWS SECTION (Desktop Light layout) ====== */}
-        <section className={styles.newsSection} aria-labelledby="news-heading">
-          <div id="news" className={styles.sectionAnchor} />
-          <div className={styles.newsInner}>
-            <div className={styles.newsTitleColumn}>
-              <img
-                className={`${styles.sectionIconImage} ${styles.newsIconImage}`}
-                src={useBaseUrl("/img/icons/icon_news.png")}
-                alt=""
-                aria-hidden="true"
-                loading="lazy"
-              />
-              <h2 id="news-heading" className={styles.newsTitle}>
-                Latest news
-              </h2>
-              <p className={styles.newsDescription}>
-                Stay up to date with the latest announcements and updates for Azure Cosmos DB Conf {CONF_YEAR}.
-              </p>
-            </div>
-
-            <div className={styles.newsCardsColumn}>
-              <div className={styles.newsCards}>
-                {newsData
-                  .slice(0, showAllNews ? newsData.length : 3)
-                  .map((newsItem, index) => (
-                    <article key={index} className={styles.newsCard}>
-                      <h3 className={styles.newsCardTitle}>{newsItem.title}</h3>
-                      <p className={styles.newsDate}>{newsItem.date}</p>
-                      <div
-                        className={styles.newsCardCopy}
-                        dangerouslySetInnerHTML={{ __html: newsItem.content }}
-                      />
-                    </article>
-                  ))}
-              </div>
-
-              {newsData.length > 3 && (
-                <div className={styles.newsActions}>
-                  <button
-                    type="button"
-                    onClick={() => setShowAllNews(!showAllNews)}
-                    className={styles.newsMoreButton}
-                  >
-                    {showAllNews ? "Show less" : "Show more"}
-                  </button>
-                </div>
-              )}
-            </div>
-          </div>
-        </section>
+        <NewsSection confYear={CONF_YEAR} />
 
         {/* ====== ABOUT SECTION (Figma frame 1:2) ====== */}
         <section className={styles.aboutSection} aria-labelledby="about-heading">
@@ -672,66 +445,7 @@ const ConfPage = () => {
           </div>
         </section>
 
-        {/* ====== FAQ SECTION (Figma frame 1:2) ====== */}
-        <section className={styles.faqSection} aria-labelledby="faq-heading">
-          <div id="faq-section" className={styles.sectionAnchor} />
-          <div className={styles.faqInner}>
-            <div className={styles.faqTitleColumn}>
-              <h2 id="faq-heading" className={styles.faqTitle}>
-                Frequently asked questions
-              </h2>
-            </div>
-
-            <div className={styles.faqCards}>
-              {faqsData.map((faq, index) => {
-                const question = String(faq.question).replace(/\b2025\b|\b2026\b/g, CONF_YEAR);
-                const content = String(faq.content).replace(/\b2025\b|\b2026\b/g, CONF_YEAR);
-                const isOpen = openFAQ === index;
-
-                return (
-                  <article key={index} className={styles.faqCard}>
-                    <button
-                      type="button"
-                      className={styles.faqCardButton}
-                      onClick={() => toggleFAQ(index)}
-                    >
-                      <span className={styles.faqQuestionText}>{question}</span>
-                      <span className={styles.faqChevron} aria-hidden="true">
-                        <svg
-                          className={
-                            isOpen ? styles.faqChevronIconOpen : styles.faqChevronIcon
-                          }
-                          width="28"
-                          height="28"
-                          viewBox="0 0 28 28"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <circle cx="14" cy="14" r="13" fill="#0078D4" />
-                          <path
-                            d="M9.5 12.5L14 17L18.5 12.5"
-                            stroke="#FFFFFF"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                      </span>
-                    </button>
-                    {isOpen && (
-                      <div className={styles.faqAnswer}>
-                        <div
-                          className={styles.faqAnswerCopy}
-                          dangerouslySetInnerHTML={{ __html: content }}
-                        />
-                      </div>
-                    )}
-                  </article>
-                );
-              })}
-            </div>
-          </div>
-        </section>
+        <FaqSection confYear={CONF_YEAR} />
 
         {/* ====== CONF FOOTER (Figma frame 1:2) ====== */}
         <div id="socials" className={styles.sectionAnchor} />
