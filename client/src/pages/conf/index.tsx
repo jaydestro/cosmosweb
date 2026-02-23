@@ -241,9 +241,6 @@ const ConfPage = () => {
                 >
                   🔔 Register for updates
                 </a>
-                <Link className={styles.introSecondaryButton} to="/conf#cfp">
-                  🎤 Call for Proposals
-                </Link>
                 <a className={styles.introTertiaryButton} href="#about">
                   ℹ️ Learn more
                 </a>
@@ -306,73 +303,6 @@ const ConfPage = () => {
                   </a>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ====== CFP SECTION ====== */}
-        <section className={styles.cfpSection} aria-labelledby="cfp-heading">
-          <div id="cfp" className={styles.sectionAnchor} />
-          <div className={styles.cfpContainer}>
-            <h2 id="cfp-heading" className={styles.cfpTitle}>
-              <img
-                src="/img/planet-1.png"
-                alt=""
-                aria-hidden="true"
-                className={styles.cfpIcon}
-              />
-              Call for Proposals
-            </h2>
-
-            <div className={styles.cfpCard}>
-              <p className={styles.cfpSummary}>
-                Want to speak at Azure Cosmos DB Conf? Submit your session proposal using the official CFP site.
-              </p>
-              <div className={styles.cfpCtaRow}>
-                <a className={styles.cfpCtaPrimary} href={CFP_URL} target="_blank" rel="noopener noreferrer">
-                  Submit a proposal
-                </a>
-                <a className={styles.cfpCtaSecondary} href={CFP_URL} target="_blank" rel="noopener noreferrer">
-                  CFP details
-                </a>
-              </div>
-
-              {cfpSections.map((section) => (
-                <section key={section.title} className={styles.cfpSectionBlock}>
-                  <h3 className={styles.cfpSectionTitle}>{section.title}</h3>
-                  {section.description ? (
-                    <p className={styles.cfpSectionDescription}>{section.description}</p>
-                  ) : null}
-                  <ul className={styles.cfpSimpleList}>
-                    {section.items.map((item) => (
-                      <li key={`${section.title}-${item.title}`} className={styles.cfpListItem}>
-                        <div className={styles.cfpLinkRow}>
-                          <img
-                            src="/img/planet-1.png"
-                            alt=""
-                            aria-hidden="true"
-                            className={styles.cfpBulletIcon}
-                            loading="lazy"
-                          />
-                          {item.url ? (
-                            <a
-                              href={item.url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className={styles.cfpLink}
-                            >
-                              {item.title}
-                            </a>
-                          ) : (
-                            <span className={styles.cfpLinkText}>{item.title}</span>
-                          )}
-                        </div>
-                        <p className={styles.cfpDescription}>{item.description}</p>
-                      </li>
-                    ))}
-                  </ul>
-                </section>
-              ))}
             </div>
           </div>
         </section>

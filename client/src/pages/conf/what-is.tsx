@@ -49,7 +49,7 @@ const WhatIsConfPage: React.FC = () => {
                 🔔 Register for updates
               </a>
               <Link className={styles.secondaryButton} to="/conf#cfp">
-                🎤 Call for Proposals
+                🎤 CFP Now Closed
               </Link>
               <Link className={styles.tertiaryButton} to="/conf#about">
                 ℹ️ Learn more

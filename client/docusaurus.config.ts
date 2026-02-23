@@ -159,11 +159,6 @@ const config: Config = {
               href: 'https://aka.ms/cosmosconfreg',
             },
             {
-              label: 'Call for Proposals',
-              to: '/conf#cfp',
-              activeBaseRegex: '^$',
-            },
-            {
               label: 'Resources',
               to: '/conf#resources',
               activeBaseRegex: '^$',
