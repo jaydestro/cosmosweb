@@ -2230,16 +2230,24 @@
   }
 }
 
-/* ========== CONF FOOTER (Figma frame 1:2) ========== */
+/* ========== CONF FOOTER (Figma node 6:850) ========== */
 .confFooter {
   width: 100%;
   background: #ffffff;
-  padding: 60px;
+  padding: 100px;
+  font-family:
+    "Segoe Sans",
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
 }
 
 [data-theme='dark'] .confFooter {
   background: #2e2e2e;
-  border-top: 0;
 }
 
 .confFooterInner {
@@ -2248,26 +2256,54 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 20px;
 }
 
+/* Top row: logo (400px) + 3 link columns */
 .confFooterTop {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+  align-items: center;
   gap: 120px;
+  width: 100%;
 }
 
+/* Logo block: logo mark + wordmark side-by-side */
 .confFooterLogo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 7px;
+  width: 400px;
+  flex-shrink: 0;
 }
 
 .confFooterLogoMark {
   display: block;
+  width: 106px;
+  height: auto;
+  object-fit: contain;
 }
 
+.confFooterWordmark {
+  display: block;
+  width: 287px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Theme visibility: show light variant by default, swap in dark mode */
+.confFooterWordmarkDark {
+  display: none;
+}
+
+[data-theme='dark'] .confFooterWordmarkLight {
+  display: none;
+}
+
+[data-theme='dark'] .confFooterWordmarkDark {
+  display: block;
+}
+
+/* Keep legacy selectors for any remaining references */
 .confFooterYear {
   color: #0078d4;
 }
@@ -2293,52 +2329,60 @@
   color: #ffffff;
 }
 
+/* Three link columns — flex so they space out naturally */
 .confFooterLinks {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 60px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
   flex: 1;
+  min-width: 0;
+}
+
+.confFooterColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
 }
 
 .confFooterColumnTitle {
   font-size: 20px;
   font-weight: 700;
   color: #000000;
-  margin-bottom: 10px;
+  line-height: normal;
+  margin: 0;
+  font-family: inherit;
 }
 
 [data-theme='dark'] .confFooterColumnTitle {
   color: #ffffff;
 }
 
+/* Each link: text + small external-link icon, gap 4px */
 .confFooterLink {
-  display: flex;
-  align-items: center;
-  gap: 0.5em;
-  font-size: 20px;
-  color: #000000;
-  text-decoration: none;
-  margin-top: 10px;
-}
-
-.confFooterLinkIcon {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  width: 1em;
-  height: 1em;
-  flex: 0 0 1em;
-  color: inherit;
+  gap: 4px;
+  font-size: 20px;
+  font-weight: 400;
+  color: #000000;
+  text-decoration: none;
+  line-height: normal;
+  font-family: inherit;
 }
 
-.confFooterLinkIcon > svg {
-  width: 1em;
-  height: 1em;
+/* The SVG icon rendered directly on the element */
+.confFooterLinkIcon {
   display: block;
+  flex-shrink: 0;
+  width: 12px;
+  height: 12px;
+  color: currentColor;
 }
 
 [data-theme='dark'] .confFooterLink {
-  color: #ffffff;
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .confFooterLink:hover {
@@ -2347,23 +2391,61 @@
 }
 
 [data-theme='dark'] .confFooterLink:hover {
-  color: #ffffff;
+  color: #7cc6ff;
+}
+
+/* AMD partnership block */
+.confFooterPartnership {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  /* left-align under the logo column */
+  width: 400px;
+}
+
+.confFooterPartnershipLabel {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  color: #000000;
+  line-height: normal;
+  font-family: inherit;
+}
+
+[data-theme='dark'] .confFooterPartnershipLabel {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.confFooterPartnershipLogo {
+  display: block;
+  height: 33px;
+  width: auto;
+  object-fit: contain;
+}
+
+[data-theme='dark'] .confFooterPartnershipLogo {
+  filter: brightness(0) invert(1);
 }
 
 .confFooterBottom {
   display: flex;
+  align-items: center;
   justify-content: center;
+  padding: 10px 0;
 }
 
 .confFooterCopyright {
   margin: 0;
   font-size: 16px;
+  font-weight: 400;
   color: #000000;
   text-align: center;
+  font-family: inherit;
 }
 
 [data-theme='dark'] .confFooterCopyright {
-  color: rgba(255, 255, 255, 0.95);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 @media (max-width: 996px) {
@@ -2373,12 +2455,53 @@
 
   .confFooterTop {
     flex-direction: column;
+    align-items: flex-start;
     gap: 32px;
   }
 
+  .confFooterLogo {
+    width: auto;
+  }
+
+  .confFooterWordmark {
+    width: auto;
+    max-width: 220px;
+  }
+
   .confFooterLinks {
-    grid-template-columns: 1fr;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: flex-start;
+  }
+
+  .confFooterColumn {
+    flex: 0 0 calc(50% - 16px);
+    min-width: 140px;
+  }
+
+  .confFooterPartnership {
+    width: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .confFooterLinks {
+    flex-direction: column;
     gap: 24px;
+  }
+
+  .confFooterColumn {
+    flex: none;
+    width: 100%;
+  }
+
+  .confFooterLogoMark {
+    width: 72px;
+  }
+
+  .confFooterWordmark {
+    max-width: 180px;
   }
 }
 
