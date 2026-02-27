@@ -194,26 +194,47 @@ const ConfPage = () => {
       </Helmet>
 
       <div className={styles.pageWrapper}>
-        {/* ====== HERO (Figma node 170:158) ====== */}
-        <header className={styles.hero} data-node-id="170:158">
-          <span className={styles.srOnly}>{`Azure Cosmos DB Conf ${CONF_YEAR}`}</span>
-          <div className={styles.heroInner}>
-            <div className={styles.heroTitleRow}>
-              <img
-                src="/img/planet-1.png"
-                alt=""
-                aria-hidden="true"
-                className={styles.heroPlanet}
-                loading="lazy"
-              />
-              <div className={styles.heroTextStack}>
-                <h1 className={styles.heroTitle}>
-                  Azure Cosmos
-                  <br />
-                  DB Conf <span className={styles.heroYear}>{CONF_YEAR}</span>
-                </h1>
-                <p className={styles.heroDateLine}>{CONF_DATE_DISPLAY}</p>
+        {/* ====== HERO (Figma node 3:40) ====== */}
+        <header className={styles.hero} data-node-id="3:40">
+          <div className={styles.heroBgWrap} aria-hidden="true">
+            <picture className={styles.heroPicture}>
+              <source media="(max-width: 600px)" srcSet={useBaseUrl("/img/conf/hero_container_mobile.png")} />
+              <img src={useBaseUrl("/img/conf/hero_container.png")} alt="" className={styles.heroBgImg} />
+            </picture>
+          </div>
+          <div className={styles.heroContent}>
+            <div className={styles.heroLockup} data-node-id="419:101">
+              <picture className={styles.heroPicture}>
+                <source media="(max-width: 600px)" srcSet={useBaseUrl("/img/conf/hero_lockup_mobile.svg")} />
+                <img
+                  src={useBaseUrl("/img/conf/hero_msft_amd_lockup.svg")}
+                  alt="Microsoft and AMD"
+                  className={styles.heroLockupImg}
+                  width={361}
+                  height={66}
+                  loading="lazy"
+                />
+              </picture>
+            </div>
+            <div className={styles.heroMain} data-node-id="419:102">
+              <div className={styles.heroLogoGrid} data-node-id="6:814">
+                <img
+                  src={useBaseUrl("/img/conf/hero_logo_mark.svg")}
+                  alt=""
+                  aria-hidden="true"
+                  className={styles.heroLogoMarkImg}
+                  width={106}
+                  height={106}
+                />
+                <img
+                  src={useBaseUrl("/img/conf/hero_wordmark.svg")}
+                  alt={`Azure Cosmos DB Conf ${CONF_YEAR}`}
+                  className={styles.heroWordmarkImg}
+                  width={287}
+                  height={77}
+                />
               </div>
+              <p className={styles.heroDate}>{CONF_DATE_DISPLAY}</p>
             </div>
           </div>
         </header>
