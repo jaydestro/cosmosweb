@@ -13,6 +13,7 @@ interface Speaker {
   name: string;
   role: string;
   company?: string;
+  confirmed?: boolean;
   img?: string;
   bio?: string;
   x?: string;
@@ -27,14 +28,35 @@ interface SpeakersSectionProps {
 }
 
 const SpeakersSection = ({ confYear }: SpeakersSectionProps) => {
-  const speakers: Speaker[] = speakersData as unknown as Speaker[];
+  const allSpeakers: Speaker[] = speakersData as unknown as Speaker[];
+  const speakers = allSpeakers.filter((s) => s.confirmed !== false);
   const [selected, setSelected] = useState<Speaker | null>(null);
   const modalRef = useRef<HTMLDivElement>(null);
+
+  // On mount, open modal if URL hash matches #speaker/<slug>
+  useEffect(() => {
+    const hash = window.location.hash;
+    const match = hash.match(/^#speaker\/(.+)$/);
+    if (match) {
+      const speaker = speakers.find((s) => s.slug === match[1]);
+      if (speaker) setSelected(speaker);
+    }
+  }, []);
+
+  const openSpeaker = (speaker: Speaker) => {
+    setSelected(speaker);
+    window.history.replaceState(null, "", `#speaker/${speaker.slug}`);
+  };
+
+  const closeSpeaker = () => {
+    setSelected(null);
+    window.history.replaceState(null, "", "#speakers");
+  };
 
   useEffect(() => {
     if (!selected) return;
     document.body.style.overflow = "hidden";
-    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setSelected(null); };
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") closeSpeaker(); };
     document.addEventListener("keydown", onKey);
     modalRef.current?.focus();
     return () => {
@@ -63,7 +85,7 @@ const SpeakersSection = ({ confYear }: SpeakersSectionProps) => {
                   key={speaker.slug}
                   className={styles.speakerCard}
                   aria-label={`View ${speaker.name}`}
-                  onClick={() => setSelected(speaker)}
+                  onClick={() => openSpeaker(speaker)}
                 >
                   <div className={styles.speakerCardImgWrap}>
                     <img
@@ -100,12 +122,12 @@ const SpeakersSection = ({ confYear }: SpeakersSectionProps) => {
           role="dialog"
           aria-modal="true"
           aria-label={`${selected.name} speaker details`}
-          onClick={(e) => { if (e.target === e.currentTarget) setSelected(null); }}
+          onClick={(e) => { if (e.target === e.currentTarget) closeSpeaker(); }}
         >
           <div className={styles.speakerModalCard} ref={modalRef} tabIndex={-1}>
             <button
               className={styles.speakerModalClose}
-              onClick={() => setSelected(null)}
+              onClick={() => closeSpeaker()}
               aria-label="Close"
             >
               ×

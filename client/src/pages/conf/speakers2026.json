@@ -81,6 +81,7 @@
   },
   {
     "slug": "anurag-dutt",
+    "confirmed": false,
     "name": "Anurag Dutt",
     "role": "Multi-Cloud Engineer",
     "company": "Milliman MedInsight",
@@ -129,6 +130,7 @@
   },
   {
     "slug": "varun-kotte",
+    "confirmed": false,
     "name": "Varun Kumar Kotte",
     "role": "Sr. Machine Learning Engineer",
     "company": "Adobe",
@@ -209,6 +211,7 @@
   },
   {
     "slug": "patrick-oguaju",
+    "confirmed": false,
     "name": "Patrick Oguaju",
     "role": "Software Developer",
     "company": "Next",
