@@ -1,33 +1,20 @@
 import React from "react";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import styles from "./conf.module.css";
+import {
+  FaBookOpen,
+  FaFileLines,
+  FaDiscord,
+  FaGithub,
+  FaLinkedinIn,
+  FaStackOverflow,
+  FaXTwitter,
+  FaYoutube,
+} from "react-icons/fa6";
 
 type ConfFooterProps = {
   confYear?: string;
 };
-
-// External link / open-in-new-tab icon (matches Figma node 6:22 "Open")
-function ExternalLinkIcon() {
-  return (
-    <svg
-      className={styles.confFooterLinkIcon}
-      width="12"
-      height="12"
-      viewBox="0 0 12 12"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <path
-        d="M7 1H11M11 1V5M11 1L5 7M4.5 2H2C1.44772 2 1 2.44772 1 3V10C1 10.5523 1.44772 11 2 11H9C9.55228 11 10 10.5523 10 10V7.5"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
 
 export default function ConfFooter({ confYear = "2026" }: ConfFooterProps) {
   const currentYear = new Date().getFullYear();
@@ -81,8 +68,10 @@ export default function ConfFooter({ confYear = "2026" }: ConfFooterProps) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
+                <span className={styles.confFooterLinkIcon} aria-hidden="true">
+                  <FaFileLines />
+                </span>
                 <span>Azure Cosmos DB</span>
-                <ExternalLinkIcon />
               </a>
               <a
                 className={styles.confFooterLink}
@@ -90,8 +79,10 @@ export default function ConfFooter({ confYear = "2026" }: ConfFooterProps) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
+                <span className={styles.confFooterLinkIcon} aria-hidden="true">
+                  <FaFileLines />
+                </span>
                 <span>Azure DocumentDB (with MongoDB compatibility)</span>
-                <ExternalLinkIcon />
               </a>
               <a
                 className={styles.confFooterLink}
@@ -99,8 +90,10 @@ export default function ConfFooter({ confYear = "2026" }: ConfFooterProps) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
+                <span className={styles.confFooterLinkIcon} aria-hidden="true">
+                  <FaFileLines />
+                </span>
                 <span>Open Source DocumentDB</span>
-                <ExternalLinkIcon />
               </a>
             </div>
 
@@ -113,8 +106,10 @@ export default function ConfFooter({ confYear = "2026" }: ConfFooterProps) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
+                <span className={styles.confFooterLinkIcon} aria-hidden="true">
+                  <FaLinkedinIn />
+                </span>
                 <span>LinkedIn</span>
-                <ExternalLinkIcon />
               </a>
               <a
                 className={styles.confFooterLink}
@@ -122,8 +117,10 @@ export default function ConfFooter({ confYear = "2026" }: ConfFooterProps) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
+                <span className={styles.confFooterLinkIcon} aria-hidden="true">
+                  <FaYoutube />
+                </span>
                 <span>YouTube</span>
-                <ExternalLinkIcon />
               </a>
               <a
                 className={styles.confFooterLink}
@@ -131,8 +128,10 @@ export default function ConfFooter({ confYear = "2026" }: ConfFooterProps) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
+                <span className={styles.confFooterLinkIcon} aria-hidden="true">
+                  <FaDiscord />
+                </span>
                 <span>Discord</span>
-                <ExternalLinkIcon />
               </a>
               <a
                 className={styles.confFooterLink}
@@ -140,8 +139,10 @@ export default function ConfFooter({ confYear = "2026" }: ConfFooterProps) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
+                <span className={styles.confFooterLinkIcon} aria-hidden="true">
+                  <FaXTwitter />
+                </span>
                 <span>X</span>
-                <ExternalLinkIcon />
               </a>
               <a
                 className={styles.confFooterLink}
@@ -149,8 +150,10 @@ export default function ConfFooter({ confYear = "2026" }: ConfFooterProps) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
+                <span className={styles.confFooterLinkIcon} aria-hidden="true">
+                  <FaStackOverflow />
+                </span>
                 <span>Stack Overflow</span>
-                <ExternalLinkIcon />
               </a>
             </div>
 
@@ -164,8 +167,10 @@ export default function ConfFooter({ confYear = "2026" }: ConfFooterProps) {
                 rel="noopener noreferrer"
                 data-node-id="6:931"
               >
+                <span className={styles.confFooterLinkIcon} aria-hidden="true">
+                  <FaBookOpen />
+                </span>
                 <span>Blog</span>
-                <ExternalLinkIcon />
               </a>
               <a
                 className={styles.confFooterLink}
@@ -174,8 +179,10 @@ export default function ConfFooter({ confYear = "2026" }: ConfFooterProps) {
                 rel="noopener noreferrer"
                 data-node-id="6:936"
               >
+                <span className={styles.confFooterLinkIcon} aria-hidden="true">
+                  <FaGithub />
+                </span>
                 <span>GitHub</span>
-                <ExternalLinkIcon />
               </a>
             </div>
 
