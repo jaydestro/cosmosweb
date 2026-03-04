@@ -12,9 +12,10 @@ import StreamSection from "./sections/StreamSection";
 import AgendaSection from "./sections/AgendaSection";
 import NewsSection from "./sections/NewsSection";
 import FaqSection from "./sections/FaqSection";
+import SpeakersSection from "./sections/SpeakersSection";
 
 const CONF_YEAR = "2026";
-const CONF_DATE_DISPLAY = "April 28 - 9:00 AM - 12:00 PM PT";
+const CONF_DATE_DISPLAY = "April 28 - 9:00 AM - 2:00 PM PST";
 const CONF_DATE_LONG = "April 28, 2026";
 const CFP_URL = "https://aka.ms/CosmosConfCFP-site";
 
@@ -275,6 +276,8 @@ const ConfPage = () => {
         {showAgenda && <AgendaSection confYear={CONF_YEAR} />}
 
         <NewsSection confYear={CONF_YEAR} />
+
+        <SpeakersSection confYear={CONF_YEAR} />
 
         {/* ====== ABOUT SECTION (Figma frame 1:2) ====== */}
         <section className={styles.aboutSection} aria-labelledby="about-heading">

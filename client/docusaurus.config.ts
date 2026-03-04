@@ -155,6 +155,11 @@ const config: Config = {
               activeBaseRegex: '^$',
             },
             {
+              label: 'Speakers',
+              to: '/conf#speakers',
+              activeBaseRegex: '^$',
+            },
+            {
               label: 'Register',
               href: 'https://aka.ms/cosmosconfreg',
             },

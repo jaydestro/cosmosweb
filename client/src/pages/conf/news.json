@@ -1,5 +1,11 @@
 [
   {
+    "title": "Meet the Speakers for Azure Cosmos DB Conf 2026!",
+    "date": "March 4, 2026",
+    "content": "We're proud to announce our speaker lineup for Azure Cosmos DB Conf 2026, presented in partnership with <strong>AMD</strong>! Thanks to AMD's support, we've expanded the show to a full 5 hours — 9:00 AM to 2:00 PM PST. This year's roster brings together world-class speakers from across the community — covering AI and RAG architectures, vector search, MCP servers, security, data modeling, distributed systems, and more. <a href='#speakers'>Meet the speakers</a> and see who's joining us on April 28, 2026.",
+    "event_date": "April 28, 2026"
+  },
+  {
     "title": "Welcome AMD — Our Headline Partner for Azure Cosmos DB Conf 2026!",
     "date": "February 27, 2026",
     "content": "We're excited to welcome <strong>AMD</strong> as a partner for Azure Cosmos DB Conf 2026! Thank you, AMD, for your support of the Azure Cosmos DB community. <a href='https://aka.ms/cosmosconfreg' target='_blank' rel='noopener noreferrer'>Register now</a> to join us on April 28, 2026.",

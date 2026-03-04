@@ -1,92 +1,86 @@
 import React from 'react';
 import Layout from '@theme/Layout';
-import clsx from 'clsx';
-import styles from './speakers.module.css';
 import Link from '@docusaurus/Link';
-import { useColorMode } from '@docusaurus/theme-common';
+import styles from './speakers.module.css';
+import speakersData from '../conf/speakers2026.json';
 
-import speakerData from './speakers.json';
-
-const X_LOGO_LIGHT = '/img/icons/x-logo-black.png';
-const X_LOGO_DARK = '/img/icons/x-logo-white.png';
-const LINKEDIN_LOGO_LIGHT = '/img/icons/InBug-Black.png';
-const LINKEDIN_LOGO_DARK = '/img/icons/InBug-White.png';
-
-interface FeatureProps {
-  img: string;
+interface Session {
   title: string;
+  abstract: string;
+  duration: string;
+}
+
+interface Speaker {
+  slug: string;
   name: string;
-  intro: string;
+  role: string;
+  img: string;
   bio: string;
-  session: { title: string; abstract: string };
+  session: Session;
   x?: string;
   linkedin?: string;
 }
 
-function Feature({ img, title, name, intro, bio, session, x, linkedin }: FeatureProps) {
-  const { colorMode } = useColorMode();
-  const isDarkMode = colorMode === 'dark';
-
-  const speakerUrl = `/speakers/Speaker?name=${encodeURIComponent(name)}&title=${encodeURIComponent(title)}&intro=${encodeURIComponent(intro)}&bio=${encodeURIComponent(bio)}&sessionTitle=${encodeURIComponent(session.title)}&sessionAbstract=${encodeURIComponent(session.abstract)}&img=${encodeURIComponent(img)}${x ? `&x=${encodeURIComponent(x)}` : ''}${linkedin ? `&linkedin=${encodeURIComponent(linkedin)}` : ''}`;
-
-  return (
-    <div className={clsx(styles.featureCard)}>
-      <Link to={speakerUrl} className={styles.featureImgContainer}>
-        <img className={styles.featureImg} alt={title} src={img} />
-      </Link>
-
-      <div className={styles.featureContent}>
-        <Link to={speakerUrl} className={styles.featureLink}>
-          <h3 className={styles.featureTitle}>{title}</h3>
-        </Link>
-        <p className={styles.featureIntro}>{intro}</p>
-        <Link to={speakerUrl} className={styles.featureSessionLink}>
-          <p className={styles.featureSession}>{session.title}</p>
-        </Link>
-
-        <div className={styles.socialIcons}>
-          {x && (
-            <a href={x} target="_blank" rel="noopener noreferrer">
-              <img
-                className={styles.socialIcon}
-                src={useColorMode().colorMode === 'dark' ? X_LOGO_DARK : X_LOGO_LIGHT}
-                alt="X Logo"
-              />
-            </a>
-          )}
-          {linkedin && (
-            <a href={linkedin} target="_blank" rel="noopener noreferrer">
-              <img className={styles.socialIcon}
-                src={useColorMode().colorMode === 'dark' ? LINKEDIN_LOGO_DARK : LINKEDIN_LOGO_LIGHT}
-                alt="LinkedIn Logo"
-              />
-            </a>
-          )}
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export default function Speakers() {
-  const speakers: FeatureProps[] = speakerData;
+  const speakers: Speaker[] = speakersData as unknown as Speaker[];
 
   return (
-    <Layout description="Welcome to the Azure Cosmos DB Conf 2025 site">
-      <main>
-        <section className={styles.speakerSection}>
-          <div className={styles.speakerContainer}>
-            <h2 className={styles.speakerHeading}>
-              Meet the Azure Cosmos DB Conf 2025 speakers.
-            </h2>
-            <div className={styles.speakerGrid}>
-              {speakers.map((props) => (
-                <Feature key={props.name} {...props} />
-              ))}
-            </div>
+    <Layout
+      title="Azure Cosmos DB Conf 2026 — Speakers"
+      description="Meet the speakers presenting at Azure Cosmos DB Conf 2026 on April 28."
+    >
+      <main className={styles.page}>
+        <div className={styles.header}>
+          <h1 className={styles.heading}>Azure Cosmos DB Conf 2026 Speakers</h1>
+          <p className={styles.subheading}>
+            Hear from {speakers.length} expert{speakers.length !== 1 ? 's' : ''} at our free virtual event on April 28, 2026.
+          </p>
+          <div className={styles.headerActions}>
+            <a
+              className={styles.registerBtn}
+              href="https://aka.ms/cosmosconfreg"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Register for Free
+            </a>
+            <Link className={styles.archiveLink} to="/archive/speakers2025">
+              View 2025 Speakers →
+            </Link>
+          </div>
+        </div>
+
+        <section className={styles.gridSection}>
+          <div className={styles.grid}>
+            {speakers.map((speaker) => (
+              <Link
+                key={speaker.slug}
+                to={`/speakers/Speaker?slug=${encodeURIComponent(speaker.slug)}`}
+                className={styles.card}
+              >
+                <div className={styles.imgWrap}>
+                  <img
+                    src={speaker.img}
+                    alt={speaker.name}
+                    className={styles.img}
+                    loading="lazy"
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).src =
+                        '/img/speakers/placeholder.jpg';
+                    }}
+                  />
+                </div>
+                <div className={styles.cardBody}>
+                  <span className={styles.name}>{speaker.name}</span>
+                  <span className={styles.role}>{speaker.role}</span>
+                  <span className={styles.sessionTitle}>{speaker.session.title}</span>
+                </div>
+              </Link>
+            ))}
           </div>
         </section>
       </main>
     </Layout>
   );
 }
+
