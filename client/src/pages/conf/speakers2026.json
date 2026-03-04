@@ -1,0 +1,338 @@
+[
+  {
+    "slug": "farah-abdou",
+    "name": "Farah Abdou",
+    "role": "Lead Machine Learning Engineer",
+    "company": "SmartServe",
+    "img": "/img/speakers/farah-abdou.jpg",
+    "linkedin": "https://www.linkedin.com/in/farah-m-abdou-1a8a31222",
+    "x": "",
+    "blog": "https://medium.com/@faraahabdou",
+    "website": "",
+    "bio": "Farah Abdou is a Lead Machine Learning Engineer with a strong focus on AI Research. Her expertise spans LLMs, NLP, and reinforcement learning, with a strong emphasis on cloud-based AI solutions. She is actively engaged in AI research, focusing on LLM-powered applications, AI-driven procedural animation, and advanced model optimization techniques. With her strong foundation in public speaking and technical mentorship, she continues to drive innovation in AI and cloud computing.",
+    "session": {
+      "title": "Cutting AI Agent Costs with Azure Cosmos DB: The Agent Memory Fabric",
+      "abstract": "Multi-agent AI systems are exploding in 2026—but they're bleeding money.\n\nThis talk reveals how we rebuilt our entire architecture using Azure Cosmos DB as a unified \"Agent Memory Fabric\"—combining vector search for semantic caching, Change Feed for event-driven coordination, and optimistic concurrency for conflict prevention. The result: cost reduction, sub-100ms agent handoffs, and zero state conflicts."
+    }
+  },
+  {
+    "slug": "eric-boyd",
+    "name": "Eric Boyd",
+    "role": "Founder & CEO",
+    "company": "responsiveX",
+    "img": "/img/speakers/eric-boyd.jpg",
+    "linkedin": "http://www.linkedin.com/in/EricDBoyd",
+    "x": "EricDBoyd",
+    "blog": "http://www.EricDBoyd.com",
+    "website": "https://responsivex.com/",
+    "bio": "Eric D. Boyd is a highly experienced entrepreneur, public speaker, and author with nearly 30 years of experience in the technology industry. He is the founder and CEO of responsiveX, a Microsoft partner and digital innovation consultancy. Eric is a Microsoft Azure and AI MVP, a Regional Director, and has extensive experience helping organizations with system design and architecture, cloud-native development, and artificial intelligence.\n\nEric is the co-author of \"Step-by-Step Azure SQL Database\" and has contributed to several other publications. He shares his expertise through his blog, podcast interviews, and educational videos, and is committed to supporting the next generation of technology leaders.",
+    "session": {
+      "title": "Distributed Locks, Sagas, and Coordination with Cosmos DB",
+      "abstract": "In distributed systems, \"just put a lock around it\" sounds reasonable until you add retries, multiple regions, and a job that can run twice. Under real load you get duplicate processing, stuck workflows, and race conditions that only appear when everything is slow and concurrent.\n\nIn this session I'll show you how to use Cosmos DB as a coordination mechanism for distributed workflows, from basic lock/lease and leader-style patterns to saga orchestration for long-running work. We'll focus on the correctness tradeoffs teams run into in production including contention, hotspots, retries, and how consistency choices affect what your system can safely assume across regions."
+    }
+  },
+  {
+    "slug": "justine-cocchi",
+    "name": "Justine Cocchi",
+    "role": "Principal Product Manager",
+    "company": "Microsoft",
+    "img": "/img/speakers/justine-cocchi.jpg",
+    "linkedin": "https://www.linkedin.com/in/justine-cocchi-51a977108/",
+    "x": "justinecocchi",
+    "blog": "",
+    "website": "",
+    "bio": "Justine is a Principal Program Manager on the Azure Cosmos DB team at Microsoft. She focuses on improving programmability for the API for NoSQL and enhancing developer experiences to help make customers more successful. This includes experiences with the change feed, caching, and materialized views.",
+    "session": {
+      "title": "Mastering the Azure Cosmos DB Change Feed: Patterns, Scaling, and Real-World Architectures",
+      "abstract": "Change Feed is one of Azure Cosmos DB's most powerful features—a persistent, ordered log of all changes to your data that enables event-driven architectures, materialized views, and real-time synchronization.\n\nWe'll walk through common consumption models, partitioning and lease management, and debugging and monitoring techniques for the most frequent failure modes teams encounter when running change feed processors at scale. The session includes a demo of a real-world change feed app including how to diagnose lag and recover processing. We'll close by illustrating how advanced features like global secondary indexes build directly on these same change feed patterns."
+    }
+  },
+  {
+    "slug": "james-codella",
+    "name": "James Codella",
+    "role": "Principal Product Manager",
+    "company": "Microsoft",
+    "img": "/img/speakers/james-codella.jpg",
+    "linkedin": "https://www.linkedin.com/in/jamescodella/",
+    "x": "jamescodella",
+    "blog": "",
+    "website": "https://www.microsoft.com",
+    "bio": "James is a Product Manager in Azure Cosmos DB working on NoSQL Query, vector search, and AI products. He has more than 15 years of experience working in data, analytics, and machine learning. He has a B.S. and M.Eng. from Cornell University and a Ph.D. from the University of Wisconsin–Madison in Operations Research. He currently lives near NYC with his wife and puppy.",
+    "session": {
+      "title": "Querying and Indexing in Azure Cosmos DB: The Complete Guide",
+      "abstract": "Every query in Azure Cosmos DB has two jobs: finding the right partitions and then identifying the right documents within them. Understanding how routing and indexing work together is the key to writing queries that are both fast and cost-efficient.\n\nWe'll cover:\n- Query fundamentals, including partition routing, indexing behavior, and reading query metrics\n- Azure Cosmos DB SQL query language features such as joins, aggregates, subqueries, and system functions\n- Index types and when to use them: range, composite, geospatial, full text, and vector indexes\n- Index management, including indexing policies, index builds, and rebuild considerations\n- Advanced optimization: computed properties and identifying high RU queries\n\nLive demos show the RU impact of indexed vs. non-indexed queries and how small indexing changes can significantly reduce cost."
+    }
+  },
+  {
+    "slug": "chander-dhall",
+    "name": "Chander Dhall",
+    "role": "CEO",
+    "company": "Cazton",
+    "img": "/img/speakers/chander-dhall.jpg",
+    "linkedin": "https://linkedin.com/in/csdhall",
+    "x": "",
+    "blog": "https://cazton.com/blogs/executive",
+    "website": "https://cazton.com",
+    "bio": "Chander Dhall, CEO of Cazton, is a fifteen-time awarded Microsoft (AI) MVP, Microsoft Regional Director, Google Developer Expert, Azure Cosmos DB Cosmonaut, and world-renowned technology leader. In 2025, he was recognized as one of only twenty AI MVPs in the United States. Cazton's clients include Google, Microsoft, Thomson Reuters, Broadcom, AT&T, Dell, Bank of America, NBC Universal, American Express, Fandango, LinkedIn, VMware, McKesson, Macquarie Bank, and many other Fortune 500 companies.\n\nChander is the author of two books: Scalability Patterns and Building Single Page Applications Using ASP.NET Core & Angular. He has keynoted and delivered workshops at Microsoft Build, .NET Conf, NDC London, DevSum Sweden, and BuildStuff Lithuania.",
+    "session": {
+      "title": "Performance-Boosting Memory Patterns: Save Tokens, Cut Costs, Increase Speed",
+      "abstract": "AI systems must retain conversation history, tool outputs, and user context across multiple turns. Basic approaches can quickly increase token usage or result in the loss of critical context.\n\nThis session explores three memory patterns implemented using Azure Cosmos DB NoSQL:\n\n1. Sliding Window Memory: Utilizes summarization for recent and older turns.\n2. Hierarchical Memory: Combines recent context, compressed history, and long-term tiers with intelligent retrieval.\n3. Entity-Based Memory Graphs: Extracts and stores structured facts for precise recall.\n\nKey Takeaways:\n- Concrete code patterns for each architecture\n- Guidance on selecting the appropriate approach\n- A reusable Azure Cosmos DB schema for AI agent memory management"
+    }
+  },
+  {
+    "slug": "anurag-dutt",
+    "name": "Anurag Dutt",
+    "role": "Multi-Cloud Engineer",
+    "company": "Milliman MedInsight",
+    "img": "/img/speakers/anurag-dutt.jpg",
+    "linkedin": "https://www.linkedin.com/in/anuragdutt01/",
+    "x": "duttanurag20",
+    "blog": "",
+    "website": "",
+    "bio": "Anurag is a Cloud Engineer with expertise in multi-cloud architectures, automation, and infrastructure management across AWS, Azure, and GCP. Passionate about cloud-native technologies and open-source, he helps teams optimize cloud workloads for scalability, security, and cost efficiency. With hands-on experience in IaC, Kubernetes, and DevOps, Anurag simplifies complex cloud concepts into practical, real-world strategies for developers and engineers.",
+    "session": {
+      "title": "From Rising RU Costs to Stable Performance: A Practical Cosmos DB Case Study",
+      "abstract": "As Azure Cosmos DB workloads scale, teams often experience rising RU costs, unpredictable latency, and uneven throughput caused by early design decisions that no longer meet production requirements.\n\nIn this session, I will walk through a realistic, high-volume data ingestion and querying workload that experienced rapid cost growth and performance degradation over time. Using Azure platform metrics, diagnostics, and query insights, we will examine how issues such as hot partitions, cross-partition queries, over-indexing, and inefficient throughput provisioning were identified.\n\nThe session will then demonstrate how targeted improvements in partition strategy, query design, indexing policies, and throughput management led to measurable reductions in RU consumption and improved system stability.\n\nAttendees will leave with a practical, repeatable framework for diagnosing and resolving common Cosmos DB performance and cost challenges."
+    }
+  },
+  {
+    "slug": "pamela-fox",
+    "name": "Pamela Fox",
+    "role": "Principal Cloud Advocate (Python)",
+    "company": "Microsoft",
+    "img": "/img/speakers/pamela-fox.jpg",
+    "linkedin": "https://www.linkedin.com/in/pamela-fox-5668b1b4/",
+    "x": "pamelafox",
+    "blog": "https://blog.pamelafox.org/",
+    "website": "https://www.microsoft.com",
+    "bio": "Pamela Fox is a Cloud Advocate in Python at Microsoft, where she helps developers use Python with the many Azure offerings. On the teaching front, Pamela has taught computer science at UC Berkeley and volunteered in bay area classrooms as part of TEALS, GirlsWhoCode, and CoderDojo. She also started the SF chapter of GirlDevelopIt, where she taught dozens of web development workshops.\n\nPamela has been in the tech industry for 15+ years, starting as one of Google's first developer advocates. She went on to be an early full-stack engineer at Coursera and spent many years at Khan Academy, both as an engineer and the creator of the computer programming content.",
+    "session": {
+      "title": "Know your user: Identity-aware MCP servers with Cosmos DB",
+      "abstract": "Model Context Protocol (MCP) enables AI agents to securely access external data and services, but how can MCP servers store per-user data when multiple users share the same server?\n\nIn this session, we'll build a Python MCP server that authenticates users via Entra ID and stores their data in Azure Cosmos DB. I will walk through how to integrate OAuth with the FastMCP framework, use the Cosmos DB Python SDK, design partition keys for efficient per-user data isolation, and implement role-based access using Microsoft Graph group membership.\n\nWalk away with a production-ready pattern for building authenticated MCP servers that keep each user's data private and secure."
+    }
+  },
+  {
+    "slug": "sudhanshu-khera",
+    "name": "Sudhanshu Khera",
+    "role": "Senior Product Manager",
+    "company": "Microsoft",
+    "img": "/img/speakers/sudhanshu-khera.jpg",
+    "linkedin": "https://www.linkedin.com/in/sudhanshukhera/",
+    "x": "",
+    "blog": "",
+    "website": "",
+    "bio": "Sudhanshu is a Senior Product Manager at Microsoft, specializing in security for Azure Cosmos DB. He has over 17 years of experience driving strategy and innovation in enterprise/B2B digital Identity and Access Management (IAM) and cybersecurity.",
+    "session": {
+      "title": "Securing Azure Cosmos DB: The Right Way",
+      "abstract": "Modern data applications often struggle to balance strong security with developer velocity. Teams face hard questions: how to move away from shared secrets, how to limit access without breaking apps, and how to protect sensitive data while still enabling real-world operational scenarios.\n\nIn this session, we'll walk through a practical, recommended approach to securing cloud data workloads. Using real customer scenarios, we'll discuss how to think about identity-first access, isolation, encryption, and data protection as a cohesive strategy rather than a collection of disconnected features.\n\nAttendees will leave with a clear, adaptable framework for evaluating and improving their data security posture over time."
+    }
+  },
+  {
+    "slug": "varun-kotte",
+    "name": "Varun Kumar Kotte",
+    "role": "Sr. Machine Learning Engineer",
+    "company": "Adobe",
+    "img": "/img/speakers/varun-kotte.jpg",
+    "linkedin": "https://www.linkedin.com/in/varun-kotte-b999a0104/",
+    "x": "",
+    "blog": "",
+    "website": "",
+    "bio": "Varun Kotte is a Senior Machine Learning Engineer specializing in large-scale AI systems, retrieval-augmented generation (RAG), and production-grade machine learning infrastructure. With over 10 years of experience across Adobe, Cisco, T-Mobile, and Bed Bath & Beyond, he has architected and scaled intelligent platforms serving hundreds of millions of users worldwide.\n\nAt Adobe, Varun led the design of the RAG infrastructure for Adobe AI Assistant and built advanced neural retrieval and search platforms supporting millions of daily queries across Lightroom, Express, and Adobe Stock. A published researcher and patent inventor, he holds a Master's degree in Computer Science.",
+    "session": {
+      "title": "Production RAG on Azure Cosmos DB: Version-Aware Enterprise QA",
+      "abstract": "Enterprise-grade RAG systems differ fundamentally from open-domain implementations: documentation evolves continuously, versioning affects answer correctness, and retrieval failures directly escalate into customer support costs.\n\nThis session presents a production RAG architecture deployed for Adobe's AI Assistant. The system manages 121,000+ enterprise documents with version-aware retrieval, achieving 72.8% nDCG@4 with sub-200ms P95 latency. Training data is scaled through synthetic generation and user interaction mining, producing 700,000+ question-answer pairs tailored to closed-domain constraints.\n\nAttendees will gain practical design patterns for version-aware retrieval, scalable training data generation, and production evaluation workflows—demonstrating how Cosmos DB can underpin high-quality, closed-domain RAG systems in real-world enterprise environments."
+    }
+  },
+  {
+    "slug": "divakar-kumar",
+    "name": "Divakar Kumar",
+    "role": "Technical Architect",
+    "company": "Flyers Soft Private Limited",
+    "img": "/img/speakers/divakar-kumar.png",
+    "linkedin": "https://www.linkedin.com/in/divakar-kumar/",
+    "x": "",
+    "blog": "https://iamdivakarkumar.com",
+    "website": "https://iamdivakarkumar.com",
+    "bio": "Divakar Kumar is a Microsoft MVP in AI and a Microsoft Certified Trainer (MCT), working as a Technical Architect at Flyerssoft. He actively shares his knowledge through blogs, talks, and training sessions, empowering developers to harness the potential of AI in real-world applications.",
+    "session": {
+      "title": "Real-Time Fraud Detection at Scale: Event Sourcing with Azure Cosmos DB",
+      "abstract": "This session demonstrates three architectural patterns for building real-time decision systems with Azure Cosmos DB:\n\n1. Event Sourcing with hierarchical partition keys for immutable audit trails, temporal queries, and scalable event storage\n2. Change Feed pattern for push-based event notifications that trigger instant materialized view updates without polling\n3. Event-Driven Integration for capturing domain events from existing databases through Azure Service Bus while keeping source systems authoritative\n\nThrough a live fraud detection demo combining traditional ML and Agentic AI, you'll see how these patterns enable fast decisioning, complete auditability, and seamless integration across heterogeneous data sources."
+    }
+  },
+  {
+    "slug": "yohan-lasorsa",
+    "name": "Yohan Lasorsa",
+    "role": "Principal Developer Advocate",
+    "company": "Microsoft",
+    "img": "/img/speakers/yohan-lasorsa.png",
+    "linkedin": "https://www.linkedin.com/in/yohanlasorsa",
+    "x": "sinedied",
+    "blog": "",
+    "website": "",
+    "bio": "Yohan is a passionate software craftsman and open-source enthusiast who finds the web to be the ultimate playground. With expertise in full-stack engineering and a love for DIY projects, he enjoys exploring the boundaries of JavaScript and sharing his knowledge with others. As a Google Developer Expert (GDE) for Angular, Yohan is an accomplished international speaker and trainer, and an active maintainer and contributor to various open-source projects.",
+    "session": {
+      "title": "Beyond Vector Search: What RAG Actually Needs",
+      "abstract": "Your AI agent is confidently serving wrong answers, and you don't even know it. Vector search is everyone's default for RAG, but ask for something specific and it quietly returns nonsense.\n\nIn this session, we'll take a working AI agent with MCP and a real database, and extend it with agentic RAG using Azure Cosmos DB hybrid search—vector plus full-text—so it actually retrieves what matters. You'll learn why the default approach breaks, how to fix it, and how to let the agent decide when to search instead of doing it blindly every time.\n\nLive code, live demo, patterns you can steal."
+    }
+  },
+  {
+    "slug": "khelan-modi",
+    "name": "Khelan Modi",
+    "role": "Program Manager",
+    "company": "Microsoft",
+    "img": "/img/speakers/khelan-modi.jpg",
+    "linkedin": "https://www.linkedin.com/in/khelan-modi/",
+    "x": "",
+    "blog": "",
+    "website": "",
+    "bio": "Khelan Modi is a dynamic Product Manager at the forefront of the Azure Cosmos DB team, seamlessly integrating deep expertise in databases with a passion for AI innovation. Focused on the transformative potential of vector search, Khelan consistently pioneers modern AI methodologies to enhance product functionalities across industries like advertisements and retail. His unique blend of technical proficiency and compelling presentation skills establishes him as a thought leader in databases and artificial intelligence.",
+    "session": {
+      "title": "One Codebase, Any Cloud: Building a Retail Database with OSS and Azure",
+      "abstract": "Retail engineering teams face a choice that shouldn't be a choice: run your database on-premises for compliance and cost control, or move to the cloud for scale and managed operations. With DocumentDB and Azure DocumentDB, that's a false dilemma.\n\nIn this session, you'll see a complete retail store database—product catalog, inventory, orders, and vector-powered recommendations—built once using MongoDB-compatible APIs and deployed both on-prem via the DocumentDB Kubernetes operator and on Azure as a fully managed service. Same drivers. Same queries. Zero application changes.\n\nYou'll walk away with an architecture you can actually replicate, and an honest accounting of the tradeoffs at each layer."
+    }
+  },
+  {
+    "slug": "sandeep-nair",
+    "name": "Sandeep Nair",
+    "role": "Principal Program Manager",
+    "company": "Microsoft",
+    "img": "/img/speakers/sandeep-nair.jpg",
+    "linkedin": "https://www.linkedin.com/in/sandeep-s-nair-058b6858/",
+    "x": "",
+    "blog": "",
+    "website": "https://microsoft.com",
+    "bio": "Sandeep Nair is a seasoned technology leader with over 25 years of industry experience, currently serving as Principal Program Manager in Azure Cosmos DB. A recognized Cosmos DB expert, Sandeep drives customer-centric innovation by integrating AI into real-world scenarios, helping organizations unlock new capabilities through intelligent data solutions.\n\nSandeep brings deep technical insight and engaging storytelling to the stage. His work focuses on empowering developers and enterprises to harness the full potential of cloud-native databases and AI.",
+    "session": {
+      "title": "From MongoDB to Azure DocumentDB: A Migration Playbook",
+      "abstract": "Explore the various migration options for Azure DocumentDB—covering tools, tradeoffs, and best practices for moving MongoDB workloads to Azure DocumentDB at scale."
+    }
+  },
+  {
+    "slug": "patrick-oguaju",
+    "name": "Patrick Oguaju",
+    "role": "Software Developer",
+    "company": "Next",
+    "img": "/img/speakers/patrick-oguaju.png",
+    "linkedin": "https://www.linkedin.com/in/patrick-oguaju",
+    "x": "",
+    "blog": "https://medium.com/@pyrosv",
+    "website": "",
+    "bio": "Patrick C. Oguaju is a software engineer with hands-on experience designing and operating high-scale, cost-sensitive distributed systems on Azure. He has worked extensively with Azure Cosmos DB in production, supporting data-intensive workloads across various industries, including retail, content platforms, and cloud-native services.\n\nPatrick focuses on practical engineering lessons—the trade-offs, failures, and insights that only emerge in real systems at scale—and enjoys sharing patterns that developers can immediately apply in their own architectures.",
+    "session": {
+      "title": "Designing Cost-Efficient, High-Scale Systems with Azure Cosmos DB: Lessons from Production",
+      "abstract": "Azure Cosmos DB gives developers incredible scale and flexibility, but without deliberate design, costs can spiral fast.\n\nIn this session, I'll walk through how we re-architected a real production system to dramatically reduce Azure Cosmos DB costs without sacrificing performance, availability, or developer velocity.\n\nThe session covers:\n- How poor partitioning and indexing silently inflate RU consumption\n- Practical data-modeling patterns that cut read/write costs\n- Strategic use of TTL, Change Feed, and data tiering\n- When not to use containers, indexing, or multi-region writes\n- How observability exposed hidden cost leaks\n\nThe session is demo-driven and grounded in real engineering decisions from high-volume, globally distributed systems."
+    }
+  },
+  {
+    "slug": "hasan-savran",
+    "name": "Hasan Savran",
+    "role": "Business Intelligence Manager",
+    "company": "Progressive Insurance",
+    "img": "/img/speakers/hasan-savran.jpg",
+    "linkedin": "https://www.linkedin.com/in/hasansavran/",
+    "x": "SavranWeb",
+    "blog": "https://savranweb.com/",
+    "website": "https://www.savranweb.com/",
+    "bio": "Hasan is an expert in Azure data products and has been recognized as a Microsoft Data Platform MVP. He owns SavranWeb Consulting and holds the Senior Business Intelligence Manager position at Progressive Insurance. His work involves designing advanced business solutions using the latest web and database development technologies. Hasan is a seasoned professional with more than two decades of experience as a developer, architect, and manager. He is a global conference speaker and enjoys blogging about SQL Server, Azure Cosmos DB, C#, and front-end development.",
+    "session": {
+      "title": "Data Modeling Decisions That Make or Break Your Cosmos DB Application",
+      "abstract": "Your data model determines your application's scalability, query performance, and cost—and the wrong choices are painful to fix later.\n\nIn this session, you'll learn:\n- Strategies for choosing partition keys\n- The tradeoffs in schema design\n- Estimating storage and scaling needs\n- Tips for managing cross-partition queries efficiently"
+    }
+  },
+  {
+    "slug": "sajeetharan-sinnathurai",
+    "name": "Sajeetharan Sinnathurai",
+    "role": "Principal Program Manager",
+    "company": "Microsoft",
+    "img": "/img/speakers/sajeetharan-sinnathurai.jpg",
+    "linkedin": "https://www.linkedin.com/in/sajeetharan/",
+    "x": "kokkisajee",
+    "blog": "https://devblogs.microsoft.com/cosmosdb/",
+    "website": "",
+    "bio": "Principal Product Manager passionate about empowering developers with exceptional tools and experiences. Currently part of the Azure Cosmos DB team, driving developer-focused features like JavaScript SDK, integrations, and tooling for local development etc. Interested in web development or cloud? Let's connect!",
+    "session": {
+      "title": "Setting Up Your Azure Cosmos DB Development Environment (and Supercharging It with AI)",
+      "abstract": "A well-configured development environment makes everything easier—faster iteration, reliable testing, and fewer surprises in production. This session walks through setting up a complete Azure Cosmos DB development workflow, then shows how to supercharge it with AI coding assistants.\n\nWe'll cover:\n- VS Code configuration and essential extensions for working with Azure Cosmos DB\n- Local development using the Azure Cosmos DB emulator, including limitations and cloud switching\n- Testing patterns with the emulator, integration testing strategies, and CI/CD considerations\n- Using context files to improve AI coding assistants' understanding of your schema\n- Effective prompting techniques for generating better Azure Cosmos DB queries, SDK code, and data models\n\nWhat attendees will leave with:\n- A ready-to-use Azure Cosmos DB development environment setup\n- Sample context files for AI coding assistants\n- A repeatable workflow that accelerates Azure Cosmos DB development"
+    }
+  },
+  {
+    "slug": "sergiy-smyrnov",
+    "name": "Sergiy Smyrnov",
+    "role": "Principal Product Manager",
+    "company": "Microsoft",
+    "img": "/img/speakers/sergiy-smyrnov.jpg",
+    "linkedin": "https://www.linkedin.com/in/sergiy-smyrnov",
+    "x": "",
+    "blog": "",
+    "website": "https://www.microsoft.com/",
+    "bio": "Sergiy Smyrnov is a Senior Specialist at Microsoft's Data & AI Global Black Belt Team, focusing on helping customers solve mission-critical problems with distributed NoSQL database technologies. Sergiy has extensive experience in database development, architecture, and performance tuning across various Relational, NoSQL, and NewSQL technologies.",
+    "session": {
+      "title": "From JOINs to JSON: Migrating a Real-World ASP.NET App to Cosmos DB with GitHub Copilot",
+      "abstract": "Migrations from RDBMS to Cosmos DB are notorious for hard decisions—denormalization trade-offs, partition key selection, embedded vs. referenced data, and complex application code conversion.\n\nWhat if an AI agent could analyze your schema, generate a detailed migration plan, provision Cosmos DB infrastructure, rewrite your application data layer to the Cosmos SDK, and migrate your data—all through natural-language prompts?\n\nIn this session, we take the classic AdventureWorks database and an old ASP.NET EF Core Web Application and live-walk through every step of such a migration: from relational schema to a fully running .NET 9 app backed by Cosmos DB for NoSQL.\n\nYou'll leave with a reusable, prompt-by-prompt playbook and learn how to use Cosmos DB Agent Kit AI skills which you can apply to your own migrations."
+    }
+  },
+  {
+    "slug": "tural-suleymani",
+    "name": "Tural Suleymani",
+    "role": "Engineering Manager",
+    "company": "VOE Consulting",
+    "img": "/img/speakers/tural-suleymani.jpg",
+    "linkedin": "https://www.linkedin.com/in/tural-suleymani/",
+    "x": "SuleymaniTural",
+    "blog": "https://www.youtube.com/@TuralSuleymaniTech",
+    "website": "https://voeconsulting.net/",
+    "bio": "Tural Suleymani is a seasoned software development expert with over a decade of industry experience. Renowned as Azerbaijan's first Microsoft MVP in .NET and a three-time C# Corner MVP, he has established himself as a leading authority in his field. He is the author of \"Hands-on Microservices with Javascript\" published by Packt and a Microsoft MCT.\n\nWith a passion for sharing knowledge, Tural has dedicated ten years to mentoring developers. He empowers a global audience through his TuralSuleymaniTech YouTube channel, delivering in-depth tutorials on C#, Apache Kafka, SQL, JavaScript, Domain-Driven Design, software architecture, microservices, and more. He currently serves as Chief Software Architect at VOE Consulting.",
+    "session": {
+      "title": "Designing High-Scale Event-Driven Microservices with Azure Cosmos DB",
+      "abstract": "Event-driven architectures often fail at scale due to tight coupling, fragile messaging pipelines, and operational complexity.\n\nIn this session, I'll share how we designed and evolved a high-scale, event-driven microservices system using Azure Cosmos DB Change Feed as the backbone for domain events—running in production under real traffic.\n\nWe'll walk through the concrete problems we faced: synchronous service dependencies, ordering guarantees, hot partitions, and consistency trade-offs. The talk includes a live, repeatable demo showing an end-to-end event flow: from write, to Change Feed, to downstream services—along with observability and failure handling.\n\nAttendees will leave with practical patterns for building scalable, loosely coupled microservices using Azure Cosmos DB, plus lessons learned from real-world trade-offs."
+    }
+  },
+  {
+    "slug": "lino-tadros",
+    "name": "Lino Tadros",
+    "role": "Founder & Principal Architect",
+    "company": "The Training Boss",
+    "img": "/img/speakers/lino-tadros.jpg",
+    "linkedin": "https://www.linkedin.com/in/linotadros",
+    "x": "linotadros",
+    "blog": "https://thetrainingboss.com/blogs",
+    "website": "https://thetrainingboss.com",
+    "bio": "Distinguished executive leader and renowned technical expert in AI, Machine Learning, and IoT. As a Microsoft Regional Director in the top 1% of global SMEs, Lino maintains a direct line of communication to Microsoft executive leaders. He has partnered with Microsoft to consult major corporations on Azure integrations, training over 1,000 global employees and architects across the US, Canada, Europe, Middle East, and Australia.\n\nHis mission-critical projects span organizations including the DoD, NASA, Disney, HP, Johnson & Johnson, and international banking institutions. He is the author of a 150-page IoT playbook for Microsoft with over 750K downloads worldwide.",
+    "session": {
+      "title": "Memory for Your Agents: Building Chat History and Semantic Caching with Azure Cosmos DB",
+      "abstract": "AI agents are only as intelligent as their ability to remember. Without persistent memory, every conversation starts from scratch, costing tokens, increasing latency, and delivering disconnected user experiences.\n\nIn this demo-driven session, I'll show you how to use Azure Cosmos DB as the unified memory layer for your agentic AI applications. We'll build two essential containers: a Chat History container that preserves multi-turn conversations across sessions, and a Semantic Cache container that uses vector search to return prior LLM completions for semantically similar prompts—reducing costs and latency by avoiding redundant API calls.\n\nWalk away with working code patterns you can apply immediately to give your agents the memory they need."
+    }
+  },
+  {
+    "slug": "rakhi-thejraj",
+    "name": "Rakhi Thejraj",
+    "role": "Senior Program Manager",
+    "company": "Microsoft",
+    "img": "/img/speakers/rakhi-thejraj.jpg",
+    "linkedin": "https://www.linkedin.com/in/rakhi-thejraj-61a314b8/",
+    "x": "",
+    "blog": "",
+    "website": "https://www.microsoft.com/",
+    "bio": "Rakhi Thejraj is a Principal Program Manager at Microsoft, focused on Azure Cosmos DB. She specializes in data ingestion, scalability, and cost optimization for distributed NoSQL workloads. Rakhi works with enterprise customers to optimize their throughput and enable reliable, high-performance data platforms at global scale.",
+    "session": {
+      "title": "Importing Data into Azure Cosmos DB: Tools, Tradeoffs, and Capacity Planning",
+      "abstract": "You have data somewhere else and need to get it into Azure Cosmos DB—fast, reliably, and without burning through your budget. This session compares your import options and shows how to plan and execute data migrations efficiently.\n\nWe'll cover:\n- Import tools and tradeoffs, including the Desktop Data Migration Tool, Azure Data Factory, and the Azure Cosmos DB Spark connector\n- Capacity planning including estimating RU requirements and pre-scaling for faster ingestion\n- Post-import optimization techniques such as scaling throughput back down and partition merge\n- Best practices for error handling, retries, validation, and indexing during bulk loads\n\nWhat attendees will leave with:\n- A decision framework for choosing the right Azure Cosmos DB import tool\n- Capacity planning calculations for bulk data loads\n- Step-by-step guidance for executing efficient Azure Cosmos DB data migrations"
+    }
+  },
+  {
+    "slug": "karishma-verma",
+    "name": "Karishma Verma",
+    "role": "Software Development Manager",
+    "company": "Amazon Autos",
+    "img": "/img/speakers/karishma-verma.jpg",
+    "linkedin": "https://www.linkedin.com/in/karishma-verma-65846633",
+    "x": "",
+    "blog": "",
+    "website": "",
+    "bio": "Karishma Verma is an accomplished Engineering Leader with 12+ years of progressive experience delivering zero-to-one products and driving industry-defining innovations. Currently at Amazon as a Software Development Manager, Karishma leads engineering initiatives that reshape entire industries. She pioneered Amazon Autos, the company's first full digital vehicle purchasing platform, and spearheaded Amazon's Physical Stores Advertising platform, deploying digital signage ads across 580+ stores reaching millions of customers globally.\n\nBefore Amazon, Karishma spent five years at Chewy, directing the Order Management Services team and overseeing critical offerings including Autoship, Chewy Pharmacy, and Connect-with-a-Vet features, supporting over 20 million customers and 15 million monthly orders.",
+    "session": {
+      "title": "Autonomous CI/CD Agents: Building Intelligent Delivery with Cosmos DB",
+      "abstract": "Modern CI/CD pipelines generate enormous volumes of state—pipeline execution logs, deployment metadata, test results, and system context. Traditional CI/CD systems treat this data as ephemeral artifacts, discarding insights that could improve decision-making.\n\nThis talk presents a real-world architecture where Azure Cosmos DB serves as the operational backbone for agentic CI/CD systems. Agents leverage Cosmos DB's global distribution, multi-region consistency, and change feed capabilities to maintain critical pipeline state: agent memory of past deployments, context for multi-agent orchestration workflows, vector embeddings for semantic analysis of code changes, and audit trails for compliance.\n\nAttendees will gain repeatable patterns for building intelligent delivery infrastructure and practical guidance for integrating vector search into CI/CD workflows for semantic code analysis."
+    }
+  }
+]
