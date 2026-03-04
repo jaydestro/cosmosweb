@@ -15,7 +15,7 @@ import FaqSection from "./sections/FaqSection";
 import SpeakersSection from "./sections/SpeakersSection";
 
 const CONF_YEAR = "2026";
-const CONF_DATE_DISPLAY = "April 28 - 9:00 AM - 12:00 PM PT";
+const CONF_DATE_DISPLAY = "April 28 - 9:00 AM - 2:00 PM PST";
 const CONF_DATE_LONG = "April 28, 2026";
 const CFP_URL = "https://aka.ms/CosmosConfCFP-site";
 
