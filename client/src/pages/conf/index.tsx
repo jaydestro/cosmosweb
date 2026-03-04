@@ -309,7 +309,7 @@ const ConfPage = () => {
                     and community experts, showcasing their innovative projects and breakthroughs.
                   </p>
                   <p>
-                    Join our engaging 3-hour live show on {CONF_DATE_LONG}, and explore additional
+                    Join our engaging 5-hour live show on {CONF_DATE_LONG}, and explore additional
                     sessions on-demand.
                   </p>
                   <p>This is an event you won't want to miss!</p>
