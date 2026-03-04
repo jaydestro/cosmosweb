@@ -56,7 +56,7 @@
     "linkedin": "https://www.linkedin.com/in/jamescodella/",
     "x": "jamescodella",
     "blog": "",
-    "website": "https://www.microsoft.com",
+    "website": "",
     "bio": "James is a Product Manager in Azure Cosmos DB working on NoSQL Query, vector search, and AI products. He has more than 15 years of experience working in data, analytics, and machine learning. He has a B.S. and M.Eng. from Cornell University and a Ph.D. from the University of Wisconsin–Madison in Operations Research. He currently lives near NYC with his wife and puppy.",
     "session": {
       "title": "Querying and Indexing in Azure Cosmos DB: The Complete Guide",
@@ -104,7 +104,7 @@
     "linkedin": "https://www.linkedin.com/in/pamela-fox-5668b1b4/",
     "x": "pamelafox",
     "blog": "https://blog.pamelafox.org/",
-    "website": "https://www.microsoft.com",
+    "website": "",
     "bio": "Pamela Fox is a Cloud Advocate in Python at Microsoft, where she helps developers use Python with the many Azure offerings. On the teaching front, Pamela has taught computer science at UC Berkeley and volunteered in bay area classrooms as part of TEALS, GirlsWhoCode, and CoderDojo. She also started the SF chapter of GirlDevelopIt, where she taught dozens of web development workshops.\n\nPamela has been in the tech industry for 15+ years, starting as one of Google's first developer advocates. She went on to be an early full-stack engineer at Coursera and spent many years at Khan Academy, both as an engineer and the creator of the computer programming content.",
     "session": {
       "title": "Know your user: Identity-aware MCP servers with Cosmos DB",
@@ -200,7 +200,7 @@
     "linkedin": "https://www.linkedin.com/in/sandeep-s-nair-058b6858/",
     "x": "",
     "blog": "",
-    "website": "https://microsoft.com",
+    "website": "",
     "bio": "Sandeep Nair is a seasoned technology leader with over 25 years of industry experience, currently serving as Principal Program Manager in Azure Cosmos DB. A recognized Cosmos DB expert, Sandeep drives customer-centric innovation by integrating AI into real-world scenarios, helping organizations unlock new capabilities through intelligent data solutions.\n\nSandeep brings deep technical insight and engaging storytelling to the stage. His work focuses on empowering developers and enterprises to harness the full potential of cloud-native databases and AI.",
     "session": {
       "title": "From MongoDB to Azure DocumentDB: A Migration Playbook",
@@ -264,7 +264,7 @@
     "linkedin": "https://www.linkedin.com/in/sergiy-smyrnov",
     "x": "",
     "blog": "",
-    "website": "https://www.microsoft.com/",
+    "website": "",
     "bio": "Sergiy Smyrnov is a Senior Specialist at Microsoft's Data & AI Global Black Belt Team, focusing on helping customers solve mission-critical problems with distributed NoSQL database technologies. Sergiy has extensive experience in database development, architecture, and performance tuning across various Relational, NoSQL, and NewSQL technologies.",
     "session": {
       "title": "From JOINs to JSON: Migrating a Real-World ASP.NET App to Cosmos DB with GitHub Copilot",
@@ -312,7 +312,7 @@
     "linkedin": "https://www.linkedin.com/in/rakhi-thejraj-61a314b8/",
     "x": "",
     "blog": "",
-    "website": "https://www.microsoft.com/",
+    "website": "",
     "bio": "Rakhi Thejraj is a Principal Program Manager at Microsoft, focused on Azure Cosmos DB. She specializes in data ingestion, scalability, and cost optimization for distributed NoSQL workloads. Rakhi works with enterprise customers to optimize their throughput and enable reliable, high-performance data platforms at global scale.",
     "session": {
       "title": "Importing Data into Azure Cosmos DB: Tools, Tradeoffs, and Capacity Planning",
