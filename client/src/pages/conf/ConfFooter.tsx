@@ -77,12 +77,29 @@ export default function ConfFooter({ confYear = "2026" }: ConfFooterProps) {
               <div className={styles.confFooterColumnTitle}>Docs</div>
               <a
                 className={styles.confFooterLink}
-                href="https://learn.microsoft.com/azure/cosmos-db/introduction"
+                href="https://learn.microsoft.com/azure/cosmos-db/"
                 target="_blank"
                 rel="noopener noreferrer"
-                data-node-id="6:924"
               >
-                <span>Tutorial</span>
+                <span>Azure Cosmos DB</span>
+                <ExternalLinkIcon />
+              </a>
+              <a
+                className={styles.confFooterLink}
+                href="https://learn.microsoft.com/azure/documentdb/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>Azure DocumentDB (with MongoDB compatibility)</span>
+                <ExternalLinkIcon />
+              </a>
+              <a
+                className={styles.confFooterLink}
+                href="https://documentdb.io/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>Open Source DocumentDB</span>
                 <ExternalLinkIcon />
               </a>
             </div>
@@ -92,12 +109,11 @@ export default function ConfFooter({ confYear = "2026" }: ConfFooterProps) {
               <div className={styles.confFooterColumnTitle}>Community</div>
               <a
                 className={styles.confFooterLink}
-                href="https://stackoverflow.com/tags/azure-cosmosdb/info"
+                href="https://www.linkedin.com/company/azure-cosmos-db"
                 target="_blank"
                 rel="noopener noreferrer"
-                data-node-id="6:905"
               >
-                <span>Stack Overflow</span>
+                <span>LinkedIn</span>
                 <ExternalLinkIcon />
               </a>
               <a
@@ -105,9 +121,17 @@ export default function ConfFooter({ confYear = "2026" }: ConfFooterProps) {
                 href="http://aka.ms/AzureCosmosDBYouTube"
                 target="_blank"
                 rel="noopener noreferrer"
-                data-node-id="6:909"
               >
                 <span>YouTube</span>
+                <ExternalLinkIcon />
+              </a>
+              <a
+                className={styles.confFooterLink}
+                href="https://discord.gg/yKnQqWgg"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>Discord</span>
                 <ExternalLinkIcon />
               </a>
               <a
@@ -115,19 +139,17 @@ export default function ConfFooter({ confYear = "2026" }: ConfFooterProps) {
                 href="https://x.com/azurecosmosdb"
                 target="_blank"
                 rel="noopener noreferrer"
-                data-node-id="6:914"
               >
                 <span>X</span>
                 <ExternalLinkIcon />
               </a>
               <a
                 className={styles.confFooterLink}
-                href="https://www.linkedin.com/company/azure-cosmos-db"
+                href="https://stackoverflow.com/tags/azure-cosmosdb/info"
                 target="_blank"
                 rel="noopener noreferrer"
-                data-node-id="6:919"
               >
-                <span>LinkedIn</span>
+                <span>Stack Overflow</span>
                 <ExternalLinkIcon />
               </a>
             </div>
