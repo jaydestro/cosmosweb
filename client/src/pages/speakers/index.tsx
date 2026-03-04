@@ -44,7 +44,7 @@ export default function Speakers() {
             >
               Register for Free
             </a>
-            <Link className={styles.archiveLink} to="/archive/speakers2025">
+            <Link className={styles.archiveLink} to="/conf#archive">
               View 2025 Speakers →
             </Link>
           </div>
