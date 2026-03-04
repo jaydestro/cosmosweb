@@ -20,6 +20,7 @@ interface Speaker {
   linkedin?: string;
   blog?: string;
   website?: string;
+  mvp?: string;
   session?: Session;
 }
 
@@ -99,7 +100,23 @@ const SpeakersSection = ({ confYear }: SpeakersSectionProps) => {
                     />
                   </div>
                   <div className={styles.speakerCardBody}>
-                    <span className={styles.speakerCardName}>{speaker.name}</span>
+                    <div className={styles.speakerCardNameRow}>
+                      <span className={styles.speakerCardName}>{speaker.name}</span>
+                      {speaker.mvp && (
+                        <img
+                          src="https://mvp.microsoft.com/Assets/UserProfile/MVP/Badge.svg"
+                          alt="Microsoft MVP"
+                          className={styles.mvpBadge}
+                        />
+                      )}
+                      {speaker.company === "Microsoft" && (
+                        <img
+                          src="/assets/icons/microsoft.svg"
+                          alt="Microsoft"
+                          className={styles.msBadge}
+                        />
+                      )}
+                    </div>
                     {(speaker.role || speaker.company) && (
                       <span className={styles.speakerCardMeta}>
                         {[speaker.role, speaker.company].filter(Boolean).join(" · ")}
@@ -148,8 +165,26 @@ const SpeakersSection = ({ confYear }: SpeakersSectionProps) => {
                 <h2 className={styles.speakerModalName}>{selected.name}</h2>
                 {selected.role && <p className={styles.speakerModalRole}>{selected.role}</p>}
                 {selected.company && <p className={styles.speakerModalCompany}>{selected.company}</p>}
-                {(selected.linkedin || selected.x || selected.blog || selected.website) && (
+                {(selected.linkedin || selected.x || selected.blog || selected.website || selected.mvp) && (
                   <div className={styles.speakerModalSocials}>
+                    {selected.mvp && (
+                      <a href={selected.mvp} target="_blank" rel="noopener noreferrer"
+                        className={styles.speakerModalMvpLink} aria-label="Microsoft MVP Credential">
+                        <img
+                          src="https://mvp.microsoft.com/Assets/UserProfile/MVP/Badge.svg"
+                          alt="Microsoft MVP"
+                          className={styles.mvpBadgeModal}
+                        />
+                      </a>
+                    )}
+                    {selected.company === "Microsoft" && (
+                      <img
+                        src="/assets/icons/microsoft.svg"
+                        alt="Microsoft"
+                        className={styles.msBadgeModal}
+                        title="Microsoft"
+                      />
+                    )}
                     {selected.linkedin && (
                       <a href={selected.linkedin.startsWith("http") ? selected.linkedin : `https://linkedin.com/in/${selected.linkedin}`}
                         target="_blank" rel="noopener noreferrer"

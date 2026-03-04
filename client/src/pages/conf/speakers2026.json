@@ -25,6 +25,7 @@
     "x": "EricDBoyd",
     "blog": "http://www.EricDBoyd.com",
     "website": "https://responsivex.com/",
+    "mvp": "https://mvp.microsoft.com/MVP/profile/77e968c6-3c9a-e411-93f2-9cb65495d3c4",
     "bio": "Eric D. Boyd is a highly experienced entrepreneur, public speaker, and author with nearly 30 years of experience in the technology industry. He is the founder and CEO of responsiveX, a Microsoft partner and digital innovation consultancy. Eric is a sought-after speaker and thought leader, delivering keynote speeches, breakout sessions, and participating in panel discussions at many industry events. He is a Microsoft Azure and AI MVP, a Regional Director, and has extensive experience helping organizations with system design and architecture, cloud-native development, and artificial intelligence. Eric is the co-author of \"Step-by-Step Azure SQL Database\" and has contributed to several other publications. He shares his expertise and insights through his blog, social media, podcast interviews, and educational videos. Eric is committed to giving back to the community and supporting the next generation of technology leaders.",
     "session": {
       "title": "Distributed Locks, Sagas, and Coordination with Cosmos DB",
@@ -73,6 +74,7 @@
     "x": "",
     "blog": "https://cazton.com/blogs/executive",
     "website": "https://cazton.com",
+    "mvp": "https://mvp.microsoft.com/MVP/profile/4dbc70c0-3c9a-e411-93f2-9cb65495d3c4",
     "bio": "Chander Dhall, CEO of Cazton, is a fifteen-time awarded Microsoft (AI) MVP, Microsoft Regional Director, Google Developer Expert, Azure Cosmos DB Cosmonaut and world-renowned technology leader in architecting and implementing solutions. In 2025, he was recognized as one of only twenty AI MVPs in the United States. He's not only rescued software development, cloud, big data, and AI teams, but also implemented successful projects under tight deadlines and difficult business constraints. His company, Cazton, has a proven track record of not just saving the client millions of dollars, but also providing expedited delivery time. Cazton's clients include Google, Microsoft, Thomson Reuters, Broadcom, AT&T, Dell, Bank of America, NBC Universal, American Express, Fandango, LinkedIn, VMware, McKesson, Macquarie Bank, and many other Fortune 500, mid-size and startup companies.\n\nIn the field of AI, Chander has been at the forefront of building and deploying enterprise-grade solutions that leverage cutting-edge technologies like OpenAI's GPT models, Google's Gemini, Cohere's Command and Anthropic's Claude. He specializes in designing and fine-tuning generative AI models for real-world applications such as conversational AI, predictive analytics, natural language processing (NLP), and advanced recommendation systems. His expertise spans the breadth of cloud platforms (Azure, AWS, GCP) and big data and AI ecosystems, including TensorFlow, PyTorch, RAFT, Microsoft Fabric, Databricks, Spark, Kafka, Snowflake, and emerging generative AI technologies.\n\nAs an Azure Advisor, ASP.NET Insider, Web API Advisor, Cosmos DB Advisor, and a Microsoft MVP for AI, Chander has insight into new releases on technologies used by millions of developers. He is the author of two books: Scalability Patterns and Building Single Page Applications Using ASP.NET Core & Angular. Chander has keynoted and delivered hands-on workshops at top conferences, including Microsoft Build, .NET Conf, Microsoft Fabric Community Conference, Microsoft TechEd, Google DevFest, Azure Dev Days, NDC London, DevSum Sweden, and BuildStuff Lithuania.",
     "session": {
       "title": "Performance-Boosting Memory Patterns: Save Tokens, Cut Costs, Increase Speed",
@@ -236,6 +238,7 @@
     "x": "SavranWeb",
     "blog": "https://savranweb.com/",
     "website": "https://www.savranweb.com/",
+    "mvp": "https://mvp.microsoft.com/MVP/profile/20773cee-6250-e911-a987-000d3a1378f6",
     "bio": "Hasan is an expert in Azure data products and has been recognized as a Microsoft Data Platform MVP. He owns SavranWeb Consulting and holds the Senior Business Intelligence Manager position at Progressive Insurance. His work involves designing advanced business solutions using the latest web and database development technologies. Hasan is a seasoned professional with more than two decades of experience in software as a developer, architect, and manager. He is a global conference speaker and enjoys blogging about SQL Server, Azure Cosmos DB, C#, and front-end development.",
     "session": {
       "title": "Data Modeling Decisions That Make or Break Your Cosmos DB Application",
@@ -284,6 +287,7 @@
     "x": "SuleymaniTural",
     "blog": "https://www.youtube.com/@TuralSuleymaniTech",
     "website": "https://voeconsulting.net/",
+    "mvp": "https://mvp.microsoft.com/MVP/profile/03714279-cac2-4e47-8b00-a57f71efc528",
     "bio": "Tural Suleymani is a seasoned software development expert with over a decade of industry experience. Renowned as Azerbaijan's first Microsoft MVP in .NET and a three-time C# Corner MVP, he has established himself as a leading authority in his field. He is the author of \"Hands-on Microservices with Javascript\" book published by Packt publishing and Microsoft MCT. With a passion for sharing knowledge, Tural has dedicated ten years to mentoring developers through comprehensive programming languages and technology tools instruction. A self-taught pioneer, he empowers a global audience through his TuralSuleymaniTech YouTube channel, where he delivers in-depth tutorials and insights on C#, Apache Kafka, SQL, JavaScript, Domain-Driven Design, software architecture, microservices, and more. Currently, he works for VOE Consulting as a Chief Software Architect.",
     "session": {
       "title": "Designing High-Scale Event-Driven Microservices with Azure Cosmos DB",
