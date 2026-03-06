@@ -83,10 +83,10 @@
   },
   {
     "slug": "anurag-dutt",
-    "confirmed": false,
+    "confirmed": true,
     "name": "Anurag Dutt",
     "role": "Multi-Cloud Engineer",
-    "company": "Milliman MedInsight",
+    "company": "",
     "img": "/img/speakers/anurag-dutt.jpg",
     "linkedin": "https://www.linkedin.com/in/anuragdutt01/",
     "x": "duttanurag20",
@@ -132,7 +132,7 @@
   },
   {
     "slug": "varun-kotte",
-    "confirmed": false,
+    "confirmed": true,
     "name": "Varun Kumar Kotte",
     "role": "Sr. Machine Learning Engineer",
     "company": "Adobe",
@@ -157,6 +157,7 @@
     "x": "",
     "blog": "https://iamdivakarkumar.com",
     "website": "https://iamdivakarkumar.com",
+    "mvp": "https://mvp.microsoft.com/MVP/profile/01f5e76b-d587-4e87-aee1-a3e52bda2c98",
     "bio": "Divakar Kumar is a Microsoft MVP in AI and a Microsoft Certified Trainer (MCT), working as a Technical Architect at Flyerssoft. He actively shares his knowledge through blogs, talks, and training sessions, empowering developers to harness the potential of AI in real-world applications.",
     "session": {
       "title": "Real-Time Fraud Detection at Scale: Event Sourcing with Azure Cosmos DB",
@@ -213,7 +214,7 @@
   },
   {
     "slug": "patrick-oguaju",
-    "confirmed": false,
+    "confirmed": true,
     "name": "Patrick Oguaju",
     "role": "Software Developer",
     "company": "Next",
@@ -264,7 +265,7 @@
   {
     "slug": "sergiy-smyrnov",
     "name": "Sergiy Smyrnov",
-    "role": "Principal Product Manager",
+    "role": "Senior Specialist, Data & AI Global Black Belt",
     "company": "Microsoft",
     "img": "/img/speakers/sergiy-smyrnov.jpg",
     "linkedin": "https://www.linkedin.com/in/sergiy-smyrnov",
