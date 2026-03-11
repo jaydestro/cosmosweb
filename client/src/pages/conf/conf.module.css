@@ -2354,11 +2354,11 @@
   color: #ffffff;
 }
 
-/* Three link columns — flex so they space out naturally */
+/* Three link columns — flex so they space out evenly */
 .confFooterLinks {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
+  gap: 48px;
   flex: 1;
   min-width: 0;
 }
@@ -2367,8 +2367,10 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  flex: 1;
+  flex: 1 1 0;
   min-width: 0;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .confFooterColumnTitle {
