@@ -265,14 +265,14 @@
   {
     "slug": "sergiy-smyrnov",
     "name": "Sergiy Smyrnov",
-    "role": "Senior Specialist, Data & AI Global Black Belt",
+    "role": "Principal PM",
     "company": "Microsoft",
     "img": "/img/speakers/sergiy-smyrnov.jpg",
     "linkedin": "https://www.linkedin.com/in/sergiy-smyrnov",
     "x": "",
     "blog": "",
     "website": "",
-    "bio": "Sergiy Smyrnov is a Senior Specialist at Microsoft Data & AI Global Black Belt Team focusing on helping customers to solve mission-critical problems with help of distributed NoSQL database technologies. Sergiy has extensive experience in database development, architecture and performance tuning across various Relational, NoSQL and NewSQL technologies.",
+    "bio": "Sergiy Smyrnov is a Principal PM @ Microsoft Azure Cosmos DB team focusing on helping customers to solve mission critical problems with help of distributed NoSQL database technologies. Sergiy has extensive experience in database development, architecture and performance tuning across various Relational, NoSQL and NewSQL technologies.",
     "session": {
       "title": "From JOINs to JSON: Migrating a Real-World ASP.NET App to Cosmos DB with GitHub Copilot",
       "abstract": "Migrations from RDBMS to Cosmos DB are notorious for hard decisions—denormalization trade-offs, partition key selection, embedded vs. referenced data, and complex application code conversion.\n\nWhat if an AI agent could analyze your schema, generate a detailed migration plan, provision Cosmos DB infrastructure, rewrite your application data layer to the Cosmos SDK, and migrate your data—all through natural-language prompts?\n\nIn this session, we take the classic AdventureWorks database and an old ASP.NET EF Core Web Application and live-walk through every step of such a migration: from relational schema to a fully running .NET 9 app backed by Cosmos DB for NoSQL.\n\nYou'll leave with a reusable, prompt-by-prompt playbook and learn how to use Cosmos DB Agent Kit AI skills which you can apply to your own migrations."
