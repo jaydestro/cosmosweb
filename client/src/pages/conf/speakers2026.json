@@ -131,23 +131,6 @@
     }
   },
   {
-    "slug": "varun-kotte",
-    "confirmed": true,
-    "name": "Varun Kumar Kotte",
-    "role": "Sr. Machine Learning Engineer",
-    "company": "Adobe",
-    "img": "/img/speakers/varun-kotte.jpg",
-    "linkedin": "https://www.linkedin.com/in/varun-kotte-b999a0104/",
-    "x": "",
-    "blog": "",
-    "website": "",
-    "bio": "Varun Kotte is a Senior Machine Learning Engineer specializing in large-scale AI systems, retrieval-augmented generation (RAG), and production-grade machine learning infrastructure. With over 10 years of experience across Adobe, Cisco, T-Mobile, and Bed Bath & Beyond, he has architected, deployed, and scaled intelligent platforms serving hundreds of millions of users worldwide. His work spans document AI, semantic search, named entity recognition, real-time analytics, and personalization systems that power mission-critical enterprise products.\n\nAt Adobe, Varun led the design of the Retrieval-Augmented Generation infrastructure for Adobe AI Assistant and built advanced neural retrieval and search platforms supporting millions of daily queries across Lightroom, Express, and Adobe Stock. He engineered low-latency LLM serving architectures, optimized large-scale data pipelines, and developed entity-aware search and recommendation systems that significantly improved relevance, engagement, and customer experience.\n\nPreviously, he developed real-time streaming analytics and predictive ML systems at Cisco to monitor call quality and customer sentiment at a global scale, and built cloud-native data platforms and recommendation engines that improved marketing ROI and customer retention at T-Mobile and Bed Bath & Beyond. A published researcher and patent inventor, he holds a Master's degree in Computer Science.",
-    "session": {
-      "title": "Production RAG on Azure Cosmos DB: Version-Aware Enterprise QA",
-      "abstract": "Enterprise-grade Retrieval-Augmented Generation (RAG) systems differ fundamentally from open-domain implementations: documentation evolves continuously, versioning affects answer correctness, and retrieval failures directly escalate into customer support costs. This session presents a production RAG architecture deployed for Adobe's AI Assistant, highlighting how Azure Cosmos DB supports version-aware, large-scale enterprise retrieval under strict SLA constraints.\n\nThe system manages 121,000+ enterprise documents with version-aware retrieval to ensure temporal and semantic correctness as documentation changes. Training data is scaled through synthetic generation and user interaction mining, producing 700,000+ question-answer pairs tailored to closed-domain constraints.\n\nThe retrieval stack combines sparse and dense methods while leveraging Cosmos DB for globally distributed, low-latency storage and retrieval, achieving 72.8% nDCG@4 with sub-200ms P95 latency. Embedding selection prioritizes MPNet-based models to balance retrieval quality against inference and deployment constraints.\n\nTo prevent regressions, the system integrates automated offline evaluation metrics alongside structured human evaluation protocols. Architectural decisions—strict domain boundaries, known entity vocabularies, and structured documentation—diverge significantly from open-domain RAG patterns and are critical to maintaining reliability at enterprise scale.\n\nAttendees will gain practical design patterns for version-aware retrieval, scalable training data generation, and production evaluation workflows demonstrating how Cosmos DB can underpin high-quality, closed-domain RAG systems in real-world enterprise environments."
-    }
-  },
-  {
     "slug": "divakar-kumar",
     "name": "Divakar Kumar",
     "role": "Technical Architect",
@@ -178,6 +161,22 @@
     "session": {
       "title": "Beyond Vector Search: What RAG Actually Needs",
       "abstract": "Your AI agent is confidently serving wrong answers, and you don't even know it. Vector search is everyone's default for RAG, but ask for something specific and it quietly returns nonsense.\n\nIn this session, we'll take a working AI agent with MCP and a real database, and extend it with agentic RAG using Azure Cosmos DB hybrid search—vector plus full-text—so it actually retrieves what matters. You'll learn why the default approach breaks, how to fix it, and how to let the agent decide when to search instead of doing it blindly every time.\n\nLive code, live demo, patterns you can steal."
+    }
+  },
+  {
+    "slug": "andrew-liu",
+    "name": "Andrew Liu",
+    "role": "Principal GPM",
+    "company": "Microsoft",
+    "img": "/img/speakers/andrew-liu.jpg",
+    "linkedin": "https://www.linkedin.com/in/aliuy/",
+    "x": "aliuy8",
+    "blog": "",
+    "website": "",
+    "bio": "",
+    "session": {
+      "title": "Behind the Scenes: How Azure Cosmos DB Runs Under the Hood",
+      "abstract": "Ever wonder what actually happens between clicking \"Create\" in the portal and your database being ready to serve requests at planetary scale? In this session, we'll pull back the curtain on Azure Cosmos DB's internal architecture, from how we deploy our database engine onto hardware from partners like AMD in datacenters worldwide, to how we set up replica sets with quorum-based replication to deliver the high availability guarantees you depend on. We'll demystify how consistent hashing determines where your data lands and why choosing a good partition key matters so much. From there, we'll explore how we built the pay-per-request serverless model, demystifying what a Request Unit actually is under the covers. We'll also look at capabilities like RU pooling, which lets you pool throughput capacity across your workloads when running a fleet of Cosmos DB containers. We're ditching PowerPoint and going straight to the whiteboard for this one."
     }
   },
   {
@@ -325,22 +324,6 @@
     "session": {
       "title": "Importing Data into Azure Cosmos DB: Tools, Tradeoffs, and Capacity Planning",
       "abstract": "You have data somewhere else and need to get it into Azure Cosmos DB—fast, reliably, and without burning through your budget. This session compares your import options and shows how to plan and execute data migrations efficiently.\n\nWe'll cover:\n- Import tools and tradeoffs, including the Desktop Data Migration Tool, Azure Data Factory, and the Azure Cosmos DB Spark connector\n- Capacity planning and cost optimization, including estimating RU requirements and pre-scaling for faster ingestion\n- Post-import optimization techniques such as scaling throughput back down and partition merge\n- Best practices for error handling, retries, validation, and indexing during bulk loads\n\nEach tool includes a hands-on walkthrough with real data, highlighting the configuration settings that matter most for performance.\n\nWhat attendees will leave with:\n- A decision framework for choosing the right Azure Cosmos DB import tool\n- Capacity planning calculations for bulk data loads\n- Step-by-step guidance for executing efficient Azure Cosmos DB data migrations"
-    }
-  },
-  {
-    "slug": "karishma-verma",
-    "name": "Karishma Verma",
-    "role": "Software Development Manager",
-    "company": "Amazon Autos",
-    "img": "/img/speakers/karishma-verma.jpg",
-    "linkedin": "https://www.linkedin.com/in/karishma-verma-65846633",
-    "x": "",
-    "blog": "",
-    "website": "",
-    "bio": "Karishma Verma is an accomplished Engineering Leader with 12+ years of progressive experience delivering zero-to-one products, building high-performance engineering teams, and driving industry-defining innovations. Based in the United States, she brings a track record of scaling distributed systems and expanding products from concept to national and global launch across diverse sectors, including Automotive, Advertising, Healthcare Tech, eCommerce, Telecom, and Research.\n\nCurrently at Amazon as a Software Development Manager, Karishma leads engineering initiatives that reshape entire industries. She pioneered Amazon Autos, the company's first full digital vehicle purchasing platform, scaling it from a single OEM to multiple manufacturers while expanding coverage to new, used, and certified pre-owned vehicles. She also spearheaded the Sell My Car offering, enabling seamless online vehicle transactions. Additionally, Karishma drove the launch of Amazon's Physical Stores Advertising platform, deploying digital signage ads across 580+ stores with over 11,000 active screens, reaching millions of customers globally.\n\nBefore Amazon, Karishma spent five years at Chewy, where she directed the Order Management Services team and oversaw the delivery of critical offerings, including Autoship, Chewy Pharmacy, compounded prescriptions, and Connect-with-a-Vet features, supporting over 20 million customers and 15 million monthly orders.",
-    "session": {
-      "title": "Autonomous CI/CD Agents: Building Intelligent Delivery with Cosmos DB",
-      "abstract": "Modern CI/CD pipelines generate enormous volumes of state—pipeline execution logs, deployment metadata, test results, and system context. Traditional CI/CD systems treat this data as ephemeral artifacts, discarding insights that could improve decision-making. Autonomous agents managing software delivery require persistent, queryable state to reason about code changes, assess deployment risk, and adapt to failures. This creates a fundamental architectural challenge: how do you build a globally distributed, low-latency state layer that enables intelligent agents to learn and improve across thousands of pipeline executions?\n\nThis talk presents a real-world architecture where Azure Cosmos DB serves as the operational backbone for agentic CI/CD systems. We demonstrate how agents leverage Cosmos DB's global distribution, multi-region consistency, and change feed capabilities to maintain critical pipeline state: agent memory of past deployments, context for multi-agent orchestration workflows, vector embeddings for semantic analysis of code changes, and audit trails for compliance. The solution addresses the core engineering challenge of building intelligent delivery systems that operate reliably at enterprise scale.\n\nWe walk through a complete, demo-driven implementation showing how autonomous agents query deployment history, analyze failure patterns, synthesize intelligent test strategies, and make adaptive deployment decisions—all backed by Cosmos DB's partitioning and consistency guarantees. The demo covers SDK patterns, data modeling decisions for agent state, leveraging change feed for real-time pipeline event processing, and how vector search enables semantic understanding of code changes across millions of commits.\n\nThe session includes lessons learned from deploying this system across multi-service environments, handling agent state consistency in high-concurrency scenarios, and optimizing cost while maintaining sub-100ms response times critical for fast deployment decisions.\n\nAttendees will gain repeatable patterns for building intelligent delivery infrastructure, understanding how to model pipeline and agent state for autonomous systems, and practical guidance for integrating vector search into CI/CD workflows for semantic code analysis."
     }
   }
 ]
