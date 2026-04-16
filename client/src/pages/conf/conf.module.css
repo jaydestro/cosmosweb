@@ -246,6 +246,7 @@
 /* ========== INTRO BLURB (under hero) ========== */
 .introSection {
   width: 100%;
+  padding: 40px 60px 0;
   font-family:
     "Segoe Sans",
     "Segoe UI",
@@ -261,7 +262,7 @@
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 40px 60px 0;
+  padding: 0;
 }
 
 .introCard {
@@ -430,7 +431,7 @@
 .streamOuter {
   width: 100%;
   height: 100%;
-  padding: 100px;
+  padding: 60px;
   display: inline-flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -448,6 +449,31 @@
   justify-content: flex-start;
   align-items: center;
   gap: 55px;
+}
+
+.streamCard {
+  width: 100%;
+  padding: 32px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.70) 0%, rgba(255, 255, 255, 0.30) 100%);
+  outline: 2px solid rgba(0, 120, 212, 0.15);
+  outline-offset: -2px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.18);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+[data-theme='dark'] .streamCard {
+  background:
+    linear-gradient(0deg, rgba(116.86, 116.86, 116.86, 0.20) 0%, rgba(116.86, 116.86, 116.86, 0.20) 100%),
+    linear-gradient(180deg, rgba(16, 16, 16, 0.70) 0%, rgba(0, 0, 0, 0.30) 100%);
+  outline-color: #5b5b5b;
+  color: #ffffff;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 
 .streamTitle {
@@ -524,6 +550,98 @@
   color: #ffffff;
 }
 
+.streamCountdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+  font-family: inherit;
+}
+
+.streamCountdownLabel {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #0078d4;
+}
+
+[data-theme='dark'] .streamCountdownLabel {
+  color: #4cc2ff;
+}
+
+.streamCountdownGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(72px, 1fr));
+  gap: 12px;
+  width: 100%;
+  max-width: 440px;
+}
+
+.streamCountdownUnit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 8px;
+  border-radius: 12px;
+  background: rgba(0, 120, 212, 0.08);
+  border: 1px solid rgba(0, 120, 212, 0.2);
+}
+
+[data-theme='dark'] .streamCountdownUnit {
+  background: rgba(76, 194, 255, 0.12);
+  border-color: rgba(76, 194, 255, 0.3);
+}
+
+.streamCountdownValue {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1;
+  color: #0078d4;
+  font-variant-numeric: tabular-nums;
+}
+
+[data-theme='dark'] .streamCountdownValue {
+  color: #ffffff;
+}
+
+.streamCountdownName {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #555;
+}
+
+[data-theme='dark'] .streamCountdownName {
+  color: #cfd3d8;
+}
+
+.streamCountdownLive {
+  margin: 4px 0 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #d13438;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .streamCountdownGrid {
+    grid-template-columns: repeat(4, minmax(56px, 1fr));
+    gap: 8px;
+  }
+
+  .streamCountdownValue {
+    font-size: 24px;
+  }
+
+  .streamCountdownName {
+    font-size: 10px;
+  }
+}
+
 [data-theme='dark'] .streamVideoFrame {
   background:
     linear-gradient(0deg, rgba(116.86, 116.86, 116.86, 0.2) 0%, rgba(116.86, 116.86, 116.86, 0.2) 100%),
@@ -545,6 +663,11 @@
 
   .streamInner {
     gap: 32px;
+  }
+
+  .streamCard {
+    padding: 20px;
+    gap: 24px;
   }
 
   .streamTitle {
@@ -927,6 +1050,111 @@
   gap: 10px;
 }
 
+.newsCardToggle {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  color: inherit;
+}
+
+.newsCardToggle:focus-visible {
+  outline: 2px solid #0078d4;
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+.newsCardToggleText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+
+.newsCardToggleIcon {
+  font-size: 28px;
+  line-height: 1;
+  color: #0078d4;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+[data-theme='dark'] .newsCardToggleIcon {
+  color: #ffffff;
+}
+
+.newsCardShareRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-end;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.newsCardShareLabel {
+  font-size: 13px;
+  color: #555;
+  opacity: 0.85;
+}
+
+[data-theme='dark'] .newsCardShareLabel {
+  color: #cfd3d8;
+}
+
+.newsCardShareButton {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 120, 212, 0.3);
+  background: rgba(255, 255, 255, 0.6);
+  color: #0078d4;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
+}
+
+.newsCardShareButton:hover,
+.newsCardShareButton:focus-visible {
+  background: #0078d4;
+  color: #ffffff;
+  border-color: #0078d4;
+  transform: translateY(-1px);
+  text-decoration: none;
+  outline: none;
+}
+
+[data-theme='dark'] .newsCardShareButton {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: #5b5b5b;
+  color: #ffffff;
+}
+
+[data-theme='dark'] .newsCardShareButton:hover,
+[data-theme='dark'] .newsCardShareButton:focus-visible {
+  background: #4cc2ff;
+  color: #000000;
+  border-color: #4cc2ff;
+}
+
 [data-theme='dark'] .newsCard {
   background:
     linear-gradient(0deg, rgba(116.86, 116.86, 116.86, 0.20) 0%, rgba(116.86, 116.86, 116.86, 0.20) 100%),
@@ -965,6 +1193,149 @@
 
 .newsCardCopy :global(a:hover) {
   text-decoration: underline;
+}
+
+/* Keynote lineup card — structured layout for news items with speaker headshots */
+.newsCardCopy :global(.keynote-intro) {
+  margin: 0 0 20px 0;
+  line-height: 1.55;
+}
+
+.newsCardCopy :global(.keynote-host) {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 28px 0;
+}
+
+.newsCardCopy :global(.keynote-section-label) {
+  margin: 0 0 16px 0;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #0078d4;
+}
+
+[data-theme='dark'] .newsCardCopy :global(.keynote-section-label) {
+  color: #4ab3ff;
+}
+
+.newsCardCopy :global(.keynote-divider) {
+  border: 0;
+  height: 1px;
+  background: rgba(0, 120, 212, 0.15);
+  margin: 28px 0;
+}
+
+[data-theme='dark'] .newsCardCopy :global(.keynote-divider) {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.newsCardCopy :global(.keynote-grid) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 24px 16px;
+  margin: 0 0 20px 0;
+}
+
+.newsCardCopy :global(.keynote-person) {
+  margin: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.newsCardCopy :global(.keynote-person img) {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border: 2px solid rgba(0, 120, 212, 0.25);
+}
+
+[data-theme='dark'] .newsCardCopy :global(.keynote-person img) {
+  border-color: rgba(74, 179, 255, 0.35);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.newsCardCopy :global(.keynote-person figcaption) {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  line-height: 1.35;
+}
+
+.newsCardCopy :global(.keynote-person .keynote-name) {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.newsCardCopy :global(.keynote-person .keynote-role) {
+  font-size: 13px;
+  opacity: 0.75;
+  font-weight: 400;
+}
+
+.newsCardCopy :global(.keynote-host .keynote-person img) {
+  width: 110px;
+  height: 110px;
+  border-width: 3px;
+}
+
+.newsCardCopy :global(.keynote-outro) {
+  margin: 0 0 12px 0;
+  line-height: 1.55;
+}
+
+.newsCardCopy :global(.keynote-cta) {
+  margin: 20px 0 0 0;
+  line-height: 1.55;
+  text-align: center;
+}
+
+.newsCardCopy :global(.keynote-cta-button) {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #0078d4;
+  color: #ffffff !important;
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none !important;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 120, 212, 0.3);
+  transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.newsCardCopy :global(.keynote-cta-button:hover) {
+  background: #106ebe;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 120, 212, 0.4);
+  text-decoration: none !important;
+}
+
+[data-theme='dark'] .newsCardCopy :global(.keynote-cta-button) {
+  background: #4ab3ff;
+  color: #0a0a0a !important;
+  box-shadow: 0 2px 8px rgba(74, 179, 255, 0.3);
+}
+
+[data-theme='dark'] .newsCardCopy :global(.keynote-cta-button:hover) {
+  background: #6bc0ff;
+  box-shadow: 0 4px 12px rgba(74, 179, 255, 0.4);
+}
+
+/* News hero image — for news items that lead with a feature graphic */
+.newsCardCopy :global(.news-hero-image) {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  margin: 0 auto 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
 }
 
 .newsDate {
@@ -1284,6 +1655,27 @@
 
 .agendaCardButton:hover {
   filter: brightness(0.95);
+  color: #ffffff;
+}
+
+.agendaCardButton[aria-disabled="true"] {
+  background: #9aa0a6;
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+
+.agendaCardButton[aria-disabled="true"]:hover {
+  filter: none;
+}
+
+.agendaOnDemandHeading {
+  margin: 28px 0 16px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #000000;
+}
+
+[data-theme="dark"] .agendaOnDemandHeading {
   color: #ffffff;
 }
 
@@ -2621,8 +3013,12 @@
 }
 
 @media (max-width: 996px) {
-  .introInner {
+  .introSection {
     padding: 24px 20px 0;
+  }
+
+  .introInner {
+    padding: 0;
   }
 
   .introCard {

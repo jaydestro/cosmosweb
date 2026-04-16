@@ -17,8 +17,8 @@ function readString(envValue: string | undefined): string | null {
   return value ? value : null;
 }
 
-const showStreamNav = readBool(process.env.CONF_SHOW_STREAM, false);
-const showAgendaNav = readBool(process.env.CONF_SHOW_AGENDA, false);
+const showStreamNav = readBool(process.env.CONF_SHOW_STREAM, true);
+const showAgendaNav = readBool(process.env.CONF_SHOW_AGENDA, true);
 
 const config: Config = {
   title: 'Azure Cosmos DB Dev Home',
@@ -126,17 +126,8 @@ const config: Config = {
             ...(showStreamNav
               ? [
                   {
-                    label: 'Stream',
+                    label: 'Watch the Stream',
                     to: '/conf#stream',
-                    activeBaseRegex: '^$',
-                  },
-                ]
-              : []),
-            ...(showAgendaNav
-              ? [
-                  {
-                    label: 'Agenda',
-                    to: '/conf#agenda',
                     activeBaseRegex: '^$',
                   },
                 ]
@@ -148,12 +139,15 @@ const config: Config = {
               // Docusaurus' active matching is path-based and doesn't handle hash-only routes well.
               activeBaseRegex: '^$',
             },
-            {
-              label: 'About Azure Cosmos DB Conf',
-              to: '/conf#about',
-              // Hash-only routes: never mark as active to avoid multiple active links.
-              activeBaseRegex: '^$',
-            },
+            ...(showAgendaNav
+              ? [
+                  {
+                    label: 'Agenda',
+                    to: '/conf#agenda',
+                    activeBaseRegex: '^$',
+                  },
+                ]
+              : []),
             {
               label: 'Speakers',
               to: '/conf#speakers',
@@ -187,8 +181,8 @@ const config: Config = {
             },
             {
               label: 'Code Of Conduct',
-              to: '/coc',
-              activeBasePath: '/coc',
+              to: '/conf/coc',
+              activeBasePath: '/conf/coc',
             },
           ],
         },

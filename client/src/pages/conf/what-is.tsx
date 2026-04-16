@@ -6,7 +6,7 @@ import ConfFooter from "./ConfFooter";
 
 const CONF_YEAR = "2026";
 const CONF_DATE_LONG = "April 28, 2026";
-const CONF_DATE_DISPLAY = "April 28 - 9:00 AM - 2:00 PM PST";
+const CONF_DATE_DISPLAY = "April 28 - 9:00 AM - 2:00 PM PDT";
 
 const WhatIsConfPage: React.FC = () => {
   return (

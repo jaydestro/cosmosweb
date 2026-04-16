@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "@theme/Layout";
-import Accordion from "../components/Accordion";
+import Accordion from "../../components/Accordion";
 
 const faqs = [
   {

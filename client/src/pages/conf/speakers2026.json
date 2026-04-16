@@ -16,6 +16,38 @@
     }
   },
   {
+    "slug": "sid-anand",
+    "name": "Sid Anand",
+    "role": "Technical Fellow",
+    "company": "Walmart",
+    "img": "/img/speakers/sid-anand.jpg",
+    "linkedin": "https://www.linkedin.com/in/siddharthanand/",
+    "x": "",
+    "blog": "",
+    "website": "",
+    "bio": "Sid Anand is a Technical Fellow at Walmart. He joins the Azure Cosmos DB Conf 2026 keynote as a featured guest.",
+    "session": {
+      "title": "Keynote Featured Guest",
+      "abstract": "Sid Anand from Walmart joins the Azure Cosmos DB Conf 2026 keynote conversation on modern applications, AI, and data at scale."
+    }
+  },
+  {
+    "slug": "steve-berg",
+    "name": "Steve Berg",
+    "role": "CVP & GM, Server CPU Cloud",
+    "company": "AMD",
+    "img": "/img/speakers/steve-berg.jpg",
+    "linkedin": "https://www.linkedin.com/in/berg-steve/",
+    "x": "",
+    "blog": "",
+    "website": "",
+    "bio": "Steve Berg is CVP & GM, Server CPU Cloud at AMD. He joins the Azure Cosmos DB Conf 2026 keynote as a featured guest.",
+    "session": {
+      "title": "Keynote Featured Guest",
+      "abstract": "Steve Berg from AMD joins the Azure Cosmos DB Conf 2026 keynote conversation on modern applications, AI, and data at scale."
+    }
+  },
+  {
     "slug": "eric-boyd",
     "name": "Eric Boyd",
     "role": "Founder & CEO",
@@ -115,6 +147,22 @@
     }
   },
   {
+    "slug": "kirill-gavrylyuk",
+    "name": "Kirill Gavrylyuk",
+    "role": "VP, Azure Cosmos DB",
+    "company": "Microsoft",
+    "img": "/img/speakers/kirill-g.jpg",
+    "linkedin": "https://www.linkedin.com/in/kirillgavrylyuk/",
+    "x": "",
+    "blog": "",
+    "website": "",
+    "bio": "Kirill Gavrylyuk leads Azure Cosmos DB at Microsoft and is the host of the Azure Cosmos DB Conf 2026 keynote.",
+    "session": {
+      "title": "Azure Cosmos DB Conf 2026 Keynote",
+      "abstract": "Kirill hosts the Azure Cosmos DB Conf 2026 keynote with featured guests from Vercel, OpenAI, Walmart, and AMD — a conversation with the builders behind some of today's most impactful platforms on modern applications, AI, and data at scale."
+    }
+  },
+  {
     "slug": "sudhanshu-khera",
     "name": "Sudhanshu Khera",
     "role": "Senior Product Manager",
@@ -161,6 +209,22 @@
     "session": {
       "title": "Beyond Vector Search: What RAG Actually Needs",
       "abstract": "Your AI agent is confidently serving wrong answers, and you don't even know it. Vector search is everyone's default for RAG, but ask for something specific and it quietly returns nonsense.\n\nIn this session, we'll take a working AI agent with MCP and a real database, and extend it with agentic RAG using Azure Cosmos DB hybrid search—vector plus full-text—so it actually retrieves what matters. You'll learn why the default approach breaks, how to fix it, and how to let the agent decide when to search instead of doing it blindly every time.\n\nLive code, live demo, patterns you can steal."
+    }
+  },
+  {
+    "slug": "jonathan-lee",
+    "name": "Jonathan Lee",
+    "role": "Member of Technical Staff",
+    "company": "OpenAI",
+    "img": "/img/speakers/jon-lee.jpg",
+    "linkedin": "https://www.linkedin.com/in/jonathan-lee-78824166/",
+    "x": "",
+    "blog": "",
+    "website": "",
+    "bio": "Jonathan Lee is a Member of Technical Staff at OpenAI. He joins the Azure Cosmos DB Conf 2026 keynote as a featured guest.",
+    "session": {
+      "title": "Keynote Featured Guest",
+      "abstract": "Jonathan Lee from OpenAI joins the Azure Cosmos DB Conf 2026 keynote conversation on modern applications, AI, and data at scale."
     }
   },
   {
@@ -226,6 +290,22 @@
     "session": {
       "title": "Designing Cost-Efficient, High-Scale Systems with Azure Cosmos DB: Lessons from Production",
       "abstract": "Azure Cosmos DB gives developers incredible scale and flexibility, but without deliberate design, costs can spiral fast.\n\nIn this session, I'll walk through how we re-architected a real production system to dramatically reduce Azure Cosmos DB costs without sacrificing performance, availability, or developer velocity.\n\nThe session covers:\n- How poor partitioning and indexing silently inflate RU consumption\n- Practical data-modeling patterns that cut read/write costs\n- Strategic use of TTL, Change Feed, and data tiering\n- When not to use containers, indexing, or multi-region writes\n- How observability exposed hidden cost leaks\n\nThe session is demo-driven and grounded in real engineering decisions from high-volume, globally distributed systems. Attendees will leave with repeatable patterns they can apply immediately to their own Cosmos DB workloads."
+    }
+  },
+  {
+    "slug": "guillermo-rauch",
+    "name": "Guillermo Rauch",
+    "role": "CEO",
+    "company": "Vercel",
+    "img": "/img/speakers/guillermo-rauch.jpg",
+    "linkedin": "https://www.linkedin.com/in/rauchg/",
+    "x": "rauchg",
+    "blog": "",
+    "website": "https://vercel.com/",
+    "bio": "Guillermo Rauch is the CEO of Vercel and creator of Next.js. He joins the Azure Cosmos DB Conf 2026 keynote as a featured guest.",
+    "session": {
+      "title": "Keynote Featured Guest",
+      "abstract": "Guillermo Rauch, CEO of Vercel, joins the Azure Cosmos DB Conf 2026 keynote conversation on modern applications, AI, and data at scale."
     }
   },
   {
