@@ -15,7 +15,7 @@ import FaqSection from "./sections/FaqSection";
 import SpeakersSection from "./sections/SpeakersSection";
 
 const CONF_YEAR = "2026";
-const CONF_DATE_DISPLAY = "April 28 - 9:00 AM - 2:00 PM PST";
+const CONF_DATE_DISPLAY = "April 28 - 9:00 AM - 2:00 PM PDT";
 const CONF_DATE_LONG = "April 28, 2026";
 const CFP_URL = "https://aka.ms/CosmosConfCFP-site";
 
@@ -250,6 +250,14 @@ const ConfPage = () => {
                 Azure Cosmos DB Conf is a free virtual event featuring expert-led sessions, demos, and real-world
                 guidance on building globally distributed apps with Azure Cosmos DB.
               </p>
+              <p className={styles.introCopy}>
+                Explore the full document database family — <strong>Azure Cosmos DB</strong>,{" "}
+                <strong>Azure DocumentDB</strong>, and{" "}
+                <a href="https://github.com/microsoft/documentdb" target="_blank" rel="noopener noreferrer">
+                  open-source DocumentDB
+                </a>
+                , hosted by the <strong>Linux Foundation</strong>.
+              </p>
               <p className={styles.introCopySecondary}>
                 Join us on <strong>{CONF_DATE_LONG}</strong> for live content and on-demand sessions.
               </p>
@@ -263,6 +271,14 @@ const ConfPage = () => {
                 >
                   🔔 Register for updates
                 </a>
+                <a
+                  className={styles.introSecondaryButton}
+                  href="https://aka.ms/CosmosDBConfChallenge"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  🏆 Cloud Skills Challenge
+                </a>
                 <a className={styles.introTertiaryButton} href="#about">
                   ℹ️ Learn more
                 </a>
@@ -273,9 +289,9 @@ const ConfPage = () => {
 
         {showStream && <StreamSection confYear={CONF_YEAR} streamEmbedUrl={streamEmbedUrl} />}
 
-        {showAgenda && <AgendaSection confYear={CONF_YEAR} />}
-
         <NewsSection confYear={CONF_YEAR} />
+
+        {showAgenda && <AgendaSection confYear={CONF_YEAR} />}
 
         <SpeakersSection confYear={CONF_YEAR} />
 

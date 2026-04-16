@@ -1,5 +1,5 @@
 {
-  "showStream": false,
-  "showAgenda": false,
-  "streamEmbedUrl": null
+  "showStream": true,
+  "showAgenda": true,
+  "streamEmbedUrl": "https://www.youtube.com/embed/OdPFriVuKtU"
 }

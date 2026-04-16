@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import { useLocation } from '@docusaurus/router';
-import speakersData from '../conf/speakers2026.json';
+import speakersData from '../speakers2026.json';
 import styles from './Speaker.module.css';
 
 const xLogoLight = '/img/icons/x-logo-black.png';
@@ -70,7 +70,7 @@ export default function SpeakerDetail() {
         <div className={styles.notFound}>
           <h1>Speaker Not Found</h1>
           <p>We could not find that speaker. They may not have been announced yet.</p>
-          <Link className={styles.backBtn} to="/speakers">
+          <Link className={styles.backBtn} to="/conf/speakers">
             ← Back to Speakers
           </Link>
         </div>
@@ -85,7 +85,7 @@ export default function SpeakerDetail() {
     >
       <div className={styles.page}>
         <div className={styles.inner}>
-          <Link className={styles.backBtn} to="/speakers">
+          <Link className={styles.backBtn} to="/conf/speakers">
             ← Back to Speakers
           </Link>
 

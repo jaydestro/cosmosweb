@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import styles from './speakers.module.css';
-import speakersData from '../conf/speakers2026.json';
+import speakersData from '../speakers2026.json';
 
 interface Session {
   title: string;
@@ -55,7 +55,7 @@ export default function Speakers() {
             {speakers.map((speaker) => (
               <Link
                 key={speaker.slug}
-                to={`/speakers/Speaker?slug=${encodeURIComponent(speaker.slug)}`}
+                to={`/conf/speakers/Speaker?slug=${encodeURIComponent(speaker.slug)}`}
                 className={styles.card}
               >
                 <div className={styles.imgWrap}>
