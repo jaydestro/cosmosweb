@@ -98,7 +98,7 @@ const config: Config = {
 
   themeConfig: {
     // Default social preview image (must exist under /static).
-    image: 'img/conf/cosmos_conf_2026_card.jpg',
+    image: 'img/conf/AzureCosmosDBConf2026_Hero_Landscape.png',
     navbar: {
       title: 'Developer Home',
       logo: {
