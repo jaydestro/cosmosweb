@@ -241,14 +241,16 @@ const ConfPage = () => {
         </header>
 
         <section className={styles.introSection} aria-labelledby="conf-intro">
+          <div id="about" className={styles.sectionAnchor} />
           <div className={styles.introInner}>
             <div className={styles.introCard}>
               <h2 id="conf-intro" className={styles.introTitle}>
                 What is Azure Cosmos DB Conf?
               </h2>
               <p className={styles.introCopy}>
-                Azure Cosmos DB Conf is a free virtual event featuring expert-led sessions, demos, and real-world
-                guidance on building globally distributed apps with Azure Cosmos DB.
+                Join us for our 6th annual Azure Cosmos DB Conf — a free virtual developer event
+                co-hosted by Microsoft and the Azure Cosmos DB community, featuring expert-led sessions,
+                demos, and real-world guidance on building globally distributed apps.
               </p>
               <p className={styles.introCopy}>
                 Explore the full document database family — <strong>Azure Cosmos DB</strong>,{" "}
@@ -256,10 +258,13 @@ const ConfPage = () => {
                 <a href="https://github.com/microsoft/documentdb" target="_blank" rel="noopener noreferrer">
                   open-source DocumentDB
                 </a>
-                , hosted by the <strong>Linux Foundation</strong>.
+                , hosted by the <strong>Linux Foundation</strong>. Learn why it&apos;s the leading database
+                platform for the era of AI and modern app development through a dynamic mix of sessions
+                from Microsoft and community experts.
               </p>
               <p className={styles.introCopySecondary}>
-                Join us on <strong>{CONF_DATE_LONG}</strong> for live content and on-demand sessions.
+                Tune in for our engaging 5-hour live show on <strong>{CONF_DATE_LONG}</strong>, and
+                explore additional sessions on-demand. This is an event you won&apos;t want to miss!
               </p>
 
               <div className={styles.introActions}>
@@ -269,7 +274,7 @@ const ConfPage = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  🔔 Register for updates
+                  🔔 Register for Free
                 </a>
                 <a
                   className={styles.introSecondaryButton}
@@ -278,9 +283,6 @@ const ConfPage = () => {
                   rel="noopener noreferrer"
                 >
                   🏆 Cloud Skills Challenge
-                </a>
-                <a className={styles.introTertiaryButton} href="#about">
-                  ℹ️ Learn more
                 </a>
               </div>
             </div>
@@ -294,58 +296,6 @@ const ConfPage = () => {
         {showAgenda && <AgendaSection confYear={CONF_YEAR} />}
 
         <SpeakersSection confYear={CONF_YEAR} />
-
-        {/* ====== ABOUT SECTION (Figma frame 1:2) ====== */}
-        <section className={styles.aboutSection} aria-labelledby="about-heading">
-          <div id="about" className={styles.sectionAnchor} />
-          <div className={styles.aboutCard}>
-            <div className={styles.aboutCardInner}>
-              <div className={styles.aboutVisual} aria-hidden="true">
-                <img
-                  className={styles.aboutVisualLogo}
-                  src={useBaseUrl("/img/conf/about_left.png")}
-                  alt=""
-                  loading="lazy"
-                />
-              </div>
-
-              <div className={styles.aboutText}>
-                <h2 id="about-heading" className={styles.aboutTitle}>
-                  About the conference
-                </h2>
-                <div className={styles.aboutCopy}>
-                  <p>
-                    Join us for our 6th annual Azure Cosmos DB Conf, a free virtual developer event
-                    co-hosted by Microsoft and the Azure Cosmos DB community.
-                  </p>
-                  <p>
-                    Tune in to learn why Azure Cosmos DB—including Azure DocumentDB, the newly renamed
-                    vCore-based Azure Cosmos DB for NoSQL—is the leading database platform for the era
-                    of AI and modern app development. Dive into a dynamic mix of sessions from Microsoft
-                    and community experts, showcasing their innovative projects and breakthroughs.
-                  </p>
-                  <p>
-                    Join our engaging 5-hour live show on {CONF_DATE_LONG}, and explore additional
-                    sessions on-demand.
-                  </p>
-                  <p>This is an event you won't want to miss!</p>
-                </div>
-
-                {/* Registration button */}
-                <div className={styles.aboutActions}>
-                  <a
-                    className={styles.aboutRegisterButton}
-                    href="https://aka.ms/cosmosconfreg"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Register for Free!
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* ====== RESOURCES SECTION ====== */}
         <section className={styles.resourcesSection} aria-labelledby="resources-heading">

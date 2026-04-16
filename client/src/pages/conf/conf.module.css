@@ -550,6 +550,98 @@
   color: #ffffff;
 }
 
+.streamCountdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+  font-family: inherit;
+}
+
+.streamCountdownLabel {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #0078d4;
+}
+
+[data-theme='dark'] .streamCountdownLabel {
+  color: #4cc2ff;
+}
+
+.streamCountdownGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(72px, 1fr));
+  gap: 12px;
+  width: 100%;
+  max-width: 440px;
+}
+
+.streamCountdownUnit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 8px;
+  border-radius: 12px;
+  background: rgba(0, 120, 212, 0.08);
+  border: 1px solid rgba(0, 120, 212, 0.2);
+}
+
+[data-theme='dark'] .streamCountdownUnit {
+  background: rgba(76, 194, 255, 0.12);
+  border-color: rgba(76, 194, 255, 0.3);
+}
+
+.streamCountdownValue {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1;
+  color: #0078d4;
+  font-variant-numeric: tabular-nums;
+}
+
+[data-theme='dark'] .streamCountdownValue {
+  color: #ffffff;
+}
+
+.streamCountdownName {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #555;
+}
+
+[data-theme='dark'] .streamCountdownName {
+  color: #cfd3d8;
+}
+
+.streamCountdownLive {
+  margin: 4px 0 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #d13438;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .streamCountdownGrid {
+    grid-template-columns: repeat(4, minmax(56px, 1fr));
+    gap: 8px;
+  }
+
+  .streamCountdownValue {
+    font-size: 24px;
+  }
+
+  .streamCountdownName {
+    font-size: 10px;
+  }
+}
+
 [data-theme='dark'] .streamVideoFrame {
   background:
     linear-gradient(0deg, rgba(116.86, 116.86, 116.86, 0.2) 0%, rgba(116.86, 116.86, 116.86, 0.2) 100%),

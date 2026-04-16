@@ -154,12 +154,6 @@ const config: Config = {
               activeBaseRegex: '^$',
             },
             {
-              label: 'About Azure Cosmos DB Conf',
-              to: '/conf#about',
-              // Hash-only routes: never mark as active to avoid multiple active links.
-              activeBaseRegex: '^$',
-            },
-            {
               label: 'Register',
               href: 'https://aka.ms/cosmosconfreg',
             },
