@@ -174,10 +174,10 @@ const ConfPage = () => {
         />
         <meta
           property="og:image"
-          content="https://developer.azurecosmosdb.com/img/Cosmos_Conf_Main_Thumbnail.jpg?v=3"
+          content="https://developer.azurecosmosdb.com/img/conf/AzureCosmosDBConf2026_Hero_Landscape.png"
         />
         <meta property="og:image:alt" content="Azure Cosmos DB Conf 2026" />
-        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
 
@@ -190,7 +190,7 @@ const ConfPage = () => {
         />
         <meta
           name="twitter:image"
-          content="https://developer.azurecosmosdb.com/img/Cosmos_Conf_Main_Thumbnail.jpg?v=3"
+          content="https://developer.azurecosmosdb.com/img/conf/AzureCosmosDBConf2026_Hero_Landscape.png"
         />
       </Helmet>
 
