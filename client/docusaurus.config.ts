@@ -225,7 +225,7 @@ const config: Config = {
             },
             {
               label: 'Discord',
-              href: 'https://discord.gg/pczdC2SU',
+              href: 'https://discord.com/invite/microsoft-open-source',
             },
             {
               label: 'X',
