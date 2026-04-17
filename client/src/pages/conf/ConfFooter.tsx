@@ -124,7 +124,7 @@ export default function ConfFooter({ confYear = "2026" }: ConfFooterProps) {
               </a>
               <a
                 className={styles.confFooterLink}
-                href="https://discord.gg/pczdC2SU"
+                href="https://aka.ms/open-source-discord"
                 target="_blank"
                 rel="noopener noreferrer"
               >
