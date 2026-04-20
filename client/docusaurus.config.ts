@@ -123,6 +123,10 @@ const config: Config = {
               activeBaseRegex: '^/conf/?$',
               className: 'mobile-only',
             },
+            {
+              label: 'Register',
+              href: 'https://aka.ms/cosmosconfreg',
+            },
             ...(showStreamNav
               ? [
                   {
@@ -132,6 +136,11 @@ const config: Config = {
                   },
                 ]
               : []),
+            {
+              label: 'Cloud Skills Challenge',
+              to: '/conf#cloud-skills',
+              activeBaseRegex: '^$',
+            },
             {
               label: 'News',
               to: '/conf#news',
@@ -152,10 +161,6 @@ const config: Config = {
               label: 'Speakers',
               to: '/conf#speakers',
               activeBaseRegex: '^$',
-            },
-            {
-              label: 'Register',
-              href: 'https://aka.ms/cosmosconfreg',
             },
             {
               label: 'Resources',

@@ -405,5 +405,21 @@
       "title": "Importing Data into Azure Cosmos DB: Tools, Tradeoffs, and Capacity Planning",
       "abstract": "You have data somewhere else and need to get it into Azure Cosmos DB—fast, reliably, and without burning through your budget. This session compares your import options and shows how to plan and execute data migrations efficiently.\n\nWe'll cover:\n- Import tools and tradeoffs, including the Desktop Data Migration Tool, Azure Data Factory, and the Azure Cosmos DB Spark connector\n- Capacity planning and cost optimization, including estimating RU requirements and pre-scaling for faster ingestion\n- Post-import optimization techniques such as scaling throughput back down and partition merge\n- Best practices for error handling, retries, validation, and indexing during bulk loads\n\nEach tool includes a hands-on walkthrough with real data, highlighting the configuration settings that matter most for performance.\n\nWhat attendees will leave with:\n- A decision framework for choosing the right Azure Cosmos DB import tool\n- Capacity planning calculations for bulk data loads\n- Step-by-step guidance for executing efficient Azure Cosmos DB data migrations"
     }
+  },
+  {
+    "slug": "theo-van-kraay",
+    "name": "Theo van Kraay",
+    "role": "Principal Product Manager",
+    "company": "Microsoft",
+    "img": "/img/speakers/theo-van-kraay.jpg",
+    "linkedin": "https://www.linkedin.com/in/theo-van-kraay-3388b130/",
+    "x": "",
+    "blog": "",
+    "website": "",
+    "bio": "Theo is passionate about NoSQL and distributed computing. He joined Microsoft in 2017 and has been in the Cosmos DB Engineering team as a Program Manager since 2019. He currently focuses on AI, programmability, and developer experience for Azure Cosmos DB. He has a masters degree in Data Science from Dundee University, and lives in the UK with his wife, two boys, and ragcoon cat.",
+    "session": {
+      "title": "MultiCloudDB: Write Once. Run Anywhere.",
+      "abstract": "Modern cloud-native databases are powerful, but each comes with its own SDK, query language, and operational model. Moving between them often means rewriting large parts of your data access layer.\n\nIn this session, we introduce a sneak preview of MultiCloudDB for Java, a portable SDK that lets you write CRUD and query logic once and run it across Azure Cosmos DB, Amazon DynamoDB, and Google Cloud Spanner, with zero code changes. By switching a single configuration setting, you can move between providers without touching application code.\n\nWe will walk through the design of the SDK, including a portable query DSL that translates into native query languages, a capability model that surfaces what is truly portable, and a provider agnostic API built for real world applications. You will also see a live demo showing the same Java application running unchanged across multiple cloud databases.\n\nWhether you are building multi cloud systems, avoiding vendor lock in, or simplifying your data access layer, this session will show how to build once and stay portable without sacrificing the power or flexibility of cloud native databases."
+    }
   }
 ]
