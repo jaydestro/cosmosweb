@@ -290,7 +290,7 @@ const ConfPage = () => {
                 🏆 Cloud Skills Challenge
               </h2>
               <p className={styles.cloudSkillsSubtitle}>
-                Build &amp; Optimize Cloud-Native Apps with Azure Cosmos DB
+                Join the Cosmos DB Conf Skills Challenge
               </p>
               <p className={styles.introCopy}>
                 Build the skills to design, develop, and optimize globally distributed applications
