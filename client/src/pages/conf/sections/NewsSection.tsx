@@ -15,8 +15,8 @@ const slugify = (value: string) =>
 
 const NewsSection = ({ confYear }: NewsSectionProps) => {
   const [showAllNews, setShowAllNews] = useState(false);
-  // Only the latest (first) news item open by default.
-  const [expanded, setExpanded] = useState<Record<number, boolean>>({ 0: true });
+  // The top two news items are open by default.
+  const [expanded, setExpanded] = useState<Record<number, boolean>>({ 0: true, 1: true });
 
   const toggle = (index: number) => {
     setExpanded((prev) => ({ ...prev, [index]: !prev[index] }));
