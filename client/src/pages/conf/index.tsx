@@ -276,13 +276,87 @@ const ConfPage = () => {
                 >
                   🔔 Register for Free
                 </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ====== CLOUD SKILLS CHALLENGE SECTION ====== */}
+        <section className={styles.introSection} aria-labelledby="cloud-skills-heading">
+          <div id="cloud-skills" className={styles.sectionAnchor} />
+          <div className={styles.introInner}>
+            <div className={styles.introCard}>
+              <h2 id="cloud-skills-heading" className={styles.introTitle}>
+                🏆 Cloud Skills Challenge
+              </h2>
+              <p className={styles.cloudSkillsSubtitle}>
+                Build &amp; Optimize Cloud-Native Apps with Azure Cosmos DB
+              </p>
+              <p className={styles.introCopy}>
+                Build the skills to design, develop, and optimize globally distributed applications
+                with Azure Cosmos DB. Complete all modules in the{" "}
+                <strong>Cosmos DB Conf Skills Challenge {CONF_YEAR}</strong> to qualify for a{" "}
+                <strong>100% discount on a DP-420 Azure Cosmos DB Developer Specialty</strong>{" "}
+                certification exam voucher.
+              </p>
+              <p className={styles.introCopy}>
+                Finish the challenge and enter to win one of <strong>500 vouchers</strong> by submitting{" "}
                 <a
-                  className={styles.introSecondaryButton}
+                  href="https://aka.ms/CosmosDBSkillsChallengeSweepstakesEntry"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  the sweepstakes entry form
+                </a>{" "}
+                by <strong>May 8, 2026</strong>.
+              </p>
+
+              <ul className={styles.cloudSkillsPillars}>
+                <li className={styles.cloudSkillsPillar}>
+                  <span className={styles.cloudSkillsPillarIcon} aria-hidden="true">🏁</span>
+                  <div>
+                    <h3 className={styles.cloudSkillsPillarTitle}>Compete</h3>
+                    <p className={styles.cloudSkillsPillarCopy}>
+                      Benchmark your progress against friends and coworkers. It&apos;s always better when
+                      we learn together.
+                    </p>
+                  </div>
+                </li>
+                <li className={styles.cloudSkillsPillar}>
+                  <span className={styles.cloudSkillsPillarIcon} aria-hidden="true">📘</span>
+                  <div>
+                    <h3 className={styles.cloudSkillsPillarTitle}>Learn</h3>
+                    <p className={styles.cloudSkillsPillarCopy}>
+                      Increase your understanding with easy-to-read instruction and stay up on the
+                      bleeding-edge of technology.
+                    </p>
+                  </div>
+                </li>
+                <li className={styles.cloudSkillsPillar}>
+                  <span className={styles.cloudSkillsPillarIcon} aria-hidden="true">🚀</span>
+                  <div>
+                    <h3 className={styles.cloudSkillsPillarTitle}>Develop skills</h3>
+                    <p className={styles.cloudSkillsPillarCopy}>
+                      By the end of the challenge, you will have marketable skills to better yourself
+                      and your career.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+
+              <p className={styles.introCopySecondary}>
+                Check out the bottom of the Cloud Skills Challenge page for the leaderboard and full
+                details. Free to join — complete modules on your own schedule before, during, or after
+                the conference.
+              </p>
+              <div className={styles.introActions}>
+                <a
+                  className={styles.introPrimaryButton}
                   href="https://aka.ms/CosmosDBConfChallenge"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  🏆 Cloud Skills Challenge
+                  🏆 Join the Cloud Skills Challenge
                 </a>
               </div>
             </div>

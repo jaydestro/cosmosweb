@@ -336,22 +336,29 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 16px;
+  padding: 10px 18px;
   border-radius: 999px;
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 16px;
+  font-weight: 600;
   text-decoration: none;
   border: 1px solid transparent;
+  transition:
+    transform 120ms ease,
+    box-shadow 120ms ease,
+    background 120ms ease,
+    color 120ms ease;
 }
 
 .introPrimaryButton {
   background: #0078d4;
   color: #ffffff;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
 .introPrimaryButton:hover {
-  background: #106ebe;
+  background: #0067b8;
   color: #ffffff;
+  transform: translateY(-1px);
 }
 
 .introSecondaryButton {
@@ -394,6 +401,77 @@
 
 [data-theme='dark'] .introTertiaryButton:hover {
   background: #106ebe;
+}
+
+/* ========== CLOUD SKILLS CHALLENGE ========== */
+.cloudSkillsSubtitle {
+  margin: -8px 0 16px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #0d2e42;
+  letter-spacing: 0.1px;
+}
+
+[data-theme='dark'] .cloudSkillsSubtitle {
+  color: #7cc6ff;
+}
+
+.cloudSkillsPillars {
+  list-style: none;
+  margin: 20px 0 16px 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.cloudSkillsPillar {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(0, 120, 212, 0.15);
+}
+
+[data-theme='dark'] .cloudSkillsPillar {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(124, 198, 255, 0.2);
+}
+
+.cloudSkillsPillarIcon {
+  font-size: 24px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.cloudSkillsPillarTitle {
+  margin: 0 0 6px 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #0d2e42;
+}
+
+[data-theme='dark'] .cloudSkillsPillarTitle {
+  color: #ffffff;
+}
+
+.cloudSkillsPillarCopy {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(13, 46, 66, 0.85);
+}
+
+[data-theme='dark'] .cloudSkillsPillarCopy {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+@media (max-width: 768px) {
+  .cloudSkillsPillars {
+    grid-template-columns: 1fr;
+  }
 }
 
 .section {
@@ -1297,34 +1375,38 @@
 }
 
 .newsCardCopy :global(.keynote-cta-button) {
-  display: inline-block;
-  padding: 12px 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
   background: #0078d4;
   color: #ffffff !important;
-  font-weight: 700;
-  font-size: 15px;
+  font-weight: 600;
+  font-size: 16px;
   text-decoration: none !important;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 120, 212, 0.3);
-  transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  transition:
+    transform 120ms ease,
+    box-shadow 120ms ease,
+    background 120ms ease,
+    color 120ms ease;
 }
 
 .newsCardCopy :global(.keynote-cta-button:hover) {
-  background: #106ebe;
+  background: #0067b8;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 120, 212, 0.4);
   text-decoration: none !important;
 }
 
 [data-theme='dark'] .newsCardCopy :global(.keynote-cta-button) {
-  background: #4ab3ff;
-  color: #0a0a0a !important;
-  box-shadow: 0 2px 8px rgba(74, 179, 255, 0.3);
+  background: #0078d4;
+  color: #ffffff !important;
 }
 
 [data-theme='dark'] .newsCardCopy :global(.keynote-cta-button:hover) {
-  background: #6bc0ff;
-  box-shadow: 0 4px 12px rgba(74, 179, 255, 0.4);
+  background: #0067b8;
 }
 
 /* News hero image — for news items that lead with a feature graphic */
