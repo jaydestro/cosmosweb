@@ -119,6 +119,15 @@ const StreamSection = ({ confYear, streamEmbedUrl }: StreamSectionProps) => {
                   </div>
                 </div>
               )}
+
+              <a
+                className={styles.streamCtaButton}
+                href="https://aka.ms/CosmosConf2026Survey"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Azure Cosmos DB Conference 2026 Post-Event Survey
+              </a>
             </div>
           </div>
         </div>

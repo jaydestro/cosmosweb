@@ -81,20 +81,9 @@ const AgendaSection = ({ confYear }: AgendaSectionProps) => {
                     <p className={styles.agendaCardDescription}>{item.description}</p>
                   )}
                 </div>
-                {item.url ? (
-                  <a
-                    className={styles.agendaCardButton}
-                    href={item.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Watch now
-                  </a>
-                ) : (
-                  <span className={styles.agendaCardButton} aria-disabled="true">
-                    Coming soon
-                  </span>
-                )}
+                <span className={styles.agendaCardButton} aria-disabled="true">
+                  Coming soon
+                </span>
               </article>
             ))}
           </div>
@@ -113,20 +102,9 @@ const AgendaSection = ({ confYear }: AgendaSectionProps) => {
                     <p className={styles.agendaCardDescription}>{item.description}</p>
                   )}
                 </div>
-                {item.url ? (
-                  <a
-                    className={styles.agendaCardButton}
-                    href={item.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Watch now
-                  </a>
-                ) : (
-                  <span className={styles.agendaCardButton} aria-disabled="true">
-                    Coming soon
-                  </span>
-                )}
+                <span className={styles.agendaCardButton} aria-disabled="true">
+                  Coming soon
+                </span>
               </article>
             ))}
           </div>
