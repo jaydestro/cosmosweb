@@ -25,7 +25,7 @@
     "x": "",
     "blog": "",
     "website": "",
-    "bio": "Sid Anand is a Technical Fellow at Walmart.",
+    "bio": "I'm a Fellow at Walmart Global Tech, where I work on all things data — designing and building large-scale distributed systems and machine learning platforms that power Walmart's global data ecosystem.\n\nBefore joining Walmart, I served as the Chief Architect and Head of Engineering at Datazoom, where we built high-fidelity, low-latency streaming data systems to capture and process video telemetry in real time. Prior to that, I was PayPal's Chief Data Engineer, helping build systems, platforms, teams, and processes that enabled access to the hundreds of petabytes of data under PayPal's management.\n\nEarlier in my career, I held senior technical roles at Netflix, LinkedIn, eBay, and Etsy, among others. I earned my BS and MS degrees in Computer Science from Cornell University, where I focused on distributed systems.\n\nOutside of work, I advise early-stage companies and several technology conferences. Once an active committer on Apache Airflow, I'm now mostly a fan and supporter of the open-source community.",
     "session": {
       "title": "Session details coming soon",
       "abstract": "Sid Anand from Walmart will be delivering a 25-minute session at Azure Cosmos DB Conf 2026. Session details to be announced."
@@ -41,7 +41,7 @@
     "x": "",
     "blog": "",
     "website": "",
-    "bio": "Steve Berg is CVP & GM, Server CPU Cloud at AMD. He joins the Azure Cosmos DB Conf 2026 keynote as a featured guest.",
+    "bio": "Strategic and results-driven Business Development Executive with more than 29 years of international experience in the cloud computing infrastructure and semiconductor industries. Leads platform enablement for AMD hyperscale accounts, formerly ZT Systems. Lead strategic business planning, marketing, ecosystem, and portfolio development for Flex's Communications, Enterprise, and Cloud segments. Lead and managed all aspects of Intel's global cloud computing business, including top account management, sales, marketing, and product line management. Lead factory process and production engineering, manufacturing, and process control.",
     "session": {
       "title": "Keynote Featured Guest",
       "abstract": "Steve Berg from AMD joins the Azure Cosmos DB Conf 2026 keynote conversation on modern applications, AI, and data at scale."
@@ -156,7 +156,7 @@
     "x": "",
     "blog": "",
     "website": "",
-    "bio": "Kirill Gavrylyuk leads Azure Cosmos DB at Microsoft and is the host of the Azure Cosmos DB Conf 2026 keynote.",
+    "bio": "Product Leader with experience of leading and growing multiple large scale cloud services from inception to maturity. Responsibilities include product strategy, business strategy, product execution, and leading engineering teams to deliver global cloud services. 20 years of experience building cloud services, distributed systems, frameworks & tools. Few highlights:\n\n• Vice President for Azure Cosmos DB, lead product and engineering teams, starting with Cosmos DB launch in 2017\n• Founder of Azure Mobile Services, led the team from inception. Founding member of Azure Functions\n• Responsible for multiple other services on Azure including Notification Hubs, App Service Mobile Apps\n• Product Management Lead on point for Capptain acquisition/integration in Azure, led the Mobile Engagement team through integration\n• Led the product management team responsible for Windows Communication Foundation\n\nCurrent interests include cloud app platforms, mobility, IoT and big data.",
     "session": {
       "title": "Azure Cosmos DB Conf 2026 Keynote",
       "abstract": "Kirill hosts the Azure Cosmos DB Conf 2026 keynote with featured guests from Vercel, OpenAI, Walmart, and AMD — a conversation with the builders behind some of today's most impactful platforms on modern applications, AI, and data at scale."
@@ -221,7 +221,7 @@
     "x": "",
     "blog": "",
     "website": "",
-    "bio": "Jonathan Lee is a Member of Technical Staff at OpenAI. He joins the Azure Cosmos DB Conf 2026 keynote as a featured guest.",
+    "bio": "Jonathan Lee is a Member of Technical Staff at OpenAI, where he works on the infrastructure and systems that power OpenAI's frontier AI models and products. He joins the Azure Cosmos DB Conf 2026 keynote to share perspective on the data and infrastructure challenges of building AI at planetary scale.",
     "session": {
       "title": "Keynote Featured Guest",
       "abstract": "Jonathan Lee from OpenAI joins the Azure Cosmos DB Conf 2026 keynote conversation on modern applications, AI, and data at scale."
@@ -237,7 +237,7 @@
     "x": "aliuy8",
     "blog": "",
     "website": "",
-    "bio": "",
+    "bio": "Andrew Liu is a PM working on the Azure Cosmos DB team. He is passionate about enabling customers to deliver novel experiences, from building POCs to tackling new growth opportunities, through Azure's cloud-borne distributed database. Prior to joining Microsoft, Andrew worked as software engineer building mission-critical infrastructure for one of the world's largest e-commerce websites.",
     "session": {
       "title": "Behind the Scenes: How Azure Cosmos DB Runs Under the Hood",
       "abstract": "Ever wonder what actually happens between clicking \"Create\" in the portal and your database being ready to serve requests at planetary scale? In this session, we'll pull back the curtain on Azure Cosmos DB's internal architecture, from how we deploy our database engine onto hardware from partners like AMD in datacenters worldwide, to how we set up replica sets with quorum-based replication to deliver the high availability guarantees you depend on. We'll demystify how consistent hashing determines where your data lands and why choosing a good partition key matters so much. From there, we'll explore how we built the pay-per-request serverless model, demystifying what a Request Unit actually is under the covers. We'll also look at capabilities like RU pooling, which lets you pool throughput capacity across your workloads when running a fleet of Cosmos DB containers. We're ditching PowerPoint and going straight to the whiteboard for this one."
@@ -302,7 +302,7 @@
     "x": "rauchg",
     "blog": "",
     "website": "https://vercel.com/",
-    "bio": "Guillermo Rauch is the CEO of Vercel and creator of Next.js. He joins the Azure Cosmos DB Conf 2026 keynote as a featured guest.",
+    "bio": "I'm a software engineer and CEO of Vercel. I'm originally from Lanús, Buenos Aires, Argentina. I owe much of my career to the Web and Open Source.\n\nI spent my early teens advocating for and teaching people how to use Linux and later developed a passion for JavaScript and Web development.\n\nAfter joining the MooTools core team, I got my first full-time job as a frontend engineer at 18 years old and relocated to San Francisco, CA.\n\nI started my first company Cloudup in SF which was later acquired by Automattic, the company behind WordPress, to power their editing and site building technology.\n\nAfter being involved in creating numerous influential open source projects like Socket.IO and Mongoose, I saw the opportunity in creating tooling and cloud infrastructure to make the Web faster, with a focus on developer experience (DX).\n\nNext.js and Vercel were born. Our platform now helps power the online presence of companies like Washington Post, Porsche, Under Armour and Nintendo.",
     "session": {
       "title": "Keynote Featured Guest",
       "abstract": "Guillermo Rauch, CEO of Vercel, joins the Azure Cosmos DB Conf 2026 keynote conversation on modern applications, AI, and data at scale."

@@ -25,14 +25,14 @@
       "title": "Performance-Boosting Memory Patterns: Save Tokens, Cut Costs, Increase Speed",
       "description": "Three production-ready memory patterns in Azure Cosmos DB that help AI systems retain context without blowing up token usage.",
       "speakers": [{ "name": "Chander Dhall", "slug": "chander-dhall" }],
-      "url": ""
+      "url": "https://youtu.be/IdK3gm-dZ2k"
     },
     {
       "time": "10:45 AM",
       "title": "Cutting AI Agent Costs with Azure Cosmos DB: The Agent Memory Fabric",
       "description": "How to unify semantic caching, Change Feed coordination, and optimistic concurrency into a single Agent Memory Fabric that slashes multi-agent costs.",
       "speakers": [{ "name": "Farah Abdou", "slug": "farah-abdou" }],
-      "url": ""
+      "url": "https://youtu.be/Wo34Trg0Wyg"
     },
     {
       "time": "11:10 AM",
@@ -46,7 +46,7 @@
       "title": "Mastering the Azure Cosmos DB Change Feed: Patterns, Scaling, and Real-World Architectures",
       "description": "A deep dive into Change Feed internals, consumption models, lease management, and how to debug and scale it in production.",
       "speakers": [{ "name": "Justine Cocchi", "slug": "justine-cocchi" }],
-      "url": ""
+      "url": "https://youtu.be/kFqcImlqYYs"
     },
     {
       "time": "12:00 PM",
@@ -67,14 +67,14 @@
       "title": "Behind the Scenes: How Azure Cosmos DB Runs Under the Hood",
       "description": "A whiteboard walkthrough of Azure Cosmos DB's internals — replica sets, consistent hashing, Request Units, and RU pooling across a global fleet.",
       "speakers": [{ "name": "Andrew Liu", "slug": "andrew-liu" }],
-      "url": ""
+      "url": "https://youtu.be/6POmAm--Kgk"
     },
     {
       "time": "1:30 PM",
       "title": "Data Modeling Decisions That Make or Break Your Cosmos DB Application",
       "description": "Strategies for partition keys, schema design, storage estimation, and managing cross-partition queries before the choices become painful to fix.",
       "speakers": [{ "name": "Hasan Savran", "slug": "hasan-savran" }],
-      "url": ""
+      "url": "https://youtu.be/FhgewWmQyBM"
     }
   ],
   "onDemand": [
@@ -82,43 +82,43 @@
       "title": "Distributed Locks, Sagas, and Coordination with Cosmos DB",
       "description": "Use Cosmos DB as a coordination layer for locks, leases, leader election, and saga orchestration — and understand the consistency tradeoffs at scale.",
       "speakers": [{ "name": "Eric Boyd", "slug": "eric-boyd" }],
-      "url": ""
+      "url": "https://youtu.be/wyBJmeXqbg8"
     },
     {
       "title": "From Rising RU Costs to Stable Performance: A Practical Cosmos DB Case Study",
       "description": "A real-world walkthrough of diagnosing hot partitions, over-indexing, and throughput issues — and the optimizations that restored stable performance.",
       "speakers": [{ "name": "Anurag Dutt", "slug": "anurag-dutt" }],
-      "url": ""
+      "url": "https://youtu.be/YyV2gX9nNN4"
     },
     {
       "title": "Know your user: Identity-aware MCP servers with Cosmos DB",
       "description": "Build a Python MCP server that authenticates users via Entra ID and stores per-user data securely in Azure Cosmos DB.",
       "speakers": [{ "name": "Pamela Fox", "slug": "pamela-fox" }],
-      "url": ""
+      "url": "https://youtu.be/YsYzykMRvgA"
     },
     {
       "title": "Securing Azure Cosmos DB: The Right Way",
       "description": "A cohesive framework for identity-first access, isolation, encryption, and data protection in cloud data workloads — built from real customer scenarios.",
       "speakers": [{ "name": "Sudhanshu Khera", "slug": "sudhanshu-khera" }],
-      "url": ""
+      "url": "https://youtu.be/F4EqbcR80TA"
     },
     {
       "title": "Real-Time Fraud Detection at Scale: Event Sourcing with Azure Cosmos DB",
       "description": "Combine event sourcing, Change Feed, and event-driven integration to build an auditable real-time fraud detection system across heterogeneous data sources.",
       "speakers": [{ "name": "Divakar Kumar", "slug": "divakar-kumar" }],
-      "url": ""
+      "url": "https://youtu.be/2x4Gv4GX3Ao"
     },
     {
       "title": "Beyond Vector Search: What RAG Actually Needs",
       "description": "Extend a working AI agent with agentic RAG using Cosmos DB hybrid search — vector plus full-text — so it retrieves what actually matters.",
       "speakers": [{ "name": "Yohan Lasorsa", "slug": "yohan-lasorsa" }],
-      "url": ""
+      "url": "https://youtu.be/nqaUuSoB6I0"
     },
     {
       "title": "From MongoDB to Azure DocumentDB: A Migration Playbook",
       "description": "A tour of migration options and tradeoffs for moving MongoDB workloads to Azure DocumentDB.",
       "speakers": [{ "name": "Sandeep Nair", "slug": "sandeep-nair" }],
-      "url": ""
+      "url": "https://youtu.be/OYtmeH0TSm4"
     },
     {
       "title": "Designing Cost-Efficient, High-Scale Systems with Azure Cosmos DB: Lessons from Production",
@@ -142,7 +142,7 @@
       "title": "Designing High-Scale Event-Driven Microservices with Azure Cosmos DB",
       "description": "Production patterns for building loosely coupled, event-driven microservices with Cosmos DB Change Feed as the domain event backbone.",
       "speakers": [{ "name": "Tural Suleymani", "slug": "tural-suleymani" }],
-      "url": ""
+      "url": "https://youtu.be/i4vUJSmFp9U"
     },
     {
       "title": "Memory for Your Agents: Building Chat History and Semantic Caching with Azure Cosmos DB",
