@@ -1,20 +1,50 @@
 import React from "react";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import styles from "../conf.module.css";
+import agendaData from "../agenda.json";
 
 interface AgendaSectionProps {
   confYear: string;
 }
 
-const placeholderAgenda = [
-  { time: "9:00 AM", title: "Opening keynote", speaker: "Speakers to be announced" },
-  { time: "TBA", title: "Session 1", speaker: "Speakers to be announced" },
-];
+interface AgendaSpeaker {
+  name: string;
+  slug: string;
+}
 
-const placeholderOnDemand = [
-  { title: "On-demand session 1", speaker: "Speakers to be announced" },
-  { title: "On-demand session 2", speaker: "Speakers to be announced" },
-];
+interface AgendaItem {
+  time?: string;
+  title: string;
+  description?: string;
+  speakers: AgendaSpeaker[];
+  url?: string;
+}
+
+const { live: liveAgenda, onDemand: onDemandAgenda } = agendaData as {
+  live: AgendaItem[];
+  onDemand: AgendaItem[];
+};
+
+const handleSpeakerClick = (slug: string) => (e: React.MouseEvent) => {
+  e.preventDefault();
+  const target = `#speaker/${slug}`;
+  if (window.location.hash === target) {
+    // Force re-trigger even when the hash hasn't changed.
+    window.dispatchEvent(new HashChangeEvent("hashchange"));
+  } else {
+    window.location.hash = target;
+  }
+};
+
+const renderSpeakers = (speakers: AgendaSpeaker[]) =>
+  speakers.map((speaker, i) => (
+    <React.Fragment key={speaker.slug}>
+      {i > 0 && ", "}
+      <a href={`#speaker/${speaker.slug}`} onClick={handleSpeakerClick(speaker.slug)}>
+        {speaker.name}
+      </a>
+    </React.Fragment>
+  ));
 
 const AgendaSection = ({ confYear }: AgendaSectionProps) => {
   return (
@@ -33,42 +63,70 @@ const AgendaSection = ({ confYear }: AgendaSectionProps) => {
             Event agenda
           </h2>
           <p className={styles.newsDescription}>
-            The full agenda for Azure Cosmos DB Conf {confYear} is coming soon. Check back for session times and speaker details.
+            Join us live on April 28, 2026 from 9:00 AM to 2:00 PM PT. All times shown in Pacific Time. Session recordings will be available on demand after the event.
           </p>
         </div>
 
         <div className={styles.newsCardsColumn}>
           <div className={styles.agendaCards}>
-            {placeholderAgenda.map((item, index) => (
+            {liveAgenda.map((item, index) => (
               <article key={index} className={styles.agendaCard}>
                 <div className={styles.agendaTime}>
                   <span>{item.time}</span>
                 </div>
                 <div className={styles.agendaCardContent}>
                   <h3 className={styles.agendaCardTitle}>{item.title}</h3>
-                  <p className={styles.agendaCardSpeaker}>{item.speaker}</p>
+                  <p className={styles.agendaCardSpeaker}>{renderSpeakers(item.speakers)}</p>
+                  {item.description && (
+                    <p className={styles.agendaCardDescription}>{item.description}</p>
+                  )}
                 </div>
-                <span className={styles.agendaCardButton} aria-disabled="true">
-                  Watch now
-                </span>
+                {item.url ? (
+                  <a
+                    className={styles.agendaCardButton}
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Watch now
+                  </a>
+                ) : (
+                  <span className={styles.agendaCardButton} aria-disabled="true">
+                    Coming soon
+                  </span>
+                )}
               </article>
             ))}
           </div>
 
           <h3 className={styles.agendaOnDemandHeading}>Exclusive On-Demand Sessions</h3>
           <div className={styles.agendaCards}>
-            {placeholderOnDemand.map((item, index) => (
+            {onDemandAgenda.map((item, index) => (
               <article key={`ondemand-${index}`} className={styles.agendaCard}>
                 <div className={styles.agendaTime}>
                   <span>On-Demand</span>
                 </div>
                 <div className={styles.agendaCardContent}>
                   <h3 className={styles.agendaCardTitle}>{item.title}</h3>
-                  <p className={styles.agendaCardSpeaker}>{item.speaker}</p>
+                  <p className={styles.agendaCardSpeaker}>{renderSpeakers(item.speakers)}</p>
+                  {item.description && (
+                    <p className={styles.agendaCardDescription}>{item.description}</p>
+                  )}
                 </div>
-                <span className={styles.agendaCardButton} aria-disabled="true">
-                  Watch now
-                </span>
+                {item.url ? (
+                  <a
+                    className={styles.agendaCardButton}
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Watch now
+                  </a>
+                ) : (
+                  <span className={styles.agendaCardButton} aria-disabled="true">
+                    Coming soon
+                  </span>
+                )}
               </article>
             ))}
           </div>

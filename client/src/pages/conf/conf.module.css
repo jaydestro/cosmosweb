@@ -1639,9 +1639,9 @@
     rgba(255, 255, 255, 0.7) 0%,
     rgba(255, 255, 255, 0.3) 100%
   );
-  outline: 2px solid #ffffff;
+  outline: 2px solid rgba(0, 120, 212, 0.15);
   outline-offset: -2px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.18);
 }
 
 [data-theme='dark'] .agendaCard {
@@ -1699,6 +1699,19 @@
 
 [data-theme="dark"] .agendaCardSpeaker {
   color: #ffffff;
+}
+
+.agendaCardDescription {
+  margin: 4px 0 0;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #444;
+  overflow-wrap: break-word;
+}
+
+[data-theme="dark"] .agendaCardDescription {
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .agendaSpeakerLink {
@@ -1826,6 +1839,10 @@
 
   .agendaCards {
     gap: 12px;
+  }
+
+  .agendaCardDescription {
+    font-size: 14px;
   }
 
   .agendaCard {

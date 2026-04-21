@@ -266,3 +266,5 @@ paket-files/
 __pycache__/
 *.pyc
 /cosmosweb/appsettings.Development.json
+youtube-session-descriptions.txt
+youtube-session-descriptions.md
