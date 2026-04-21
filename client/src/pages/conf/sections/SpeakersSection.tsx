@@ -34,14 +34,19 @@ const SpeakersSection = ({ confYear }: SpeakersSectionProps) => {
   const [selected, setSelected] = useState<Speaker | null>(null);
   const modalRef = useRef<HTMLDivElement>(null);
 
-  // On mount, open modal if URL hash matches #speaker/<slug>
+  // Open modal when URL hash matches #speaker/<slug> — both on mount and live
+  // when other sections (e.g. Agenda) link to #speaker/<slug>.
   useEffect(() => {
-    const hash = window.location.hash;
-    const match = hash.match(/^#speaker\/(.+)$/);
-    if (match) {
+    const openFromHash = () => {
+      const match = window.location.hash.match(/^#speaker\/(.+)$/);
+      if (!match) return;
       const speaker = speakers.find((s) => s.slug === match[1]);
       if (speaker) setSelected(speaker);
-    }
+    };
+
+    openFromHash();
+    window.addEventListener("hashchange", openFromHash);
+    return () => window.removeEventListener("hashchange", openFromHash);
   }, []);
 
   const openSpeaker = (speaker: Speaker) => {

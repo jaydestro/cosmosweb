@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "@docusaurus/Link";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import styles from "../conf.module.css";
 import agendaData from "../agenda.json";
@@ -26,13 +25,24 @@ const { live: liveAgenda, onDemand: onDemandAgenda } = agendaData as {
   onDemand: AgendaItem[];
 };
 
+const handleSpeakerClick = (slug: string) => (e: React.MouseEvent) => {
+  e.preventDefault();
+  const target = `#speaker/${slug}`;
+  if (window.location.hash === target) {
+    // Force re-trigger even when the hash hasn't changed.
+    window.dispatchEvent(new HashChangeEvent("hashchange"));
+  } else {
+    window.location.hash = target;
+  }
+};
+
 const renderSpeakers = (speakers: AgendaSpeaker[]) =>
   speakers.map((speaker, i) => (
     <React.Fragment key={speaker.slug}>
       {i > 0 && ", "}
-      <Link to={`/conf/speakers/Speaker?slug=${encodeURIComponent(speaker.slug)}`}>
+      <a href={`#speaker/${speaker.slug}`} onClick={handleSpeakerClick(speaker.slug)}>
         {speaker.name}
-      </Link>
+      </a>
     </React.Fragment>
   ));
 
