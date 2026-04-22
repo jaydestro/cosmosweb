@@ -15,8 +15,8 @@
     },
     {
       "time": "9:50 AM",
-      "title": "Featured Session",
-      "description": "Sid Anand, Technical Fellow at Walmart, delivers a featured session — details coming soon.",
+      "title": "Cosmos DB Best Practices — A Lesson from Spacely Sprockets",
+      "description": "Sid Anand, Technical Fellow at Walmart, uses the Jetsons' Spacely Sprockets as a fun lens for the best practices behind always-on, low-latency, cost-efficient Cosmos DB apps.",
       "speakers": [{ "name": "Sid Anand", "slug": "sid-anand" }],
       "url": ""
     },
