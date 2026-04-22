@@ -28,6 +28,30 @@ interface SpeakersSectionProps {
   confYear: string;
 }
 
+// Pick a topic emoji from the session title. Falls back to 🎤.
+const getTopicEmoji = (title: string | undefined): string => {
+  if (!title) return "🎤";
+  const t = title.toLowerCase();
+  if (/keynote|featured/.test(t)) return "🎤";
+  if (/spacely|best practices/.test(t)) return "🚀";
+  if (/behind the scenes|under the hood|architecture/.test(t)) return "🏗️";
+  if (/distributed lock|saga|coordination/.test(t)) return "🔒";
+  if (/change feed/.test(t)) return "🔄";
+  if (/query|index/.test(t)) return "🔍";
+  if (/fraud|event sourc/.test(t)) return "⚡";
+  if (/microservice|event-driven/.test(t)) return "📡";
+  if (/migrat/.test(t)) return "🔀";
+  if (/import/.test(t)) return "📥";
+  if (/mcp|identity|security|secur/.test(t)) return "🛡️";
+  if (/rag|vector|hybrid search/.test(t)) return "🧭";
+  if (/memory|agent|llm|\bai\b/.test(t)) return "🤖";
+  if (/multi.?cloud|any cloud|one codebase/.test(t)) return "☁️";
+  if (/cost|ru\b/.test(t)) return "💰";
+  if (/data model|modeling/.test(t)) return "🗂️";
+  if (/dev(elopment)? env|environment|copilot|tool/.test(t)) return "🛠️";
+  return "🎤";
+};
+
 const SpeakersSection = ({ confYear }: SpeakersSectionProps) => {
   const allSpeakers: Speaker[] = speakersData as unknown as Speaker[];
   const speakers = allSpeakers.filter((s) => s.confirmed !== false);
@@ -229,6 +253,95 @@ const SpeakersSection = ({ confYear }: SpeakersSectionProps) => {
                 <p className={styles.speakerModalBioText}>{selected.bio}</p>
               </div>
             )}
+
+            {(() => {
+              const shareHash = `#speaker/${selected.slug}`;
+              const shareUrl =
+                typeof window !== "undefined"
+                  ? `${window.location.origin}${window.location.pathname}${shareHash}`
+                  : shareHash;
+              const sessionTitle = selected.session?.title;
+              const roleCompany = [selected.role, selected.company].filter(Boolean).join(", ");
+              const topicEmoji = getTopicEmoji(sessionTitle);
+              // Short-form for X (keep under ~240 chars before URL)
+              const twitterText = sessionTitle
+                ? `${topicEmoji} Catch ${selected.name}${roleCompany ? ` (${roleCompany})` : ""} at #AzureCosmosDBConf ${confYear}: "${sessionTitle}"`
+                : `${topicEmoji} Catch ${selected.name}${roleCompany ? ` (${roleCompany})` : ""} at #AzureCosmosDBConf ${confYear}.`;
+              // Longer-form for LinkedIn
+              const linkedInText = sessionTitle
+                ? `${topicEmoji} I'm looking forward to ${selected.name}${roleCompany ? ` (${roleCompany})` : ""} at Azure Cosmos DB Conf ${confYear} — session: "${sessionTitle}". Free, virtual, April 28. #AzureCosmosDBConf #AzureCosmosDB`
+                : `${topicEmoji} I'm looking forward to ${selected.name}${roleCompany ? ` (${roleCompany})` : ""} at Azure Cosmos DB Conf ${confYear}. Free, virtual, April 28. #AzureCosmosDBConf #AzureCosmosDB`;
+              const emailSubject = sessionTitle
+                ? `${selected.name} at Azure Cosmos DB Conf ${confYear} — ${sessionTitle}`
+                : `${selected.name} at Azure Cosmos DB Conf ${confYear}`;
+              const emailBody = `${linkedInText}\n\n${shareUrl}`;
+              const encodedUrl = encodeURIComponent(shareUrl);
+              const twitterUrl = `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodeURIComponent(twitterText)}`;
+              const linkedInUrl = `https://www.linkedin.com/feed/?shareActive=true&text=${encodeURIComponent(
+                `${linkedInText}\n\n${shareUrl}`
+              )}`;
+              const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
+              const mailUrl = `mailto:?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+              const copyLink = (e: React.MouseEvent<HTMLButtonElement>) => {
+                e.preventDefault();
+                if (typeof window === "undefined" || !navigator.clipboard) return;
+                navigator.clipboard.writeText(shareUrl).catch(() => {});
+              };
+              return (
+                <div className={styles.newsCardShareRow} aria-label="Share this speaker">
+                  <span className={styles.newsCardShareLabel}>Share:</span>
+                  <a
+                    className={styles.newsCardShareButton}
+                    href={twitterUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Share on X (Twitter)"
+                    aria-label="Share on X"
+                  >
+                    𝕏
+                  </a>
+                  <a
+                    className={styles.newsCardShareButton}
+                    href={linkedInUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Share on LinkedIn"
+                    aria-label="Share on LinkedIn"
+                  >
+                    in
+                  </a>
+                  <a
+                    className={styles.newsCardShareButton}
+                    href={facebookUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Share on Facebook"
+                    aria-label="Share on Facebook"
+                  >
+                    f
+                  </a>
+                  <a
+                    className={styles.newsCardShareButton}
+                    href={mailUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Share by email"
+                    aria-label="Share by email"
+                  >
+                    ✉
+                  </a>
+                  <button
+                    type="button"
+                    className={styles.newsCardShareButton}
+                    onClick={copyLink}
+                    title="Copy link to this speaker"
+                    aria-label="Copy link"
+                  >
+                    🔗
+                  </button>
+                </div>
+              );
+            })()}
           </div>
         </div>
       )}
