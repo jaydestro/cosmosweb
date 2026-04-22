@@ -27,8 +27,8 @@
     "website": "",
     "bio": "I'm a Fellow at Walmart Global Tech, where I work on all things data — designing and building large-scale distributed systems and machine learning platforms that power Walmart's global data ecosystem.\n\nBefore joining Walmart, I served as the Chief Architect and Head of Engineering at Datazoom, where we built high-fidelity, low-latency streaming data systems to capture and process video telemetry in real time. Prior to that, I was PayPal's Chief Data Engineer, helping build systems, platforms, teams, and processes that enabled access to the hundreds of petabytes of data under PayPal's management.\n\nEarlier in my career, I held senior technical roles at Netflix, LinkedIn, eBay, and Etsy, among others. I earned my BS and MS degrees in Computer Science from Cornell University, where I focused on distributed systems.\n\nOutside of work, I advise early-stage companies and several technology conferences. Once an active committer on Apache Airflow, I'm now mostly a fan and supporter of the open-source community.",
     "session": {
-      "title": "Session details coming soon",
-      "abstract": "Sid Anand from Walmart will be delivering a 25-minute session at Azure Cosmos DB Conf 2026. Session details to be announced."
+      "title": "Cosmos DB Best Practices — A Lesson from Spacely Sprockets",
+      "abstract": "If you are a fan of 80s cartoons and distributed data systems, this talk is for you. George Jetson is tasked with building an E-commerce site for his company, Spacely Sprockets. As you may recall, Spacely Sprockets is owned by one Mr. Cosmo G. Spacely. Mr. Spacely is a tyrant of a boss in that he wants to maximize profits through E-commerce. This means that his site needs to always be up, while serving customer requests at low latency to all corners of the galaxy where customers need sprockets! To maximize his profit and captivate customers, Mr. Spacely will need to run a tight ship, saving money on his tech stack. George, a humble but hard-working software engineer has happened across Cosmos DB. Will it solve his company's needs? Come to this talk to find out."
     }
   },
   {
