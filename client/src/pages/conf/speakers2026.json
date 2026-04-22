@@ -131,6 +131,22 @@
     }
   },
   {
+    "slug": "mick-feller",
+    "name": "Mick Feller",
+    "role": "Distinguished Software Engineer",
+    "company": "The ODP Corporation",
+    "img": "/img/speakers/mick-feller.jpg",
+    "linkedin": "https://www.linkedin.com/in/mickfeller",
+    "x": "",
+    "blog": "",
+    "website": "",
+    "bio": "Passionate software engineering leader, with hands on skills in numerous technologies.",
+    "session": {
+      "title": "Customer Testimonial",
+      "abstract": "Mick Feller shares how The ODP Corporation (Office Depot) built a homegrown enterprise AI app — the Personal Assistant — on Azure Cosmos DB, combining time-series analytics with HR profile storage to give AI models richer context, while doubling usage year over year with hands-off scaling and fine-grained cost control."
+    }
+  },
+  {
     "slug": "pamela-fox",
     "name": "Pamela Fox",
     "role": "Principal Cloud Advocate (Python)",
@@ -144,6 +160,22 @@
     "session": {
       "title": "Know your user: Identity-aware MCP servers with Cosmos DB",
       "abstract": "Model Context Protocol (MCP) enables AI agents to securely access external data and services, but how can MCP servers store per-user data when multiple users share the same server?\n\nIn this session, we'll build a Python MCP server that authenticates users via Entra ID and stores their data in Azure Cosmos DB. I will walk through how to integrate OAuth with the FastMCP framework, use the Cosmos DB Python SDK, design partition keys for efficient per-user data isolation, and implement role-based access using Microsoft Graph group membership. I'll also share development tips when working with Cosmos DB: using the VS Code extension to explore data, chatting in GitHub Copilot with the data via the Cosmos MCP server, and empowering Copilot with agent skills to align the server code with Cosmos DB best practices.\n\nWalk away with a production-ready pattern for building authenticated MCP servers that keep each user's data private and secure."
+    }
+  },
+  {
+    "slug": "johnny-halife",
+    "name": "Johnny Halife",
+    "role": "Partner",
+    "company": "SOUTHWORKS",
+    "img": "/img/speakers/johnny.jpg",
+    "linkedin": "https://www.linkedin.com/in/johnnyhalife-engineering",
+    "x": "",
+    "blog": "",
+    "website": "https://www.southworks.com/",
+    "bio": "Johnny Halife is a partner at SOUTHWORKS, a global software development scaleup that accelerates value for organisations and people. With over 17 years of experience in the IT software and services industry, he leads and delivers web applications and agile projects for clients across various sectors and regions, such as Microsoft, Warner Media, and Riot Games. He is also an official member of the Forbes Business Council, an invitation-only community for successful business leaders and entrepreneurs, where he shares his insights and expertise on innovation, technology, and growth.\n\nOutside of his leadership role at SOUTHWORKS, Johnny is the founder of MURAL, a San Francisco-based startup that enables teams to collaborate visually and creatively. He served as the chief technology officer of MURAL from 2012 to 2017, overseeing the product development and innovation. Johnny is passionate about design thinking, emerging technologies, and entrepreneurship, and has mentored and coached several startups and organisations, such as Startup Weekend, Microsoft Azure Accelerator, and IDEO U. He holds multiple certifications from IDEO U and AWS, and has studied computer science and software engineering at ORT Argentina and Universidad del CEMA.",
+    "session": {
+      "title": "Customer Testimonial: SOUTHWORKS",
+      "abstract": "Johnny Halife shares how SOUTHWORKS uses Azure Cosmos DB as the operational backbone for cloud-native applications they build for customers — real-time user context, event-driven systems, faster delivery, and consistent performance without reworking the data layer."
     }
   },
   {

@@ -14,6 +14,13 @@
       "url": ""
     },
     {
+      "time": "9:48 AM",
+      "title": "Customer Testimonial: The ODP Corporation (Office Depot) | Mick Feller",
+      "description": "Mick Feller, Distinguished Software Engineer at The ODP Corporation (Office Depot), on powering an enterprise AI Personal Assistant with Azure Cosmos DB.",
+      "speakers": [{ "name": "Mick Feller", "slug": "mick-feller" }],
+      "url": "https://youtu.be/r8V5PAeD4ME"
+    },
+    {
       "time": "9:50 AM",
       "title": "Cosmos DB Best Practices — A Lesson from Spacely Sprockets",
       "description": "Sid Anand, Technical Fellow at Walmart, uses the Jetsons' Spacely Sprockets as a fun lens for the best practices behind always-on, low-latency, cost-efficient Cosmos DB apps.",
@@ -39,7 +46,7 @@
       "title": "MultiCloudDB: Write Once. Run Anywhere.",
       "description": "A sneak preview of a portable Java SDK that runs unchanged across Azure Cosmos DB, Amazon DynamoDB, and Google Cloud Spanner.",
       "speakers": [{ "name": "Theo van Kraay", "slug": "theo-van-kraay" }],
-      "url": ""
+      "url": "https://youtu.be/j6RgAfwwD30"
     },
     {
       "time": "11:30 AM",
@@ -54,6 +61,13 @@
       "description": "Build a retail store database once with MongoDB-compatible APIs and deploy it unchanged on-prem via Kubernetes and fully managed on Azure.",
       "speakers": [{ "name": "Khelan Modi", "slug": "khelan-modi" }],
       "url": ""
+    },
+    {
+      "time": "12:23 PM",
+      "title": "Customer Testimonial: SOUTHWORKS | Johnny Halife",
+      "description": "Johnny Halife, Partner at SOUTHWORKS, on using Azure Cosmos DB as the operational backbone for cloud-native, event-driven customer builds.",
+      "speakers": [{ "name": "Johnny Halife", "slug": "johnny-halife" }],
+      "url": "https://youtu.be/Ay1q7mVOx-c"
     },
     {
       "time": "12:25 PM",
@@ -124,19 +138,19 @@
       "title": "Designing Cost-Efficient, High-Scale Systems with Azure Cosmos DB: Lessons from Production",
       "description": "Repeatable data-modeling, TTL, Change Feed, and observability patterns that cut Cosmos DB costs without sacrificing performance or velocity.",
       "speakers": [{ "name": "Patrick Oguaju", "slug": "patrick-oguaju" }],
-      "url": ""
+      "url": "https://youtu.be/0jKYbTHTJ5A"
     },
     {
       "title": "Setting Up Your Azure Cosmos DB Development Environment (and Supercharging It with AI)",
       "description": "A complete Cosmos DB dev workflow — emulator, testing, CI/CD — supercharged with context files and prompting techniques for AI coding assistants.",
       "speakers": [{ "name": "Sajeetharan Sinnathurai", "slug": "sajeetharan-sinnathurai" }],
-      "url": ""
+      "url": "https://youtu.be/PrO_42ZC_1M"
     },
     {
       "title": "From JOINs to JSON: Migrating a Real-World ASP.NET App to Cosmos DB with GitHub Copilot",
       "description": "A prompt-by-prompt playbook for migrating AdventureWorks and an ASP.NET EF Core app to .NET 9 on Cosmos DB using GitHub Copilot and Agent Kit.",
       "speakers": [{ "name": "Sergiy Smyrnov", "slug": "sergiy-smyrnov" }],
-      "url": ""
+      "url": "https://youtu.be/zx9cBMB6rOg"
     },
     {
       "title": "Designing High-Scale Event-Driven Microservices with Azure Cosmos DB",
