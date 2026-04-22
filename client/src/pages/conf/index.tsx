@@ -295,20 +295,14 @@ const ConfPage = () => {
               <p className={styles.introCopy}>
                 Build the skills to design, develop, and optimize globally distributed applications
                 with Azure Cosmos DB. Complete all modules in the{" "}
-                <strong>Cosmos DB Conf Skills Challenge {CONF_YEAR}</strong> to qualify for a{" "}
-                <strong>100% discount on a DP-420 Azure Cosmos DB Developer Specialty</strong>{" "}
-                certification exam voucher.
+                <strong>Cosmos DB Conf Skills Challenge {CONF_YEAR}</strong> to prepare for the{" "}
+                <strong>Microsoft Certified: Azure Cosmos DB Developer Specialty (DP-420)</strong>{" "}
+                exam.
               </p>
               <p className={styles.introCopy}>
-                Finish the challenge and enter to win one of <strong>500 vouchers</strong> by submitting{" "}
-                <a
-                  href="https://aka.ms/CosmosDBSkillsChallengeSweepstakesEntry"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  the sweepstakes entry form
-                </a>{" "}
-                by <strong>May 8, 2026</strong>.
+                Eligible participants who complete the challenge may receive access to a discounted
+                exam voucher, while supplies last. Complete the challenge by{" "}
+                <strong>May 8, 2026</strong>.
               </p>
 
               <ul className={styles.cloudSkillsPillars}>
@@ -317,8 +311,8 @@ const ConfPage = () => {
                   <div>
                     <h3 className={styles.cloudSkillsPillarTitle}>Compete</h3>
                     <p className={styles.cloudSkillsPillarCopy}>
-                      Benchmark your progress against friends and coworkers. It&apos;s always better when
-                      we learn together.
+                      Benchmark your progress against peers and track your standing on the
+                      leaderboard.
                     </p>
                   </div>
                 </li>
@@ -327,8 +321,8 @@ const ConfPage = () => {
                   <div>
                     <h3 className={styles.cloudSkillsPillarTitle}>Learn</h3>
                     <p className={styles.cloudSkillsPillarCopy}>
-                      Increase your understanding with easy-to-read instruction and stay up on the
-                      bleeding-edge of technology.
+                      Build your understanding with guided modules covering modern application and
+                      AI patterns.
                     </p>
                   </div>
                 </li>
@@ -337,17 +331,16 @@ const ConfPage = () => {
                   <div>
                     <h3 className={styles.cloudSkillsPillarTitle}>Develop skills</h3>
                     <p className={styles.cloudSkillsPillarCopy}>
-                      By the end of the challenge, you will have marketable skills to better yourself
-                      and your career.
+                      Gain practical, job-ready experience you can apply immediately.
                     </p>
                   </div>
                 </li>
               </ul>
 
               <p className={styles.introCopySecondary}>
-                Check out the bottom of the Cloud Skills Challenge page for the leaderboard and full
-                details. Free to join — complete modules on your own schedule before, during, or after
-                the conference.
+                Check the Cloud Skills Challenge page for leaderboard details and full requirements.
+                Free to join and self-paced — complete modules on your own schedule before, during,
+                or after the conference.
               </p>
               <div className={styles.introActions}>
                 <a
