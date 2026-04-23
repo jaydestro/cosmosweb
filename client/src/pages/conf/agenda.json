@@ -77,6 +77,13 @@
       "url": ""
     },
     {
+      "time": "12:58 PM",
+      "title": "Community Spotlight: Big Data Energy | Jess Ramos",
+      "description": "Jess Ramos, founder of Big Data Energy Analytics and LinkedIn Top Voice in Data & AI, on building a community for 500,000+ data and tech professionals.",
+      "speakers": [{ "name": "Jess Ramos", "slug": "jess-ramos" }],
+      "url": ""
+    },
+    {
       "time": "1:00 PM",
       "title": "Behind the Scenes: How Azure Cosmos DB Runs Under the Hood",
       "description": "A whiteboard walkthrough of Azure Cosmos DB's internals — replica sets, consistent hashing, Request Units, and RU pooling across a global fleet.",
