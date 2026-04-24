@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import agendaData from "./agenda.json";
+import agendaData from "../pages/conf/agenda.json";
 
 // Videos become clickable on 2026-04-28 1:30 PM PDT (PDT = UTC-7 → 20:30 UTC).
 export const VIDEO_RELEASE_TIMESTAMP = Date.UTC(2026, 3, 28, 20, 30, 0);

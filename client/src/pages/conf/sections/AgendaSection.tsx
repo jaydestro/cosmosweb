@@ -2,7 +2,7 @@ import React from "react";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import styles from "../conf.module.css";
 import agendaData from "../agenda.json";
-import { useVideoReleased } from "../videoRelease";
+import { useVideoReleased } from "../../../conf/videoRelease";
 
 interface AgendaSectionProps {
   confYear: string;
