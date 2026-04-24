@@ -131,6 +131,22 @@
     }
   },
   {
+    "slug": "andrew-ruffin",
+    "name": "Andrew Ruffin",
+    "role": "Senior Product Manager",
+    "company": "AMD",
+    "img": "/img/speakers/andrew-ruffin.jpg",
+    "linkedin": "https://www.linkedin.com/in/andrewruffin/",
+    "x": "",
+    "blog": "",
+    "website": "",
+    "bio": "Experienced product, policy, and growth strategist with proven success in the high-stakes arenas of semiconductors and technology policy. Skilled in building alliances, finding new use cases and customers for emerging technologies, launching new software and hardware products, and managing teams. A translator and connector between business, technology, and policy with a commitment to continuous learning.",
+    "session": {
+      "title": "Powering Azure Cosmos DB with AMD EPYC",
+      "abstract": "Andrew Ruffin, Senior Product Manager at AMD, shares how modern AMD EPYC processors power Azure Cosmos DB across the globe — delivering up to 35% more performance and performance-per-dollar with the latest v7 generation, and feeding the dynamic scaling and elasticity features Cosmos DB users rely on every day."
+    }
+  },
+  {
     "slug": "mick-feller",
     "name": "Mick Feller",
     "role": "Distinguished Software Engineer",
@@ -413,7 +429,8 @@
     "img": "/img/speakers/tural-suleymani.jpg",
     "linkedin": "https://www.linkedin.com/in/tural-suleymani/",
     "x": "SuleymaniTural",
-    "blog": "https://www.youtube.com/@TuralSuleymaniTech",
+    "blog": "",
+    "youtube": "https://www.youtube.com/@TuralSuleymaniTech",
     "website": "https://voeconsulting.net/",
     "mvp": "https://mvp.microsoft.com/MVP/profile/03714279-cac2-4e47-8b00-a57f71efc528",
     "bio": "Tural Suleymani is a seasoned software development expert with over a decade of industry experience. Renowned as Azerbaijan's first Microsoft MVP in .NET and a three-time C# Corner MVP, he has established himself as a leading authority in his field. He is the author of \"Hands-on Microservices with Javascript\" book published by Packt publishing and Microsoft MCT. With a passion for sharing knowledge, Tural has dedicated ten years to mentoring developers through comprehensive programming languages and technology tools instruction. A self-taught pioneer, he empowers a global audience through his TuralSuleymaniTech YouTube channel, where he delivers in-depth tutorials and insights on C#, Apache Kafka, SQL, JavaScript, Domain-Driven Design, software architecture, microservices, and more. Currently, he works for VOE Consulting as a Chief Software Architect.",

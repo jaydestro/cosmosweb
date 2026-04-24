@@ -24,6 +24,7 @@ interface Speaker {
   x?: string;
   linkedin?: string;
   blog?: string;
+  youtube?: string;
   website?: string;
   mvp?: string;
   session?: Session;
@@ -200,7 +201,7 @@ const SpeakersSection = ({ confYear }: SpeakersSectionProps) => {
                 <h2 className={styles.speakerModalName}>{selected.name}</h2>
                 {selected.role && <p className={styles.speakerModalRole}>{selected.role}</p>}
                 {selected.company && <p className={styles.speakerModalCompany}>{selected.company}</p>}
-                {(selected.linkedin || selected.x || selected.blog || selected.website || selected.mvp) && (
+                {(selected.linkedin || selected.x || selected.blog || selected.youtube || selected.website || selected.mvp) && (
                   <div className={styles.speakerModalSocials}>
                     {selected.mvp && (
                       <a href={selected.mvp} target="_blank" rel="noopener noreferrer"
@@ -233,6 +234,10 @@ const SpeakersSection = ({ confYear }: SpeakersSectionProps) => {
                     {selected.blog && (
                       <a href={selected.blog} target="_blank" rel="noopener noreferrer"
                         className={styles.speakerModalSocialLink} title="Blog" aria-label="Blog">✍️</a>
+                    )}
+                    {selected.youtube && (
+                      <a href={selected.youtube} target="_blank" rel="noopener noreferrer"
+                        className={styles.speakerModalSocialLink} title="YouTube" aria-label="YouTube">▶️</a>
                     )}
                     {selected.website && (
                       <a href={selected.website} target="_blank" rel="noopener noreferrer"

@@ -25,7 +25,7 @@
       "title": "Cosmos DB Best Practices — A Lesson from Spacely Sprockets",
       "description": "Sid Anand, Technical Fellow at Walmart, uses the Jetsons' Spacely Sprockets as a fun lens for the best practices behind always-on, low-latency, cost-efficient Cosmos DB apps.",
       "speakers": [{ "name": "Sid Anand", "slug": "sid-anand" }],
-      "url": ""
+      "url": "https://youtu.be/Yw65J4fRVj0"
     },
     {
       "time": "10:15 AM",
@@ -47,6 +47,13 @@
       "description": "A sneak preview of a portable Java SDK that runs unchanged across Azure Cosmos DB, Amazon DynamoDB, and Google Cloud Spanner.",
       "speakers": [{ "name": "Theo van Kraay", "slug": "theo-van-kraay" }],
       "url": "https://youtu.be/j6RgAfwwD30"
+    },
+    {
+      "time": "11:28 AM",
+      "title": "Powering Azure Cosmos DB with AMD EPYC | Andrew Ruffin",
+      "description": "Andrew Ruffin, Senior Product Manager at AMD, on the modern AMD EPYC processors that power Azure Cosmos DB across the globe.",
+      "speakers": [{ "name": "Andrew Ruffin", "slug": "andrew-ruffin" }],
+      "url": "https://youtu.be/yWP5e4-PWwU"
     },
     {
       "time": "11:30 AM",
@@ -74,7 +81,7 @@
       "title": "Querying and Indexing in Azure Cosmos DB: The Complete Guide",
       "description": "A complete tour of the Azure Cosmos DB query engine and indexing system — routing, index types, query metrics, and cost-saving optimizations.",
       "speakers": [{ "name": "James Codella", "slug": "james-codella" }],
-      "url": "https://youtu.be/fkEDPP1XsKk"
+      "url": "https://youtu.be/vJeklofgJEw"
     },
     {
       "time": "12:58 PM",
@@ -99,6 +106,18 @@
     }
   ],
   "onDemand": [
+    {
+      "title": "Keynote Interview: Vercel's Guillermo Rauch on the Agent Era",
+      "description": "Guillermo Rauch, CEO of Vercel and creator of Next.js, joins Kirill Gavrylyuk on building a developer cloud for the AI agent era.",
+      "speakers": [{ "name": "Guillermo Rauch", "slug": "guillermo-rauch" }],
+      "url": "https://youtu.be/LXys8EPan7U"
+    },
+    {
+      "title": "Keynote Interview: OpenAI on Building at Planetary Scale",
+      "description": "Jonathan Lee from OpenAI's online storage team joins Kirill Gavrylyuk on what it takes for a database to keep up with OpenAI.",
+      "speakers": [{ "name": "Jonathan Lee", "slug": "jonathan-lee" }],
+      "url": "https://youtu.be/CU10bYYjqPA"
+    },
     {
       "title": "Distributed Locks, Sagas, and Coordination with Cosmos DB",
       "description": "Use Cosmos DB as a coordination layer for locks, leases, leader election, and saga orchestration — and understand the consistency tradeoffs at scale.",
