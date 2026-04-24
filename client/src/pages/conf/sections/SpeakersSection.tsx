@@ -1,6 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "../conf.module.css";
 import speakersData from "../speakers2026.json";
+import {
+  getVideoUrlForSpeaker,
+  getYouTubeEmbedUrl,
+  useVideoReleased,
+} from "../videoRelease";
 
 interface Session {
   title?: string;
@@ -57,6 +62,7 @@ const SpeakersSection = ({ confYear }: SpeakersSectionProps) => {
   const speakers = allSpeakers.filter((s) => s.confirmed !== false);
   const [selected, setSelected] = useState<Speaker | null>(null);
   const modalRef = useRef<HTMLDivElement>(null);
+  const videoReleased = useVideoReleased();
 
   // Open modal when URL hash matches #speaker/<slug> — both on mount and live
   // when other sections (e.g. Agenda) link to #speaker/<slug>.
@@ -244,6 +250,21 @@ const SpeakersSection = ({ confYear }: SpeakersSectionProps) => {
                 {selected.session.abstract && (
                   <p className={styles.speakerModalAbstract}>{selected.session.abstract}</p>
                 )}
+                {videoReleased && (() => {
+                  const embedUrl = getYouTubeEmbedUrl(getVideoUrlForSpeaker(selected.slug));
+                  if (!embedUrl) return null;
+                  return (
+                    <div className={styles.speakerModalVideo}>
+                      <iframe
+                        src={embedUrl}
+                        title={`${selected.name} — ${selected.session?.title ?? "session video"}`}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                        loading="lazy"
+                      />
+                    </div>
+                  );
+                })()}
               </div>
             )}
 

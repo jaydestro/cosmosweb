@@ -60,7 +60,7 @@
       "title": "One Codebase, Any Cloud: Building a Retail Database with OSS and Azure",
       "description": "Build a retail store database once with MongoDB-compatible APIs and deploy it unchanged on-prem via Kubernetes and fully managed on Azure.",
       "speakers": [{ "name": "Khelan Modi", "slug": "khelan-modi" }],
-      "url": ""
+      "url": "https://youtu.be/O9bxsV9TeiI"
     },
     {
       "time": "12:23 PM",
@@ -74,7 +74,7 @@
       "title": "Querying and Indexing in Azure Cosmos DB: The Complete Guide",
       "description": "A complete tour of the Azure Cosmos DB query engine and indexing system — routing, index types, query metrics, and cost-saving optimizations.",
       "speakers": [{ "name": "James Codella", "slug": "james-codella" }],
-      "url": ""
+      "url": "https://youtu.be/fkEDPP1XsKk"
     },
     {
       "time": "12:58 PM",
@@ -169,13 +169,13 @@
       "title": "Memory for Your Agents: Building Chat History and Semantic Caching with Azure Cosmos DB",
       "description": "Build chat history and semantic cache containers that give AI agents persistent, context-aware memory while cutting tokens and latency.",
       "speakers": [{ "name": "Lino Tadros", "slug": "lino-tadros" }],
-      "url": ""
+      "url": "https://youtu.be/atbRswDKruY"
     },
     {
       "title": "Importing Data into Azure Cosmos DB: Tools, Tradeoffs, and Capacity Planning",
       "description": "A decision framework for choosing between the Data Migration Tool, Azure Data Factory, and the Spark connector — plus capacity planning for bulk loads.",
       "speakers": [{ "name": "Rakhi Thejraj", "slug": "rakhi-thejraj" }],
-      "url": ""
+      "url": "https://youtu.be/CTeI9N-LK4Y"
     }
   ]
 }

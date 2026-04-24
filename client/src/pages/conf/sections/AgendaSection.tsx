@@ -2,6 +2,7 @@ import React from "react";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import styles from "../conf.module.css";
 import agendaData from "../agenda.json";
+import { useVideoReleased } from "../videoRelease";
 
 interface AgendaSectionProps {
   confYear: string;
@@ -23,6 +24,27 @@ interface AgendaItem {
 const { live: liveAgenda, onDemand: onDemandAgenda } = agendaData as {
   live: AgendaItem[];
   onDemand: AgendaItem[];
+};
+
+// Videos become clickable on 2026-04-28 1:30 PM PDT (PDT = UTC-7).
+const renderAgendaCta = (url: string | undefined, released: boolean) => {
+  if (url && released) {
+    return (
+      <a
+        className={styles.agendaCardButton}
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Watch on YouTube
+      </a>
+    );
+  }
+  return (
+    <span className={styles.agendaCardButton} aria-disabled="true">
+      Coming soon
+    </span>
+  );
 };
 
 const handleSpeakerClick = (slug: string) => (e: React.MouseEvent) => {
@@ -47,6 +69,8 @@ const renderSpeakers = (speakers: AgendaSpeaker[]) =>
   ));
 
 const AgendaSection = ({ confYear }: AgendaSectionProps) => {
+  const released = useVideoReleased();
+
   return (
     <section className={styles.newsSection} aria-labelledby="agenda-heading">
       <div id="agenda" className={styles.sectionAnchor} />
@@ -81,9 +105,7 @@ const AgendaSection = ({ confYear }: AgendaSectionProps) => {
                     <p className={styles.agendaCardDescription}>{item.description}</p>
                   )}
                 </div>
-                <span className={styles.agendaCardButton} aria-disabled="true">
-                  Coming soon
-                </span>
+                {renderAgendaCta(item.url, released)}
               </article>
             ))}
           </div>
@@ -102,9 +124,7 @@ const AgendaSection = ({ confYear }: AgendaSectionProps) => {
                     <p className={styles.agendaCardDescription}>{item.description}</p>
                   )}
                 </div>
-                <span className={styles.agendaCardButton} aria-disabled="true">
-                  Coming soon
-                </span>
+                {renderAgendaCta(item.url, released)}
               </article>
             ))}
           </div>
