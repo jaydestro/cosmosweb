@@ -131,22 +131,6 @@
     }
   },
   {
-    "slug": "andrew-ruffin",
-    "name": "Andrew Ruffin",
-    "role": "Senior Product Manager",
-    "company": "AMD",
-    "img": "/img/speakers/andrew-ruffin.jpg",
-    "linkedin": "https://www.linkedin.com/in/andrewruffin/",
-    "x": "",
-    "blog": "",
-    "website": "",
-    "bio": "Experienced product, policy, and growth strategist with proven success in the high-stakes arenas of semiconductors and technology policy. Skilled in building alliances, finding new use cases and customers for emerging technologies, launching new software and hardware products, and managing teams. A translator and connector between business, technology, and policy with a commitment to continuous learning.",
-    "session": {
-      "title": "Powering Azure Cosmos DB with AMD EPYC",
-      "abstract": "Andrew Ruffin, Senior Product Manager at AMD, shares how modern AMD EPYC processors power Azure Cosmos DB across the globe — delivering up to 35% more performance and performance-per-dollar with the latest v7 generation, and feeding the dynamic scaling and elasticity features Cosmos DB users rely on every day."
-    }
-  },
-  {
     "slug": "mick-feller",
     "name": "Mick Feller",
     "role": "Distinguished Software Engineer",
@@ -370,6 +354,22 @@
     "session": {
       "title": "Keynote Featured Guest",
       "abstract": "Guillermo Rauch, CEO of Vercel, joins the Azure Cosmos DB Conf 2026 keynote conversation on modern applications, AI, and data at scale."
+    }
+  },
+  {
+    "slug": "andrew-ruffin",
+    "name": "Andrew Ruffin",
+    "role": "Senior Product Manager",
+    "company": "AMD",
+    "img": "/img/speakers/andrew-ruffin.jpg",
+    "linkedin": "https://www.linkedin.com/in/andrewruffin/",
+    "x": "",
+    "blog": "",
+    "website": "",
+    "bio": "Experienced product, policy, and growth strategist with proven success in the high-stakes arenas of semiconductors and technology policy. Skilled in building alliances, finding new use cases and customers for emerging technologies, launching new software and hardware products, and managing teams. A translator and connector between business, technology, and policy with a commitment to continuous learning.",
+    "session": {
+      "title": "Powering Azure Cosmos DB with AMD EPYC",
+      "abstract": "Andrew Ruffin, Senior Product Manager at AMD, shares how modern AMD EPYC processors power Azure Cosmos DB across the globe — delivering up to 35% more performance and performance-per-dollar with the latest v7 generation, and feeding the dynamic scaling and elasticity features Cosmos DB users rely on every day."
     }
   },
   {
