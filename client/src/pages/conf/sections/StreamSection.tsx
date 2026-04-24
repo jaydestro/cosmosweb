@@ -4,6 +4,8 @@ import styles from "../conf.module.css";
 interface StreamSectionProps {
   confYear: string;
   streamEmbedUrl: string | null;
+  /** When true, hide the countdown + subscribe notice (stream is live). */
+  live?: boolean;
 }
 
 // Azure Cosmos DB Conf 2026: April 28, 2026 · 9:00 AM PDT (UTC−7)
@@ -32,7 +34,7 @@ const computeCountdown = (): Countdown => {
 
 const pad = (value: number) => value.toString().padStart(2, "0");
 
-const StreamSection = ({ confYear, streamEmbedUrl }: StreamSectionProps) => {
+const StreamSection = ({ confYear, streamEmbedUrl, live = false }: StreamSectionProps) => {
   // Start with a stable value for SSR; update on the client after mount.
   const [countdown, setCountdown] = useState<Countdown>(() => computeCountdown());
 
@@ -83,41 +85,45 @@ const StreamSection = ({ confYear, streamEmbedUrl }: StreamSectionProps) => {
                 <span data-node-id="6:228">Evaluation available on 4/28/2026</span>
               </button>
               */}
-              <p className={styles.streamCtaNote} data-node-id="6:230">
-                Subscribe to the channel and click the 🔔 bell to get a reminder when we go live.
-              </p>
-
-              {countdown.done ? (
-                <p className={styles.streamCountdownLive} aria-live="polite">
-                  🔴 We&apos;re live!
+              {!live && (
+                <p className={styles.streamCtaNote} data-node-id="6:230">
+                  Subscribe to the channel and click the 🔔 bell to get a reminder when we go live.
                 </p>
-              ) : (
-                <div
-                  className={styles.streamCountdown}
-                  role="timer"
-                  aria-live="off"
-                  aria-label={`Time until Azure Cosmos DB Conf ${confYear} goes live`}
-                >
-                  <span className={styles.streamCountdownLabel}>Live in</span>
-                  <div className={styles.streamCountdownGrid}>
-                    <div className={styles.streamCountdownUnit}>
-                      <span className={styles.streamCountdownValue}>{pad(countdown.days)}</span>
-                      <span className={styles.streamCountdownName}>days</span>
-                    </div>
-                    <div className={styles.streamCountdownUnit}>
-                      <span className={styles.streamCountdownValue}>{pad(countdown.hours)}</span>
-                      <span className={styles.streamCountdownName}>hrs</span>
-                    </div>
-                    <div className={styles.streamCountdownUnit}>
-                      <span className={styles.streamCountdownValue}>{pad(countdown.minutes)}</span>
-                      <span className={styles.streamCountdownName}>min</span>
-                    </div>
-                    <div className={styles.streamCountdownUnit}>
-                      <span className={styles.streamCountdownValue}>{pad(countdown.seconds)}</span>
-                      <span className={styles.streamCountdownName}>sec</span>
+              )}
+
+              {!live && (
+                countdown.done ? (
+                  <p className={styles.streamCountdownLive} aria-live="polite">
+                    🔴 We&apos;re live!
+                  </p>
+                ) : (
+                  <div
+                    className={styles.streamCountdown}
+                    role="timer"
+                    aria-live="off"
+                    aria-label={`Time until Azure Cosmos DB Conf ${confYear} goes live`}
+                  >
+                    <span className={styles.streamCountdownLabel}>Live in</span>
+                    <div className={styles.streamCountdownGrid}>
+                      <div className={styles.streamCountdownUnit}>
+                        <span className={styles.streamCountdownValue}>{pad(countdown.days)}</span>
+                        <span className={styles.streamCountdownName}>days</span>
+                      </div>
+                      <div className={styles.streamCountdownUnit}>
+                        <span className={styles.streamCountdownValue}>{pad(countdown.hours)}</span>
+                        <span className={styles.streamCountdownName}>hrs</span>
+                      </div>
+                      <div className={styles.streamCountdownUnit}>
+                        <span className={styles.streamCountdownValue}>{pad(countdown.minutes)}</span>
+                        <span className={styles.streamCountdownName}>min</span>
+                      </div>
+                      <div className={styles.streamCountdownUnit}>
+                        <span className={styles.streamCountdownValue}>{pad(countdown.seconds)}</span>
+                        <span className={styles.streamCountdownName}>sec</span>
+                      </div>
                     </div>
                   </div>
-                </div>
+                )
               )}
 
               <a
