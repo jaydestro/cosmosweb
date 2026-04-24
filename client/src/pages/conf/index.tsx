@@ -13,7 +13,7 @@ import AgendaSection from "./sections/AgendaSection";
 import NewsSection from "./sections/NewsSection";
 import FaqSection from "./sections/FaqSection";
 import SpeakersSection from "./sections/SpeakersSection";
-import { useStreamReleased } from "./videoRelease";
+import { useStreamReleased } from "../../conf/videoRelease";
 
 const CONF_YEAR = "2026";
 const CONF_DATE_DISPLAY = "April 28 - 9:00 AM - 2:00 PM PDT";

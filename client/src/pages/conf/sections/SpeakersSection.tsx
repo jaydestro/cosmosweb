@@ -5,7 +5,7 @@ import {
   getVideoUrlForSpeaker,
   getYouTubeEmbedUrl,
   useVideoReleased,
-} from "../videoRelease";
+} from "../../../conf/videoRelease";
 
 interface Session {
   title?: string;
