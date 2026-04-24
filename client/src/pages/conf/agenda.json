@@ -73,8 +73,7 @@
       "time": "12:25 PM",
       "title": "Querying and Indexing in Azure Cosmos DB: The Complete Guide",
       "description": "A complete tour of the Azure Cosmos DB query engine and indexing system — routing, index types, query metrics, and cost-saving optimizations.",
-      "speakers": [{ "name": "James Codella", "slug": "james-codella" }],
-      "url": "https://youtu.be/fkEDPP1XsKk"
+      "speakers": [{ "name": "James Codella", "slug": "james-codella" }]
     },
     {
       "time": "12:58 PM",

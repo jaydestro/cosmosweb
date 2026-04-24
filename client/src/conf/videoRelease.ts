@@ -57,13 +57,13 @@ export const getVideoUrlForSpeaker = (slug: string): string | undefined => {
  * during SSR/initial render to avoid hydration mismatch, then flips to `true`
  * on the client if applicable. Re-checked every minute.
  *
- * Supports `?releaseNow` (case-insensitive, value optional; `0`/`false` opts
- * out) to force-release for testing/previewing.
+ * Supports `?releaseNow` or `?streamNow` (case-insensitive, value optional;
+ * `0`/`false` opts out) to force-release for testing/previewing.
  */
 export const useVideoReleased = (): boolean => {
   const [released, setReleased] = useState(false);
   useEffect(() => {
-    const forceReleased = hasPreviewParam(["releaseNow"]);
+    const forceReleased = hasPreviewParam(["releaseNow", "streamNow"]);
     const check = () =>
       setReleased(forceReleased || Date.now() >= VIDEO_RELEASE_TIMESTAMP);
     check();
