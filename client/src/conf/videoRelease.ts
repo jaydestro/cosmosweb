@@ -7,6 +7,22 @@ export const VIDEO_RELEASE_TIMESTAMP = Date.UTC(2026, 3, 28, 20, 30, 0);
 // Live stream embed becomes visible on 2026-04-28 7:00 AM PDT (→ 14:00 UTC).
 export const STREAM_RELEASE_TIMESTAMP = Date.UTC(2026, 3, 28, 14, 0, 0);
 
+/**
+ * Case-insensitive check for a preview query param. Accepts any non-empty
+ * value (e.g. `?streamNow=1`, `?streamnow=true`, `?STREAMNOW`).
+ */
+const hasPreviewParam = (names: string[]): boolean => {
+  if (typeof window === "undefined") return false;
+  const params = new URLSearchParams(window.location.search);
+  const wanted = names.map((n) => n.toLowerCase());
+  for (const [key, value] of params.entries()) {
+    if (wanted.includes(key.toLowerCase()) && value !== "0" && value !== "false") {
+      return true;
+    }
+  }
+  return false;
+};
+
 interface AgendaEntry {
   speakers: { slug: string }[];
   url?: string;
