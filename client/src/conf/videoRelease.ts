@@ -8,17 +8,20 @@ export const VIDEO_RELEASE_TIMESTAMP = Date.UTC(2026, 3, 28, 20, 30, 0);
 export const STREAM_RELEASE_TIMESTAMP = Date.UTC(2026, 3, 28, 14, 0, 0);
 
 /**
- * Case-insensitive check for a preview query param. Accepts any non-empty
- * value (e.g. `?streamNow=1`, `?streamnow=true`, `?STREAMNOW`).
+ * Case-insensitive check for a preview query param. Returns true when any of
+ * the given names is present in the URL, unless its value explicitly opts out
+ * (`0` or `false`, case-insensitive). Bare flags like `?streamnow` count as
+ * enabled.
  */
 const hasPreviewParam = (names: string[]): boolean => {
   if (typeof window === "undefined") return false;
   const params = new URLSearchParams(window.location.search);
-  const wanted = names.map((n) => n.toLowerCase());
+  const wanted = new Set(names.map((n) => n.toLowerCase()));
   for (const [key, value] of params.entries()) {
-    if (wanted.includes(key.toLowerCase()) && value !== "0" && value !== "false") {
-      return true;
-    }
+    if (!wanted.has(key.toLowerCase())) continue;
+    const normalized = value.trim().toLowerCase();
+    if (normalized === "0" || normalized === "false") continue;
+    return true;
   }
   return false;
 };
@@ -54,14 +57,13 @@ export const getVideoUrlForSpeaker = (slug: string): string | undefined => {
  * during SSR/initial render to avoid hydration mismatch, then flips to `true`
  * on the client if applicable. Re-checked every minute.
  *
- * Supports `?releaseNow=1` in the URL to force-release for testing/previewing.
+ * Supports `?releaseNow` (case-insensitive, value optional; `0`/`false` opts
+ * out) to force-release for testing/previewing.
  */
 export const useVideoReleased = (): boolean => {
   const [released, setReleased] = useState(false);
   useEffect(() => {
-    const forceReleased =
-      typeof window !== "undefined" &&
-      new URLSearchParams(window.location.search).get("releaseNow") === "1";
+    const forceReleased = hasPreviewParam(["releaseNow"]);
     const check = () =>
       setReleased(forceReleased || Date.now() >= VIDEO_RELEASE_TIMESTAMP);
     check();
@@ -73,19 +75,15 @@ export const useVideoReleased = (): boolean => {
 
 /**
  * Returns true once the live stream release time has passed. SSR-safe.
- * Supports `?streamNow=1` (and also `?releaseNow=1`) for preview.
+ * Supports `?streamNow` or `?releaseNow` (case-insensitive, value optional;
+ * `0`/`false` opts out) for preview.
  */
 export const useStreamReleased = (): boolean => {
   const [released, setReleased] = useState(false);
   useEffect(() => {
-    const params =
-      typeof window !== "undefined"
-        ? new URLSearchParams(window.location.search)
-        : null;
-    const forceReleased =
-      params?.get("streamNow") === "1" || params?.get("releaseNow") === "1";
+    const forceReleased = hasPreviewParam(["streamNow", "releaseNow"]);
     const check = () =>
-      setReleased(!!forceReleased || Date.now() >= STREAM_RELEASE_TIMESTAMP);
+      setReleased(forceReleased || Date.now() >= STREAM_RELEASE_TIMESTAMP);
     check();
     const interval = window.setInterval(check, 60_000);
     return () => window.clearInterval(interval);
