@@ -134,7 +134,7 @@
     "slug": "mick-feller",
     "name": "Mick Feller",
     "role": "Distinguished Software Engineer",
-    "company": "The ODP Corporation",
+    "company": "The ODP Group",
     "img": "/img/speakers/mick-feller.jpg",
     "linkedin": "https://www.linkedin.com/in/mickfeller",
     "x": "",
@@ -143,7 +143,7 @@
     "bio": "Passionate software engineering leader, with hands on skills in numerous technologies.",
     "session": {
       "title": "Customer Testimonial",
-      "abstract": "Mick Feller shares how The ODP Corporation (Office Depot) built a homegrown enterprise AI app — the Personal Assistant — on Azure Cosmos DB, combining time-series analytics with HR profile storage to give AI models richer context, while doubling usage year over year with hands-off scaling and fine-grained cost control."
+      "abstract": "Mick Feller shares how The ODP Group (Office Depot) built a homegrown enterprise AI app — the Personal Assistant — on Azure Cosmos DB, combining time-series analytics with HR profile storage to give AI models richer context, while doubling usage year over year with hands-off scaling and fine-grained cost control."
     }
   },
   {
