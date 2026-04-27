@@ -36,10 +36,10 @@
     },
     {
       "time": "10:45 AM",
-      "title": "Cutting AI Agent Costs with Azure Cosmos DB: The Agent Memory Fabric",
-      "description": "How to unify semantic caching, Change Feed coordination, and optimistic concurrency into a single Agent Memory Fabric that slashes multi-agent costs.",
-      "speakers": [{ "name": "Farah Abdou", "slug": "farah-abdou" }],
-      "url": "https://youtu.be/Wo34Trg0Wyg"
+      "title": "Mastering the Azure Cosmos DB Change Feed: Patterns, Scaling, and Real-World Architectures",
+      "description": "A deep dive into Change Feed internals, consumption models, lease management, and how to debug and scale it in production.",
+      "speakers": [{ "name": "Justine Cocchi", "slug": "justine-cocchi" }],
+      "url": "https://youtu.be/kFqcImlqYYs"
     },
     {
       "time": "11:10 AM",
@@ -57,10 +57,10 @@
     },
     {
       "time": "11:30 AM",
-      "title": "Mastering the Azure Cosmos DB Change Feed: Patterns, Scaling, and Real-World Architectures",
-      "description": "A deep dive into Change Feed internals, consumption models, lease management, and how to debug and scale it in production.",
-      "speakers": [{ "name": "Justine Cocchi", "slug": "justine-cocchi" }],
-      "url": "https://youtu.be/kFqcImlqYYs"
+      "title": "Cutting AI Agent Costs with Azure Cosmos DB: The Agent Memory Fabric",
+      "description": "How to unify semantic caching, Change Feed coordination, and optimistic concurrency into a single Agent Memory Fabric that slashes multi-agent costs.",
+      "speakers": [{ "name": "Farah Abdou", "slug": "farah-abdou" }],
+      "url": "https://youtu.be/Wo34Trg0Wyg"
     },
     {
       "time": "12:00 PM",

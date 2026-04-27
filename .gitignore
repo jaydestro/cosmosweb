@@ -271,3 +271,6 @@ __pycache__/
 /cosmosweb/appsettings.Development.json
 youtube-session-descriptions.txt
 youtube-session-descriptions.md
+agenda-live.md
+agenda-live.svg
+agenda-live.png
