@@ -34,6 +34,18 @@ const computeCountdown = (): Countdown => {
 
 const pad = (value: number) => value.toString().padStart(2, "0");
 
+// Convert a YouTube embed URL (https://www.youtube.com/embed/VIDEOID) into a
+// watchable URL (https://www.youtube.com/watch?v=VIDEOID). Falls back to the
+// original URL if the format is unrecognized.
+const toWatchUrl = (embedUrl: string | null): string | null => {
+  if (!embedUrl) return null;
+  const match = embedUrl.match(/youtube\.com\/embed\/([^/?#]+)/);
+  if (match) {
+    return `https://www.youtube.com/watch?v=${match[1]}`;
+  }
+  return embedUrl;
+};
+
 const StreamSection = ({ confYear, streamEmbedUrl, live = false }: StreamSectionProps) => {
   // Start with a stable value for SSR; update on the client after mount.
   const [countdown, setCountdown] = useState<Countdown>(() => computeCountdown());
@@ -53,41 +65,37 @@ const StreamSection = ({ confYear, streamEmbedUrl, live = false }: StreamSection
         <div className={styles.streamInner}>
           <div className={styles.streamCard}>
             <h2 className={styles.streamTitle} data-node-id="6:226">
-              Watch the Azure Cosmos DB Conf {confYear} Stream
+              Missed Azure Cosmos DB Conf {confYear}? Watch it here.
             </h2>
 
-            <div className={styles.streamVideoFrame} data-node-id="6:225">
-              {streamEmbedUrl ? (
-                <iframe
-                  className={styles.streamVideo}
-                  src={streamEmbedUrl}
-                  title={`Azure Cosmos DB Conf ${confYear} stream`}
-                  frameBorder={0}
-                  allow="autoplay; encrypted-media; picture-in-picture"
-                  allowFullScreen
-                />
+            <div className={`${styles.streamVideoFrame} ${styles.streamThankYouFrame}`} data-node-id="6:225">
+              {toWatchUrl(streamEmbedUrl) ? (
+                <a
+                  className={styles.streamThankYouLink}
+                  href={toWatchUrl(streamEmbedUrl) as string}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Watch the Azure Cosmos DB Conf ${confYear} recording on YouTube`}
+                >
+                  <img
+                    className={styles.streamThankYouImage}
+                    src="/img/thank_you_closing.png"
+                    alt={`Thank you for joining Azure Cosmos DB Conf ${confYear}`}
+                  />
+                </a>
               ) : (
-                <div className={styles.streamVideoPlaceholder} aria-hidden="true" />
+                <img
+                  className={styles.streamThankYouImage}
+                  src="/img/thank_you_closing.png"
+                  alt={`Thank you for joining Azure Cosmos DB Conf ${confYear}`}
+                />
               )}
             </div>
 
             <div className={styles.streamCta} data-node-id="6:233">
-              {/* Evaluation button hidden for now — will be re-enabled closer to the live show. */}
-              {/*
-              <button
-                type="button"
-                className={styles.streamCtaButton}
-                data-node-id="6:232"
-                disabled
-                aria-disabled="true"
-                title="Available during the live show"
-              >
-                <span data-node-id="6:228">Evaluation available on 4/28/2026</span>
-              </button>
-              */}
               {!live && (
                 <p className={styles.streamCtaNote} data-node-id="6:230">
-                  Subscribe to the channel and click the 🔔 bell to get a reminder when we go live.
+                  Couldn&apos;t catch the event live? Watch the full recording on YouTube and share your feedback in the post-event survey.
                 </p>
               )}
 
@@ -126,14 +134,27 @@ const StreamSection = ({ confYear, streamEmbedUrl, live = false }: StreamSection
                 )
               )}
 
-              <a
-                className={styles.streamCtaButton}
-                href="https://aka.ms/CosmosConf2026Survey"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Azure Cosmos DB Conference 2026 Post-Event Survey
-              </a>
+              <div className={styles.streamCtaButtonRow}>
+                <a
+                  className={styles.streamCtaButton}
+                  href="https://aka.ms/CosmosConf2026Survey"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Azure Cosmos DB Conference 2026 Post-Event Survey
+                </a>
+                {toWatchUrl(streamEmbedUrl) && (
+                  <a
+                    className={styles.streamCtaButton}
+                    href={toWatchUrl(streamEmbedUrl) as string}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Watch the Azure Cosmos DB Conf 2026 recording on YouTube"
+                  >
+                    Watch the Recording on YouTube
+                  </a>
+                )}
+              </div>
             </div>
           </div>
         </div>

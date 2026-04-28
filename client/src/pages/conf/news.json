@@ -1,5 +1,11 @@
 [
   {
+    "title": "That's a Wrap — Thank You, Cosmos Conf 2026!",
+    "date": "April 28, 2026",
+    "content": "<p class='keynote-intro'>And just like that, <strong>Azure Cosmos DB Conf 2026</strong> is in the books. A huge <strong>thank you</strong> to everyone who tuned in today — and to the <strong>incredible speakers</strong>, the production crew, and the partners who made the show happen.</p><p class='keynote-intro'>A special shout-out to our <strong>community</strong> who showed up in the YouTube live chat and kept the energy going all day long. You make this event what it is.</p><p class='keynote-intro'>Missed something? <strong>Every session is now available on demand.</strong> Browse the <a class='blue' href='#speakers'>speaker cards</a> to find each session embedded next to its speaker, or watch the full <strong>Cosmos Conf 2026 playlist</strong> on YouTube.</p><p class='keynote-cta'><a class='keynote-cta-button' href='https://aka.ms/CosmosConf26Playlist' target='_blank' rel='noopener noreferrer'>Watch the Full Playlist on YouTube</a></p><p class='keynote-cta' style='font-size:13px;opacity:0.75;margin-top:10px;'><a href='#speakers'>Browse speakers &amp; sessions</a> · <a href='https://aka.ms/CosmosConf2026Survey' target='_blank' rel='noopener noreferrer'>Share your feedback</a></p>",
+    "event_date": "April 28, 2026"
+  },
+  {
     "title": "Today Is the Day — Welcome to Azure Cosmos DB Conf 2026!",
     "date": "April 28, 2026",
     "content": "<p class='keynote-intro'>It's go time. <strong>Azure Cosmos DB Conf 2026</strong> kicks off today with a <strong>5-hour live broadcast</strong> from <strong>9:00 AM to 2:00 PM PDT</strong>, plus <strong>13 on-demand sessions</strong> ready to watch right after.</p><p class='keynote-intro'>Read the welcome post from the team for everything you need to know about today's show — the keynote, featured guests, what to expect, and how to get the most out of the day.</p><p class='keynote-cta'><a class='keynote-cta-button' href='https://devblogs.microsoft.com/cosmosdb/welcome-to-azure-cosmos-db-conf-2026/' target='_blank' rel='noopener noreferrer'>Read: Welcome to Azure Cosmos DB Conf 2026</a></p><p class='keynote-cta' style='font-size:13px;opacity:0.75;margin-top:10px;'><a href='#stream'>Jump to the live stream</a> · <a href='#agenda'>View the agenda</a></p>",

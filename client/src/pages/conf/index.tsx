@@ -276,17 +276,6 @@ const ConfPage = () => {
                 Tune in for our engaging 5-hour live show on <strong>{CONF_DATE_LONG}</strong>, and
                 explore additional sessions on-demand. This is an event you won&apos;t want to miss!
               </p>
-
-              <div className={styles.introActions}>
-                <a
-                  className={styles.introPrimaryButton}
-                  href="https://aka.ms/cosmosconfreg"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  🔔 Register for Free
-                </a>
-              </div>
             </div>
           </div>
         </section>

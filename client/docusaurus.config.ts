@@ -17,7 +17,6 @@ function readString(envValue: string | undefined): string | null {
   return value ? value : null;
 }
 
-const showStreamNav = readBool(process.env.CONF_SHOW_STREAM, true);
 const showAgendaNav = readBool(process.env.CONF_SHOW_AGENDA, true);
 
 const config: Config = {
@@ -123,19 +122,6 @@ const config: Config = {
               activeBaseRegex: '^/conf/?$',
               className: 'mobile-only',
             },
-            {
-              label: 'Register',
-              href: 'https://aka.ms/cosmosconfreg',
-            },
-            ...(showStreamNav
-              ? [
-                  {
-                    label: 'Watch the Stream',
-                    to: '/conf#stream',
-                    activeBaseRegex: '^$',
-                  },
-                ]
-              : []),
             {
               label: 'Cloud Skills Challenge',
               to: '/conf#cloud-skills',
