@@ -1,5 +1,11 @@
 [
   {
+    "title": "Today Is the Day — Welcome to Azure Cosmos DB Conf 2026!",
+    "date": "April 28, 2026",
+    "content": "<p class='keynote-intro'>It's go time. <strong>Azure Cosmos DB Conf 2026</strong> kicks off today with a <strong>5-hour live broadcast</strong> from <strong>9:00 AM to 2:00 PM PDT</strong>, plus <strong>13 on-demand sessions</strong> ready to watch right after.</p><p class='keynote-intro'>Read the welcome post from the team for everything you need to know about today's show — the keynote, featured guests, what to expect, and how to get the most out of the day.</p><p class='keynote-cta'><a class='keynote-cta-button' href='https://devblogs.microsoft.com/cosmosdb/welcome-to-azure-cosmos-db-conf-2026/' target='_blank' rel='noopener noreferrer'>Read: Welcome to Azure Cosmos DB Conf 2026</a></p><p class='keynote-cta' style='font-size:13px;opacity:0.75;margin-top:10px;'><a href='#stream'>Jump to the live stream</a> · <a href='#agenda'>View the agenda</a></p>",
+    "event_date": "April 28, 2026"
+  },
+  {
     "title": "The Agenda Is Live — See What's Happening on April 28",
     "date": "April 21, 2026",
     "content": "<p class='keynote-intro'>The full <strong>Azure Cosmos DB Conf 2026</strong> agenda is here. We've locked in the running order for a packed <strong>5-hour live broadcast</strong> — 9:00 AM to 2:00 PM PDT — plus <strong>13 on-demand sessions</strong> you can watch any time.</p><p class='keynote-intro'>The day kicks off with the keynote featuring <strong>Kirill Gavrylyuk</strong> and guests from <strong>Vercel, OpenAI, Walmart,</strong> and <strong>AMD</strong>, followed by deep-dives on AI agent memory, hybrid search, change feed, query optimization, security, cost engineering, and more.</p><p class='keynote-cta'><a class='keynote-cta-button' href='#agenda'>View the Agenda</a></p><p class='keynote-cta' style='font-size:13px;opacity:0.75;margin-top:10px;'><a href='https://aka.ms/cosmosconfreg' target='_blank' rel='noopener noreferrer'>Register for free</a> · April 28, 2026</p>",
