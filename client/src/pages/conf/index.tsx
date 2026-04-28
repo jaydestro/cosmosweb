@@ -242,8 +242,12 @@ const ConfPage = () => {
           </div>
         </header>
 
-        {showStream && streamLive && (
-          <StreamSection confYear={CONF_YEAR} streamEmbedUrl={streamEmbedUrl} live />
+        {showStream && (
+          <StreamSection
+            confYear={CONF_YEAR}
+            streamEmbedUrl={streamEmbedUrl}
+            live={streamLive}
+          />
         )}
 
         <section className={styles.introSection} aria-labelledby="conf-intro">
@@ -361,8 +365,6 @@ const ConfPage = () => {
             </div>
           </div>
         </section>
-
-        {showStream && !streamLive && <StreamSection confYear={CONF_YEAR} streamEmbedUrl={streamEmbedUrl} />}
 
         <NewsSection confYear={CONF_YEAR} />
 
