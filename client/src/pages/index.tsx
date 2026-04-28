@@ -16,7 +16,7 @@ const developerCommunityData = [
   {
     name: 'Learn more about Azure Cosmos DB',
     imageUrl: '../img/icons/msft.png',
-    link: 'https://learn.microsoft.com/en-us/azure/cosmos-db/',
+    link: 'https://learn.microsoft.com/azure/cosmos-db/',
   },
   {
     name: 'Azure Cosmos DB community',
