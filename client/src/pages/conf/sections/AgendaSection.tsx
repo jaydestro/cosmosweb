@@ -87,7 +87,7 @@ const AgendaSection = ({ confYear }: AgendaSectionProps) => {
             Event agenda
           </h2>
           <p className={styles.newsDescription}>
-            Join us live on April 28, 2026 from 9:00 AM to 2:00 PM PDT. All times shown in Pacific Daylight Time. Session recordings will be available on demand after the event.
+            Azure Cosmos DB Conf 2026 streamed live on April 28, 2026 from 9:00 AM to 2:00 PM PDT. All times shown in Pacific Daylight Time. Every session is now available on demand.
           </p>
         </div>
 

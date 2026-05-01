@@ -273,8 +273,8 @@ const ConfPage = () => {
                 from Microsoft and community experts.
               </p>
               <p className={styles.introCopySecondary}>
-                Tune in for our engaging 5-hour live show on <strong>{CONF_DATE_LONG}</strong>, and
-                explore additional sessions on-demand. This is an event you won&apos;t want to miss!
+                Our 5-hour live show streamed on <strong>{CONF_DATE_LONG}</strong>. Every session
+                — keynote, breakouts, and community talks — is now available on demand.
               </p>
             </div>
           </div>
