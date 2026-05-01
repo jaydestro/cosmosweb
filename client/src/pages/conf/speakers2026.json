@@ -43,8 +43,8 @@
     "website": "",
     "bio": "Strategic and results-driven Business Development Executive with more than 29 years of international experience in the cloud computing infrastructure and semiconductor industries. Leads platform enablement for AMD hyperscale accounts, formerly ZT Systems. Lead strategic business planning, marketing, ecosystem, and portfolio development for Flex's Communications, Enterprise, and Cloud segments. Lead and managed all aspects of Intel's global cloud computing business, including top account management, sales, marketing, and product line management. Lead factory process and production engineering, manufacturing, and process control.",
     "session": {
-      "title": "Keynote Featured Guest",
-      "abstract": "Steve Berg from AMD joins the Azure Cosmos DB Conf 2026 keynote conversation on modern applications, AI, and data at scale."
+      "title": "Keynote Interview: AMD on the Hardware Behind Cosmos DB",
+      "abstract": "Steve Berg, Corporate Vice President & GM, Server CPU Cloud at AMD, joins Kirill Gavrylyuk for a keynote conversation about the silicon quietly powering one of the world's largest distributed databases. They cover nearly a decade of AMD EPYC in the Azure cloud, how EPYC powers Azure Cosmos DB across datacenters worldwide, the impact of 3D V-Cache and higher core counts on database workloads, and how AMD ↔ Microsoft co-engineering feeds Cosmos DB features like autoscale, RU pooling, and serverless — all in service of better performance per dollar per watt."
     }
   },
   {

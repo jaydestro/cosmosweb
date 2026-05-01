@@ -39,17 +39,19 @@ const { live, onDemand } = agendaData as {
 const allSessions: AgendaEntry[] = [...live, ...onDemand];
 
 /**
- * Look up a YouTube URL for a given speaker slug. Returns the first matching
- * session URL, or undefined if the speaker has no URL (yet).
+ * Look up a YouTube URL for a given speaker slug. Prefers sessions where the
+ * speaker is the sole speaker (their own talk) over multi-speaker sessions
+ * like the keynote panel. Falls back to the first multi-speaker match.
  */
 export const getVideoUrlForSpeaker = (slug: string): string | undefined => {
+  let fallback: string | undefined;
   for (const session of allSessions) {
     if (!session.url) continue;
-    if (session.speakers.some((s) => s.slug === slug)) {
-      return session.url;
-    }
+    if (!session.speakers.some((s) => s.slug === slug)) continue;
+    if (session.speakers.length === 1) return session.url;
+    if (!fallback) fallback = session.url;
   }
-  return undefined;
+  return fallback;
 };
 
 /**
