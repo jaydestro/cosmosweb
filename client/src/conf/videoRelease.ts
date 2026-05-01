@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import agendaData from "../pages/conf/agenda.json";
 
 // Videos become clickable on 2026-04-28 1:30 PM PDT (PDT = UTC-7 → 20:30 UTC).
@@ -55,43 +54,15 @@ export const getVideoUrlForSpeaker = (slug: string): string | undefined => {
 };
 
 /**
- * Returns true once the shared release time has passed. The value is `false`
- * during SSR/initial render to avoid hydration mismatch, then flips to `true`
- * on the client if applicable. Re-checked every minute.
- *
- * Supports `?releaseNow` or `?streamNow` (case-insensitive, value optional;
- * `0`/`false` opts out) to force-release for testing/previewing.
+ * Post-event: time-based gating is suspended. Both hooks now always return
+ * `true` so the site is permanently in its post-event state (videos clickable,
+ * stream section shows the thank-you / recording card, no countdown, no
+ * "We're live" indicator). The timestamp constants and `hasPreviewParam`
+ * helper are kept in case time-gating needs to be re-enabled for a future
+ * event.
  */
-export const useVideoReleased = (): boolean => {
-  const [released, setReleased] = useState(false);
-  useEffect(() => {
-    const forceReleased = hasPreviewParam(["releaseNow", "streamNow"]);
-    const check = () =>
-      setReleased(forceReleased || Date.now() >= VIDEO_RELEASE_TIMESTAMP);
-    check();
-    const interval = window.setInterval(check, 60_000);
-    return () => window.clearInterval(interval);
-  }, []);
-  return released;
-};
-
-/**
- * Returns true once the live stream release time has passed. SSR-safe.
- * Supports `?streamNow` or `?releaseNow` (case-insensitive, value optional;
- * `0`/`false` opts out) for preview.
- */
-export const useStreamReleased = (): boolean => {
-  const [released, setReleased] = useState(false);
-  useEffect(() => {
-    const forceReleased = hasPreviewParam(["streamNow", "releaseNow"]);
-    const check = () =>
-      setReleased(forceReleased || Date.now() >= STREAM_RELEASE_TIMESTAMP);
-    check();
-    const interval = window.setInterval(check, 60_000);
-    return () => window.clearInterval(interval);
-  }, []);
-  return released;
-};
+export const useVideoReleased = (): boolean => true;
+export const useStreamReleased = (): boolean => true;
 
 /**
  * Convert a youtu.be or youtube.com URL into a youtube.com/embed/<id> URL.

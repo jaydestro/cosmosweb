@@ -24,7 +24,10 @@ const config: Config = {
   tagline: 'Infinite Scale, Instant Impact!',
   favicon: 'img/favicon.ico',
 
-  clientModules: ['./src/clientModules/confMobileHashActive.ts'],
+  clientModules: [
+    './src/clientModules/confMobileHashActive.ts',
+    './src/clientModules/clientErrorLogger.ts',
+  ],
 
   url: 'https://developer.azurecosmosdb.com',
   baseUrl: '/',
