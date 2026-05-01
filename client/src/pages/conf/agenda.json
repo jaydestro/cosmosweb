@@ -11,7 +11,7 @@
         { "name": "Andrew Liu", "slug": "andrew-liu" },
         { "name": "Steve Berg", "slug": "steve-berg" }
       ],
-      "url": ""
+      "url": "https://youtu.be/lOppojg4QlY"
     },
     {
       "time": "9:48 AM",
@@ -95,7 +95,7 @@
       "title": "Behind the Scenes: How Azure Cosmos DB Runs Under the Hood",
       "description": "A whiteboard walkthrough of Azure Cosmos DB's internals — replica sets, consistent hashing, Request Units, and RU pooling across a global fleet.",
       "speakers": [{ "name": "Andrew Liu", "slug": "andrew-liu" }],
-      "url": "https://youtu.be/6POmAm--Kgk"
+      "url": "https://youtu.be/A7Q_wZqUmJc"
     },
     {
       "time": "1:30 PM",
@@ -117,6 +117,12 @@
       "description": "Jonathan Lee from OpenAI's online storage team joins Kirill Gavrylyuk on what it takes for a database to keep up with OpenAI.",
       "speakers": [{ "name": "Jonathan Lee", "slug": "jonathan-lee" }],
       "url": "https://youtu.be/CU10bYYjqPA"
+    },
+    {
+      "title": "Keynote Interview: AMD's Steve Berg on the Hardware Behind Cosmos DB",
+      "description": "Steve Berg, CVP & GM Server CPU Cloud at AMD, joins Kirill Gavrylyuk on the AMD EPYC silicon powering Azure Cosmos DB across the globe.",
+      "speakers": [{ "name": "Steve Berg", "slug": "steve-berg" }],
+      "url": "https://youtu.be/eL-Wj27FHmM"
     },
     {
       "title": "Distributed Locks, Sagas, and Coordination with Cosmos DB",
