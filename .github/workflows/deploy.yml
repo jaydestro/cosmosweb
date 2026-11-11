@@ -11,6 +11,9 @@ permissions:
 
 jobs:
   build-and-deploy:
+    # Production deploys run only on the upstream repository, which holds the AZURE_* secrets and the OIDC
+    # federated credential. Forks have neither, so the Azure login step would always fail there.
+    if: github.repository == 'AzureCosmosDB/cosmosweb'
     runs-on: ubuntu-latest
 
     steps:
